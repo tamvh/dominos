@@ -197,12 +197,12 @@ Rectangle {
                               oriprice: oriString, promtype: promtype, itmviewable: true})
     }
 
-    Rectangle {
-        id: rectTitle
-        height: 70
-        width: parent.width
-        color: "transparent"
-    }
+//    Rectangle {
+//        id: rectTitle
+//        height: 70
+//        width: parent.width
+//        color: "transparent"
+//    }
 
     GridView {
         id: gridItemView
@@ -210,15 +210,14 @@ Rectangle {
         cellWidth: m_cellw
         cellHeight: m_cellh
         focus: true
-        anchors.top: rectTitle.bottom
-        anchors.topMargin: 70
+//        anchors.top: rectTitle.bottom
+//        anchors.topMargin: 70
         model: foodsModel
 
         delegate: Item {
             id: item
             width: m_cellw
             height: m_cellh
-            anchors.top: rectTitle.bottom
             property int cellPadding: 3
             property int cellFontSize: fooditemfntsize
 

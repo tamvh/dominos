@@ -49,10 +49,12 @@ ApplicationWindow {
     property string pizza_prize: qsTr("")
     property string promote_price: qsTr("")
     property int nItem: 1
+    property int nChessy: 0
     property var global_foodItems;
     property string customer_name: qsTr("")
     property string customer_hinhthuc: qsTr("dinein")
     property string name_code: qsTr("")
+    property bool enable_cheesy: false
 
     Material.primary: Material.DeepOrange
     Material.accent: Material.DeepOrange
@@ -170,14 +172,21 @@ ApplicationWindow {
             pizza_sizebanh = qsTr("7\"")
             pizza_sizebanh_id = "7"
             check_sizebanh(7)
+            enable_cheesy = false
+            if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC") {
+                pizza_debanh_id = "TC";
+                select_debanh("de_mong");
+            }
         } else if(sizebanh === 9) {
             pizza_sizebanh = qsTr("9\"")
             pizza_sizebanh_id = "9"
             check_sizebanh(9)
+            enable_cheesy = true
         } else if(sizebanh === 12) {
             pizza_sizebanh = qsTr("12\"")
             pizza_sizebanh_id = "12"
             check_sizebanh(12)
+            enable_cheesy = true
         }
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
     }
@@ -209,6 +218,10 @@ ApplicationWindow {
             pizza_debanh = "Đế vừa";
         } else if( debanh === "de_day") {
             pizza_debanh = "Đế dày";
+        } else if(debanh === "de_cheesy") {
+            pizza_debanh = "Viền phô mai";
+        } else if(debanh === "de_thin_cheesy") {
+            pizza_debanh = "Viền phô mai mỏng";
         }
     }
 
@@ -216,12 +229,18 @@ ApplicationWindow {
         pizza_debanh_mong.checked = false;
         pizza_debanh_vua.checked = false;
         pizza_debanh_day.checked = false;
+        pizza_debanh_cheesy_crust.checked = false;
+        pizza_debanh_thin_cheesy_crust.checked = false;
         if(debanh === "de_mong") {
             pizza_debanh_mong.checked = true;
         } else if(debanh === "de_vua") {
             pizza_debanh_vua.checked = true;
         } else if( debanh === "de_day") {
             pizza_debanh_day.checked = true;
+        } else if( debanh === "de_cheesy") {
+            pizza_debanh_cheesy_crust.checked = true;
+        } else if( debanh === "de_thin_cheesy") {
+            pizza_debanh_thin_cheesy_crust.checked = true;
         }
     }
 
@@ -229,6 +248,8 @@ ApplicationWindow {
         pizza_debanh_mong.checked = false;
         pizza_debanh_vua.checked = false;
         pizza_debanh_day.checked = false;
+        pizza_debanh_cheesy_crust.checked = false;
+        pizza_debanh_thin_cheesy_crust.checked = false;
     }
 
 
@@ -243,6 +264,23 @@ ApplicationWindow {
             rect_pizzasize_small.enabled = true
         }
         select_debanh('de_mong');
+        enable_cheesy = false;
+        nChessy = 0;
+        txtPercentCheesy.text = getPercentCheesy(0);
+    }
+
+    function getPercentCheesy(n){
+        var _percentcheesy = "0%";
+        if(n === 0) {
+            _percentcheesy = "0%";
+        } else if(n === 1) {
+            _percentcheesy = "50%";
+        } else if(n === 2) {
+            _percentcheesy = "100%";
+        } else if(n === 3) {
+            _percentcheesy = "200%";
+        }
+        return _percentcheesy;
     }
 
     Component.onCompleted: {
@@ -599,8 +637,8 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/2 //2.8
-            height: window.height/2
+            width: window.width/2.5
+            Layout.fillHeight: true
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
             Column {
@@ -740,80 +778,201 @@ ApplicationWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         text: "ĐẾ BÁNH"
                     }
-                    RowLayout {
-                        id: idDebanh
-                        Layout.fillWidth: true
-                        width: columnContentCakeInfo.width - 110
-                        Rectangle {
-                            Layout.fillHeight: true
+                    Column {
+                        spacing: 10
+                        RowLayout {
+                            id: idDebanh
                             Layout.fillWidth: true
-                            Layout.maximumWidth: idDebanh.width/3
-                            height: idDebanh.width/6
-                            color: "#E0E0E0"
-                            radius: 10
-                            RadioButton {
-                                id: pizza_debanh_mong
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Đế mỏng")
-                                checked: init_check_debanh()
-                                onClicked: {
-                                    select_debanh("de_mong")
-                                    pizza_debanh_id = "TC"
+                            width: columnContentCakeInfo.width - 110
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3
+                                height: idDebanh.width/6
+                                color: "#E0E0E0"
+                                radius: 10
+                                RadioButton {
+                                    id: pizza_debanh_mong
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: qsTr("Đế mỏng")
+                                    checked: init_check_debanh()
+                                    onClicked: {
+                                        select_debanh("de_mong")
+                                        pizza_debanh_id = "TC"
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_mong")
+                                        pizza_debanh_id = "TC"
+                                    }
                                 }
                             }
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    select_debanh("de_mong")
-                                    pizza_debanh_id = "TC"
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3
+                                height: idDebanh.width/6
+                                color: "#E0E0E0"
+                                radius: 10
+                                RadioButton {
+                                    id: pizza_debanh_vua
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: qsTr("Đế vừa")
+                                    onClicked: {
+                                        select_debanh("de_vua")
+                                        pizza_debanh_id = "NYC"
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_vua")
+                                        pizza_debanh_id = "NYC"
+                                    }
+                                }
+                            }
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3
+                                height: idDebanh.width/6
+                                color: "#E0E0E0"
+                                radius: 10
+                                RadioButton {
+                                    id: pizza_debanh_day
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: qsTr("Đế dày")
+                                    onClicked: {
+                                        select_debanh("de_day")
+                                        pizza_debanh_id = "HT"
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_day")
+                                        pizza_debanh_id = "HT"
+                                    }
                                 }
                             }
                         }
-                        Rectangle {
-                            Layout.fillHeight: true
+
+                        RowLayout {
                             Layout.fillWidth: true
-                            Layout.maximumWidth: idDebanh.width/3
-                            height: idDebanh.width/6
-                            color: "#E0E0E0"
-                            radius: 10
-                            RadioButton {
-                                id: pizza_debanh_vua
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Đế vừa")
-                                onClicked: {
-                                    select_debanh("de_vua")
-                                    pizza_debanh_id = "NYC"
+                            width: columnContentCakeInfo.width - 110
+                            visible: enable_cheesy
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3
+                                height: idDebanh.width/6
+                                color: "#E0E0E0"
+                                radius: 10
+                                RadioButton {
+                                    id: pizza_debanh_cheesy_crust
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: qsTr("Viền phô mai")
+                                    onClicked: {
+                                        select_debanh("de_cheesy")
+                                        pizza_debanh_id = "CC"
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_cheesy")
+                                        pizza_debanh_id = "CC"
+                                    }
                                 }
                             }
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    select_debanh("de_vua")
-                                    pizza_debanh_id = "NYC"
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3
+                                height: idDebanh.width/6
+                                color: "#E0E0E0"
+                                radius: 10
+                                RadioButton {
+                                    id: pizza_debanh_thin_cheesy_crust
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: qsTr("Viền phô mai mỏng")
+                                    onClicked: {
+                                        select_debanh("de_thin_cheesy")
+                                        pizza_debanh_id = "TCC"
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_thin_cheesy")
+                                        pizza_debanh_id = "TCC"
+                                    }
+                                }
+                            }
+                            Rectangle {
+                                Layout.fillHeight: true
+                                Layout.fillWidth: true
+                                Layout.maximumWidth: idDebanh.width/3 - 10
+                                height: idDebanh.width/6
+                                color: "white"
+
+                            }
+                        }
+                    }
+
+                }
+
+                Row {
+                    Layout.fillWidth: true
+                    spacing: 10
+                    Label {
+                        width: 100
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: "THÊM PHÔ MAI"
+                        visible: enable_cheesy
+                    }
+                    Row {
+                        width: parent.width
+
+                        Button {
+                            visible: enable_cheesy
+                            height: parent.width/10
+                            width:  parent.width/8
+                            font.pixelSize: fntsize + 4
+                            text: "-"
+                            onClicked: {
+                                if(nChessy > 0) {
+                                    nChessy -= 1;
+                                    txtPercentCheesy.text = getPercentCheesy(nChessy);
                                 }
                             }
                         }
+
                         Rectangle {
-                            Layout.fillHeight: true
-                            Layout.fillWidth: true
-                            Layout.maximumWidth: idDebanh.width/3
-                            height: idDebanh.width/6
-                            color: "#E0E0E0"
-                            radius: 10
-                            RadioButton {
-                                id: pizza_debanh_day
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Đế dày")
-                                onClicked: {
-                                    select_debanh("de_day")
-                                    pizza_debanh_id = "HT"
-                                }
+                            visible: enable_cheesy
+                            height: parent.width/10
+                            width: parent.width/8
+                            Label {
+                                id:txtPercentCheesy
+                                text: getPercentCheesy(nChessy)
+                                anchors.centerIn: parent
+                                font.pointSize: 30
+                                font.bold: true
                             }
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    select_debanh("de_day")
-                                    pizza_debanh_id = "HT"
+                        }
+
+                        Button {
+                            visible: enable_cheesy
+                            height: parent.width/10
+                            width:  parent.width/8
+                            font.pixelSize: fntsize + 4
+                            text: "+"
+                            onClicked: {
+                                if(nChessy < 3) {
+                                    nChessy += 1
+                                    txtPercentCheesy.text = getPercentCheesy(nChessy);
                                 }
                             }
                         }
@@ -892,7 +1051,7 @@ ApplicationWindow {
                     Label {
                         id: lblChitiet
                         width: cakeInfoDialog.width - 100
-                        text: nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh
+                        text: nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + nChessy
                     }
                 }
 
@@ -951,6 +1110,111 @@ ApplicationWindow {
                         var _quantity = nItem;
                         name_code = mainController.getProductCode(_prod_name, pizza_sizebanh_id, pizza_debanh_id);
                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+
+                        if(pizza_sizebanh_id === "9") {
+                            if(nChessy === 1) {
+                                _name = "Side eXtra Cheese 9\"";
+                                name_code = "O9XCHE";
+                                _price = "10,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(nChessy === 2) {
+                                _name = "Side Double Cheese 9\"";
+                                name_code = "O9DCHE";
+                                _price = "20,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(nChessy === 3) {
+                                _name = "Side Triple Cheese 9\"";
+                                name_code = "O9TCHE";
+                                _price = "30,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(pizza_debanh_id === "CC") {
+                                _name = "Side 9\" Cheesy Crust";
+                                name_code = "O9CC";
+                                _price = "49,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(pizza_debanh_id === "TCC") {
+                                _name = "Side 9\" Cheesy Crust";
+                                name_code = "O9CC";
+                                _price = "49,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+                        }
+
+                        if(pizza_sizebanh_id === "12") {
+                            if(nChessy === 1) {
+                                _name = "Side eXtra Cheese 12\"";
+                                name_code = "O12XCHE";
+                                _price = "15,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(nChessy === 2) {
+                                _name = "Side Double Cheese 12\"";
+                                name_code = "O12DCHE";
+                                _price = "30,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(nChessy === 3) {
+                                _name = "Side Triple Cheese 12\"";
+                                name_code = "O12TCHE";
+                                _price = "45,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(pizza_debanh_id === "CC") {
+                                _name = "Side 12\" Cheesy Crust";
+                                name_code = "O12CC";
+                                _price = "69,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+
+                            if(pizza_debanh_id === "TCC") {
+                                _name = "Side 12\" Cheesy Crust";
+                                name_code = "O12CC";
+                                _price = "69,000";
+//                                _quantity = 1;
+                                pizza_sizebanh = "-";
+                                pizza_debanh = "-";
+                                mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                            }
+                        }
+
                         reset();
                         cakeInfoDialog.close();
                     }

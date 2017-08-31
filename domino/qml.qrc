@@ -87,6 +87,13 @@
         <file>images/app/vpos_logo.png</file>
         <file>images/app/zalopay.png</file>
         <file>images/app/zoom.png</file>
+        <file>images/app/dominos_logo.png</file>
+        <file>images/app/demong.png</file>
+        <file>images/app/devua.png</file>
+        <file>images/app/deday.png</file>
+        <file>images/app/size_7.svg</file>
+        <file>images/app/size_9.svg</file>
+        <file>images/app/size_12.svg</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/UnisectVnu.ttf</file>
