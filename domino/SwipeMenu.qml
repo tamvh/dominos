@@ -124,16 +124,16 @@ Page {
                     var _cateFull = "";
                     if(_cateName !== "Tất cả"){
                         if(_cateName === "Pizza Favorite") {
-                            _cateFull = _cateName //+ "\n(S:59K, M: 119K, L: 179K)";
+                            _cateFull = _cateName + "\n(S:59K, M: 119K, L: 179K)";
                         }
                         else if(_cateName === "Pizza Classic") {
-                            _cateFull = _cateName //+ "\n(S:69K, M: 129K, L: 199K)";
+                            _cateFull = _cateName + "\n(S:69K, M: 129K, L: 199K)";
                         }
                         else if(_cateName === "Pizza Premium") {
-                            _cateFull = _cateName //+ "\n(S:79K, M: 139K, L: 219K)";
+                            _cateFull = _cateName + "\n(S:79K, M: 139K, L: 219K)";
                         }
                         else if(_cateName === "Pizza Signature") {
-                            _cateFull = _cateName //+ "\n(M: 179K, L: 279K)";
+                            _cateFull = _cateName + "\n(M: 179K, L: 279K)";
                         }
                         else {
                             _cateFull = _cateName;

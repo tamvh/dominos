@@ -55,8 +55,8 @@ ApplicationWindow {
     property string name_code: qsTr("")
     property bool enable_cheesy: false
 
-    Material.primary: "#01579B"
-    Material.accent: "#01579B"
+    Material.primary: "#F44336"
+    Material.accent: "#F44336" //"#01579B"
 
     function getTotalMoney() {
         //get money
@@ -626,8 +626,7 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/2.2
-            Layout.fillHeight: true
+            width: window.width/2.7
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
             Column {
@@ -857,6 +856,7 @@ ApplicationWindow {
                         RowLayout {
                             id: rowExtracDebanh
                             Layout.fillWidth: true
+                            Layout.fillHeight: true
                             width: columnContentCakeInfo.width - 110
                             visible: enable_cheesy
                             Rectangle {
@@ -925,6 +925,7 @@ ApplicationWindow {
 
                 Row {
                     Layout.fillWidth: true
+                    Layout.fillHeight: true
                     spacing: 10
                     Label {
                         width: 100
@@ -957,7 +958,7 @@ ApplicationWindow {
                                 id:txtPercentCheesy
                                 text: getPercentCheesy(nChessy)
                                 anchors.centerIn: parent
-                                font.pointSize: 30
+                                font.pointSize: 15
                                 font.bold: true
                             }
                         }
@@ -1010,7 +1011,7 @@ ApplicationWindow {
                                 id:txtTotalItem
                                 text: nItem
                                 anchors.centerIn: parent
-                                font.pointSize: 30
+                                font.pointSize: 15
                                 font.bold: true
                             }
                         }
