@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick quickcontrols2 concurrent svg network websockets printsupport xml
+QT += qml quick quickcontrols2 concurrent svg network websockets printsupport xml core
 CONFIG += link_pkgconfig
 
 #App versioning

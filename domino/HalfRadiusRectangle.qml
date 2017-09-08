@@ -5,7 +5,7 @@ import QtQuick.Controls.Material 2.0
 Rectangle {
     property int bottomRadius: 15
     property int radiusWidth: 3
-    property color rcColor: "#FF5722"
+    property color rcColor: "#01579B"
 
     Rectangle {
         anchors.bottom: parent.bottom

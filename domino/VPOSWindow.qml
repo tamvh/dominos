@@ -30,7 +30,6 @@ ApplicationWindow {
     property int admConfColwidth1: 220
     property int admConfColwidth2: 180
 
-    property alias userConfigButtonVisible: userBtnConfig.visible
     property string searchFilter: ""
     property bool idleAlertShowed: false
     property int foodItemcount: 0
@@ -284,7 +283,7 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        titleLabel.text = (mainController.getAppTitle() + " - " + mainController.getAppMachine());
+        titleLabel.text = mainController.getAppMachine();
 
         if (mainController.getAppName() === "") {
             idPageLogin.open()
@@ -301,7 +300,7 @@ ApplicationWindow {
 
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "#F44336" }
-                    GradientStop { position: 1.0; color: "#E91E63" }
+                    GradientStop { position: 1.0; color: "#F44336" }
                 }
 
                 RowLayout {
@@ -460,6 +459,11 @@ ApplicationWindow {
 
                     }
 
+                    Image {
+                        id: imgLogoDominos
+                        source: "qrc:/icons/images/app/dominos_logo.png"
+                    }
+
                     Label {
                         id: titleLabel
                         horizontalAlignment: Qt.AlignHCenter
@@ -469,7 +473,6 @@ ApplicationWindow {
                         font.pixelSize: 25
                         font.family: idFont.name
                         text: "NONAME"
-
                         Connections {
                             target: mainController
                             onUpdateTitle: {
@@ -477,6 +480,7 @@ ApplicationWindow {
                             }
                         }
                     }
+
 
                     RowLayout {
                         id: controlBox
@@ -532,22 +536,6 @@ ApplicationWindow {
                             }
                         }
 
-
-
-                        ToolButton {
-                            id: userBtnConfig
-                            visible: mainController.getUserEnableConfig()
-                            contentItem: Image {
-                                fillMode: Image.Pad
-                                horizontalAlignment: Image.AlignHCenter
-                                verticalAlignment: Image.AlignVCenter
-                                source: "qrc:/icons/icons/userconfig.png"
-                            }
-                            onClicked: {
-                                idPageLogin.open()
-                            }
-                        }
-
                         ToolButton {
                             id: toolBtnSetting
                             visible: mainController.isDebugmode()
@@ -559,7 +547,6 @@ ApplicationWindow {
                             }
                             onClicked: {
                                 optionsMenu.open()
-                                //stackView.push(settingPage)
                             }
 
                             Menu {
@@ -637,7 +624,7 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/2.5
+            width: window.width/2.2
             Layout.fillHeight: true
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
@@ -697,6 +684,7 @@ ApplicationWindow {
                                 id: pizzasize_small
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Nhỏ (7\")")
+                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("7\"")
                                     pizza_sizebanh_id = "7"
@@ -723,6 +711,7 @@ ApplicationWindow {
                                 id: pizzasize_avg
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Vừa (9\")")
+                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("9\"")
                                     pizza_sizebanh_id = "9"
@@ -749,6 +738,7 @@ ApplicationWindow {
                                 id: pizzasize_big
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Lớn (12\")")
+                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("12\"")
                                     pizza_sizebanh_id = "12"
@@ -795,6 +785,7 @@ ApplicationWindow {
                                     id: pizza_debanh_mong
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế mỏng")
+                                    Material.accent: "#01579B"
                                     checked: init_check_debanh()
                                     onClicked: {
                                         select_debanh("de_mong")
@@ -820,6 +811,7 @@ ApplicationWindow {
                                     id: pizza_debanh_vua
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế vừa")
+                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_vua")
                                         pizza_debanh_id = "NYC"
@@ -844,6 +836,7 @@ ApplicationWindow {
                                     id: pizza_debanh_day
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế dày")
+                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_day")
                                         pizza_debanh_id = "HT"
@@ -874,6 +867,7 @@ ApplicationWindow {
                                     id: pizza_debanh_cheesy_crust
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Viền phô mai")
+                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_cheesy")
                                         pizza_debanh_id = "CC"
@@ -898,6 +892,7 @@ ApplicationWindow {
                                     id: pizza_debanh_thin_cheesy_crust
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Viền phô mai mỏng")
+                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_thin_cheesy")
                                         pizza_debanh_id = "TCC"
@@ -1102,6 +1097,7 @@ ApplicationWindow {
                     highlighted: true
                     font.pixelSize: fntsize + 4
                     text: "ĐỒNG Ý"
+                    Material.accent: "#01579B"
                     onClicked: {
                         var _prod_name = pizza_prod_name.split('\n')[0];
                         var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;

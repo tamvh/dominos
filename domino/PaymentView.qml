@@ -1,8 +1,12 @@
 import QtQuick 2.7
-import MainController 1.0
-import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.2
+import QtQuick.Controls.Universal 2.0
+import QtQuick.Window 2.2
+import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
+
 
 Rectangle {
     height: childrenRect.height
@@ -158,47 +162,14 @@ Rectangle {
                 enabled: false
                 highlighted: true
                 font.pointSize: txtfntsize + 8
+                Material.accent: "#01579B"
                 onClicked: {
                     window.txtThanhTien = textThanhtienValue.text
                     window.global_foodItems = choosenItemListView.generateBillDetail()
                     idPageProfile.open()
                 }
-//                onClicked: {
-
-//                    // clear search keyword
-//                    searchFilter = ""
-
-//                    // set bill detail to mainController
-//                    var foodItems = choosenItemListView.generateBillDetail()
-//                    window.txtThanhTien = textThanhtienValue.text
-
-//                    if (mainController.getPaymentMethod() === 4 && mainController.isCashAllowed()) {
-//                        // thanh toán bằng tiền mặt: gửi request hóa đơn lên server, OK in hóa đơn thu tiền
-//                        cashAlert.cashValue = textThanhtienValue.text
-//                        cashAlert.foodItems = foodItems;
-//                        cashAlert.open()
-//                    }
-//                    else if (mainController.getPaymentMethod() === 2 && mainController.isCardAllowed()) {
-//                        // thanh toán thẻ, chờ quẹt thẻ, gửi request hóa đơn lên server, OK in hóa đơn giao khách
-//                        var foId = mainController.pay(textThanhtienValue.text, foodItems, 1)
-//                        enabled = false
-//                        mainController.updateCardWaitingPay(true)
-//                        popQuetthe.totalBill = textThanhtienValue.text
-//                        popQuetthe.open()
-//                    }
-//                    else if (mainController.getPaymentMethod() === 1) {
-//                        // thanh toán qua Zalopay, gửi request lên server, nhận về qr-code show ra và chờ Zalopay gửi tín hiệu thành công để in hóa đơn giao khách
-//                        var foId_zalopay = mainController.pay(textThanhtienValue.text, foodItems, 1)
-//                        enabled = false
-//                        payZaloDialog.totalBill = textThanhtienValue.text
-//                        payZaloDialog.foId = foId_zalopay;
-//                        payZaloDialog.open()
-//                    }
-//                    else {
-//                       appMessage.showMessage("Xin lỗi, chương trình này chỉ hỗ trợ thanh toán bằng Zalopay!")
-//                    }
-//                }
             }
+
 
             Connections {
                 target: mainController

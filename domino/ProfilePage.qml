@@ -1,6 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.2
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
@@ -26,39 +26,39 @@ Popup {
         width: window.width/3
         height: (window.height*2)/3
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: 20
+        spacing: 10
         Column {
             anchors.horizontalCenter: parent.horizontalCenter
             width: implicitWidth
-            spacing: 10
-            topPadding: globalPadding
-            bottomPadding: globalPadding
-
+            anchors.margins: 0
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: fntsize + 4
+                font.pixelSize: fntsize + 2
                 font.weight: Font.DemiBold
-                text: "VUI LÒNG ĐIỀN THÔNG TIN"
+                text: "NHẬP THÔNG TIN KHÁCH HÀNG"
             }
+        }
+        Rectangle {
+            width: columnContentProfile.width
+            height: 20
+            anchors.margins: 0
+
         }
         ColumnLayout {
             id: appOptionColumn
-            spacing: 10
             width: window.width/3
             Layout.alignment: Qt.AlignHCenter
+            anchors.leftMargin: 0
             Row {
                 spacing: globalPadding
+                anchors.leftMargin: 0
                 width: appOptionColumn.width
-                Label {
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 100
-                    text: "Tên khách hàng"
-                }
-
                 TextField {
                     id: txtCustomerName
-                    width: appOptionColumn.width - 100 - globalPadding
+                    width: appOptionColumn.width
                     text: ""
+                    placeholderText: "Nhập tên Khách Hàng"
+                    Material.accent: "#01579B"
                     onTextChanged: {
                         console.log("customer name change...");
                         if(txtCustomerName.text.trim().length > 0) {
@@ -72,18 +72,14 @@ Popup {
             Row {
                 spacing: globalPadding
                 width: appOptionColumn.width
-                Label {
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 100
-                    text: "Hình thức"
-                }
 
                 Row {
-                    width: appOptionColumn.width - 100 - globalPadding
+                    width: appOptionColumn.width
                     RadioButton {
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Ăn tại chỗ")
                         checked: true
+                        Material.accent: "#01579B"
                         onClicked: {
                             console.log("dinein");
                             customer_hinhthuc = "dinein";
@@ -92,6 +88,7 @@ Popup {
                     RadioButton {
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Mang về")
+                        Material.accent: "#01579B"
                         onClicked: {
                             console.log("carryout");
                             customer_hinhthuc = "carryout";
@@ -106,12 +103,13 @@ Popup {
                 anchors.horizontalCenter: parent.horizontalCenter
                 Button {
                     id: btnThanhToan
-                    width: appOptionColumn.width/2
-                    height: appOptionColumn.width/4
+                    width: (appOptionColumn.width*2)/3
+                    height: 80
                     highlighted: true
                     enabled: false
                     font.pixelSize: fntsize
                     text: "Thanh toán"
+                    Material.accent: "#01579B"
                     onClicked: {
                         // clear search keyword
                         searchFilter = ""
@@ -220,8 +218,8 @@ Popup {
                     }
                 }
                 Button {
-                    width: appOptionColumn.width/2
-                    height: appOptionColumn.width/4
+                    width: appOptionColumn.width/3
+                    height: 80
                     font.pixelSize: fntsize
                     text: "Hủy"
                     onClicked: {
