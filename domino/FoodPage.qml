@@ -328,8 +328,10 @@ Rectangle {
                                     _cateName === "Pizza Signature") {
                                 if(_cateName === "Pizza Signature") {
                                     window.getMoney(_cateName, '9', 1)
+                                    window.enable_cheesy = true;
                                 } else {
                                     window.getMoney(_cateName, '7', 1)
+                                    window.enable_cheesy = false;
                                 }
                                 window.reset(category);
                                 cakeInfoDialog.open()

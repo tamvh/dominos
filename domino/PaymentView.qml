@@ -1,7 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
-//import QtQuick.Controls.Material 2.2
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -162,7 +161,8 @@ Rectangle {
                 enabled: false
                 highlighted: true
                 font.pointSize: txtfntsize + 8
-//                Material.accent: "#01579B"
+
+
                 onClicked: {
                     window.txtThanhTien = textThanhtienValue.text
                     window.global_foodItems = choosenItemListView.generateBillDetail()

@@ -28,7 +28,7 @@ T.TabButton {
     background: Item {
         implicitHeight: 60
         Rectangle {
-            color: !control.enabled ? control.Material.hintTextColor : control.down || control.checked ? "red" : "white"
+            color: !control.enabled ? control.Material.hintTextColor : control.down || control.checked ? "#F44336" : "white"
             border.width: 1
             border.color: "#E2E6E7"
             anchors.fill: parent

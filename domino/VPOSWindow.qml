@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
-//import QtQuick.Controls.Material 2.0
+import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -55,8 +55,8 @@ ApplicationWindow {
     property string name_code: qsTr("")
     property bool enable_cheesy: false
 
-//    Material.primary: Material.DeepOrange
-//    Material.accent: Material.DeepOrange
+    Material.primary: "#01579B"
+    Material.accent: "#01579B"
 
     function getTotalMoney() {
         //get money
@@ -258,12 +258,14 @@ ApplicationWindow {
         if(cateName === "Pizza Signature") {
             select_sizebanh(9)
             rect_pizzasize_small.enabled = false
+            enable_cheesy = true;
         } else {
             select_sizebanh(7)
             rect_pizzasize_small.enabled = true
+            enable_cheesy = false;
         }
         select_debanh('de_mong');
-        enable_cheesy = false;
+//        enable_cheesy = false;
         nChessy = 0;
         txtPercentCheesy.text = getPercentCheesy(0);
     }
@@ -853,6 +855,7 @@ ApplicationWindow {
                         }
 
                         RowLayout {
+                            id: rowExtracDebanh
                             Layout.fillWidth: true
                             width: columnContentCakeInfo.width - 110
                             visible: enable_cheesy
@@ -893,6 +896,7 @@ ApplicationWindow {
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Viền phô mai mỏng")
 //                                    Material.accent: "#01579B"
+
                                     onClicked: {
                                         select_debanh("de_thin_cheesy")
                                         pizza_debanh_id = "TCC"
@@ -1092,12 +1096,13 @@ ApplicationWindow {
                 spacing: globalPadding
                 topPadding: globalPadding
                 Button {
-                    height: parent.width/6
+                    id: btnSelectItem
+                    height: 80
                     width: (parent.width/3)*2 - globalPadding/2
                     highlighted: true
                     font.pixelSize: fntsize + 4
                     text: "ĐỒNG Ý"
-//                    Material.accent: "#01579B"
+
                     onClicked: {
                         var _prod_name = pizza_prod_name.split('\n')[0];
                         var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
@@ -1216,7 +1221,8 @@ ApplicationWindow {
                     }
                 }
                 Button {
-                    height: parent.width/6
+                    id: btnCancelSelectItem
+                    height: 80
                     width:  parent.width/3 - globalPadding/2
                     font.pixelSize: fntsize + 4
                     text: "HUỶ"

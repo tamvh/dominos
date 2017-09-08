@@ -1,7 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
-//import QtQuick.Controls.Material 2.0
+import QtQuick.Controls 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -58,7 +57,6 @@ Popup {
                     width: appOptionColumn.width
                     text: ""
                     placeholderText: "Nhập tên Khách Hàng"
-//                    Material.accent: "#01579B"
                     onTextChanged: {
                         if(txtCustomerName.text.trim().length > 0) {
                             btnThanhToan.enabled = true;
@@ -75,19 +73,20 @@ Popup {
                 Row {
                     width: appOptionColumn.width
                     RadioButton {
+                        id: radioDineIn
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Ăn tại chỗ")
                         checked: true
-//                        Material.accent: "#01579B"
+
                         onClicked: {
                             console.log("dinein");
                             customer_hinhthuc = "dinein";
                         }
                     }
                     RadioButton {
+                        id: radioCarryOut
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Mang về")
-//                        Material.accent: "#01579B"
                         onClicked: {
                             console.log("carryout");
                             customer_hinhthuc = "carryout";
@@ -108,7 +107,8 @@ Popup {
                     enabled: false
                     font.pixelSize: fntsize
                     text: "Thanh toán"
-//                    Material.accent: "#01579B"
+
+
                     onClicked: {
                         // clear search keyword
                         searchFilter = ""
@@ -217,10 +217,12 @@ Popup {
                     }
                 }
                 Button {
+                    id: btnHuy
                     width: appOptionColumn.width/3
                     height: 80
                     font.pixelSize: fntsize
                     text: "Hủy"
+
                     onClicked: {
                         txtCustomerName.text = "";
                         popupProfile.close()
