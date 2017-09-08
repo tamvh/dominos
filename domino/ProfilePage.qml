@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.0
+//import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -58,7 +58,7 @@ Popup {
                     width: appOptionColumn.width
                     text: ""
                     placeholderText: "Nhập tên Khách Hàng"
-                    Material.accent: "#01579B"
+//                    Material.accent: "#01579B"
                     onTextChanged: {
                         console.log("customer name change...");
                         if(txtCustomerName.text.trim().length > 0) {
@@ -79,7 +79,7 @@ Popup {
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Ăn tại chỗ")
                         checked: true
-                        Material.accent: "#01579B"
+//                        Material.accent: "#01579B"
                         onClicked: {
                             console.log("dinein");
                             customer_hinhthuc = "dinein";
@@ -88,7 +88,7 @@ Popup {
                     RadioButton {
                         anchors.verticalCenter: parent.verticalCenter
                         text: qsTr("Mang về")
-                        Material.accent: "#01579B"
+//                        Material.accent: "#01579B"
                         onClicked: {
                             console.log("carryout");
                             customer_hinhthuc = "carryout";
@@ -109,7 +109,7 @@ Popup {
                     enabled: false
                     font.pixelSize: fntsize
                     text: "Thanh toán"
-                    Material.accent: "#01579B"
+//                    Material.accent: "#01579B"
                     onClicked: {
                         // clear search keyword
                         searchFilter = ""

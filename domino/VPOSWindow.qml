@@ -1,7 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
-import QtQuick.Controls.Material 2.0
+//import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
@@ -684,7 +684,7 @@ ApplicationWindow {
                                 id: pizzasize_small
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Nhỏ (7\")")
-                                Material.accent: "#01579B"
+//                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("7\"")
                                     pizza_sizebanh_id = "7"
@@ -711,7 +711,7 @@ ApplicationWindow {
                                 id: pizzasize_avg
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Vừa (9\")")
-                                Material.accent: "#01579B"
+//                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("9\"")
                                     pizza_sizebanh_id = "9"
@@ -738,7 +738,7 @@ ApplicationWindow {
                                 id: pizzasize_big
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: qsTr("Lớn (12\")")
-                                Material.accent: "#01579B"
+//                                Material.accent: "#01579B"
                                 onClicked: {
                                     pizza_sizebanh = qsTr("12\"")
                                     pizza_sizebanh_id = "12"
@@ -785,7 +785,7 @@ ApplicationWindow {
                                     id: pizza_debanh_mong
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế mỏng")
-                                    Material.accent: "#01579B"
+//                                    Material.accent: "#01579B"
                                     checked: init_check_debanh()
                                     onClicked: {
                                         select_debanh("de_mong")
@@ -811,7 +811,7 @@ ApplicationWindow {
                                     id: pizza_debanh_vua
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế vừa")
-                                    Material.accent: "#01579B"
+//                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_vua")
                                         pizza_debanh_id = "NYC"
@@ -836,7 +836,7 @@ ApplicationWindow {
                                     id: pizza_debanh_day
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Đế dày")
-                                    Material.accent: "#01579B"
+//                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_day")
                                         pizza_debanh_id = "HT"
@@ -867,7 +867,7 @@ ApplicationWindow {
                                     id: pizza_debanh_cheesy_crust
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Viền phô mai")
-                                    Material.accent: "#01579B"
+//                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_cheesy")
                                         pizza_debanh_id = "CC"
@@ -892,7 +892,7 @@ ApplicationWindow {
                                     id: pizza_debanh_thin_cheesy_crust
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: qsTr("Viền phô mai mỏng")
-                                    Material.accent: "#01579B"
+//                                    Material.accent: "#01579B"
                                     onClicked: {
                                         select_debanh("de_thin_cheesy")
                                         pizza_debanh_id = "TCC"
@@ -1097,7 +1097,7 @@ ApplicationWindow {
                     highlighted: true
                     font.pixelSize: fntsize + 4
                     text: "ĐỒNG Ý"
-                    Material.accent: "#01579B"
+//                    Material.accent: "#01579B"
                     onClicked: {
                         var _prod_name = pizza_prod_name.split('\n')[0];
                         var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
