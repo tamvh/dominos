@@ -55,8 +55,8 @@ ApplicationWindow {
     property string name_code: qsTr("")
     property bool enable_cheesy: false
 
-    Material.primary: Material.DeepOrange
-    Material.accent: Material.DeepOrange
+//    Material.primary: Material.DeepOrange
+//    Material.accent: Material.DeepOrange
 
     function getTotalMoney() {
         //get money
