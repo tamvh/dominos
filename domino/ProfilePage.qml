@@ -60,7 +60,6 @@ Popup {
                     placeholderText: "Nhập tên Khách Hàng"
 //                    Material.accent: "#01579B"
                     onTextChanged: {
-                        console.log("customer name change...");
                         if(txtCustomerName.text.trim().length > 0) {
                             btnThanhToan.enabled = true;
                         } else {
