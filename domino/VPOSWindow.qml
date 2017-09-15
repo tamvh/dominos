@@ -1015,7 +1015,7 @@ ApplicationWindow {
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/deday.png'
+                                            source: 'qrc:/icons/images/app/demong.png'
                                         }
                                         Image {
                                             visible: visible_dephomaimong
