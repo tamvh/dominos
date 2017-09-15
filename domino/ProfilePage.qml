@@ -6,7 +6,7 @@ import QtQuick.Window 2.2
 import MainController 1.0
 import QmlDefine 1.0
 import "dynamicqml"
-import QtQuick.VirtualKeyboard 2.1
+//import QtQuick.VirtualKeyboard 2.1
 
 Popup {
     id: popupProfile
@@ -139,6 +139,7 @@ Popup {
                         }
                         txtCustomerName.text = "";
                         radioDineIn.checked = true;
+                        txtCustomerName.focus = true;
                         popupProfile.close()
                     }
                     Connections {
@@ -225,6 +226,7 @@ Popup {
                     onClicked: {
                         txtCustomerName.text = "";
                         radioDineIn.checked = true;
+                        txtCustomerName.focus = true;
                         popupProfile.close()
                     }
                 }
