@@ -179,17 +179,45 @@ ApplicationWindow {
             pizza_money_root = "";
         }
         local_money = soluong * mainController.getMoneyValue(promote_price);
-        if(nChessy === 1) {
-            local_money = local_money + 10000;
-            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 10000);
+        if(pizza_sizebanh_id === "9") {
+            if(nChessy === 1) {
+                local_money = local_money + soluong*10000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*10000);
+            }
+            if(nChessy === 2) {
+                local_money = local_money + soluong*20000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*20000);
+            }
+            if(nChessy === 3) {
+                local_money = local_money + soluong*30000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*30000);
+            }
         }
-        if(nChessy === 2) {
-            local_money = local_money + 20000;
-            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 20000);
+
+        if(pizza_sizebanh_id === "12") {
+            if(nChessy === 1) {
+                local_money = local_money + soluong*15000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*15000);
+            }
+            if(nChessy === 2) {
+                local_money = local_money + soluong*30000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*30000);
+            }
+            if(nChessy === 3) {
+                local_money = local_money + soluong*45000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*45000);
+            }
         }
-        if(nChessy === 3) {
-            local_money = local_money + 30000;
-            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 30000);
+
+        if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC") {
+            if(pizza_sizebanh_id === "9") {
+                local_money = local_money + soluong*49000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*49000);
+            }
+            if(pizza_sizebanh_id === "12") {
+                local_money = local_money + soluong*69000;
+                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*69000);
+            }
         }
 
         pizza_money = mainController.moneyMoney(local_money);
@@ -251,6 +279,7 @@ ApplicationWindow {
         } else if(debanh === "de_thin_cheesy") {
             pizza_debanh = "Viền phô mai mỏng";
         }
+        getMoney(pizza_category, pizza_sizebanh_id, nItem)
     }
 
     function check_debanh(debanh) {
@@ -883,8 +912,8 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        select_debanh("de_mong")
                                         pizza_debanh_id = "TC"
+                                        select_debanh("de_mong")
                                     }
                                 }
                             }
@@ -924,8 +953,8 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        select_debanh("de_vua")
                                         pizza_debanh_id = "NY"
+                                        select_debanh("de_vua")
                                     }
                                 }
 
@@ -966,8 +995,8 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        select_debanh("de_day")
                                         pizza_debanh_id = "HT"
+                                        select_debanh("de_day")
                                     }
                                 }
                             }
@@ -1008,8 +1037,8 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        select_debanh("de_thin_cheesy")
                                         pizza_debanh_id = "TCC"
+                                        select_debanh("de_thin_cheesy")
                                     }
                                 }
                             }
@@ -1050,8 +1079,8 @@ ApplicationWindow {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        select_debanh("de_cheesy")
                                         pizza_debanh_id = "CC"
+                                        select_debanh("de_cheesy")
                                     }
                                 }
                             }
@@ -1082,6 +1111,7 @@ ApplicationWindow {
                                 if(nChessy > 0) {
                                     nChessy -= 1;
                                     txtPercentCheesy.text = getPercentCheesy(nChessy);
+                                    getMoney(pizza_category, pizza_sizebanh_id, nItem);
                                 }
                             }
                         }
@@ -1109,6 +1139,7 @@ ApplicationWindow {
                                 if(nChessy < 3) {
                                     nChessy += 1
                                     txtPercentCheesy.text = getPercentCheesy(nChessy);
+                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
                                 }
                             }
                         }
