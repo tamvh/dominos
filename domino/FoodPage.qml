@@ -10,7 +10,7 @@ import QtQuick.Window 2.2
 Rectangle {
     property int iconsize: Screen.devicePixelRatio < 2 ? 200 : 120 / Screen.devicePixelRatio
     property int fooditemfntsize: mainController.getConfigFoodItemFontsize()
-    property int m_colCount: Math.min(width < iconsize ? 1 : width / iconsize, 4)
+    property int m_colCount: 3//Math.min(width < iconsize ? 1 : width / iconsize, 4)
     property int m_colSpace: width / 25
     property int m_cellw: width / m_colCount
     property int m_cellh: m_cellw+30
@@ -180,7 +180,7 @@ Rectangle {
         return foundfilter;
     }
 
-    function appendFood(min_size, objdata, category, foodname, price, image, img_cache, oriprice, promtype) {
+    function appendFood(description, min_size, objdata, category, foodcode, foodname, price, image, img_cache, oriprice, promtype) {
         var priceString = mainController.moneyMoney(price)
         var oriString = "";
         if (oriprice > 0) {
@@ -193,7 +193,7 @@ Rectangle {
         if(category.split(' ')[0] === 'Pizza') {
             visible_price = false
         }
-        foodsModel.append({visible_price: visible_price, min_size: min_size, objdata: objdata, category: category, name: foodname, namelatin: latin, price: priceString, image: image, img_cache: img_cache,
+        foodsModel.append({description: description, visible_price: visible_price, min_size: min_size, objdata: objdata, category: category, code: foodcode, name: foodname, namelatin: latin, price: priceString, image: image, img_cache: img_cache,
                               oriprice: oriString, promtype: promtype, itmviewable: true})
     }
 
@@ -231,7 +231,7 @@ Rectangle {
 
                 bottomRadius: 10
                 radiusWidth: 1
-                rcColor: item.GridView.isCurrentItem? "red":"#E2E6E7"
+                rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
 
                 // search-filter
                 opacity: itmviewable
@@ -245,7 +245,6 @@ Rectangle {
                         anchors.top: parent.top
                         width:parent.width
                         height:width*255/310
-
                         Image {
                             id: foodIcon
                             fillMode: Image.Stretch
@@ -315,7 +314,9 @@ Rectangle {
                             var name_code = "";
                             window.url_img = image
                             window.obj_data = objdata
+                            window.pizza_prod_code = code
                             window.pizza_prod_name = name
+                            name_code = code;
                             window.pizza_prize = mainController.getMoneyValue(price);
                             var _quantity = 1;
                             window.pizza_money = mainController.moneyMoney(mainController.getMoneyValue(price) * _quantity)
@@ -336,9 +337,39 @@ Rectangle {
                                 window.reset(category);
                                 cakeInfoDialog.open()
                             } else {
+                                console.log("name code: " + name_code);
                                 mainController.insertItem(name_code, name.split('\n')[0], "-", "-", price, _quantity, oriprice, 0)
                             }
                         }
+                    }
+                }
+            }
+            Rectangle {
+                width: 48
+                height: 48
+                opacity: 0.5
+                anchors.left: parent.left
+                anchors.leftMargin: 6
+                anchors.top: parent.top
+                anchors.topMargin: 3
+                color: "transparent"
+                border.color: "lightgrey"
+                border.width: 1
+                radius: 30
+                Image {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.Pad
+                    source: "qrc:/icons/images/app/zoom.png"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        window.zoom_prod_name = name
+                        window.zoom_prod_img = image;
+                        window.zoom_prod_thanhphan = description;
+                        zoomItemDialog.open()
                     }
                 }
             }

@@ -840,6 +840,7 @@ QString CommonFunction::updateDataFoods(const QString &qstrData, CDownloadFileMa
         }
         jsonSubObj1["img_cache"] = ListFile[i].bSetCache;
         jsonArray[i] = jsonSubObj1;
+        qDebug() << "prod: " << jsonSubObj1;
     }
     jsonSubObj["items"] = jsonArray;
     jsonObjMain["dt"] = jsonSubObj;

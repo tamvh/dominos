@@ -29,6 +29,8 @@
         <file>KitchenPage.qml</file>
         <file>AccountPage.qml</file>
         <file>ProfilePage.qml</file>
+        <file>TitleSubPage.qml</file>
+        <file>FoodPizzaPage.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>
@@ -94,6 +96,9 @@
         <file>images/app/size_7.svg</file>
         <file>images/app/size_9.svg</file>
         <file>images/app/size_12.svg</file>
+        <file>images/app/check.png</file>
+        <file>images/app/dominos_logo_vertical.jpg</file>
+        <file>images/app/dominos_logo_vertical.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/UnisectVnu.ttf</file>

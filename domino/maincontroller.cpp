@@ -2736,13 +2736,14 @@ QString MainController::getProductCode(const QString &pro_name, const QString &p
     QString prod_code = "";
     foreach (const QJsonValue & product, m_prods_from_dominos) {
         QJsonObject obj_product = product.toObject();
-        qDebug() << "obj prod: " << obj_product;
+//        qDebug() << "obj prod: " << obj_product;
         QString local_flavorCode = obj_product.value("FlavorCode").toString();
-        QString local_productName = CommonFunction::filterPizzaName(obj_product.value("ProductName").toString()).trimmed();
+        QString local_productName = CommonFunction::filterPizzaName(obj_product.value("ProductName").toString()).trimmed().toUpper();
         QString local_prod_size = obj_product.value("SizeCode").toString();
+
         if(local_productName.compare(pro_name) == 0 &&
                 local_flavorCode.compare(prod_plavor_code) == 0 &&
-                local_prod_size.compare(prod_size)) {
+                local_prod_size.compare(prod_size) == 0) {
             prod_code = obj_product.value("ProductCode").toString();
             break;
         }
@@ -2845,5 +2846,9 @@ long long MainController::getPriceCoupon(long long price, const QString &pizza_s
         promote_price = price * (1 - _percent);
     }
     return promote_price;
+}
+
+void MainController::removeItemInPaymentView(int row) {
+    emit removeItemPaymentView(row);
 }
 

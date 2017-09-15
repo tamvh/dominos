@@ -1,10 +1,7 @@
-import QtQuick 2.7
-import QtQuick.Layouts 1.3
+import QtQuick 2.4
+import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.0
-import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
-import QtGraphicalEffects 1.0
-import QtQuick.Controls.Styles 1.4
 
 import MainController 1.0
 import QmlDefine 1.0
@@ -19,7 +16,6 @@ Popup {
     modal: true
     property var citlv: null
     property int txtfntsize: mainController.getConfigFoodItemFontsize()
-
     Column {
         id: columnContentProfile
         width: window.width/3
@@ -102,7 +98,7 @@ Popup {
                 Button {
                     id: btnThanhToan
                     width: (appOptionColumn.width*2)/3
-                    height: 80
+                    height: 60
                     highlighted: true
                     enabled: false
                     font.pixelSize: fntsize
@@ -140,6 +136,7 @@ Popup {
                            appMessage.showMessage("Xin lỗi, chương trình này chỉ hỗ trợ thanh toán bằng Zalopay!")
                         }
                         txtCustomerName.text = "";
+                        radioDineIn.checked = true;
                         popupProfile.close()
                     }
                     Connections {
@@ -219,12 +216,13 @@ Popup {
                 Button {
                     id: btnHuy
                     width: appOptionColumn.width/3
-                    height: 80
+                    height: 60
                     font.pixelSize: fntsize
                     text: "Hủy"
 
                     onClicked: {
                         txtCustomerName.text = "";
+                        radioDineIn.checked = true;
                         popupProfile.close()
                     }
                 }

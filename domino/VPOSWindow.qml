@@ -36,6 +36,7 @@ ApplicationWindow {
 
     property string url_img: qsTr("")
     property string obj_data: qsTr("")
+    property string pizza_prod_code: qsTr("")
     property string pizza_prod_name: qsTr("")
     property string pizza_debanh_id: qsTr("TC")
     property string pizza_sizebanh_id: qsTr("7")
@@ -54,9 +55,26 @@ ApplicationWindow {
     property string customer_hinhthuc: qsTr("dinein")
     property string name_code: qsTr("")
     property bool enable_cheesy: false
+    property int styleData_row: -1
+    property string prodNameInPaymenView: qsTr("")
+    property string  zoom_prod_name: qsTr("")
+    property string  zoom_prod_img: qsTr("")
+    property string  zoom_prod_thanhphan: qsTr("")
 
-    Material.primary: "#F44336"
-    Material.accent: "#F44336" //"#01579B"
+    property bool visible_imgchk_7: false
+    property bool visible_imgchk_9: false
+    property bool visible_imgchk_12: false
+
+    property bool visible_demong: false
+    property bool visible_devua: false
+    property bool visible_deday: false
+    property bool visible_dephomaimong: false
+    property bool visible_dephomaiday: false
+
+    property bool pressbtn_selected: false
+
+    Material.primary: "#006493"
+    Material.accent: "#006493" //"#01579B"
 
     function getTotalMoney() {
         //get money
@@ -161,6 +179,19 @@ ApplicationWindow {
             pizza_money_root = "";
         }
         local_money = soluong * mainController.getMoneyValue(promote_price);
+        if(nChessy === 1) {
+            local_money = local_money + 10000;
+            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 10000);
+        }
+        if(nChessy === 2) {
+            local_money = local_money + 20000;
+            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 20000);
+        }
+        if(nChessy === 3) {
+            local_money = local_money + 30000;
+            pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + 30000);
+        }
+
         pizza_money = mainController.moneyMoney(local_money);
 
     }
@@ -191,22 +222,20 @@ ApplicationWindow {
     }
 
     function check_sizebanh(sizebanh) {
-        pizzasize_small.checked = false;
-        pizzasize_avg.checked = false;
-        pizzasize_big.checked = false;
+        reset_sizebanh();
         if(sizebanh === 7) {
-            pizzasize_small.checked = true;
+            visible_imgchk_7 = true;
         } else if(sizebanh === 9) {
-            pizzasize_avg.checked = true;
+            visible_imgchk_9 = true;
         } else if(sizebanh === 12) {
-            pizzasize_big.checked = true;
+            visible_imgchk_12 = true;
         }
     }
 
     function reset_sizebanh() {
-        pizzasize_small.checked = false;
-        pizzasize_avg.checked = false;
-        pizzasize_big.checked = false;
+        visible_imgchk_7 = false;
+        visible_imgchk_9 = false;
+        visible_imgchk_12 = false;
     }
 
     function select_debanh(debanh) {
@@ -218,37 +247,33 @@ ApplicationWindow {
         } else if( debanh === "de_day") {
             pizza_debanh = "Đế dày";
         } else if(debanh === "de_cheesy") {
-            pizza_debanh = "Viền phô mai";
+            pizza_debanh = "Viền phô mai dày";
         } else if(debanh === "de_thin_cheesy") {
             pizza_debanh = "Viền phô mai mỏng";
         }
     }
 
     function check_debanh(debanh) {
-        pizza_debanh_mong.checked = false;
-        pizza_debanh_vua.checked = false;
-        pizza_debanh_day.checked = false;
-        pizza_debanh_cheesy_crust.checked = false;
-        pizza_debanh_thin_cheesy_crust.checked = false;
+        reset_debanh();
         if(debanh === "de_mong") {
-            pizza_debanh_mong.checked = true;
+            visible_demong = true;
         } else if(debanh === "de_vua") {
-            pizza_debanh_vua.checked = true;
+            visible_devua = true;
         } else if( debanh === "de_day") {
-            pizza_debanh_day.checked = true;
-        } else if( debanh === "de_cheesy") {
-            pizza_debanh_cheesy_crust.checked = true;
+            visible_deday = true;
         } else if( debanh === "de_thin_cheesy") {
-            pizza_debanh_thin_cheesy_crust.checked = true;
+            visible_dephomaimong = true;
+        } else if( debanh === "de_cheesy") {
+            visible_dephomaiday = true;
         }
     }
 
     function reset_debanh() {
-        pizza_debanh_mong.checked = false;
-        pizza_debanh_vua.checked = false;
-        pizza_debanh_day.checked = false;
-        pizza_debanh_cheesy_crust.checked = false;
-        pizza_debanh_thin_cheesy_crust.checked = false;
+        visible_demong = false;
+        visible_devua = false;
+        visible_deday = false;
+        visible_dephomaimong = false;
+        visible_dephomaiday = false;
     }
 
 
@@ -265,8 +290,8 @@ ApplicationWindow {
             enable_cheesy = false;
         }
         select_debanh('de_mong');
-//        enable_cheesy = false;
         nChessy = 0;
+        pizza_debanh_id = "TC";
         txtPercentCheesy.text = getPercentCheesy(0);
     }
 
@@ -301,8 +326,8 @@ ApplicationWindow {
                 end: Qt.point(parent.width, parent.height)
 
                 gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#F44336" }
-                    GradientStop { position: 1.0; color: "#F44336" }
+                    GradientStop { position: 0.0; color: "#006493" }
+                    GradientStop { position: 1.0; color: "#006493" }
                 }
 
                 RowLayout {
@@ -460,32 +485,23 @@ ApplicationWindow {
                         name: "UnisectVnu"
 
                     }
-
-                    Image {
-                        id: imgLogoDominos
-                        source: "qrc:/icons/images/app/dominos_logo.png"
-                    }
-
-                    Label {
-                        id: titleLabel
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
-                        Layout.fillWidth: true
-                        color: "white"
-                        font.pixelSize: 25
-                        font.family: idFont.name
-                        text: "NONAME"
-                        Connections {
-                            target: mainController
-                            onUpdateTitle: {
-                                titleLabel.text = title
-                            }
+                    RowLayout {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        Image {
+                            id: imgLogoDominos
+                            source: "qrc:/icons/images/app/dominos_logo_vertical.png"
+                            height: 45
+                            width: 150
                         }
+
                     }
 
 
                     RowLayout {
                         id: controlBox
+                        anchors.right: parent.right
+                        anchors.rightMargin: 5
                         ToolButton {
                             ToolTip.visible: pressed
                             ToolTip.text: "Tìm kiếm món ăn"
@@ -628,8 +644,9 @@ ApplicationWindow {
             id: columnContentCakeInfo
             width: window.width/2.7
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 20
+//            spacing: 20
             Column {
+                id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: implicitWidth
                 spacing: 10
@@ -641,8 +658,16 @@ ApplicationWindow {
                     font.pixelSize: fntsize + 4
                     font.weight: Font.DemiBold
                     text: "VUI LÒNG CHỌN THÔNG TIN LOẠI BÁNH"
+                    color: "#006493"
                 }
+                Rectangle {
+                    height: 1
+                    width: columnHeader.width
+                    color: "#E0E0E0"
+                }
+
             }
+
 
             ColumnLayout {
                 width: columnContentCakeInfo.width
@@ -658,10 +683,8 @@ ApplicationWindow {
                         text: window.pizza_prod_name
                     }
                 }
-                spacing: 10
                 Row {
                     Layout.fillWidth: true
-                    spacing: globalPadding
                     topPadding: globalPadding
                     bottomPadding: globalPadding
                     rightPadding: globalPadding
@@ -672,27 +695,45 @@ ApplicationWindow {
                     }
                     RowLayout {
                         id: idKichthuocBanh
-                        width: columnContentCakeInfo.width - 110
+                        width: columnContentCakeInfo.width - 100
                         Rectangle {
                             id: rect_pizzasize_small
                             Layout.fillHeight: true
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
                             height: idKichthuocBanh.width/6
-                            color: "#E0E0E0"
                             radius: 10
-                            RadioButton {
-                                id: pizzasize_small
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Nhỏ (7\")")
-//                                Material.accent: "#01579B"
-                                onClicked: {
-                                    pizza_sizebanh = qsTr("7\"")
-                                    pizza_sizebanh_id = "7"
-                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
-                                    select_sizebanh(7)
+                            RowLayout {
+                                id: pizzasize_7
+                                anchors.centerIn: parent
+                                Item {
+                                    height: 60
+                                    width: 60
+                                    Image {
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        source: 'qrc:/icons/images/app/size_7.svg'
+                                    }
+                                    Image {
+                                        visible: visible_imgchk_7
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        source: 'qrc:/icons/images/app/check.png'
+                                    }
+                                }
+                                Column {
+                                    Label {
+                                        text: "(7\") Nhỏ"
+                                        font.bold: true
+                                    }
+                                    Label {
+                                        text: "4 miếng"
+                                    }
                                 }
                             }
+
+
+
                             MouseArea {
                                 anchors.fill: parent
                                 onClicked: {
@@ -706,18 +747,35 @@ ApplicationWindow {
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
                             height: idKichthuocBanh.width/6
-                            color: "#E0E0E0"
                             radius: 10
-                            RadioButton {
-                                id: pizzasize_avg
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Vừa (9\")")
-//                                Material.accent: "#01579B"
-                                onClicked: {
-                                    pizza_sizebanh = qsTr("9\"")
-                                    pizza_sizebanh_id = "9"
-                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
-                                    select_sizebanh(9)
+                            RowLayout {
+                                id: pizzasize_9
+                                anchors.centerIn: parent
+                                Item {
+                                    height: 60
+                                    width: 60
+
+                                    Image {
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        anchors.margins: 2
+                                        source: 'qrc:/icons/images/app/size_9.svg'
+                                    }
+                                    Image {
+                                        visible: visible_imgchk_9
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        source: 'qrc:/icons/images/app/check.png'
+                                    }
+                                }
+                                Column {
+                                    Label {
+                                        text: "(9\") Vừa"
+                                        font.bold: true
+                                    }
+                                    Label {
+                                        text: "6 miếng"
+                                    }
                                 }
                             }
                             MouseArea {
@@ -733,18 +791,34 @@ ApplicationWindow {
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
                             height: idKichthuocBanh.width/6
-                            color: "#E0E0E0"
                             radius: 10
-                            RadioButton {
-                                id: pizzasize_big
-                                anchors.verticalCenter: parent.verticalCenter
-                                text: qsTr("Lớn (12\")")
-//                                Material.accent: "#01579B"
-                                onClicked: {
-                                    pizza_sizebanh = qsTr("12\"")
-                                    pizza_sizebanh_id = "12"
-                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
-                                    select_sizebanh(12)
+                            RowLayout {
+                                id: pizzasize_12
+                                anchors.centerIn: parent
+                                Item {
+                                    height: 60
+                                    width: 60
+                                    Image {
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        anchors.margins: 2
+                                        source: 'qrc:/icons/images/app/size_12.svg'
+                                    }
+                                    Image {
+                                        visible: visible_imgchk_12
+                                        fillMode: Image.Stretch
+                                        anchors.fill: parent
+                                        source: 'qrc:/icons/images/app/check.png'
+                                    }
+                                }
+                                Column {
+                                    Label {
+                                        text: "(12\") Lớn"
+                                        font.bold: true
+                                    }
+                                    Label {
+                                        text: "8 miếng"
+                                    }
                                 }
                             }
                             MouseArea {
@@ -756,8 +830,6 @@ ApplicationWindow {
                         }
                     }
                 }
-
-
                 Row {
                     Layout.fillWidth: true
                     spacing: globalPadding
@@ -778,19 +850,34 @@ ApplicationWindow {
                             Rectangle {
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3
-                                height: idDebanh.width/6
-                                color: "#E0E0E0"
+                                Layout.maximumWidth: idDebanh.width/5
+                                height: 80
                                 radius: 10
-                                RadioButton {
-                                    id: pizza_debanh_mong
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: qsTr("Đế mỏng")
-//                                    Material.accent: "#01579B"
-                                    checked: init_check_debanh()
-                                    onClicked: {
-                                        select_debanh("de_mong")
-                                        pizza_debanh_id = "TC"
+                                Column {
+                                    anchors.centerIn: parent
+                                    Item {
+                                        height: 60
+                                        width: 60
+                                        Image {
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/demong.png'
+                                        }
+                                        Image {
+                                            visible: visible_demong
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/check.png'
+                                        }
+                                    }
+                                    Column {
+                                        height: 20
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            text: "Đế mỏng"
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
+                                        }
                                     }
                                 }
                                 MouseArea {
@@ -804,43 +891,76 @@ ApplicationWindow {
                             Rectangle {
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3
-                                height: idDebanh.width/6
-                                color: "#E0E0E0"
+                                Layout.maximumWidth: idDebanh.width/5
+                                height: 80//idDebanh.width/6
                                 radius: 10
-                                RadioButton {
-                                    id: pizza_debanh_vua
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: qsTr("Đế vừa")
-//                                    Material.accent: "#01579B"
-                                    onClicked: {
-                                        select_debanh("de_vua")
-                                        pizza_debanh_id = "NYC"
+                                Column {
+                                    anchors.centerIn: parent
+                                    Item {
+                                        height: 60
+                                        width: 60
+                                        Image {
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/devua.png'
+                                        }
+                                        Image {
+                                            visible: visible_devua
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/check.png'
+                                        }
+                                    }
+                                    Column {
+                                        height: 20
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            text: "Đế vừa"
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
+                                        }
                                     }
                                 }
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
                                         select_debanh("de_vua")
-                                        pizza_debanh_id = "NYC"
+                                        pizza_debanh_id = "NY"
                                     }
                                 }
+
                             }
                             Rectangle {
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3
-                                height: idDebanh.width/6
-                                color: "#E0E0E0"
+                                Layout.maximumWidth: idDebanh.width/5
+                                height: 80//idDebanh.width/6
                                 radius: 10
-                                RadioButton {
-                                    id: pizza_debanh_day
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: qsTr("Đế dày")
-//                                    Material.accent: "#01579B"
-                                    onClicked: {
-                                        select_debanh("de_day")
-                                        pizza_debanh_id = "HT"
+                                Column {
+                                    anchors.centerIn: parent
+                                    Item {
+                                        height: 60
+                                        width: 60
+                                        Image {
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/deday.png'
+                                        }
+                                        Image {
+                                            visible: visible_deday
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/check.png'
+                                        }
+                                    }
+                                    Column {
+                                        height: 20
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            text: "Đế dày"
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
+                                        }
                                     }
                                 }
                                 MouseArea {
@@ -851,55 +971,38 @@ ApplicationWindow {
                                     }
                                 }
                             }
-                        }
-
-                        RowLayout {
-                            id: rowExtracDebanh
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            width: columnContentCakeInfo.width - 110
-                            visible: enable_cheesy
                             Rectangle {
+                                visible: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3
-                                height: idDebanh.width/6
-                                color: "#E0E0E0"
+                                Layout.maximumWidth: idDebanh.width/5
+                                height: 80//idDebanh.width/6
                                 radius: 10
-                                RadioButton {
-                                    id: pizza_debanh_cheesy_crust
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: qsTr("Viền phô mai")
-//                                    Material.accent: "#01579B"
-                                    onClicked: {
-                                        select_debanh("de_cheesy")
-                                        pizza_debanh_id = "CC"
+                                Column {
+                                    anchors.centerIn: parent
+                                    Item {
+                                        height: 60
+                                        width: 60
+                                        Image {
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/deday.png'
+                                        }
+                                        Image {
+                                            visible: visible_dephomaimong
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/check.png'
+                                        }
                                     }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        select_debanh("de_cheesy")
-                                        pizza_debanh_id = "CC"
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                Layout.fillHeight: true
-                                Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3
-                                height: idDebanh.width/6
-                                color: "#E0E0E0"
-                                radius: 10
-                                RadioButton {
-                                    id: pizza_debanh_thin_cheesy_crust
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: qsTr("Viền phô mai mỏng")
-//                                    Material.accent: "#01579B"
-
-                                    onClicked: {
-                                        select_debanh("de_thin_cheesy")
-                                        pizza_debanh_id = "TCC"
+                                    Column {
+                                        height: 20
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            text: "Phô mai\nmỏng"
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
+                                        }
                                     }
                                 }
                                 MouseArea {
@@ -911,16 +1014,49 @@ ApplicationWindow {
                                 }
                             }
                             Rectangle {
+                                visible: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
-                                Layout.maximumWidth: idDebanh.width/3 - 10
-                                height: idDebanh.width/6
-                                color: "white"
-
+                                Layout.maximumWidth: idDebanh.width/5
+                                height: 80//idDebanh.width/6
+                                radius: 10
+                                Column {
+                                    anchors.centerIn: parent
+                                    Item {
+                                        height: 60
+                                        width: 60
+                                        Image {
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/deday.png'
+                                        }
+                                        Image {
+                                            visible: visible_dephomaiday
+                                            fillMode: Image.Stretch
+                                            anchors.fill: parent
+                                            source: 'qrc:/icons/images/app/check.png'
+                                        }
+                                    }
+                                    Column {
+                                        height: 20
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            text: "Phô mai\ndày"
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
+                                        }
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        select_debanh("de_cheesy")
+                                        pizza_debanh_id = "CC"
+                                    }
+                                }
                             }
                         }
                     }
-
                 }
 
                 Row {
@@ -1098,19 +1234,21 @@ ApplicationWindow {
                 topPadding: globalPadding
                 Button {
                     id: btnSelectItem
-                    height: 80
+                    height: 60
                     width: (parent.width/3)*2 - globalPadding/2
                     highlighted: true
                     font.pixelSize: fntsize + 4
                     text: "ĐỒNG Ý"
 
                     onClicked: {
+
                         var _prod_name = pizza_prod_name.split('\n')[0];
                         var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
                         var _price = mainController.moneyMoney(promote_price);
                         var _oriprice = 0;
                         var _quantity = nItem;
-                        name_code = mainController.getProductCode(_prod_name, pizza_sizebanh_id, pizza_debanh_id);
+                        name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
+                        console.log("Name Code: " + name_code);
                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
 
                         if(pizza_sizebanh_id === "9") {
@@ -1223,7 +1361,7 @@ ApplicationWindow {
                 }
                 Button {
                     id: btnCancelSelectItem
-                    height: 80
+                    height: 60
                     width:  parent.width/3 - globalPadding/2
                     font.pixelSize: fntsize + 4
                     text: "HUỶ"
@@ -2075,6 +2213,129 @@ ApplicationWindow {
         onClosed: {
             idleTimer.stopTimerCounter();
             idleAlertShowed = false;
+        }
+    }
+
+    Popup {
+        id: deleteItemDialog
+        modal: true
+        focus: true
+        x: (window.width - width)/2
+        y: (window.height - height)/2
+        closePolicy: Popup.NoAutoClose
+
+
+        contentItem: ColumnLayout {
+            spacing: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Label {
+                text: "XÁC NHẬN"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: fntsize + 4
+                font.weight: Font.DemiBold
+            }
+
+            ColumnLayout {
+                spacing: 10
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: "Bạn có muốn xoá món này không?"
+                }
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: "[" + prodNameInPaymenView + "]"
+                }
+
+                RowLayout {
+                    spacing: 10
+                    Layout.fillWidth: true
+                    Button {
+                        id: btnCancel
+                        text: "Huỷ"
+                        Layout.preferredWidth: 0
+                        Layout.fillWidth: true
+                        onClicked: {
+                            deleteItemDialog.close();
+                        }
+                    }
+
+                    Button {
+                        id: btnConfirm
+                        text: "Xoá"
+                        highlighted: true
+                        Layout.preferredWidth: 0
+                        Layout.fillWidth: true
+                        onClicked: {
+                            mainController.removeItemInPaymentView(styleData_row);
+                            deleteItemDialog.close();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    Popup {
+        id: zoomItemDialog
+        modal: true
+        focus: true
+        x: (window.width - width)/2
+        y: (window.height - height)/2
+        width:window.width/3
+        contentItem: ColumnLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            Label {
+                text: zoom_prod_name.split('\n')[0]
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: fntsize + 4
+                font.weight: Font.DemiBold
+            }
+
+            ColumnLayout {
+                spacing: 10
+                Item {
+                    id: itemImage
+                    anchors.top: parent.top
+                    width:parent.width
+                    height:parent.width*0.66
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Image {
+                        id: foodIcon
+                        fillMode: Image.Stretch
+                        anchors.fill: parent
+                        anchors.margins: 2
+                        source: zoom_prod_img
+                    }
+                }
+
+                RowLayout {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Text {
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                        width: window.width/3
+                        text: zoom_prod_thanhphan.trim().length == 0 ? "THÀNH PHẦN: Chưa có thông tin." : "THÀNH PHẦN: " + zoom_prod_thanhphan;
+                        font.italic: true
+                        wrapMode:Text.Wrap
+                    }
+                }
+
+                RowLayout {
+                    spacing: 10
+                    Layout.fillWidth: true
+                    Button {
+                        text: "Đóng"
+                        Layout.preferredWidth: 0
+                        Layout.fillWidth: true
+                        height: 60
+                        highlighted: true
+                        onClicked: {
+                            zoomItemDialog.close();
+                        }
+                    }
+                }
+            }
         }
     }
 
