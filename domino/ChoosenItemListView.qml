@@ -168,7 +168,7 @@ Item {
             movable: false
             role: "item_name"
             title: qsTr("  Tên hàng")
-            width: tableViewChoosen.colRatio*11
+            width: tableViewChoosen.colRatio*12
             //width: Units.dp(150) > 20 ? Units.dp(150) : 150
         }
         TableViewColumn {
@@ -199,8 +199,8 @@ Item {
             resizable: false
             movable: false
             role: "price"
-            title: qsTr("Giá     ")
-            width: tableViewChoosen.colRatio*5
+            title: qsTr("Giá")
+            width: tableViewChoosen.colRatio*4
             //width: Units.dp(75)
         }
         TableViewColumn {

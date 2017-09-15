@@ -671,9 +671,9 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/2.7
+            width: window.width/3.6
             anchors.horizontalCenter: parent.horizontalCenter
-//            spacing: 20
+            spacing: 20
             Column {
                 id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -699,6 +699,7 @@ ApplicationWindow {
 
 
             ColumnLayout {
+                spacing: 10
                 width: columnContentCakeInfo.width
                 Row {
                     Layout.fillWidth: true
@@ -714,7 +715,7 @@ ApplicationWindow {
                 }
                 Row {
                     Layout.fillWidth: true
-                    topPadding: globalPadding
+                    topPadding: 3*globalPadding
                     bottomPadding: globalPadding
                     rightPadding: globalPadding
                     Label {
@@ -1265,7 +1266,7 @@ ApplicationWindow {
                 topPadding: globalPadding
                 Button {
                     id: btnSelectItem
-                    height: 60
+                    height: 70
                     width: (parent.width/3)*2 - globalPadding/2
                     highlighted: true
                     font.pixelSize: fntsize + 4
@@ -1392,7 +1393,7 @@ ApplicationWindow {
                 }
                 Button {
                     id: btnCancelSelectItem
-                    height: 60
+                    height: 70
                     width:  parent.width/3 - globalPadding/2
                     font.pixelSize: fntsize + 4
                     text: "HUỶ"
@@ -2313,9 +2314,9 @@ ApplicationWindow {
         focus: true
         x: (window.width - width)/2
         y: (window.height - height)/2
-        width:window.width/3
         contentItem: ColumnLayout {
             anchors.horizontalCenter: parent.horizontalCenter
+            width: window.width/3
             Label {
                 text: zoom_prod_name.split('\n')[0]
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -2325,6 +2326,7 @@ ApplicationWindow {
 
             ColumnLayout {
                 spacing: 10
+
                 Item {
                     id: itemImage
                     anchors.top: parent.top
@@ -2340,16 +2342,12 @@ ApplicationWindow {
                     }
                 }
 
-                RowLayout {
+                Text {
+                    Layout.fillWidth: true
                     anchors.horizontalCenter: parent.horizontalCenter
-                    Text {
-                        Layout.fillWidth: true
-                        horizontalAlignment: Text.AlignHCenter
-                        width: window.width/3
-                        text: zoom_prod_thanhphan.trim().length == 0 ? "THÀNH PHẦN: Chưa có thông tin." : "THÀNH PHẦN: " + zoom_prod_thanhphan;
-                        font.italic: true
-                        wrapMode:Text.Wrap
-                    }
+                    horizontalAlignment: Text.AlignHCenter
+                    text: zoom_prod_thanhphan.trim().length == 0 ? "THÀNH PHẦN: <i>Chưa có thông tin.</i>" : "THÀNH PHẦN: <i>" + zoom_prod_thanhphan+ "</i>";
+                    wrapMode:Text.WordWrap
                 }
 
                 RowLayout {
@@ -2359,7 +2357,7 @@ ApplicationWindow {
                         text: "Đóng"
                         Layout.preferredWidth: 0
                         Layout.fillWidth: true
-                        height: 60
+                        height: 70
                         highlighted: true
                         onClicked: {
                             zoomItemDialog.close();
