@@ -6,6 +6,7 @@ import QtQuick.Window 2.2
 import MainController 1.0
 import QmlDefine 1.0
 import "dynamicqml"
+import QtQuick.VirtualKeyboard 2.1
 
 Popup {
     id: popupProfile
@@ -53,6 +54,7 @@ Popup {
                     width: appOptionColumn.width
                     text: ""
                     placeholderText: "Nhập tên Khách Hàng"
+                    focus: true
                     onTextChanged: {
                         if(txtCustomerName.text.trim().length > 0) {
                             btnThanhToan.enabled = true;
