@@ -97,6 +97,7 @@
         <file>images/app/size_9.svg</file>
         <file>images/app/size_12.svg</file>
         <file>images/app/check.png</file>
+        <file>images/app/details.png</file>
         <file>images/app/dominos_logo_vertical.jpg</file>
         <file>images/app/dominos_logo_vertical.png</file>
     </qresource>

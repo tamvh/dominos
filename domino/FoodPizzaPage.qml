@@ -453,7 +453,7 @@ Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.Pad
-                    source: "qrc:/icons/images/app/zoom.png"
+                    source: "qrc:/icons/images/app/details.png"
                 }
 
                 MouseArea {
