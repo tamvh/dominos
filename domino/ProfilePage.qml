@@ -99,7 +99,7 @@ Popup {
                 Button {
                     id: btnThanhToan
                     width: (appOptionColumn.width*2)/3
-                    height: 60
+                    height: 70
                     highlighted: true
                     enabled: false
                     font.pixelSize: fntsize
@@ -218,7 +218,7 @@ Popup {
                 Button {
                     id: btnHuy
                     width: appOptionColumn.width/3
-                    height: 60
+                    height: 70
                     font.pixelSize: fntsize
                     text: "Hủy"
 

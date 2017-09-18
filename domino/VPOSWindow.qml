@@ -919,6 +919,7 @@ ApplicationWindow {
                                 }
                             }
                             Rectangle {
+                                visible: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
@@ -1280,6 +1281,12 @@ ApplicationWindow {
                         var _oriprice = 0;
                         var _quantity = nItem;
                         name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
+                        if(name_code === '12TCCCB') {
+                            name_code = '2TCCCB';
+                        }
+                        if(name_code === '12HTMRITA') {
+                            name_code = '12HTMAR';
+                        }
                         console.log("Name Code: " + name_code);
                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
 
@@ -2316,7 +2323,6 @@ ApplicationWindow {
         y: (window.height - height)/2
         contentItem: ColumnLayout {
             anchors.horizontalCenter: parent.horizontalCenter
-            width: window.width/3
             Label {
                 text: zoom_prod_name.split('\n')[0]
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -2326,12 +2332,12 @@ ApplicationWindow {
 
             ColumnLayout {
                 spacing: 10
-
+                Layout.preferredWidth: window.width/3
                 Item {
                     id: itemImage
                     anchors.top: parent.top
-                    width:parent.width
-                    height:parent.width*0.66
+                    width: window.width/3 - 10
+                    height:(window.width/3 - 10)*0.66
                     anchors.horizontalCenter: parent.horizontalCenter
                     Image {
                         id: foodIcon
@@ -2343,26 +2349,22 @@ ApplicationWindow {
                 }
 
                 Text {
-                    Layout.fillWidth: true
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: window.width/3 - 10
                     horizontalAlignment: Text.AlignHCenter
                     text: zoom_prod_thanhphan.trim().length == 0 ? "THÀNH PHẦN: <i>Chưa có thông tin.</i>" : "THÀNH PHẦN: <i>" + zoom_prod_thanhphan+ "</i>";
-                    wrapMode:Text.WordWrap
+                    wrapMode: Text.Wrap
                 }
+            }
 
-                RowLayout {
-                    spacing: 10
-                    Layout.fillWidth: true
-                    Button {
-                        text: "Đóng"
-                        Layout.preferredWidth: 0
-                        Layout.fillWidth: true
-                        height: 70
-                        highlighted: true
-                        onClicked: {
-                            zoomItemDialog.close();
-                        }
-                    }
+            Button {
+                text: "Đóng"
+                Layout.preferredWidth: window.width/3 - 10
+//                Layout.fillWidth: true
+                height: 70
+                highlighted: true
+                onClicked: {
+                    zoomItemDialog.close();
                 }
             }
         }
