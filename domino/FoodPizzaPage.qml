@@ -231,14 +231,23 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_7.svg'
                         }
                     }
-                    Label {
-                        visible: visible_price
-                        text: "Nhỏ(7\") " + text_price7
+                    Column {
+                        Label {
+                            visible: visible_price
+                            text: "Nhỏ(7\")"
+                        }
+                        Label {
+                            visible: visible_price
+                            text: text_price7 + " VNĐ"
+                            color: "red"
+                        }
                     }
+
                     Rectangle {
                         visible: visible_price
                         height: 60
                         width: 5
+                        color: "transparent"
                     }
                     Item {
                         height: 60
@@ -250,12 +259,20 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_9.svg'
                         }
                     }
-                    Label {
-                        text: "Nhỏ(9\") " + text_price9
+                    Column {
+                        Label {
+                            text: "Nhỏ(9\")"
+                        }
+                        Label {
+                            text: text_price9 + " VNĐ"
+                            color: "red"
+                        }
                     }
+
                     Rectangle {
                         height: 60
                         width: 5
+                        color: "transparent"
                     }
                     Item {
                         height: 60
@@ -267,9 +284,16 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_12.svg'
                         }
                     }
-                    Label {
-                        text: "Nhỏ(12\") " + text_price12
+                    Column {
+                        Label {
+                            text: "Nhỏ(12\")"
+                        }
+                        Label {
+                            text: text_price12 + " VNĐ"
+                            color: "red"
+                        }
                     }
+
                 }
             }
         }

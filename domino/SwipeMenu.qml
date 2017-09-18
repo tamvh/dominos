@@ -72,16 +72,16 @@ Page {
             var swipe_pizza = component_pizza.createObject(swipeView, {visible:visible})
 
             if(cateName === 'Pizza Favorite') {
-                swipe_pizza.appendSubCate(true, '59.000', '119.000', '179.000');
+                swipe_pizza.appendSubCate(true, '59,000', '119,000', '179,000');
             }
             if(cateName === 'Pizza Classic') {
-                swipe_pizza.appendSubCate(true, '69.000', '129.000', '199.000');
+                swipe_pizza.appendSubCate(true, '69,000', '129,000', '199,000');
             }
             if(cateName === 'Pizza Premium') {
-                swipe_pizza.appendSubCate(true, '79.000', '139.000', '219.000');
+                swipe_pizza.appendSubCate(true, '79,000', '139,000', '219,000');
             }
             if(cateName === 'Pizza Signature') {
-                swipe_pizza.appendSubCate(false, '0', '179.000', '279.000');
+                swipe_pizza.appendSubCate(false, '0', '179,000', '279,000');
             }
 
 
