@@ -1,7 +1,6 @@
-import QtQuick 2.4
-import QtQuick.Layouts 1.1
+import QtQuick 2.0
 import QtQuick.Controls 2.0
-import QtQuick.Window 2.2
+import QtQuick.Layouts 1.1
 
 import MainController 1.0
 import QmlDefine 1.0

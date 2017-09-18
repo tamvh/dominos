@@ -671,7 +671,7 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/3.6
+            width: window.width/2
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
             Column {
@@ -737,8 +737,8 @@ ApplicationWindow {
                                 id: pizzasize_7
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
+                                    height: 80
+                                    width: 80
                                     Image {
                                         fillMode: Image.Stretch
                                         anchors.fill: parent
@@ -782,8 +782,8 @@ ApplicationWindow {
                                 id: pizzasize_9
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
+                                    height: 80
+                                    width: 80
 
                                     Image {
                                         fillMode: Image.Stretch
@@ -826,8 +826,8 @@ ApplicationWindow {
                                 id: pizzasize_12
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
+                                    height: 80
+                                    width: 80
                                     Image {
                                         fillMode: Image.Stretch
                                         anchors.fill: parent
@@ -886,8 +886,8 @@ ApplicationWindow {
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 80
+                                        width: 80
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -928,8 +928,8 @@ ApplicationWindow {
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 80
+                                        width: 80
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -970,8 +970,8 @@ ApplicationWindow {
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 80
+                                        width: 80
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -1012,8 +1012,8 @@ ApplicationWindow {
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 80
+                                        width: 80
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -1054,8 +1054,8 @@ ApplicationWindow {
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 80
+                                        width: 80
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -1105,7 +1105,7 @@ ApplicationWindow {
 
                         Button {
                             visible: enable_cheesy
-                            height: parent.width/10
+                            height: parent.width/8
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
                             text: "-"
@@ -1120,8 +1120,8 @@ ApplicationWindow {
 
                         Rectangle {
                             visible: enable_cheesy
-                            height: parent.width/10
-                            width: parent.width/8
+                            height: parent.width/8
+                            width: parent.width/6
                             Label {
                                 id:txtPercentCheesy
                                 text: getPercentCheesy(nChessy)
@@ -1133,7 +1133,7 @@ ApplicationWindow {
 
                         Button {
                             visible: enable_cheesy
-                            height: parent.width/10
+                            height: parent.width/8
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
                             text: "+"
@@ -1160,7 +1160,7 @@ ApplicationWindow {
                         width: parent.width
 
                         Button {
-                            height: parent.width/10
+                            height: parent.width/8
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
                             text: "-"
@@ -1174,8 +1174,8 @@ ApplicationWindow {
                         }
 
                         Rectangle {
-                            height: parent.width/10
-                            width: parent.width/8
+                            height: parent.width/8
+                            width: parent.width/6
                             Label {
                                 id:txtTotalItem
                                 text: nItem
@@ -1186,7 +1186,7 @@ ApplicationWindow {
                         }
 
                         Button {
-                            height: parent.width/10
+                            height: parent.width/8
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
                             text: "+"

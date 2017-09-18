@@ -231,10 +231,14 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_7.svg'
                         }
                     }
-                    Column {
+                    RowLayout {
                         Label {
                             visible: visible_price
                             text: "Nhỏ(7\")"
+                        }
+                        Label {
+                            visible: visible_price
+                            text: "-"
                         }
                         Label {
                             visible: visible_price
@@ -246,7 +250,7 @@ Rectangle {
                     Rectangle {
                         visible: visible_price
                         height: 60
-                        width: 5
+                        width: 10
                         color: "transparent"
                     }
                     Item {
@@ -259,9 +263,12 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_9.svg'
                         }
                     }
-                    Column {
+                    RowLayout {
                         Label {
                             text: "Nhỏ(9\")"
+                        }
+                        Label {
+                            text: "-"
                         }
                         Label {
                             text: text_price9 + " VNĐ"
@@ -271,7 +278,7 @@ Rectangle {
 
                     Rectangle {
                         height: 60
-                        width: 5
+                        width: 10
                         color: "transparent"
                     }
                     Item {
@@ -284,9 +291,12 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_12.svg'
                         }
                     }
-                    Column {
+                    RowLayout {
                         Label {
                             text: "Nhỏ(12\")"
+                        }
+                        Label {
+                            text: "-"
                         }
                         Label {
                             text: text_price12 + " VNĐ"
