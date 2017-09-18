@@ -2,10 +2,6 @@ TEMPLATE = app
 
 QT += qml quick quickcontrols2 concurrent svg network websockets printsupport xml core
 CONFIG += link_pkgconfig
-static {
-    QT += svg
-    QTPLUGIN += qtvirtualkeyboardplugin
-}
 
 #App versioning
 VERSION_MAJOR = 1
