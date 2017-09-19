@@ -231,21 +231,31 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_7.svg'
                         }
                     }
-                    RowLayout {
-                        Label {
-                            visible: visible_price
-                            text: "Nhỏ(7\")"
+                    Column {
+                        spacing: 10
+                        RowLayout {
+                            Label {
+                                visible: visible_price
+                                text: "Nhỏ(7\")"
+                            }
+                            Label {
+                                visible: visible_price
+                                text: "-"
+                            }
+                            Label {
+                                visible: visible_price
+                                text: "4 miếng"
+                            }
                         }
-                        Label {
-                            visible: visible_price
-                            text: "-"
-                        }
-                        Label {
-                            visible: visible_price
-                            text: text_price7 + " VNĐ"
-                            color: "red"
+                        RowLayout {
+                            Label {
+                                visible: visible_price
+                                text: text_price7 + " VNĐ"
+                                color: "red"
+                            }
                         }
                     }
+
 
                     Rectangle {
                         visible: visible_price
@@ -263,18 +273,27 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_9.svg'
                         }
                     }
-                    RowLayout {
-                        Label {
-                            text: "Nhỏ(9\")"
+                    Column {
+                        spacing: 10
+                        RowLayout {
+                            Label {
+                                text: "Vừa(9\")"
+                            }
+                            Label {
+                                text: "-"
+                            }
+                            Label {
+                                text: "6 miếng"
+                            }
                         }
-                        Label {
-                            text: "-"
-                        }
-                        Label {
-                            text: text_price9 + " VNĐ"
-                            color: "red"
+                        RowLayout {
+                            Label {
+                                text: text_price9 + " VNĐ"
+                                color: "red"
+                            }
                         }
                     }
+
 
                     Rectangle {
                         height: 60
@@ -291,19 +310,26 @@ Rectangle {
                             source: 'qrc:/icons/images/app/size_12.svg'
                         }
                     }
-                    RowLayout {
-                        Label {
-                            text: "Nhỏ(12\")"
+                    Column {
+                        spacing: 10
+                        RowLayout {
+                            Label {
+                                text: "Nhỏ(12\")"
+                            }
+                            Label {
+                                text: "-"
+                            }
+                            Label {
+                                text: "8 miếng"
+                            }
                         }
-                        Label {
-                            text: "-"
-                        }
-                        Label {
-                            text: text_price12 + " VNĐ"
-                            color: "red"
+                        RowLayout {
+                            Label {
+                                text: text_price12 + " VNĐ"
+                                color: "red"
+                            }
                         }
                     }
-
                 }
             }
         }

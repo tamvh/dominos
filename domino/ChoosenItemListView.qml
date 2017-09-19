@@ -222,7 +222,7 @@ Item {
                 color: "transparent"
             }
             headerDelegate: Rectangle {
-                implicitHeight: Screen.devicePixelRatio <= 2? 48: 32
+                implicitHeight: Screen.devicePixelRatio <= 2? 48: 48
                 color: "#e2e6e7"
                 Text {
                     id: textItem
