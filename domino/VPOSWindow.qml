@@ -2328,15 +2328,6 @@ ApplicationWindow {
                 RowLayout {
                     spacing: 10
                     Layout.fillWidth: true
-                    Button {
-                        id: btnCancel
-                        text: "Huỷ"
-                        Layout.preferredWidth: 0
-                        Layout.fillWidth: true
-                        onClicked: {
-                            deleteItemDialog.close();
-                        }
-                    }
 
                     Button {
                         id: btnConfirm
@@ -2346,6 +2337,15 @@ ApplicationWindow {
                         Layout.fillWidth: true
                         onClicked: {
                             mainController.removeItemInPaymentView(styleData_row);
+                            deleteItemDialog.close();
+                        }
+                    }
+                    Button {
+                        id: btnCancel
+                        text: "Huỷ"
+                        Layout.preferredWidth: 0
+                        Layout.fillWidth: true
+                        onClicked: {
                             deleteItemDialog.close();
                         }
                     }
