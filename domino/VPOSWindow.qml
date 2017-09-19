@@ -673,7 +673,7 @@ ApplicationWindow {
             id: columnContentCakeInfo
             width: window.width/3.5
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 20
+            spacing: 40
             Column {
                 id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -919,7 +919,7 @@ ApplicationWindow {
                                 }
                             }
                             Rectangle {
-                                visible: enable_cheesy
+                                enabled: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
@@ -1003,7 +1003,7 @@ ApplicationWindow {
                                 }
                             }
                             Rectangle {
-                                visible: enable_cheesy
+                                enabled: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
@@ -1045,7 +1045,7 @@ ApplicationWindow {
                                 }
                             }
                             Rectangle {
-                                visible: enable_cheesy
+                                enabled: enable_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
