@@ -206,7 +206,7 @@ Rectangle {
 
     Rectangle {
         id: rectTitle
-        height: 95
+        height: 100
         width: parent.width
         color: "transparent"
         GridView {
@@ -367,7 +367,7 @@ Rectangle {
         cellHeight: m_cellh
         focus: true
         anchors.top: rectTitle.bottom
-        anchors.topMargin: 95
+        anchors.topMargin: 100
         model: foodsModel
 
         delegate: Item {
