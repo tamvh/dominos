@@ -55,6 +55,8 @@ ApplicationWindow {
     property string customer_hinhthuc: qsTr("dinein")
     property string name_code: qsTr("")
     property bool enable_cheesy: false
+    property double opacity_cheesy: 1.0
+    property double opacity_rect_pizzasize_small: 1.0
     property int styleData_row: -1
     property string prodNameInPaymenView: qsTr("")
     property string  zoom_prod_name: qsTr("")
@@ -72,6 +74,7 @@ ApplicationWindow {
     property bool visible_dephomaiday: false
 
     property bool pressbtn_selected: false
+
 
     Material.primary: "#006493"
     Material.accent: "#006493" //"#01579B"
@@ -231,7 +234,8 @@ ApplicationWindow {
             pizza_sizebanh_id = "7"
             check_sizebanh(7)
             enable_cheesy = false
-            if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC") {
+            opacity_cheesy = 0.3
+            if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC" || pizza_debanh_id === "NY") {
                 pizza_debanh_id = "TC";
                 select_debanh("de_mong");
             }
@@ -240,11 +244,13 @@ ApplicationWindow {
             pizza_sizebanh_id = "9"
             check_sizebanh(9)
             enable_cheesy = true
+            opacity_cheesy = 1.0
         } else if(sizebanh === 12) {
             pizza_sizebanh = qsTr("12\"")
             pizza_sizebanh_id = "12"
             check_sizebanh(12)
             enable_cheesy = true
+            opacity_cheesy = 1.0
         }
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
     }
@@ -313,10 +319,14 @@ ApplicationWindow {
             select_sizebanh(9)
             rect_pizzasize_small.enabled = false
             enable_cheesy = true;
+            opacity_cheesy = 1.0;
+            opacity_rect_pizzasize_small = 0.3
         } else {
             select_sizebanh(7)
             rect_pizzasize_small.enabled = true
             enable_cheesy = false;
+            opacity_cheesy = 0.3;
+            opacity_rect_pizzasize_small = 1.0
         }
         select_debanh('de_mong');
         nChessy = 0;
@@ -671,9 +681,9 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         Column {
             id: columnContentCakeInfo
-            width: window.width/3.5
+            width: window.width/2
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 40
+            spacing: 20
             Column {
                 id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -705,12 +715,14 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     spacing: 10
                     Label {
-                        width: 100
+                        width: 150
                         anchors.verticalCenter: parent.verticalCenter
                         text: "TÊN BÁNH"
+                        font.pixelSize: fntsize + 2
                     }
                     Label {
                         text: window.pizza_prod_name
+                        font.pixelSize: fntsize + 8
                     }
                 }
                 Row {
@@ -719,26 +731,28 @@ ApplicationWindow {
                     bottomPadding: globalPadding
                     rightPadding: globalPadding
                     Label {
-                        width: 100
+                        width: 150
                         anchors.verticalCenter: parent.verticalCenter
                         text: "SIZE BÁNH"
+                        font.pixelSize: fntsize + 2
                     }
                     RowLayout {
                         id: idKichthuocBanh
-                        width: columnContentCakeInfo.width - 100
+                        width: columnContentCakeInfo.width - 150
                         Rectangle {
                             id: rect_pizzasize_small
+                            opacity: opacity_rect_pizzasize_small
                             Layout.fillHeight: true
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
-                            height: idKichthuocBanh.width/6
+                            height: (window.width/2)/3
                             radius: 10
                             RowLayout {
                                 id: pizzasize_7
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
+                                    height: rect_pizzasize_small.height
+                                    width: rect_pizzasize_small.height
                                     Image {
                                         fillMode: Image.Stretch
                                         anchors.fill: parent
@@ -755,9 +769,11 @@ ApplicationWindow {
                                     Label {
                                         text: "(7\") Nhỏ"
                                         font.bold: true
+                                        font.pixelSize: fntsize + 6
                                     }
                                     Label {
                                         text: "4 miếng"
+                                        font.pixelSize: fntsize + 6
                                     }
                                 }
                             }
@@ -776,15 +792,14 @@ ApplicationWindow {
                             Layout.fillHeight: true
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
-                            height: idKichthuocBanh.width/6
+                            height: (window.width/2)/3
                             radius: 10
                             RowLayout {
                                 id: pizzasize_9
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
-
+                                    height: rect_pizzasize_avg.height
+                                    width: rect_pizzasize_avg.height
                                     Image {
                                         fillMode: Image.Stretch
                                         anchors.fill: parent
@@ -802,9 +817,11 @@ ApplicationWindow {
                                     Label {
                                         text: "(9\") Vừa"
                                         font.bold: true
+                                        font.pixelSize: fntsize + 6
                                     }
                                     Label {
                                         text: "6 miếng"
+                                        font.pixelSize: fntsize + 6
                                     }
                                 }
                             }
@@ -820,14 +837,14 @@ ApplicationWindow {
                             Layout.fillHeight: true
                             Layout.fillWidth: true
                             Layout.maximumWidth: idKichthuocBanh.width/3
-                            height: idKichthuocBanh.width/6
+                            height: (window.width/2)/3
                             radius: 10
                             RowLayout {
                                 id: pizzasize_12
                                 anchors.centerIn: parent
                                 Item {
-                                    height: 60
-                                    width: 60
+                                    height: rect_pizzasize_big.height
+                                    width: rect_pizzasize_big.height
                                     Image {
                                         fillMode: Image.Stretch
                                         anchors.fill: parent
@@ -845,9 +862,11 @@ ApplicationWindow {
                                     Label {
                                         text: "(12\") Lớn"
                                         font.bold: true
+                                        font.pixelSize: fntsize + 6
                                     }
                                     Label {
                                         text: "8 miếng"
+                                        font.pixelSize: fntsize + 6
                                     }
                                 }
                             }
@@ -867,27 +886,28 @@ ApplicationWindow {
                     bottomPadding: globalPadding
                     rightPadding: globalPadding
                     Label {
-                        width: 100
+                        width: 150
                         anchors.verticalCenter: parent.verticalCenter
                         text: "ĐẾ BÁNH"
+                        font.pixelSize: fntsize + 2
                     }
                     Column {
                         spacing: 10
                         RowLayout {
                             id: idDebanh
                             Layout.fillWidth: true
-                            width: columnContentCakeInfo.width - 110
+                            width: columnContentCakeInfo.width - 160
                             Rectangle {
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
-                                height: 80
+                                height: (window.width/2)/3
                                 radius: 10
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 140
+                                        width: 140
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -907,6 +927,7 @@ ApplicationWindow {
                                             text: "Đế mỏng"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
+                                            font.pixelSize: fntsize + 6
                                         }
                                     }
                                 }
@@ -920,16 +941,17 @@ ApplicationWindow {
                             }
                             Rectangle {
                                 enabled: enable_cheesy
+                                opacity: opacity_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
-                                height: 80//idDebanh.width/6
+                                height: (window.width/2)/3
                                 radius: 10
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 140
+                                        width: 140
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -949,6 +971,7 @@ ApplicationWindow {
                                             text: "Đế vừa"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
+                                            font.pixelSize: fntsize + 6
                                         }
                                     }
                                 }
@@ -965,13 +988,13 @@ ApplicationWindow {
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
-                                height: 80//idDebanh.width/6
+                                height: (window.width/2)/3
                                 radius: 10
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 140
+                                        width: 140
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -991,6 +1014,7 @@ ApplicationWindow {
                                             text: "Đế dày"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
+                                            font.pixelSize: fntsize + 6
                                         }
                                     }
                                 }
@@ -1004,16 +1028,17 @@ ApplicationWindow {
                             }
                             Rectangle {
                                 enabled: enable_cheesy
+                                opacity: opacity_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
-                                height: 80//idDebanh.width/6
+                                height: (window.width/2)/3
                                 radius: 10
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 140
+                                        width: 140
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -1033,6 +1058,7 @@ ApplicationWindow {
                                             text: "Phô mai\nmỏng"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
+                                            font.pixelSize: fntsize + 6
                                         }
                                     }
                                 }
@@ -1046,16 +1072,17 @@ ApplicationWindow {
                             }
                             Rectangle {
                                 enabled: enable_cheesy
+                                opacity: opacity_cheesy
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
                                 Layout.maximumWidth: idDebanh.width/5
-                                height: 80//idDebanh.width/6
+                                height: (window.width/2)/3
                                 radius: 10
                                 Column {
                                     anchors.centerIn: parent
                                     Item {
-                                        height: 60
-                                        width: 60
+                                        height: 140
+                                        width: 140
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
@@ -1075,6 +1102,7 @@ ApplicationWindow {
                                             text: "Phô mai\ndày"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
+                                            font.pixelSize: fntsize + 6
                                         }
                                     }
                                 }
@@ -1090,18 +1118,24 @@ ApplicationWindow {
                     }
                 }
 
+                Rectangle {
+                    width: parent.width
+                    height: 20
+                }
+
                 Row {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     spacing: 10
                     Label {
-                        width: 100
+                        width: 170
                         anchors.verticalCenter: parent.verticalCenter
                         text: "THÊM PHÔ MAI"
                         visible: enable_cheesy
+                        font.pixelSize: fntsize + 2
                     }
                     Row {
-                        width: parent.width
+                        width: parent.width - 170
 
                         Button {
                             visible: enable_cheesy
@@ -1128,6 +1162,7 @@ ApplicationWindow {
                                 anchors.centerIn: parent
                                 font.pointSize: 15
                                 font.bold: true
+                                font.pixelSize: fntsize + 7
                             }
                         }
 
@@ -1152,13 +1187,13 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     spacing: 10
                     Label {
-                        width: 100
+                        width: 170
                         anchors.verticalCenter: parent.verticalCenter
                         text: "SỐ LƯỢNG"
+                        font.pixelSize: fntsize + 2
                     }
                     Row {
-                        width: parent.width
-
+                        width: parent.width - 170
                         Button {
                             height: parent.width/10
                             width:  parent.width/8
@@ -1182,6 +1217,7 @@ ApplicationWindow {
                                 anchors.centerIn: parent
                                 font.pointSize: 15
                                 font.bold: true
+                                font.pixelSize: fntsize + 7
                             }
                         }
 
@@ -1213,14 +1249,16 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     spacing: 10
                     Label {
-                        width: 100
+                        width: 150
                         anchors.verticalCenter: parent.verticalCenter
                         text: "MÔ TẢ"
+                        font.pixelSize: fntsize + 2
                     }
                     Label {
                         id: lblChitiet
-                        width: cakeInfoDialog.width - 100
+                        width: cakeInfoDialog.width - 150
                         text: nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + nChessy
+                        font.pixelSize: fntsize + 2
                     }
                 }
 
@@ -1228,18 +1266,19 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     spacing: 10
                     Label {
-                        width: 100
+                        width: 150
                         anchors.verticalCenter: parent.verticalCenter
                         text: "THÀNH TIỀN"
+                        font.pixelSize: fntsize + 2
                     }
                     Row {
-                        width: cakeInfoDialog.width - 100
+                        width: cakeInfoDialog.width - 150
                         Layout.fillWidth: true
                         spacing: 7
                         Text {
                             text: pizza_money_root
                             color: "#4a9fe7"
-                            font.pixelSize: cellFontSize + 2
+                            font.pixelSize: fntsize + 4
                             font.strikeout: true
                         }
 
@@ -1247,13 +1286,13 @@ ApplicationWindow {
 
                             text: pizza_money
                             color: "red"
-                            font.pixelSize: cellFontSize + 6
+                            font.pixelSize: fntsize + 8
                         }
 
                         Text {
                             text: "VNĐ"
                             color: "red"
-                            font.pixelSize: cellFontSize
+                            font.pixelSize: fntsize
                             anchors.bottom: parent.bottom
                             anchors.margins: 4
                         }

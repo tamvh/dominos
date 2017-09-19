@@ -206,7 +206,7 @@ Rectangle {
 
     Rectangle {
         id: rectTitle
-        height: 70
+        height: 95
         width: parent.width
         color: "transparent"
         GridView {
@@ -217,12 +217,13 @@ Rectangle {
             model: subCateModel
 
             delegate: Item {
+                property int cellFontSize: fooditemfntsize
                 RowLayout {
                     anchors.centerIn: parent
                     //anchors.fill: parent
                     Item {
-                        height: 60
-                        width: 60
+                        height: 80
+                        width: 80
                         visible: visible_price
                         Image {
                             fillMode: Image.Stretch
@@ -237,14 +238,17 @@ Rectangle {
                             Label {
                                 visible: visible_price
                                 text: "Nhỏ(7\")"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 visible: visible_price
                                 text: "-"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 visible: visible_price
                                 text: "4 miếng"
+                                font.pixelSize: cellFontSize + 4
                             }
                         }
                         RowLayout {
@@ -252,6 +256,7 @@ Rectangle {
                                 visible: visible_price
                                 text: text_price7 + " VNĐ"
                                 color: "red"
+                                font.pixelSize: cellFontSize + 4
                             }
                         }
                     }
@@ -264,8 +269,8 @@ Rectangle {
                         color: "transparent"
                     }
                     Item {
-                        height: 60
-                        width: 60
+                        height: 80
+                        width: 80
                         Image {
                             fillMode: Image.Stretch
                             anchors.fill: parent
@@ -278,25 +283,28 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: "Vừa(9\")"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 text: "-"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 text: "6 miếng"
+                                font.pixelSize: cellFontSize + 4
                             }
                         }
                         RowLayout {
                             Label {
-                                text: text_price9 + " VNĐ"
+                                text: text_price9
                                 color: "#4a9fe7"
-                                font.pixelSize: cellFontSize + 2
+                                font.pixelSize: cellFontSize + 4
                                 font.strikeout: true
                             }
                             Label {
                                 text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9'))  + " VNĐ"
                                 color: "red"
-                                font.pixelSize: cellFontSize + 2
+                                font.pixelSize: cellFontSize + 6
                             }
                         }
                     }
@@ -308,8 +316,8 @@ Rectangle {
                         color: "transparent"
                     }
                     Item {
-                        height: 60
-                        width: 60
+                        height: 80
+                        width: 80
                         Image {
                             fillMode: Image.Stretch
                             anchors.fill: parent
@@ -322,25 +330,28 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: "Nhỏ(12\")"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 text: "-"
+                                font.pixelSize: cellFontSize + 4
                             }
                             Label {
                                 text: "8 miếng"
+                                font.pixelSize: cellFontSize + 4
                             }
                         }
                         RowLayout {
                             Label {
-                                text: text_price12 + " VNĐ"
+                                text: text_price12
                                 color: "#4a9fe7"
-                                font.pixelSize: cellFontSize + 2
+                                font.pixelSize: cellFontSize + 6
                                 font.strikeout: true
                             }
                             Label {
                                 text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12'))  + " VNĐ"
                                 color: "red"
-                                font.pixelSize: cellFontSize + 2
+                                font.pixelSize: cellFontSize + 6
                             }
                         }
                     }
@@ -356,7 +367,7 @@ Rectangle {
         cellHeight: m_cellh
         focus: true
         anchors.top: rectTitle.bottom
-        anchors.topMargin: 70
+        anchors.topMargin: 95
         model: foodsModel
 
         delegate: Item {
