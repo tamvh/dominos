@@ -1131,14 +1131,15 @@ ApplicationWindow {
                         width: 170
                         anchors.verticalCenter: parent.verticalCenter
                         text: "THÊM PHÔ MAI"
-                        visible: enable_cheesy
+                        enabled: enable_cheesy
+                        opacity: opacity_cheesy
                         font.pixelSize: fntsize + 2
                     }
                     Row {
                         width: parent.width - 170
-
+                        enabled: enable_cheesy
+                        opacity: opacity_cheesy
                         Button {
-                            visible: enable_cheesy
                             height: parent.width/10
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
@@ -1153,7 +1154,6 @@ ApplicationWindow {
                         }
 
                         Rectangle {
-                            visible: enable_cheesy
                             height: parent.width/10
                             width: parent.width/6
                             Label {
@@ -1167,7 +1167,6 @@ ApplicationWindow {
                         }
 
                         Button {
-                            visible: enable_cheesy
                             height: parent.width/10
                             width:  parent.width/8
                             font.pixelSize: fntsize + 4
@@ -2328,7 +2327,6 @@ ApplicationWindow {
                 RowLayout {
                     spacing: 10
                     Layout.fillWidth: true
-
                     Button {
                         id: btnConfirm
                         text: "Xoá"
