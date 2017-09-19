@@ -289,7 +289,14 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: text_price9 + " VNĐ"
+                                color: "#4a9fe7"
+                                font.pixelSize: cellFontSize + 2
+                                font.strikeout: true
+                            }
+                            Label {
+                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9'))  + " VNĐ"
                                 color: "red"
+                                font.pixelSize: cellFontSize + 2
                             }
                         }
                     }
@@ -326,7 +333,14 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: text_price12 + " VNĐ"
+                                color: "#4a9fe7"
+                                font.pixelSize: cellFontSize + 2
+                                font.strikeout: true
+                            }
+                            Label {
+                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12'))  + " VNĐ"
                                 color: "red"
+                                font.pixelSize: cellFontSize + 2
                             }
                         }
                     }
