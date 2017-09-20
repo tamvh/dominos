@@ -4,17 +4,15 @@ import QtQuick.Layouts 1.1
 
 Popup {
     id: profilePage
-    width: window.width/3
-    height: 250
     x: (parent.width - width)/2
     y: (parent.height - height)/4
     closePolicy: Popup.NoAutoClose
     focus: true
-
+    modal: true
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
-
+        spacing: 20
         Label {
             text: "NHẬP THÔNG TIN KHÁCH HÀNG"
             Layout.alignment: Qt.AlignHCenter
@@ -29,6 +27,7 @@ Popup {
                 width: appOptionColumn.width
                 text: ''
                 placeholderText: "Nhập tên Khách Hàng"
+                focus: true
                 onTextChanged: {
                     if(txtCustomerName.text.trim().length > 0) {
                         btnThanhToan.enabled = true;
@@ -41,7 +40,6 @@ Popup {
         Row {
             spacing: globalPadding
             width: appOptionColumn.width
-
             Row {
                 width: appOptionColumn.width
                 RadioButton {
@@ -49,7 +47,6 @@ Popup {
                     anchors.verticalCenter: parent.verticalCenter
                     text: qsTr("Ăn tại chỗ")
                     checked: true
-
                     onClicked: {
                         console.log("dinein");
                         customer_hinhthuc = "dinein";
@@ -66,11 +63,9 @@ Popup {
                 }
             }
         }
-
         Row {
             spacing: 10
             Layout.alignment: Qt.AlignHCenter
-
             Button {
                 id: btnThanhToan
                 width: (appOptionColumn.width*2)/3
@@ -113,6 +108,7 @@ Popup {
                     }
                     txtCustomerName.text = "";
                     radioDineIn.checked = true;
+                    txtCustomerName.focus = true;
                     profilePage.close()
                 }
                 Connections {
@@ -199,6 +195,7 @@ Popup {
                 onClicked: {
                     txtCustomerName.text = "";
                     radioDineIn.checked = true;
+                    txtCustomerName.focus = true;
                     profilePage.close()
                 }
             }
