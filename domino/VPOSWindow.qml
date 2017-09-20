@@ -2361,20 +2361,21 @@ ApplicationWindow {
         contentItem: ColumnLayout {
             anchors.horizontalCenter: parent.horizontalCenter
             Label {
-                text: zoom_prod_name.split('\n')[0]
+                text: zoom_prod_name
                 anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: fntsize + 4
                 font.weight: Font.DemiBold
+                color: "#607D8B"
             }
 
             ColumnLayout {
                 spacing: 10
-                Layout.preferredWidth: window.width/3
                 Item {
                     id: itemImage
                     anchors.top: parent.top
-                    width: window.width/3 - 10
-                    height:(window.width/3 - 10)*0.66
+                    width: window.width - 10
+                    height:(window.width - 10)*0.66
                     anchors.horizontalCenter: parent.horizontalCenter
                     Image {
                         id: foodIcon
@@ -2387,17 +2388,19 @@ ApplicationWindow {
 
                 Text {
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
                     Layout.preferredWidth: window.width/3 - 10
                     horizontalAlignment: Text.AlignHCenter
                     text: zoom_prod_thanhphan.trim().length == 0 ? "THÀNH PHẦN: <i>Chưa có thông tin.</i>" : "THÀNH PHẦN: <i>" + zoom_prod_thanhphan+ "</i>";
                     wrapMode: Text.Wrap
+                    font.pixelSize: fntsize + 5
+                    color: "#607D8B"
                 }
             }
 
             Button {
                 text: "Đóng"
-                Layout.preferredWidth: window.width/3 - 10
-//                Layout.fillWidth: true
+                Layout.fillWidth: true
                 height: 70
                 highlighted: true
                 onClicked: {
