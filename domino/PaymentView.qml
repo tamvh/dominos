@@ -166,7 +166,7 @@ Rectangle {
                 onClicked: {
                     window.txtThanhTien = textThanhtienValue.text
                     window.global_foodItems = choosenItemListView.generateBillDetail()
-                    idPageLogin.open()
+                    idProfilePage.open()
                 }
             }
 
