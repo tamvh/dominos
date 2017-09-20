@@ -515,6 +515,7 @@ ApplicationWindow {
 
                                 settingFlags1 = 0
                             }
+                            idAboutPage.open();
                         }
                     }
 
@@ -2428,6 +2429,10 @@ ApplicationWindow {
 
     AccountPage {
         id: accountPage
+    }
+
+    AboutPage {
+        id: idAboutPage
     }
 
     Connections {

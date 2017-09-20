@@ -610,6 +610,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/QrTimer.qml \
 		../domino/FoodPizzaPage.qml \
 		../domino/SearchPage.qml \
+		../domino/AboutPage.qml \
 		../domino/PaymentPage.qml \
 		../domino/PaymentView.qml \
 		../domino/main.qml \
