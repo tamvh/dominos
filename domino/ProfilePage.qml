@@ -8,8 +8,8 @@ Popup {
     y: (parent.height - height)/4
     closePolicy: Popup.NoAutoClose
     //focus: true
-    activeFocus: true
     modal: true
+    clip: true
     width: window.width/4
     contentItem: ColumnLayout {
         id: appOptionColumn
