@@ -9,10 +9,12 @@ Popup {
     closePolicy: Popup.NoAutoClose
     focus: true
     modal: true
+    width: window.width/4
     contentItem: ColumnLayout {
         id: appOptionColumn
+        anchors.horizontalCenter: parent.horizontalCenter
         Layout.alignment: Qt.AlignHCenter
-        spacing: 20
+        spacing: 10
         Label {
             text: "NHẬP THÔNG TIN KHÁCH HÀNG"
             Layout.alignment: Qt.AlignHCenter
@@ -22,6 +24,7 @@ Popup {
 
         Row {
             Layout.alignment: Qt.AlignHCenter
+            anchors.horizontalCenter: parent.horizontalCenter
             TextField {
                 id: txtCustomerName
                 width: appOptionColumn.width
@@ -40,6 +43,7 @@ Popup {
         Row {
             spacing: globalPadding
             width: appOptionColumn.width
+            anchors.horizontalCenter: parent.horizontalCenter
             Row {
                 width: appOptionColumn.width
                 RadioButton {
@@ -64,11 +68,10 @@ Popup {
             }
         }
         Row {
-            spacing: 10
             Layout.alignment: Qt.AlignHCenter
             Button {
                 id: btnThanhToan
-                width: (appOptionColumn.width*2)/3
+                width: (appOptionColumn.width*2)/3 -5
                 height: 70
                 highlighted: true
                 enabled: false
@@ -185,9 +188,13 @@ Popup {
                     }
                 }
             }
+            Rectangle {
+                height: 70
+                width: 10
+            }
             Button {
                 id: btnHuy
-                width: appOptionColumn.width/3
+                width: appOptionColumn.width/3-5
                 height: 70
                 font.pixelSize: fntsize
                 text: "Hủy"
