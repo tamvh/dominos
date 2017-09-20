@@ -2423,7 +2423,7 @@ ApplicationWindow {
     }
 
     ProfilePage {
-        id: idPageProfile
+        id: idProfilePage
     }
 
     AccountPage {
