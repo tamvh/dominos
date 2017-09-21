@@ -8,12 +8,15 @@ Popup {
     y: (parent.height - height)/4
     focus: true
     modal: true
-    width: window.width/2
-    height: window.height*(2/3)
+    width: 874
+    height: 641
+
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
         spacing: 20
+        Layout.fillHeight: true
+        Layout.fillWidth: true
         Row {
             width: appOptionColumn.width
             anchors.horizontalCenter: parent.horizontalCenter
@@ -26,6 +29,7 @@ Popup {
                 source: "qrc:/icons/images/app/vpos_logo_black.png"
             }
         }
+
 
         ColumnLayout {
             width: appOptionColumn.width
@@ -51,7 +55,7 @@ Popup {
             width: appOptionColumn.width
             anchors.horizontalCenter: parent.horizontalCenter
             Label {
-                text: "Phiên bản 2.0"
+                text: "Phiên bản 1.0"
                 font.pixelSize: 30
                 color: "#58585A"
             }

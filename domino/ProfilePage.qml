@@ -15,7 +15,8 @@ Popup {
     rightPadding: 30
     leftPadding: 30
     bottomPadding: 30
-
+    width: 874
+    height: 549
     function select_hinhthuc() {
         reset_color();
         if(customer_hinhthuc === 'dinein') {
@@ -42,7 +43,7 @@ Popup {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: ColumnLayout   {
         id: appOptionColumn
         width: 874
         height: 549
@@ -61,7 +62,7 @@ Popup {
         ColumnLayout {
             width: 874
             Label {
-                width: appOptionColumn.width
+                width: 874
                 text: "TÊN KHÁCH HÀNG"
                 font.bold: true
                 font.pixelSize: 24
