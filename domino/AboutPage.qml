@@ -4,18 +4,16 @@ import QtQuick.Layouts 1.1
 
 Popup {
     id: aboutPage
-    width: 874
-    height: 641
     x: (parent.width - width)/2
     y: (parent.height - height)/4
     focus: true
     modal: true
+    width: 874
+    height: 641
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
         spacing: 20
-        width: 874
-        height: 641
         Row {
             width: appOptionColumn.width
             anchors.horizontalCenter: parent.horizontalCenter

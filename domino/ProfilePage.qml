@@ -15,8 +15,6 @@ Popup {
     rightPadding: 30
     leftPadding: 30
     bottomPadding: 30
-    width: 874
-    height: 549
 
     function select_hinhthuc() {
         reset_color();
@@ -28,6 +26,7 @@ Popup {
             radioCarryOut.border.color = "#0695D6";
         }
     }
+
     function reset_color() {
         radioDineIn.border.color = "#DDDDDD";
         radioCarryOut.border.color = "#DDDDDD";
