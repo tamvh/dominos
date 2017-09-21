@@ -10,13 +10,14 @@ Popup {
     modal: true
     width: 874
     height: 641
-
+    anchors.fill: parent
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
         spacing: 20
         Layout.fillHeight: true
         Layout.fillWidth: true
+        anchors.fill: parent
         Row {
             width: appOptionColumn.width
             anchors.horizontalCenter: parent.horizontalCenter
