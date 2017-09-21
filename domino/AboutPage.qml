@@ -38,7 +38,7 @@ Popup {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: "Sản phẩm được phát triển bởi"
-                font.pixelSize: 30
+                font.pixelSize: 27
                 color: "#58585A"
             }
             Label {
@@ -56,7 +56,7 @@ Popup {
             anchors.horizontalCenter: parent.horizontalCenter
             Label {
                 text: "Phiên bản 1.0"
-                font.pixelSize: 30
+                font.pixelSize: 27
                 color: "#58585A"
             }
         }
