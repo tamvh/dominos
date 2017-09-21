@@ -2101,8 +2101,8 @@ ApplicationWindow {
             target: mainController
             onPrinterReadyChanged: {
                 if (ready === false) {
-                    printerMessageDialog.showMessage(false, "Máy in chưa sẵn sàng vui lòng kiểm tra lại máy in")
-                    appMessage.showMessage("Máy in chưa sẵn sàng !!!")
+                    //printerMessageDialog.showMessage(false, "Máy in chưa sẵn sàng vui lòng kiểm tra lại máy in")
+                    //appMessage.showMessage("Máy in chưa sẵn sàng !!!")
                 } else {
                     printerMessageDialog.showMessage(true, "Máy in đã sẵn sàng")
                     appMessage.showMessage("Máy in đã sẵn sàng")
