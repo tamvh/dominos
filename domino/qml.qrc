@@ -88,6 +88,7 @@
         <file>images/app/search.png</file>
         <file>images/app/top_bar.png</file>
         <file>images/app/vpos_logo.png</file>
+        <file>images/app/vpos_logo_black.png</file>
         <file>images/app/zalopay.png</file>
         <file>images/app/zoom.png</file>
         <file>images/app/dominos_logo.png</file>
@@ -97,10 +98,14 @@
         <file>images/app/size_7.svg</file>
         <file>images/app/size_9.svg</file>
         <file>images/app/size_12.svg</file>
+        <file>images/app/size_7.png</file>
+        <file>images/app/size_9.png</file>
+        <file>images/app/size_12.png</file>
         <file>images/app/check.png</file>
         <file>images/app/details.png</file>
         <file>images/app/dominos_logo_vertical.jpg</file>
         <file>images/app/dominos_logo_vertical.png</file>
+        <file>images/app/dominos_logo_vertical.svg</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/UnisectVnu.ttf</file>

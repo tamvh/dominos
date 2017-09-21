@@ -4,8 +4,8 @@ import QtQuick.Layouts 1.1
 
 Popup {
     id: aboutPage
-    width: 400
-    height: 300
+    width: 874
+    height: 641
     x: (parent.width - width)/2
     y: (parent.height - height)/4
     focus: true
@@ -21,9 +21,9 @@ Popup {
                 fillMode: Image.Pad
                 horizontalAlignment: Image.AlignHCenter
                 verticalAlignment: Image.AlignVCenter
-                height: 90
-                width: 90
-                source: "qrc:/icons/icons/logo.png"
+                height: 135
+                width: 274
+                source: "qrc:/icons/images/app/vpos_logo_black.png"
             }
         }
 
@@ -35,14 +35,16 @@ Popup {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: "Sản phẩm được phát triển bởi"
-                font.pixelSize: fntsize
+                font.pixelSize: 30
+                color: "#58585A"
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: "VNG Corporation"
                 font.bold: true
-                font.pixelSize: fntsize
+                font.pixelSize: 30
+                color: "#58585A"
             }
         }
 
@@ -51,7 +53,8 @@ Popup {
             anchors.horizontalCenter: parent.horizontalCenter
             Label {
                 text: "Phiên bản 1.0"
-                font.pixelSize: fntsize
+                font.pixelSize: 30
+                color: "#58585A"
             }
         }
 
@@ -63,8 +66,10 @@ Popup {
             Button {
                 id: cancelButton
                 text: "ĐÓNG"
-                width: 200
+                width: 342
+                height: 78
                 highlighted: true
+                font.pixelSize: 30
                 onClicked: {
                     aboutPage.close();
                 }

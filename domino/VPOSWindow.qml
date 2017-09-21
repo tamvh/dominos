@@ -530,7 +530,7 @@ ApplicationWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         Image {
                             id: imgLogoDominos
-                            source: "qrc:/icons/images/app/dominos_logo_vertical.png"
+                            source: "qrc:/icons/images/app/dominos_logo_vertical.svg"
                             height: 45
                             width: 150
                         }

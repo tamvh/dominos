@@ -146,20 +146,15 @@ Popup {
         Row {
             Layout.alignment: Qt.AlignHCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            Rectangle {
+            Button {
                 id: btnThanhToan
-                height: 78
+                height: 90
                 width: 342
-                color: "#8397A0" //"#0695D6"
-                radius: 5
+                highlighted: true
                 enabled: false
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("THANH TOÁN")
-                    font.bold: true
-                    font.pixelSize: 30
-                    color: "#FFFFFF"
-                }
+                text: qsTr("THANH TOÁN")
+                font.bold: true
+                font.pixelSize: 30
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -271,36 +266,26 @@ Popup {
                     }
                 }
             }
+
             Rectangle {
-                height: 78
+                height: 90
                 width: 50
-
-
             }
 
-            Rectangle {
-                id: rectCancel
-                height: 78
+            Button {
+                text: "HỦY"
                 width: 342
-                color: "#8397A0"
-                radius: 5
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("HỦY")
-                    font.bold: true
-                    font.pixelSize: 30
-                    color: "#FFFFFF"
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        txtCustomerName.text = "";
-                        txtCustomerName.focus = true;
-                        profilePage.close()
-                    }
+                height: 90
+                highlighted: true
+                font.pixelSize: 30
+                font.bold: true
+                onClicked: {
+                    txtCustomerName.text = "";
+                    txtCustomerName.focus = true;
+                    profilePage.close()
                 }
             }
+
         }
     }
 }

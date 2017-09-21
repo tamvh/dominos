@@ -229,7 +229,7 @@ Rectangle {
                             fillMode: Image.Stretch
                             anchors.fill: parent
                             anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_7.svg'
+                            source: 'qrc:/icons/images/app/size_7.png'
                         }
                     }
                     Column {
@@ -275,7 +275,7 @@ Rectangle {
                             fillMode: Image.Stretch
                             anchors.fill: parent
                             anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_9.svg'
+                            source: 'qrc:/icons/images/app/size_9.png'
                         }
                     }
                     Column {
@@ -322,7 +322,7 @@ Rectangle {
                             fillMode: Image.Stretch
                             anchors.fill: parent
                             anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_12.svg'
+                            source: 'qrc:/icons/images/app/size_12.png'
                         }
                     }
                     Column {

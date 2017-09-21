@@ -641,6 +641,8 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/foods/classic/veggie_mania.jpg \
 		../domino/images/app/deday.png \
 		../domino/images/app/dominos_logo.png \
+		../domino/images/app/dominos_logo_vertical.svg \
+		../domino/images/app/vpos_logo_black.png \
 		../domino/images/app/size_12.svg \
 		../domino/images/app/size_7.svg \
 		../domino/images/app/size_9.svg \
@@ -648,6 +650,9 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/dominos_logo_vertical.jpg \
 		../domino/images/app/close_red.png \
 		../domino/images/app/dominos_logo_vertical.png \
+		../domino/images/app/size_12.png \
+		../domino/images/app/size_7.png \
+		../domino/images/app/size_9.png \
 		../domino/images/app/check.png \
 		../domino/images/app/details.png \
 		../domino/images/app/menu.png \
