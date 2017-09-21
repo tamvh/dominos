@@ -45,7 +45,8 @@ Popup {
 
     contentItem: ColumnLayout {
         id: appOptionColumn
-
+        width: 874
+        height: 549
         Layout.alignment: Qt.AlignHCenter
 
         Label {
@@ -153,7 +154,6 @@ Popup {
                 highlighted: true
                 enabled: false
                 text: qsTr("THANH TOÁN")
-                font.bold: true
                 font.pixelSize: 30
                 MouseArea {
                     anchors.fill: parent
@@ -278,7 +278,6 @@ Popup {
                 height: 90
                 highlighted: true
                 font.pixelSize: 30
-                font.bold: true
                 onClicked: {
                     txtCustomerName.text = "";
                     txtCustomerName.focus = true;

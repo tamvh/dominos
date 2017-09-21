@@ -14,6 +14,8 @@ Popup {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
         spacing: 20
+        width: 874
+        height: 641
         Row {
             width: appOptionColumn.width
             anchors.horizontalCenter: parent.horizontalCenter
