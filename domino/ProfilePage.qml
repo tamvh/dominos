@@ -48,7 +48,7 @@ Popup {
         width: 874
         height: 549
         Layout.alignment: Qt.AlignHCenter
-        spacing: 20
+        spacing: 40
         Label {
             text: "NHẬP THÔNG TIN KHÁCH HÀNG"
             Layout.alignment: Qt.AlignHCenter
@@ -87,7 +87,7 @@ Popup {
         }
 
         ColumnLayout {
-            spacing: 20
+            spacing: 10
             Label {
                 width: appOptionColumn.width
                 text: "TÙY CHỌN"
