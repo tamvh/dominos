@@ -2298,20 +2298,24 @@ ApplicationWindow {
         id: deleteItemDialog
         modal: true
         focus: true
+        topPadding: 40
+        rightPadding: 40
+        leftPadding: 40
+        bottomPadding: 40
         x: (window.width - width)/2
         y: (window.height - height)/2
         closePolicy: Popup.NoAutoClose
 
-
         contentItem: ColumnLayout {
-            spacing: 20
+            spacing: 50
             anchors.horizontalCenter: parent.horizontalCenter
 
             Label {
                 text: "XÁC NHẬN"
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: fntsize + 4
-                font.weight: Font.DemiBold
+                font.pixelSize: 36
+                font.bold: true
+                color: "#0078AE"
             }
 
             ColumnLayout {
@@ -2319,34 +2323,43 @@ ApplicationWindow {
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: "Bạn có muốn xoá món này không?"
+                    font.pixelSize: 36
+                    color: "#4A4A4A"
+
                 }
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: "[" + prodNameInPaymenView + "]"
+                    font.pixelSize: 36
+                    font.bold: true
                 }
 
-                RowLayout {
-                    spacing: 10
-                    Layout.fillWidth: true
-                    Button {
-                        id: btnConfirm
-                        text: "Xoá"
-                        highlighted: true
-                        Layout.preferredWidth: 0
-                        Layout.fillWidth: true
-                        onClicked: {
-                            mainController.removeItemInPaymentView(styleData_row);
-                            deleteItemDialog.close();
-                        }
+
+            }
+            Row {
+                spacing: 30
+                Layout.alignment: Qt.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                Button {
+                    id: btnConfirm
+                    text: "Xoá"
+                    highlighted: true
+                    font.pixelSize: 30
+                    height: 90
+                    width: 342
+                    onClicked: {
+                        mainController.removeItemInPaymentView(styleData_row);
+                        deleteItemDialog.close();
                     }
-                    Button {
-                        id: btnCancel
-                        text: "Huỷ"
-                        Layout.preferredWidth: 0
-                        Layout.fillWidth: true
-                        onClicked: {
-                            deleteItemDialog.close();
-                        }
+                }
+                Button {
+                    id: btnCancel
+                    text: "Không"
+                    font.pixelSize: 30
+                    height: 90
+                    width: 342
+                    onClicked: {
+                        deleteItemDialog.close();
                     }
                 }
             }

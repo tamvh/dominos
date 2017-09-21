@@ -13,7 +13,7 @@ Rectangle {
     property int m_colCount: 3//Math.min(width < iconsize ? 1 : width / iconsize, 4)
     property int m_colSpace: width / 25
     property int m_cellw: width / m_colCount
-    property int m_cellh: m_cellw+30
+    property int m_cellh: m_cellw+10
 
     property bool itmfilter: false
     property string presrchtxt: ""
@@ -269,7 +269,8 @@ Rectangle {
                                 Label {
                                     id:foodName
                                     text: name
-                                    font.pixelSize: cellFontSize
+                                    font.pixelSize: 20
+                                    font.bold: true
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     horizontalAlignment: Text.AlignHCenter
 

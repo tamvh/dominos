@@ -13,7 +13,7 @@ Rectangle {
     property int m_colCount: 3//Math.min(width < iconsize ? 1 : width / iconsize, 4)
     property int m_colSpace: width / 25
     property int m_cellw: width / m_colCount
-    property int m_cellh: m_cellw+30
+    property int m_cellh: m_cellw+10
 
     property bool itmfilter: false
     property string presrchtxt: ""
@@ -206,7 +206,7 @@ Rectangle {
 
     Rectangle {
         id: rectTitle
-        height: 100
+        height: 135
         width: parent.width
         color: "transparent"
         GridView {
@@ -238,25 +238,32 @@ Rectangle {
                             Label {
                                 visible: visible_price
                                 text: "Nhỏ(7\")"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 visible: visible_price
                                 text: "-"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 visible: visible_price
                                 text: "4 miếng"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                         }
                         RowLayout {
                             Label {
                                 visible: visible_price
                                 text: text_price7 + " VNĐ"
-                                color: "red"
-                                font.pixelSize: cellFontSize + 4
+                                color: "#E61837"
+                                font.pixelSize: 30
+                                font.bold: true
                             }
                         }
                     }
@@ -283,28 +290,35 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: "Vừa(9\")"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 text: "-"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 text: "6 miếng"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                         }
-                        RowLayout {
-                            Label {
-                                text: text_price9
-                                color: "#4a9fe7"
-                                font.pixelSize: cellFontSize + 4
-                                font.strikeout: true
-                            }
+                        ColumnLayout {
                             Label {
                                 text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9'))  + " VNĐ"
-                                color: "red"
-                                font.pixelSize: cellFontSize + 6
+                                color: "#E61837"
+                                font.pixelSize: 30
+                                font.bold: true
+                            }
+                            Label {
+                                text: text_price9  + " VNĐ"
+                                color: "gray"
+                                font.pixelSize: cellFontSize + 4
+                                font.strikeout: true
                             }
                         }
                     }
@@ -330,28 +344,35 @@ Rectangle {
                         RowLayout {
                             Label {
                                 text: "Nhỏ(12\")"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 text: "-"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                             Label {
                                 text: "8 miếng"
-                                font.pixelSize: cellFontSize + 4
+                                font.pixelSize: 18
+                                font.bold: true
+                                color: "#000000"
                             }
                         }
-                        RowLayout {
-                            Label {
-                                text: text_price12
-                                color: "#4a9fe7"
-                                font.pixelSize: cellFontSize + 6
-                                font.strikeout: true
-                            }
+                        ColumnLayout {
                             Label {
                                 text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12'))  + " VNĐ"
-                                color: "red"
+                                color: "#E61837"
+                                font.pixelSize: 30
+                                font.bold: true
+                            }
+                            Label {
+                                text: text_price12 + " VNĐ"
+                                color: "gray"
                                 font.pixelSize: cellFontSize + 6
+                                font.strikeout: true
                             }
                         }
                     }
@@ -367,7 +388,7 @@ Rectangle {
         cellHeight: m_cellh
         focus: true
         anchors.top: rectTitle.bottom
-        anchors.topMargin: 100
+        anchors.topMargin: 135
         model: foodsModel
 
         delegate: Item {
@@ -424,7 +445,8 @@ Rectangle {
                                 Label {
                                     id:foodName
                                     text: name
-                                    font.pixelSize: cellFontSize
+                                    font.pixelSize: 20
+                                    font.bold: true
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     horizontalAlignment: Text.AlignHCenter
 
