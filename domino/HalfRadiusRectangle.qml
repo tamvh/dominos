@@ -13,17 +13,16 @@ Rectangle {
 
         width: parent.width
         height: bottomRadius * 3
-        radius: bottomRadius
 
         border.color: rcColor
         border.width: radiusWidth
+//        radius: bottomRadius
     }
 
     Rectangle {
         id: rectTop
         anchors.top: parent.top
         anchors.left: parent.left
-
         width: parent.width
         height: parent.height - bottomRadius
 
@@ -36,6 +35,7 @@ Rectangle {
         x: radiusWidth
         anchors.bottom: rectTop.bottom
         height: radiusWidth
+        radius: bottomRadius
     }
 
     color: "transparent"

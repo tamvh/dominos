@@ -388,7 +388,6 @@ Rectangle {
                 bottomRadius: 10
                 radiusWidth: 1
                 rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
-
                 // search-filter
                 opacity: itmviewable
 
