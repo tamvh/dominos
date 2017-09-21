@@ -10,6 +10,10 @@ Popup {
     modal: true
     width: 874
     height: 641
+    topPadding: 40
+    rightPadding: 40
+    leftPadding: 40
+    bottomPadding: 40
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
