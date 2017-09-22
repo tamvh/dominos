@@ -1367,7 +1367,8 @@ ApplicationWindow {
                                          font.pixelSize: 30
                                          font.bold: true
                                          text: "ĐỒNG Ý"
-
+                                         Material.primary: "#0695D6"
+                                         Material.accent: "#0695D6"
                                          onClicked: {
 
                                              var _prod_name = pizza_prod_name.split('\n')[0];
@@ -1504,6 +1505,8 @@ ApplicationWindow {
                                         font.pixelSize: 30
                                         font.bold: true
                                         text: "HỦY"
+                                        Material.primary: "#8397A0"
+                                        Material.accent: "#8397A0"
                                         onClicked: {
                                             reset();
                                             cakeInfoDialog.close()

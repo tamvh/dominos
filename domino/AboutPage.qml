@@ -8,20 +8,20 @@ Popup {
     y: (parent.height - height)/4
     focus: true
     modal: true
-    width: 874
-    height: 641
-    topPadding: 70
+    width: 600
+    height: 500
+    topPadding: 30
     rightPadding: 30
     leftPadding: 30
     bottomPadding: 30
     Column {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
-        spacing: 70
+        spacing: 40
         anchors.fill: parent
         anchors.horizontalCenter: parent.horizontalCenter
         Column {
-            width: 874
+            width: 600
             anchors.horizontalCenter: parent.horizontalCenter
             Image {
                 fillMode: Image.Pad
@@ -34,11 +34,11 @@ Popup {
 
 
         ColumnLayout {
-            width: 874
+            width: 600
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 60
+            spacing: 40
             Row {
-                width: 874
+                width: 600
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -49,7 +49,7 @@ Popup {
                 }
             }
             Row {
-                width: 874
+                width: 600
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -61,7 +61,7 @@ Popup {
                 }
             }
             Row {
-                width: 874
+                width: 600
                 anchors.horizontalCenter: parent.horizontalCenter
                 Label {
                     text: "Phiên bản 1.0"
@@ -71,7 +71,7 @@ Popup {
             }
             Row {
                 spacing: 10
-                width: 874
+                width: 600
                 anchors.horizontalCenter: parent.horizontalCenter
                 Button {
                     id: cancelButton

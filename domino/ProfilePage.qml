@@ -26,6 +26,11 @@ Popup {
         }
     }
 
+    function init() {
+        customer_hinhthuc = 'dinein';
+        select_hinhthuc();
+    }
+
     function reset_color() {
         radioDineIn.border.color = "#DDDDDD";
         radioCarryOut.border.color = "#DDDDDD";
@@ -187,6 +192,7 @@ Popup {
                         }
                         txtCustomerName.text = "";
                         txtCustomerName.focus = true;
+                        init();
                         profilePage.close()
                     }
                     Connections {
@@ -279,6 +285,7 @@ Popup {
                 onClicked: {
                     txtCustomerName.text = "";
                     txtCustomerName.focus = true;
+                    init();
                     profilePage.close()
                 }
             }
