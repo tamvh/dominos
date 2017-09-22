@@ -1300,7 +1300,7 @@ ApplicationWindow {
                         columns: 2
                         Rectangle {
                             width: 692
-                            height: 100
+                            height: 200
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
@@ -1358,7 +1358,7 @@ ApplicationWindow {
 
                         Rectangle {
                             width: 342
-                            height: 100
+                            height: 200
                             ColumnLayout {
                                 Row {
                                      width: 342
