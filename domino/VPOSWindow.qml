@@ -1338,6 +1338,7 @@ ApplicationWindow {
                                             color: "#9B9B9B"
                                             font.pixelSize: 20
                                             font.strikeout: true
+                                            font.bold: true
                                         }
 
                                         Text {
@@ -1363,7 +1364,8 @@ ApplicationWindow {
                                          height: 80
                                          width: 342
                                          highlighted: true
-                                         font.pixelSize: fntsize + 4
+                                         font.pixelSize: 30
+                                         font.bold: true
                                          text: "ĐỒNG Ý"
 
                                          onClicked: {
@@ -1499,7 +1501,8 @@ ApplicationWindow {
                                         id: btnCancelSelectItem
                                         height: 80
                                         width:  342
-                                        font.pixelSize: fntsize + 4
+                                        font.pixelSize: 30
+                                        font.bold: true
                                         text: "HỦY"
                                         onClicked: {
                                             reset();
@@ -2413,7 +2416,7 @@ ApplicationWindow {
                 anchors.horizontalCenter: parent.horizontalCenter
                 Button {
                     id: btnConfirm
-                    text: "Xoá"
+                    text: "Xóa"
                     highlighted: true
                     font.pixelSize: 30
                     height: 90

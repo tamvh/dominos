@@ -36,7 +36,7 @@ Popup {
         ColumnLayout {
             width: 874
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: 70
+            spacing: 60
             Row {
                 width: 874
                 anchors.horizontalCenter: parent.horizontalCenter
