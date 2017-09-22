@@ -9,7 +9,7 @@ Popup {
     focus: true
     modal: true
     width: 874
-    height: 650
+
     topPadding: 60
     rightPadding: 60
     leftPadding: 60

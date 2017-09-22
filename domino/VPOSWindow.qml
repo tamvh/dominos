@@ -235,7 +235,7 @@ ApplicationWindow {
             pizza_sizebanh_id = "7"
             check_sizebanh(7)
             enable_cheesy = false
-            opacity_cheesy = 0.1
+            opacity_cheesy = 0.2
             if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC" || pizza_debanh_id === "NY") {
                 pizza_debanh_id = "TC";
                 select_debanh("de_mong");
@@ -344,12 +344,12 @@ ApplicationWindow {
             rect_pizzasize_small.enabled = false
             enable_cheesy = true;
             opacity_cheesy = 1.0;
-            opacity_rect_pizzasize_small = 0.1
+            opacity_rect_pizzasize_small = 0.2
         } else {
             select_sizebanh(7)
             rect_pizzasize_small.enabled = true
             enable_cheesy = false;
-            opacity_cheesy = 0.1;
+            opacity_cheesy = 0.2;
             opacity_rect_pizzasize_small = 1.0
         }
         select_debanh('de_mong');
@@ -1299,9 +1299,10 @@ ApplicationWindow {
                 Row {
                     Grid {
                         columns: 2
+                        Layout.fillHeight: true
                         Rectangle {
                             width: 692
-                            height: 150
+                            height: 100
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
@@ -1340,17 +1341,10 @@ ApplicationWindow {
                                         }
 
                                         Text {
-                                            text: pizza_money
-                                            color: "red"
-                                            font.pixelSize: fntsize + 8
-                                        }
-
-                                        Text {
-                                            text: "VNĐ"
+                                            text: pizza_money + " VNĐ"
                                             color: "#E61837"
                                             font.pixelSize: 30
-                                            anchors.bottom: parent.bottom
-                                            anchors.margins: 4
+                                            font.bold: true
                                         }
                                     }
                                 }
@@ -1359,7 +1353,7 @@ ApplicationWindow {
 
                         Rectangle {
                             width: 342
-                            height: 150
+                            height: 100
                             ColumnLayout {
                                 Row {
                                      width: 342
