@@ -705,7 +705,7 @@ ApplicationWindow {
         y: Math.abs(window.height -  cakeInfoDialog.height)/3
         closePolicy: Popup.NoAutoClose
         width: 1095
-        height: 920
+        height: 922
         topPadding: 42
         rightPadding: 30
         leftPadding: 30
@@ -713,6 +713,7 @@ ApplicationWindow {
             id: columnContentCakeInfo
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
+
             Column {
                 id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -1072,7 +1073,7 @@ ApplicationWindow {
                                     Column {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         Label {
-                                            text: "Viền phô mai mỏng"
+                                            text: "Phô mai mỏng"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             font.pixelSize: 18
@@ -1115,7 +1116,7 @@ ApplicationWindow {
                                     Column {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         Label {
-                                            text: "Viền phô mai dày"
+                                            text: "Phô mai dày"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             font.pixelSize: 18
@@ -1295,15 +1296,16 @@ ApplicationWindow {
                 }
 
                 Row {
-                    RowLayout {
-                        width: 1035
+                    Grid {
+                        columns: 2
                         Rectangle {
-                            width: 690
-                            color: "gray"
+                            width: 692
+                            height: 100
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
                                 ColumnLayout {
+                                    width: 692
                                     Label {
                                         width: 692
                                         text: "MÔ TẢ"
@@ -1320,6 +1322,7 @@ ApplicationWindow {
                                     }
                                 }
                                 ColumnLayout {
+                                    width: 692
                                     Label {
                                         text: "THÀNH TIỀN"
                                         font.pixelSize: 20
@@ -1352,161 +1355,159 @@ ApplicationWindow {
                                 }
                             }
                         }
+
                         Rectangle {
-                            height: 50
                             width: 342
-                            RowLayout {
-                                width: 342
-                                ColumnLayout {
-                                    Row {
+                            height: 100
+                            ColumnLayout {
+                                Row {
+                                     width: 342
+                                     Button {
+                                         id: btnSelectItem
+                                         height: 80
                                          width: 342
-                                         Button {
-                                             id: btnSelectItem
-                                             height: 80
-                                             width: 342
-                                             highlighted: true
-                                             font.pixelSize: fntsize + 4
-                                             text: "ĐỒNG Ý"
+                                         highlighted: true
+                                         font.pixelSize: fntsize + 4
+                                         text: "ĐỒNG Ý"
 
-                                             onClicked: {
+                                         onClicked: {
 
-                                                 var _prod_name = pizza_prod_name.split('\n')[0];
-                                                 var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
-                                                 var _price = mainController.moneyMoney(promote_price);
-                                                 var _oriprice = 0;
-                                                 var _quantity = nItem;
-                                                 name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
-                                                 if(name_code === '12TCCCB') {
-                                                     name_code = '2TCCCB';
-                                                 }
-                                                 if(name_code === '12HTMRITA') {
-                                                     name_code = '12HTMAR';
-                                                 }
-                                                 console.log("Name Code: " + name_code);
-                                                 mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-
-                                                 if(pizza_sizebanh_id === "9") {
-                                                     if(nChessy === 1) {
-                                                         _name = "Side eXtra Cheese 9\"";
-                                                         name_code = "O9XCHE";
-                                                         _price = "10,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(nChessy === 2) {
-                                                         _name = "Side Double Cheese 9\"";
-                                                         name_code = "O9DCHE";
-                                                         _price = "20,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(nChessy === 3) {
-                                                         _name = "Side Triple Cheese 9\"";
-                                                         name_code = "O9TCHE";
-                                                         _price = "30,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(pizza_debanh_id === "CC") {
-                                                         _name = "Side 9\" Cheesy Crust";
-                                                         name_code = "O9CC";
-                                                         _price = "49,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(pizza_debanh_id === "TCC") {
-                                                         _name = "Side 9\" Cheesy Crust";
-                                                         name_code = "O9CC";
-                                                         _price = "49,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-                                                 }
-
-                                                 if(pizza_sizebanh_id === "12") {
-                                                     if(nChessy === 1) {
-                                                         _name = "Side eXtra Cheese 12\"";
-                                                         name_code = "O12XCHE";
-                                                         _price = "15,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(nChessy === 2) {
-                                                         _name = "Side Double Cheese 12\"";
-                                                         name_code = "O12DCHE";
-                                                         _price = "30,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(nChessy === 3) {
-                                                         _name = "Side Triple Cheese 12\"";
-                                                         name_code = "O12TCHE";
-                                                         _price = "45,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(pizza_debanh_id === "CC") {
-                                                         _name = "Side 12\" Cheesy Crust";
-                                                         name_code = "O12CC";
-                                                         _price = "69,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-
-                                                     if(pizza_debanh_id === "TCC") {
-                                                         _name = "Side 12\" Cheesy Crust";
-                                                         name_code = "O12CC";
-                                                         _price = "69,000";
-                         //                                _quantity = 1;
-                                                         pizza_sizebanh = "-";
-                                                         pizza_debanh = "-";
-                                                         mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
-                                                     }
-                                                 }
-
-                                                 reset();
-                                                 cakeInfoDialog.close();
+                                             var _prod_name = pizza_prod_name.split('\n')[0];
+                                             var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
+                                             var _price = mainController.moneyMoney(promote_price);
+                                             var _oriprice = 0;
+                                             var _quantity = nItem;
+                                             name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
+                                             if(name_code === '12TCCCB') {
+                                                 name_code = '2TCCCB';
                                              }
-                                         }
-                                    }
+                                             if(name_code === '12HTMRITA') {
+                                                 name_code = '12HTMAR';
+                                             }
+                                             console.log("Name Code: " + name_code);
+                                             mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
 
-                                    Row {
-                                        width: 342
-                                        Button {
-                                            id: btnCancelSelectItem
-                                            height: 80
-                                            width:  342
-                                            font.pixelSize: fntsize + 4
-                                            text: "HỦY"
-                                            onClicked: {
-                                                reset();
-                                                cakeInfoDialog.close()
-                                            }
+                                             if(pizza_sizebanh_id === "9") {
+                                                 if(nChessy === 1) {
+                                                     _name = "Side eXtra Cheese 9\"";
+                                                     name_code = "O9XCHE";
+                                                     _price = "10,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(nChessy === 2) {
+                                                     _name = "Side Double Cheese 9\"";
+                                                     name_code = "O9DCHE";
+                                                     _price = "20,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(nChessy === 3) {
+                                                     _name = "Side Triple Cheese 9\"";
+                                                     name_code = "O9TCHE";
+                                                     _price = "30,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(pizza_debanh_id === "CC") {
+                                                     _name = "Side 9\" Cheesy Crust";
+                                                     name_code = "O9CC";
+                                                     _price = "49,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(pizza_debanh_id === "TCC") {
+                                                     _name = "Side 9\" Cheesy Crust";
+                                                     name_code = "O9CC";
+                                                     _price = "49,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+                                             }
+
+                                             if(pizza_sizebanh_id === "12") {
+                                                 if(nChessy === 1) {
+                                                     _name = "Side eXtra Cheese 12\"";
+                                                     name_code = "O12XCHE";
+                                                     _price = "15,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(nChessy === 2) {
+                                                     _name = "Side Double Cheese 12\"";
+                                                     name_code = "O12DCHE";
+                                                     _price = "30,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(nChessy === 3) {
+                                                     _name = "Side Triple Cheese 12\"";
+                                                     name_code = "O12TCHE";
+                                                     _price = "45,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(pizza_debanh_id === "CC") {
+                                                     _name = "Side 12\" Cheesy Crust";
+                                                     name_code = "O12CC";
+                                                     _price = "69,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+
+                                                 if(pizza_debanh_id === "TCC") {
+                                                     _name = "Side 12\" Cheesy Crust";
+                                                     name_code = "O12CC";
+                                                     _price = "69,000";
+                     //                                _quantity = 1;
+                                                     pizza_sizebanh = "-";
+                                                     pizza_debanh = "-";
+                                                     mainController.insertItem(name_code, _name, pizza_sizebanh, pizza_debanh, _price, _quantity, _oriprice, 0);
+                                                 }
+                                             }
+
+                                             reset();
+                                             cakeInfoDialog.close();
+                                         }
+                                     }
+                                }
+
+                                Row {
+                                    width: 342
+                                    Button {
+                                        id: btnCancelSelectItem
+                                        height: 80
+                                        width:  342
+                                        font.pixelSize: fntsize + 4
+                                        text: "HỦY"
+                                        onClicked: {
+                                            reset();
+                                            cakeInfoDialog.close()
                                         }
                                     }
                                 }
