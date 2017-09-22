@@ -1302,7 +1302,7 @@ ApplicationWindow {
                         Layout.fillHeight: true
                         Rectangle {
                             width: 692
-                            height: 100
+                            height: 130
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
@@ -1353,7 +1353,7 @@ ApplicationWindow {
 
                         Rectangle {
                             width: 342
-                            height: 100
+                            height: 130
                             ColumnLayout {
                                 Row {
                                      width: 342

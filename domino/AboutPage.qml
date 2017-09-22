@@ -9,25 +9,23 @@ Popup {
     focus: true
     modal: true
     width: 874
-
-    topPadding: 60
-    rightPadding: 60
-    leftPadding: 60
-    bottomPadding: 60
-    contentItem: ColumnLayout {
+    height: 641
+    topPadding: 70
+    rightPadding: 30
+    leftPadding: 30
+    bottomPadding: 30
+    Column {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
-        spacing: 20
-        Layout.fillHeight: true
-        Layout.fillWidth: true
+        spacing: 70
         anchors.fill: parent
-        Row {
-            width: appOptionColumn.width
+        anchors.horizontalCenter: parent.horizontalCenter
+        Column {
+            width: 874
             anchors.horizontalCenter: parent.horizontalCenter
             Image {
                 fillMode: Image.Pad
-                horizontalAlignment: Image.AlignHCenter
-                verticalAlignment: Image.AlignVCenter
+                anchors.horizontalCenter: parent.horizontalCenter
                 height: 135
                 width: 274
                 source: "qrc:/icons/images/app/vpos_logo_black.png"
@@ -36,49 +34,55 @@ Popup {
 
 
         ColumnLayout {
-            width: appOptionColumn.width
+            width: 874
             anchors.horizontalCenter: parent.horizontalCenter
-            Label {
+            spacing: 70
+            Row {
+                width: 874
                 anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                text: "Sản phẩm được phát triển bởi"
-                font.pixelSize: 27
-                color: "#58585A"
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "Sản phẩm được phát triển bởi"
+                    font.pixelSize: 27
+                    color: "#58585A"
+                }
             }
-            Label {
+            Row {
+                width: 874
                 anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                text: "VNG Corporation"
-                font.bold: true
-                font.pixelSize: 30
-                color: "#58585A"
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "VNG Corporation"
+                    font.bold: true
+                    font.pixelSize: 30
+                    color: "#58585A"
+                }
             }
-        }
-
-        Row {
-            width: appOptionColumn.width
-            anchors.horizontalCenter: parent.horizontalCenter
-            Label {
-                text: "Phiên bản 1.0"
-                font.pixelSize: 27
-                color: "#58585A"
+            Row {
+                width: 874
+                anchors.horizontalCenter: parent.horizontalCenter
+                Label {
+                    text: "Phiên bản 1.0"
+                    font.pixelSize: 27
+                    color: "#58585A"
+                }
             }
-        }
-
-        Row {
-            spacing: 10
-            width: appOptionColumn.width
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            Button {
-                id: cancelButton
-                text: "ĐÓNG"
-                width: 342
-                height: 78
-                highlighted: true
-                font.pixelSize: 30
-                onClicked: {
-                    aboutPage.close();
+            Row {
+                spacing: 10
+                width: 874
+                anchors.horizontalCenter: parent.horizontalCenter
+                Button {
+                    id: cancelButton
+                    text: "ĐÓNG"
+                    width: 342
+                    height: 78
+                    highlighted: true
+                    font.pixelSize: 30
+                    onClicked: {
+                        aboutPage.close();
+                    }
                 }
             }
         }
