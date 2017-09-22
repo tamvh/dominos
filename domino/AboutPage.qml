@@ -9,11 +9,11 @@ Popup {
     focus: true
     modal: true
     width: 874
-    height: 641
-    topPadding: 40
-    rightPadding: 40
-    leftPadding: 40
-    bottomPadding: 40
+    height: 650
+    topPadding: 60
+    rightPadding: 60
+    leftPadding: 60
+    bottomPadding: 60
     contentItem: ColumnLayout {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter

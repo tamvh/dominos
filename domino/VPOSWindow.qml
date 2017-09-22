@@ -235,7 +235,7 @@ ApplicationWindow {
             pizza_sizebanh_id = "7"
             check_sizebanh(7)
             enable_cheesy = false
-            opacity_cheesy = 0.3
+            opacity_cheesy = 0.1
             if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC" || pizza_debanh_id === "NY") {
                 pizza_debanh_id = "TC";
                 select_debanh("de_mong");
@@ -344,12 +344,12 @@ ApplicationWindow {
             rect_pizzasize_small.enabled = false
             enable_cheesy = true;
             opacity_cheesy = 1.0;
-            opacity_rect_pizzasize_small = 0.3
+            opacity_rect_pizzasize_small = 0.1
         } else {
             select_sizebanh(7)
             rect_pizzasize_small.enabled = true
             enable_cheesy = false;
-            opacity_cheesy = 0.3;
+            opacity_cheesy = 0.1;
             opacity_rect_pizzasize_small = 1.0
         }
         select_debanh('de_mong');
@@ -1301,7 +1301,7 @@ ApplicationWindow {
                         columns: 2
                         Rectangle {
                             width: 692
-                            height: 170
+                            height: 150
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
@@ -1359,10 +1359,11 @@ ApplicationWindow {
 
                         Rectangle {
                             width: 342
-                            height: 170
+                            height: 150
                             ColumnLayout {
                                 Row {
                                      width: 342
+                                     spacing: 20
                                      Button {
                                          id: btnSelectItem
                                          height: 80
