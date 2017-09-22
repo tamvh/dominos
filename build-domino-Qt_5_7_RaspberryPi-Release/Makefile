@@ -668,6 +668,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/search.png \
 		../domino/images/app/close_grey.png \
 		../domino/images/app/devua.png \
+		../domino/images/app/icon-thickness-med.svg \
 		../domino/images/app/vpos_logo.png \
 		../domino/images/app/zalopay.png \
 		../domino/icons/appicon.png \

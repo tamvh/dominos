@@ -706,9 +706,10 @@ ApplicationWindow {
         closePolicy: Popup.NoAutoClose
         width: 1095
         height: 922
-        topPadding: 42
+        topPadding: 30
         rightPadding: 30
         leftPadding: 30
+        bottomPadding: 30
         Column {
             id: columnContentCakeInfo
             anchors.horizontalCenter: parent.horizontalCenter
@@ -982,7 +983,7 @@ ApplicationWindow {
                                         Image {
                                             fillMode: Image.Stretch
                                             anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-thickness-thick.svg'
+                                            source: 'qrc:/icons/images/app/icon-thickness-med.svg'
                                         }
                                     }
                                     Column {
@@ -1300,7 +1301,7 @@ ApplicationWindow {
                         columns: 2
                         Rectangle {
                             width: 692
-                            height: 200
+                            height: 170
                             ColumnLayout {
                                 spacing: 30
                                 width: 692
@@ -1358,7 +1359,7 @@ ApplicationWindow {
 
                         Rectangle {
                             width: 342
-                            height: 200
+                            height: 170
                             ColumnLayout {
                                 Row {
                                      width: 342
