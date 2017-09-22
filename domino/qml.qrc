@@ -103,9 +103,14 @@
         <file>images/app/size_12.png</file>
         <file>images/app/check.png</file>
         <file>images/app/details.png</file>
+        <file>images/app/info_icon.svg</file>
         <file>images/app/dominos_logo_vertical.jpg</file>
         <file>images/app/dominos_logo_vertical.png</file>
         <file>images/app/dominos_logo_vertical.svg</file>
+        <file>images/app/icon-cheese-side-thick.svg</file>
+        <file>images/app/icon-cheese-side-thin.svg</file>
+        <file>images/app/icon-thickness-thick.svg</file>
+        <file>images/app/icon-thickness-thin.svg</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/UnisectVnu.ttf</file>

@@ -2,7 +2,7 @@ import QtQuick 2.6
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
-
+import QtGraphicalEffects 1.0
 import QtQuick.Window 2.2
 
 
@@ -215,12 +215,11 @@ Rectangle {
             anchors.centerIn: parent
             focus: true
             model: subCateModel
-
             delegate: Item {
                 property int cellFontSize: fooditemfntsize
                 RowLayout {
                     anchors.centerIn: parent
-                    //anchors.fill: parent
+                    spacing: 30
                     Item {
                         height: 80
                         width: 80
@@ -528,14 +527,18 @@ Rectangle {
                 anchors.top: parent.top
                 anchors.topMargin: 3
                 color: "transparent"
-                border.color: "lightgrey"
-                border.width: 1
                 radius: 30
                 Image {
+                    id: imgInfo
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.Pad
-                    source: "qrc:/icons/images/app/details.png"
+                    source: "qrc:/icons/images/app/info_icon.svg"
+                }
+                ColorOverlay {
+                    anchors.fill: imgInfo
+                    source: imgInfo
+                    color: "#FFFFFF"
                 }
 
                 MouseArea {

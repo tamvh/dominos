@@ -642,6 +642,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/deday.png \
 		../domino/images/app/dominos_logo.png \
 		../domino/images/app/dominos_logo_vertical.svg \
+		../domino/images/app/icon-cheese-side-thick.svg \
 		../domino/images/app/vpos_logo_black.png \
 		../domino/images/app/size_12.svg \
 		../domino/images/app/size_7.svg \
@@ -649,6 +650,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/top_bar.png \
 		../domino/images/app/dominos_logo_vertical.jpg \
 		../domino/images/app/close_red.png \
+		../domino/images/app/icon-thickness-thin.svg \
 		../domino/images/app/dominos_logo_vertical.png \
 		../domino/images/app/size_12.png \
 		../domino/images/app/size_7.png \
@@ -657,7 +659,10 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/details.png \
 		../domino/images/app/menu.png \
 		../domino/images/app/demong.png \
+		../domino/images/app/icon-thickness-thick.svg \
+		../domino/images/app/icon-cheese-side-thin.svg \
 		../domino/images/app/button.png \
+		../domino/images/app/info_icon.svg \
 		../domino/images/app/edit.png \
 		../domino/images/app/zoom.png \
 		../domino/images/app/search.png \
