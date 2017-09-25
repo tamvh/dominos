@@ -5,7 +5,8 @@ import QtQuick.Controls.Material 2.0
 T.TabBar {
     id: control
 
-    padding: window.globalPadding
+    padding: 0
+
 
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                             contentItem.implicitWidth + leftPadding + rightPadding)

@@ -19,7 +19,7 @@ Rectangle {
     property bool itmfilter: false
     property string presrchtxt: ""
 
-    color: "transparent"
+    color: "#F5F5F5"
 
     ListModel {
         id: foodsModel
@@ -198,21 +198,21 @@ Rectangle {
                               oriprice: oriString, promtype: promtype, itmviewable: true})
     }
 
-//    Rectangle {
-//        id: rectTitle
-//        height: 70
-//        width: parent.width
-//        color: "transparent"
-//    }
+    Rectangle {
+        id: rectTitle
+        anchors.fill: parent
+        height: 10
+        color: "#F5F5F5"
+    }
 
     GridView {
         id: gridItemView
         anchors.fill: parent
         cellWidth: m_cellw
         cellHeight: m_cellh
+        anchors.top: rectTitle.bottom
+        anchors.topMargin: 10
         focus: true
-//        anchors.top: rectTitle.bottom
-//        anchors.topMargin: 70
         model: foodsModel
 
         delegate: Item {
@@ -231,7 +231,7 @@ Rectangle {
                 property bool viewitem : true
 
                 bottomRadius: 10
-                radiusWidth: 1
+                radiusWidth: 3
                 rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
 
                 // search-filter
@@ -250,7 +250,7 @@ Rectangle {
                             id: foodIcon
                             fillMode: Image.Stretch
                             anchors.fill: parent
-                            anchors.margins: 2
+                            anchors.margins: 3
                             asynchronous: true
                             cache: img_cache
                             source: image
@@ -347,9 +347,9 @@ Rectangle {
                 }
             }
             Rectangle {
-                width: 48
-                height: 48
-                opacity: 0.5
+                width: 50
+                height: 50
+                opacity: 1.0
                 anchors.left: parent.left
                 anchors.leftMargin: 6
                 anchors.top: parent.top

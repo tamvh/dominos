@@ -1,6 +1,11 @@
-import QtQuick 2.0
+import QtQuick 2.7
+import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.1
+import QtQuick.Controls.Material 2.0
+import QtQuick.Controls.Universal 2.0
+import QtQuick.Window 2.2
+import QtGraphicalEffects 1.0
+import QtQuick.Controls.Styles 1.4
 
 Popup {
     id: aboutPage
@@ -80,6 +85,8 @@ Popup {
                     height: 78
                     highlighted: true
                     font.pixelSize: 30
+                    Material.primary: "#0695D6"
+                    Material.accent: "#0695D6"
                     onClicked: {
                         aboutPage.close();
                     }

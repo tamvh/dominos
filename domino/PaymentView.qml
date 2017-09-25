@@ -2,14 +2,16 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Universal 2.0
+import QtQuick.Controls.Material 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
 
 
+
 Rectangle {
     height: childrenRect.height
-    color: "transparent"
+    color: "#F5F5F5"
     property var citlv: null
     property int txtfntsize: mainController.getConfigFoodItemFontsize()
 
@@ -76,18 +78,18 @@ Rectangle {
                     anchors.left: parent.left
                     anchors.margins: 20
                     text: qsTr("Tổng tiền:")
-                    font.pointSize: txtfntsize + 2
+                    font.pointSize: 30
+                    font.bold: true
                 }
 
                 Text {
                     id: textThanhtienVnd
                     anchors.right: parent.right
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 3
                     height: 85
                     text: qsTr("VNĐ")
-                    font.pointSize: txtfntsize
+                    font.pointSize: 30
                     font.weight: Font.DemiBold
+                    color: "#0078AE"
                 }
 
                 Text {
@@ -96,8 +98,10 @@ Rectangle {
                     anchors.margins: 10
                     height: 85
                     text: qsTr("0")
-                    font.pointSize: txtfntsize + 2
+                    font.pointSize: 30
                     font.weight: Font.DemiBold
+                    color: "#0078AE"
+
                 }
             }
 
@@ -156,12 +160,13 @@ Rectangle {
                 id: button1
                 anchors.left: parent.left
                 anchors.right: parent.right
-                height: 80
+                height: 95
                 text: qsTr("Thanh toán")
                 enabled: false
                 highlighted: true
                 font.pointSize: txtfntsize + 8
-
+                Material.primary: "#0695D6"
+                Material.accent: "#0695D6"
 
                 onClicked: {
                     window.txtThanhTien = textThanhtienValue.text

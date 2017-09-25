@@ -8,18 +8,14 @@ Rectangle {
     Rectangle {
         height: parent.height
         width: 1
-        color: "#E2E6E7"
+        color: "#F5F5F5"
     }
 
     ChoosenItemListView {
-        anchors.topMargin: window.globalPadding
-        anchors.rightMargin: window.globalPadding
-        anchors.right: parent.right
-
         id: choosenItemListView
         anchors.top: parent.top
         anchors.bottom: paymentView.top
-        width: parent.width - window.globalPadding
+        width: parent.width
     }
 
     PaymentView {
@@ -27,8 +23,6 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.left: parent.left
-        anchors.leftMargin: 1
-        anchors.bottomMargin: window.globalPadding
     }
 
     Component.onCompleted: {

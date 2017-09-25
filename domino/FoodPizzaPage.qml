@@ -13,12 +13,12 @@ Rectangle {
     property int m_colCount: 3//Math.min(width < iconsize ? 1 : width / iconsize, 4)
     property int m_colSpace: width / 25
     property int m_cellw: width / m_colCount
-    property int m_cellh: m_cellw+10
+    property int m_cellh: m_cellw
 
     property bool itmfilter: false
     property string presrchtxt: ""
 
-    color: "transparent"
+    color: "#F5F5F5"
 
     ListModel {
         id: foodsModel
@@ -206,9 +206,9 @@ Rectangle {
 
     Rectangle {
         id: rectTitle
-        height: 135
+        height: 130
         width: parent.width
-        color: "transparent"
+        color: "#F5F5F5"
         GridView {
             id: gridSubCateView
 
@@ -387,7 +387,7 @@ Rectangle {
         cellHeight: m_cellh
         focus: true
         anchors.top: rectTitle.bottom
-        anchors.topMargin: 135
+        anchors.topMargin: 130
         model: foodsModel
 
         delegate: Item {
@@ -406,7 +406,7 @@ Rectangle {
                 property bool viewitem : true
 
                 bottomRadius: 10
-                radiusWidth: 1
+                radiusWidth: 3
                 rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
                 // search-filter
                 opacity: itmviewable
@@ -419,26 +419,28 @@ Rectangle {
                         id: itemImage
                         anchors.top: parent.top
                         width:parent.width
-                        height:width*255/310
+                        height:width*255/325
+                        focus: true
+
                         Image {
                             id: foodIcon
                             fillMode: Image.Stretch
                             anchors.fill: parent
-                            anchors.margins: 2
+                            anchors.margins: 3
                             asynchronous: true
                             cache: img_cache
                             source: image
+
                         }
                     }
+
 
                     Item {
                         Layout.fillWidth: true
                         anchors.top: itemImage.bottom
                         anchors.bottom: parent.bottom
-
                         ColumnLayout {
                             anchors.centerIn: parent
-                            spacing: 5 / Screen.devicePixelRatio
                             RowLayout {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 Label {
@@ -519,9 +521,9 @@ Rectangle {
                 }
             }
             Rectangle {
-                width: 48
-                height: 48
-                opacity: 0.5
+                width: 50
+                height: 50
+                opacity: 1.0
                 anchors.left: parent.left
                 anchors.leftMargin: 6
                 anchors.top: parent.top

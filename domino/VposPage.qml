@@ -30,7 +30,7 @@ Page {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            width: parent.width*2/3.2
+            width: parent.width*2/3
 
             SwipeMenu {
                 anchors.fill: parent

@@ -21,25 +21,6 @@ Item {
 
     ListModel {
         id: choosenItemModel
-
-        // id: số hóa đơn
-        // time: thời gian thanh toán
-        // total: tổng tiền
-        // bill json format:
-        //    {
-        //     title: "Canteen VNG"
-        //     receiptNum: "12345",
-        //     datetime: "20116-06-05 10:00:00",
-        //     total: "100,000",
-        //     item: [
-        //       {
-        //         item_name: "ba con soi",
-        //         quantity: "2",
-        //         price: "10,000",
-        //         amount: "20,000"
-        //       }
-        //       ]
-        //    }
         function outjson(invcecode, invcetime, barcode, total) {
             var printData = {
                 title: mainController.getTitleEng(),
@@ -154,12 +135,12 @@ Item {
     TableView {
         id: tableViewChoosen
         anchors.fill: parent
-        //anchors.top: parent.top
-        //anchors.left: parent.left
-        //anchors.right: parent.right
-        //anchors.bottom: idXoachon.top
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: idXoachon.top
 
-        property int colRatio: width/32
+        property int colRatio: width/22
 
         horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
 
@@ -174,25 +155,9 @@ Item {
         TableViewColumn {
             resizable: false
             movable: false
-            role: "size"
-            title: qsTr("Size")
-            width: tableViewChoosen.colRatio*3
-            //width: Units.dp(75) > 20 ? Units.dp(75) : 75
-        }
-        TableViewColumn {
-            resizable: false
-            movable: false
-            role: "debanh"
-            title: qsTr(" Đế bánh")
-            width: tableViewChoosen.colRatio*5
-            //width: Units.dp(150) > 20 ? Units.dp(150) : 150
-        }
-        TableViewColumn {
-            resizable: false
-            movable: false
             role: "quantity"
             title: qsTr("SL")
-            width: tableViewChoosen.colRatio*3
+            width: tableViewChoosen.colRatio*2
             //width: Units.dp(75) > 20 ? Units.dp(75) : 75
         }
         TableViewColumn {
@@ -208,7 +173,7 @@ Item {
             movable: false
             role: "amount"
             title: qsTr("Thành tiền")
-            width: tableViewChoosen.colRatio*5
+            width: tableViewChoosen.colRatio*4
             //width: Units.dp(75)
         }
 
@@ -222,19 +187,20 @@ Item {
                 color: "transparent"
             }
             headerDelegate: Rectangle {
-                implicitHeight: Screen.devicePixelRatio <= 2? 48: 48
-                color: "#e2e6e7"
+                implicitHeight: Screen.devicePixelRatio <= 2? 60: 60
+                color: "#DBF0FA"
                 Text {
                     id: textItem
                     anchors.fill: parent
                     verticalAlignment: Text.AlignVCenter
                     //horizontalAlignment: (styleData.column === 0 ? Text.AlignLeft : Text.AlignHCenter)
-                    horizontalAlignment: ((styleData.column === 0 || styleData.column === 2) ? Text.AlignLeft :
-                                                                   ((styleData.column === 4 || styleData.column === 1) ? Text.AlignHCenter:Text.AlignRight))
+                    horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignHCenter:Text.AlignRight))
                     text: styleData.value
-                    font.pixelSize: billitemfntsize
+                    font.pixelSize: 16
+                    font.bold: true
                     elide: Text.ElideRight
-                    color: "#404040"
+                    color: "#000000"
                     renderType: Settings.isMobile ? Text.QtRendering : Text.NativeRendering
                 }
 
@@ -261,7 +227,7 @@ Item {
             }
 
             itemDelegate: Item {
-                height: Screen.devicePixelRatio <= 2? 48: 32
+                height: Screen.devicePixelRatio <= 2? 60: 60
                 property int implicitWidth: label.implicitWidth + 20
 
                 Text {
@@ -271,16 +237,16 @@ Item {
                     x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
                                                                                        horizontalAlignment === Text.AlignRight ? 1 : 8
                     verticalAlignment:  Text.AlignVCenter
-                    horizontalAlignment: ((styleData.column === 0 || styleData.column === 2) ? Text.AlignLeft :
-                                                                   ((styleData.column === 4 || styleData.column === 1) ? Text.AlignHCenter:Text.AlignRight))
+                    horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignHCenter:Text.AlignRight))
 
-                    //horizontalAlignment: styleData.textAlignment
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.verticalCenterOffset: 1
                     elide: styleData.elideMode
                     text: styleData.value !== undefined ? styleData.value : ""
-                    font.pixelSize: billitemfntsize
-                    color: styleData.textColor
+                    font.pixelSize: 18
+                    font.bold: (styleData.column === 0 || styleData.column === 1) ? false : true
+                    color: "#000000"
                     renderType: Settings.isMobile ? Text.QtRendering : Text.NativeRendering
                 }
 
@@ -298,34 +264,11 @@ Item {
 
             rowDelegate: Rectangle {
                 id: abc
-                height: Screen.devicePixelRatio <= 2? 48: 32
+                height: Screen.devicePixelRatio <= 2? 60: 60
                 property color selectedColor: control.activeFocus ? "#07c" : "#999"
                 color: styleData.selected ? selectedColor : !styleData.alternate ? "#FFFFFF" : "#F5F5F5"
             }
         }
-
-//        Component {
-//            id: imageDelegate
-//            Item {
-//                anchors.fill: parent
-//                Image {
-//                    fillMode: Image.Pad
-//                    anchors.horizontalCenter: parent.horizontalCenter
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    source:"qrc:/icons/icons/cancel.png"
-//                }
-
-//                MouseArea {
-//                    id:mouseArea
-//                    anchors.fill: parent
-//                    onClicked: {
-//                        // click at ROW to delete
-//                        console.log('fff: ' + styleData.row);
-//                        choosenItemModel.removeItem(styleData.row)
-//                    }
-//                }
-//            }
-//        }
 
         Connections {
             target: mainController

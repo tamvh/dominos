@@ -566,23 +566,23 @@ ApplicationWindow {
                         id: controlBox
                         anchors.right: parent.right
                         anchors.rightMargin: 5
-                        ToolButton {
-                            ToolTip.visible: pressed
-                            ToolTip.text: "Tìm kiếm món ăn"
-                            ToolTip.timeout: 2000
-                            contentItem: Image {
-                                fillMode: Image.Pad
-                                horizontalAlignment: Image.AlignHCenter
-                                verticalAlignment: Image.AlignVCenter
-                                source: "qrc:/icons/icons/search_white.png"
-                            }
-                            onClicked: {
-                                idSearchbox.text = ""
-                                idSearchbox.focus = true
-                                isShowSearch = !isShowSearch
-                                mainController.uiFoodupdateStatus( isShowSearch ? -4 : 4)
-                            }
-                        }
+//                        ToolButton {
+//                            ToolTip.visible: pressed
+//                            ToolTip.text: "Tìm kiếm món ăn"
+//                            ToolTip.timeout: 2000
+//                            contentItem: Image {
+//                                fillMode: Image.Pad
+//                                horizontalAlignment: Image.AlignHCenter
+//                                verticalAlignment: Image.AlignVCenter
+//                                source: "qrc:/icons/icons/search_white.png"
+//                            }
+//                            onClicked: {
+//                                idSearchbox.text = ""
+//                                idSearchbox.focus = true
+//                                isShowSearch = !isShowSearch
+//                                mainController.uiFoodupdateStatus( isShowSearch ? -4 : 4)
+//                            }
+//                        }
 
                         ToolButton {
                             id: toolButtonCloud
@@ -1159,6 +1159,7 @@ ApplicationWindow {
                                     height: 60
                                     width:  60
                                     color: "#0695D6"
+                                    radius: 3
                                     Label {
                                         anchors.centerIn: parent
                                         font.pointSize: 24
@@ -1196,6 +1197,7 @@ ApplicationWindow {
                                     height: 60
                                     width:  60
                                     color: "#0695D6"
+                                    radius: 3
                                     Label {
                                         anchors.centerIn: parent
                                         font.pointSize: 24
@@ -1230,6 +1232,7 @@ ApplicationWindow {
                                     height: 60
                                     width:  60
                                     color: "#0695D6"
+                                    radius: 3
                                     Label {
                                         anchors.centerIn: parent
                                         font.pointSize: 24
@@ -1267,6 +1270,7 @@ ApplicationWindow {
                                     height: 60
                                     width:  60
                                     color: "#0695D6"
+                                    radius: 3
                                     Label {
                                         anchors.centerIn: parent
                                         font.pointSize: 24
@@ -1300,79 +1304,80 @@ ApplicationWindow {
                     Grid {
                         columns: 2
                         Layout.fillHeight: true
-                        Rectangle {
+                        ColumnLayout {
+                            spacing: 30
                             width: 692
-                            height: 130
                             ColumnLayout {
-                                spacing: 30
                                 width: 692
-                                ColumnLayout {
+                                Label {
                                     width: 692
-                                    Label {
-                                        width: 692
-                                        text: "MÔ TẢ"
-                                        font.pixelSize: 20
-                                        color: "#777777"
-                                    }
-                                    Label {
-                                        id: lblChitiet
-                                        width: 692
-                                        text: nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + nChessy
-                                        font.pixelSize: 20
-                                        font.bold: true
-                                        color: "#000000"
-                                    }
+                                    text: "MÔ TẢ"
+                                    font.pixelSize: 20
+                                    color: "#777777"
                                 }
-                                ColumnLayout {
+                                Label {
+                                    id: lblChitiet
                                     width: 692
-                                    Label {
-                                        text: "THÀNH TIỀN"
+                                    text: nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + nChessy
+                                    font.pixelSize: 20
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                            }
+                            ColumnLayout {
+                                width: 692
+                                Label {
+                                    text: "THÀNH TIỀN"
+                                    font.pixelSize: 20
+                                    color: "#777777"
+                                }
+                                RowLayout {
+                                    Layout.fillWidth: true
+                                    spacing: 7
+                                    Text {
+                                        text: pizza_money_root
+                                        color: "#9B9B9B"
                                         font.pixelSize: 20
-                                        color: "#777777"
+                                        font.strikeout: true
+                                        font.bold: true
                                     }
-                                    RowLayout {
-                                        Layout.fillWidth: true
-                                        spacing: 7
-                                        Text {
-                                            text: pizza_money_root
-                                            color: "#9B9B9B"
-                                            font.pixelSize: 20
-                                            font.strikeout: true
-                                            font.bold: true
-                                        }
 
-                                        Text {
-                                            text: pizza_money + " VNĐ"
-                                            color: "#E61837"
-                                            font.pixelSize: 30
-                                            font.bold: true
-                                        }
+                                    Text {
+                                        text: pizza_money + " VNĐ"
+                                        color: "#E61837"
+                                        font.pixelSize: 30
+                                        font.bold: true
                                     }
                                 }
                             }
                         }
 
-                        Rectangle {
-                            width: 342
-                            height: 130
-                            ColumnLayout {
-                                Row {
+                        ColumnLayout {
+                            spacing: 30
+                            Row {
+                                 width: 342
+                                 spacing: 30
+                                 anchors.right: parent.right
+                                 anchors.rightMargin: 0
+                                 Rectangle {
+                                     id: btnSelectItem
+                                     height: 80
                                      width: 342
-                                     spacing: 20
-                                     Button {
-                                         id: btnSelectItem
-                                         height: 80
-                                         width: 342
-                                         highlighted: true
+                                     color: "#0695D6"
+                                     radius: 5
+                                     Label {
+                                         anchors.centerIn: parent
                                          font.pixelSize: 30
                                          font.bold: true
                                          text: "ĐỒNG Ý"
-                                         Material.primary: "#0695D6"
-                                         Material.accent: "#0695D6"
+                                         color: "#FFFFFF"
+                                     }
+                                     MouseArea{
+                                         anchors.fill: parent
                                          onClicked: {
 
                                              var _prod_name = pizza_prod_name.split('\n')[0];
-                                             var _name = _prod_name + "-" + pizza_sizebanh + "-" + pizza_debanh;
+                                             var _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh;
                                              var _price = mainController.moneyMoney(promote_price);
                                              var _oriprice = 0;
                                              var _quantity = nItem;
@@ -1494,19 +1499,26 @@ ApplicationWindow {
                                              cakeInfoDialog.close();
                                          }
                                      }
-                                }
+                                 }
+                            }
 
-                                Row {
-                                    width: 342
-                                    Button {
-                                        id: btnCancelSelectItem
-                                        height: 80
-                                        width:  342
+                            Row {
+                                width: 342
+                                Rectangle {
+                                    id: btnCancelSelectItem
+                                    height: 80
+                                    width:  342
+                                    color: "#8397A0"
+                                    radius: 5
+                                    Label {
+                                        anchors.centerIn: parent
                                         font.pixelSize: 30
                                         font.bold: true
                                         text: "HỦY"
-                                        Material.primary: "#8397A0"
-                                        Material.accent: "#8397A0"
+                                        color: "#FFFFFF"
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
                                         onClicked: {
                                             reset();
                                             cakeInfoDialog.close()
@@ -2406,7 +2418,7 @@ ApplicationWindow {
                 }
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: "[" + prodNameInPaymenView + "]"
+                    text: prodNameInPaymenView
                     font.pixelSize: 36
                     font.bold: true
                 }
@@ -2424,6 +2436,8 @@ ApplicationWindow {
                     font.pixelSize: 30
                     height: 90
                     width: 342
+                    Material.primary: "#E61837"
+                    Material.accent: "#E61837"
                     onClicked: {
                         mainController.removeItemInPaymentView(styleData_row);
                         deleteItemDialog.close();
@@ -2510,6 +2524,8 @@ ApplicationWindow {
                     width: 342
                     highlighted: true
                     font.pixelSize: 30
+                    Material.primary: "#0695D6"
+                    Material.accent: "#0695D6"
                     onClicked: {
                         zoomItemDialog.close();
                     }
