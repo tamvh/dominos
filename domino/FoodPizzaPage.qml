@@ -514,6 +514,7 @@ Rectangle {
                                     window.getMoney(_cateName, '7', 1)
                                     window.enable_cheesy = false;
                                 }
+                                window.pressbtn_selected = true;
                                 window.reset(category);
                                 cakeInfoDialog.open()
                             } else {

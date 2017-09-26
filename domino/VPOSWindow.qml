@@ -77,7 +77,7 @@ ApplicationWindow {
     property bool visible_dephomaimong: false
     property bool visible_dephomaiday: false
 
-    property bool pressbtn_selected: false
+    property bool pressbtn_selected: true
 
 
 
@@ -365,6 +365,7 @@ ApplicationWindow {
         nChessy = 0;
         pizza_debanh_id = "TC";
         txtPercentCheesy.text = getPercentCheesy(0);
+        btnSelectItem.enabled = pressbtn_selected;
     }
 
     function getPercentCheesy(n){
@@ -1377,7 +1378,8 @@ ApplicationWindow {
                                      MouseArea{
                                          anchors.fill: parent
                                          onClicked: {
-
+                                             pressbtn_selected = false;
+                                             btnSelectItem.enabled = pressbtn_selected;
                                              var _prod_name = pizza_prod_name.split('\n').length > 1 ? pizza_prod_name.split('\n')[1].toString().replace('(','').replace(')',''): pizza_prod_name;
                                              var _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh;
                                              var _price = mainController.moneyMoney(promote_price);
