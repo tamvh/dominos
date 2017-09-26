@@ -47,6 +47,9 @@ ApplicationWindow {
     property string min_size: qsTr("")
     property string pizza_category: qsTr("")
     property string pizza_prize: qsTr("")
+    property string pizza_prize_7: qsTr("")
+    property string pizza_prize_9: qsTr("")
+    property string pizza_prize_12: qsTr("")
     property string promote_price: qsTr("")
     property int nItem: 1
     property int nChessy: 0
@@ -74,6 +77,7 @@ ApplicationWindow {
     property bool visible_dephomaiday: false
 
     property bool pressbtn_selected: false
+
 
 
     Material.primary: "#006493"
@@ -791,7 +795,7 @@ ApplicationWindow {
                                             color: "#000000"
                                         }
                                         Label {
-                                            text: "59,000 VNĐ"
+                                            text: pizza_prize_7 + " VNĐ"
                                             font.bold: true
                                             font.pixelSize: 30
                                             color: "#000000"
@@ -836,13 +840,13 @@ ApplicationWindow {
                                             color: "#000000"
                                         }
                                         Label {
-                                            text: "119,000 VNĐ"
+                                            text: pizza_prize_9 + " VNĐ"
                                             font.bold: true
                                             font.pixelSize: 30
                                             color: "#000000"
                                         }
                                         Label {
-                                            text: "119,000 VNĐ"
+                                            text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_9), "12")) + "VNĐ"
                                             font.bold: true
                                             font.pixelSize: 20
                                             font.strikeout: true
@@ -885,13 +889,13 @@ ApplicationWindow {
                                             color: "#000000"
                                         }
                                         Label {
-                                            text: "179,000 VNĐ"
+                                            text: pizza_prize_12 + " VNĐ"
                                             font.bold: true
                                             font.pixelSize: 30
                                             color: "#000000"
                                         }
                                         Label {
-                                            text: "139,000 VNĐ"
+                                            text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_12), "12")) + "VNĐ"
                                             font.bold: true
                                             font.pixelSize: 20
                                             font.strikeout: true

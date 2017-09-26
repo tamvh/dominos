@@ -187,7 +187,7 @@ Rectangle {
         subCateModel.append({visible_price: visible_price, text_price7: text_price7, text_price9: text_price9, text_price12: text_price12})
     }
 
-    function appendFood(description, min_size, objdata, category, foodcode, foodname, price, image, img_cache, oriprice, promtype) {
+    function appendFood(description, min_size, objdata, category, foodcode, foodname, price, price_7, price_9, price_12, image, img_cache, oriprice, promtype) {
         var priceString = mainController.moneyMoney(price)
         var oriString = "";
         if (oriprice > 0) {
@@ -200,7 +200,7 @@ Rectangle {
         if(category.split(' ')[0] === 'Pizza') {
             visible_price = false
         }
-        foodsModel.append({description: description, visible_price: visible_price, min_size: min_size, objdata: objdata, category: category, code: foodcode, name: foodname, namelatin: latin, price: priceString, image: image, img_cache: img_cache,
+        foodsModel.append({description: description, visible_price: visible_price, min_size: min_size, objdata: objdata, category: category, code: foodcode, name: foodname, namelatin: latin, price: priceString, price_7: price_7, price_9: price_9, price_12: price_12, image: image, img_cache: img_cache,
                               oriprice: oriString, promtype: promtype, itmviewable: true})
     }
 
@@ -419,7 +419,7 @@ Rectangle {
                         id: itemImage
                         anchors.top: parent.top
                         width:parent.width
-                        height:width*255/325
+                        height:width*255/340
                         focus: true
 
                         Image {
@@ -495,6 +495,9 @@ Rectangle {
                             window.pizza_prod_code = code
                             window.pizza_prod_name = name
                             window.pizza_prize = mainController.getMoneyValue(price);
+                            window.pizza_prize_7 = price_7
+                            window.pizza_prize_9 = price_9
+                            window.pizza_prize_12 = price_12
                             var _quantity = 1;
                             window.pizza_money = mainController.moneyMoney(mainController.getMoneyValue(price) * _quantity)
                             window.min_size = min_size;

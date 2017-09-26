@@ -87,7 +87,30 @@ Page {
 
             // add foods to swipe page
             for(var item_pizza in foods.dt.items) {
+                var price_7 = "";
+                var price_9 = "";
+                var price_12 = "";
                 if ((foods.dt.items[item_pizza].cate_mask & cateValue) === cateValue) {
+                    if(cateName === 'Pizza Favorite') {
+                        price_7 = "59,000";
+                        price_9 = "119,000";
+                        price_12 = "179,000";
+                    }
+                    if(cateName === 'Pizza Classic') {
+                        price_7 = "69,000";
+                        price_9 = "129,000";
+                        price_12 = "199,000";
+                    }
+                    if(cateName === 'Pizza Premium') {
+                        price_7 = "79,000";
+                        price_9 = "139,000";
+                        price_12 = "219,000";
+                    }
+                    if(cateName === 'Pizza Signature') {
+                        price_7 = "-";
+                        price_9 = "179,000";
+                        price_12 = "279,000";
+                    }
                     swipe_pizza.appendFood(
                                 foods.dt.items[item_pizza].description,
                                 "",
@@ -96,6 +119,9 @@ Page {
                                 foods.dt.items[item_pizza].item_code,
                                 foods.dt.items[item_pizza].item_name,
                                 foods.dt.items[item_pizza].price,
+                                price_7,
+                                price_9,
+                                price_12,
                                 foods.dt.items[item_pizza].img_path,
                                 foods.dt.items[item_pizza].img_cache,
                                 foods.dt.items[item_pizza].promotion_type > 0 ? foods.dt.items[item_pizza].original_price : "",
