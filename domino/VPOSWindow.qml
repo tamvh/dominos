@@ -745,6 +745,7 @@ ApplicationWindow {
                         Label {
                             text: "TÊN BÁNH"
                             font.pixelSize: 20
+                            font.bold: true
                             color: "#777777"
                         }
                         Label {
@@ -761,6 +762,7 @@ ApplicationWindow {
                         Label {
                             text: "SIZE BÁNH"
                             font.pixelSize: 20
+                            font.bold: true
                             color: "#777777"
                         }
                         RowLayout {
@@ -920,6 +922,7 @@ ApplicationWindow {
                         Label {
                             text: "ĐẾ BÁNH"
                             font.pixelSize: 20
+                            font.bold: true
                             color: "#777777"
                         }
                         RowLayout {
@@ -1153,6 +1156,7 @@ ApplicationWindow {
                                 enabled: enable_cheesy
                                 opacity: opacity_cheesy
                                 font.pixelSize: 20
+                                font.bold: true
                                 color: "#777777"
                             }
                             Row {
@@ -1228,6 +1232,7 @@ ApplicationWindow {
                             Label {
                                 text: "SỐ LƯỢNG"
                                 font.pixelSize: 20
+                                font.bold: true
                                 color: "#777777"
                             }
                             Row {
@@ -1317,6 +1322,7 @@ ApplicationWindow {
                                     width: 692
                                     text: "MÔ TẢ"
                                     font.pixelSize: 20
+                                    font.bold: true
                                     color: "#777777"
                                 }
                                 Label {
@@ -1333,6 +1339,7 @@ ApplicationWindow {
                                 Label {
                                     text: "THÀNH TIỀN"
                                     font.pixelSize: 20
+                                    font.bold: true
                                     color: "#777777"
                                 }
                                 RowLayout {

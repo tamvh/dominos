@@ -86,7 +86,7 @@ Popup {
             }
             Rectangle {
                 height: 1
-                width: 874
+                width: parent.width
                 color: "#777777"
             }
         }
