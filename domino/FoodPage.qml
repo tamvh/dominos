@@ -221,7 +221,7 @@ Rectangle {
             height: m_cellh
             property int cellPadding: 3
             property int cellFontSize: fooditemfntsize
-
+            clip: true
             HalfRadiusRectangle {
                 id: halfRect
                 anchors.fill: parent
@@ -229,7 +229,7 @@ Rectangle {
                 anchors.rightMargin: cellPadding
                 anchors.bottomMargin: cellPadding*2
                 property bool viewitem : true
-
+                clip: true
                 bottomRadius: 10
                 radiusWidth: 3
                 rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
@@ -256,6 +256,8 @@ Rectangle {
                             source: image
                         }
                     }
+
+
 
                     Item {
                         Layout.fillWidth: true
@@ -324,24 +326,11 @@ Rectangle {
                             window.pizza_money = mainController.moneyMoney(mainController.getMoneyValue(price) * _quantity)
                             window.min_size = min_size;
                             window.pizza_category = category;
-                            var _cateName = category.split('\n')[0];
-                            if(_cateName === "Pizza Favorite" ||
-                                    _cateName === "Pizza Classic" ||
-                                    _cateName === "Pizza Premium" ||
-                                    _cateName === "Pizza Signature") {
-                                if(_cateName === "Pizza Signature") {
-                                    window.getMoney(_cateName, '9', 1)
-                                    window.enable_cheesy = true;
-                                } else {
-                                    window.getMoney(_cateName, '7', 1)
-                                    window.enable_cheesy = false;
-                                }
-                                window.reset(category);
-                                cakeInfoDialog.open()
-                            } else {
-                                console.log("name code: " + name_code);
-                                mainController.insertItem(name_code, name.split('\n')[0], "-", "-", price, _quantity, oriprice, 0)
-                            }
+                            var name_prod = name.split('\n').length > 1 ? name.split('\n')[1].toString().replace('(','').replace(')','') : name
+                            console.log("name code: " + name_code);
+
+                            mainController.insertItem(name_code, name_prod, "-", "-", price, _quantity, oriprice, 0)
+
                         }
                     }
                 }

@@ -279,6 +279,9 @@ void DominoController::onGetStoreCouponsFinish(const QVariant &data)
 void DominoController::onPlaceOrderFinish(const QVariant &data)
 {
     qDebug() << "data place order: " << data.toString();
+    QDomDocument doc;
+    doc.setContent(data.toString());
+    QDomNodeList nodeList = doc.elementsByTagName("Products");
     QJsonObject result = FunctionUtils::convertXmlToJson(data.toString(), "OrderReply");
     emit eventPlaceOrder(result);
 

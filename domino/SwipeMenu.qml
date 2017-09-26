@@ -107,7 +107,7 @@ Page {
                         price_12 = "219,000";
                     }
                     if(cateName === 'Pizza Signature') {
-                        price_7 = "-";
+                        price_7 = "0";
                         price_9 = "179,000";
                         price_12 = "279,000";
                     }

@@ -2805,24 +2805,35 @@ void MainController::placeorder2dominoserver() {
     json_Customer["LoyaltyNumber"] = "1234567891234567899";
     json_order["Customer"] = json_Customer;
 
-    QJsonObject obj_coupon;
-    QJsonObject obj_code;
-    QString coupon = this->getIdCoupon();
-    obj_code["Code"] = coupon;
-    obj_coupon["Coupon"] = obj_code;
-    json_order["Coupons"] = obj_coupon;
-
-
     QJsonArray json_arr_OrderItems;
     QJsonObject json_OrderItems;
+    bool find_pizza_discount_40 = false;
     for(int i = 0; i< m_foods.count(); i++) {
         QJsonObject json_OrderItem;
         QJsonObject item = m_foods.at(i).toObject();
         json_OrderItem["ProductCode"] = item["code_name"];
-        json_OrderItem["ProductName"] = item["size"];
+        if(item["size"] == "9\"" || item["size"] == "12\"") {
+            json_OrderItem["ProductName"] = item["size"];
+            find_pizza_discount_40 = true;
+        } else {
+            json_OrderItem["ProductName"] = item["item_name"].toString().split("/")[0];
+        }
+
         json_OrderItem["ItemQuantity"] = item["quantity"];
         json_arr_OrderItems.insert(i, json_OrderItem);
     }
+
+
+    if(find_pizza_discount_40) {
+        QJsonObject obj_coupon;
+        QJsonObject obj_code;
+        QString coupon = this->getIdCoupon();
+        obj_code["Code"] = coupon;
+        obj_coupon["Coupon"] = obj_code;
+        json_order["Coupons"] = obj_coupon;
+    }
+
+
     json_OrderItems["OrderItem"] = json_arr_OrderItems;
     json_order["OrderItems"] = json_OrderItems;
 
