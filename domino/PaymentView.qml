@@ -66,9 +66,8 @@ Rectangle {
             width: parent.width
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.margins: window.globalPadding
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 5
+            anchors.margins: 10
+
             RowLayout {
                 Layout.fillWidth: true
                 width: parent.width
@@ -175,6 +174,13 @@ Rectangle {
                     idProfilePage.open()
                 }
             }
+
+            Rectangle {
+                height: 5
+                width: parent.width
+                color: "#F5F5F5"
+            }
+
 
 
             Connections {

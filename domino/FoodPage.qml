@@ -14,7 +14,7 @@ Rectangle {
     property int m_colCount: 3//Math.min(width < iconsize ? 1 : width / iconsize, 4)
     property int m_colSpace: width / 25
     property int m_cellw: width / m_colCount
-    property int m_cellh: m_cellw+10
+    property int m_cellh: m_cellw+20
 
     property bool itmfilter: false
     property string presrchtxt: ""
@@ -245,7 +245,7 @@ Rectangle {
                         id: itemImage
                         anchors.top: parent.top
                         width:parent.width
-                        height:width*255/310
+                        height:width*255/330
                         Image {
                             id: foodIcon
                             fillMode: Image.Stretch
