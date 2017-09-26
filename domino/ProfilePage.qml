@@ -1,6 +1,8 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
+import QtQuick.Controls.Material 2.0
+import QtQuick.Controls.Universal 2.0
 
 Popup {
     id: profilePage
@@ -158,6 +160,8 @@ Popup {
                 enabled: false
                 text: qsTr("THANH TOÁN")
                 font.pixelSize: 30
+                Material.primary: "#0695D6"
+                Material.accent: "#0695D6"
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -282,6 +286,8 @@ Popup {
                 height: 90
                 highlighted: true
                 font.pixelSize: 30
+                Material.primary: "#8397A0"
+                Material.accent: "#8397A0"
                 onClicked: {
                     txtCustomerName.text = "";
                     txtCustomerName.focus = true;

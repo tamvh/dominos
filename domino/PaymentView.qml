@@ -67,7 +67,8 @@ Rectangle {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.margins: window.globalPadding
-
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 5
             RowLayout {
                 Layout.fillWidth: true
                 width: parent.width
