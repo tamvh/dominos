@@ -48,8 +48,6 @@ Popup {
 
     contentItem: ColumnLayout   {
         id: appOptionColumn
-        width: 874
-        height: 549
         Layout.alignment: Qt.AlignHCenter
         spacing: 40
         Label {
@@ -63,9 +61,9 @@ Popup {
 
 
         ColumnLayout {
-            width: 874
+            width: 814
             Label {
-                width: 874
+                width: 814
                 text: "TÊN KHÁCH HÀNG"
                 font.bold: true
                 font.pixelSize: 24
@@ -73,7 +71,7 @@ Popup {
             }
             TextInput {
                 id: txtCustomerName
-                width: 874
+                width: 814
                 text: ''
                 focus: true
                 font.pixelSize: 36
@@ -84,7 +82,7 @@ Popup {
             }
             Rectangle {
                 height: 1
-                width: 814
+                width: parent.width
                 color: "#777777"
             }
         }

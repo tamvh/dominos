@@ -2888,8 +2888,8 @@ void MainController::placeorder2dominoserver() {
     order["Order"] = json_order;
 
     dominoCtrl.placeOrder(order);
-    m_customer_hinhthuc = "";
-    m_customer_name = "";
+//    m_customer_hinhthuc = "";
+//    m_customer_name = "";
 }
 
 long long MainController::getPriceCoupon(long long price, const QString &pizza_size) {
