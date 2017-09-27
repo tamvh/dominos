@@ -2341,11 +2341,11 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
         pdf.codeFeedline();
     }
 
-    pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB1);
-    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()));
-    pdf.codeLine(QString("Hoa don Domino:\t%1").arg(g_storeOrderID));
-    pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name));
-    pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()));
+    pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Hoa don Domino:\t%1").arg(g_storeOrderID), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()), pdf.Justify_left, TAB2);
 
     pdf.codeChars('-', PAGESZ, pdf.Justify_center);
 

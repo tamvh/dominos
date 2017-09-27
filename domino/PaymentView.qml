@@ -184,6 +184,85 @@ Rectangle {
 
             Connections {
                 target: mainController
+
+                onPaymentUpdate: {
+                    updatePaymentMethod(methods)
+                }
+
+                onPaymentMask: {
+                    updatePaymentMask(paymentMask)
+                    idPaymethod.visible = !((paymentMask===1)||(paymentMask===2)||(paymentMask===4))
+                }
+
+                onUpdateShowthanhtoancungdonhang: {
+                    updateShowthanhtoancungdonhang(isShow);
+                }
+
+                onNotifySucc: {
+                    var bClose = true;
+                        if (errcode === 0 ) {
+                            if (g_autoThanhtoan === true) {
+                                if ( mainController.getPaymentMethod() === 1 ) {
+                                    // === 1 : zalopay
+                                    // reset QR code
+                                    payZaloDialog.resetQRCode();
+                                    payZaloDialog.resetTimer();
+
+                                    // tiếp tục thanh toán cho khách kế tiếp cùng hóa đơn
+                                    //var foodItems = choosenItemListView.generateBillDetail()
+                                    payZaloDialog.foId = mainController.pay(textThanhtienValue.text, window.global_foodItems, 1);
+                                }
+                                else if ( mainController.getPaymentMethod() === 2 ) {
+                                    // === 2 : card
+                                }
+                                else if ( mainController.getPaymentMethod() === 4 ) {
+                                    // === 4 : cash - tiền mặt
+                                    cashAlert.open();
+                                }
+
+                                bClose = false;
+
+                            }
+                            else {
+                                // xoá hóa đơn đã thanh toán, chờ khách tiếp theo chọn món
+                                textThanhtienValue.text = "0";
+                                button1.enabled = false;
+                                choosenItemListView.cleanup();
+                            }
+                        }
+
+                    if (bClose == true){
+                        if ( mainController.getPaymentMethod() === 1 ) {
+                            // === : zalopay
+                            payZaloDialog.close();
+                        }
+                        else if ( mainController.getPaymentMethod() === 2 ) {
+                            // === 2 : card
+                            popQuetthe.close();
+                        }
+                        else if ( mainController.getPaymentMethod() === 4 ) {
+                            // === 4 : cash - tiền mặt
+                            cashAlert.close();
+                        }
+                    }
+                    console.log("err code: " + errcode);
+
+                    // open popup dialog to guide user get the bill
+                    if ((bClose == true) && (errcode == 0)) {
+                        if (mainController.getBillAlertTimer() > 0) {
+                            getBillAlert.open()
+                        }
+                    }
+                    if ( errcode == 1) {
+                        if (mainController.getBillAlertTimer() > 0) {
+                            getErrAlert.open()
+                        }
+                    }
+                }
+            }
+
+            Connections {
+                target: mainController
                 onPaySucc: {
 
                     // update QR code
