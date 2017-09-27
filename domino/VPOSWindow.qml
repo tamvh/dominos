@@ -78,6 +78,7 @@ ApplicationWindow {
     property bool visible_dephomaiday: false
 
     property bool pressbtn_selected: true
+    property bool g_autoThanhtoan: false
 
 
 
@@ -2089,6 +2090,65 @@ ApplicationWindow {
 
         onClosed: {
             getBillTimer.stopTimerCounter();
+        }
+    }
+
+    Popup {
+        // show bảng báo nhận hóa đơn
+        id: getErrAlert
+        modal: true
+        focus: true
+        x: (window.width - width) / 2
+        y: Math.abs(window.height - getErrAlert.height) / 3
+
+        width: 874
+        height: 422
+        topPadding: 50
+        rightPadding: 30
+        leftPadding: 30
+        bottomPadding: 30
+        Column {
+            id: billAlerErrColumn
+            spacing: 50
+            anchors.horizontalCenter: parent.horizontalCenter
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 36
+                font.bold: true
+                color: "#0078AE"
+                text: "THÔNG BÁO"
+            }
+
+            Text {
+                width: 700
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Rất tiếc, đã xảy ra lỗi khi thanh toán.\nVui lòng thử lại sau."
+                font.pixelSize: 36
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 342
+                height: 90
+                highlighted: true
+                font.pixelSize: 30
+                text: "Đóng"
+                Material.primary: "#E61837"
+                Material.accent: "#E61837"
+                onClicked: {
+                    getErrAlert.close()
+                }
+            }
+        }
+
+        onOpened: {
+            getErrTimer.parentId = 4;
+            getErrTimer.restartTimerCounter();
+        }
+
+        onClosed: {
+            getErrTimer.stopTimerCounter();
         }
     }
 

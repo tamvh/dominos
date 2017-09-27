@@ -625,7 +625,6 @@ void MainController::onPayZaloDone(const QVariant &data)
 
             // (QR responed) send QR & ID to GUI
             emit paySucc(invceCode, qrPicture, discount, oripay, discpay);
-            this->placeorder2dominoserver();
     #if 0
     #ifdef Q_OS_ANDROID
             //"Amount 4 bytes " "appid 2 bytes" "transaction token 16 bytes" "crc 2 bytes"
@@ -863,6 +862,10 @@ void MainController::onNotify(const QString &message)
                     BillInfo bi;
                     if( m_Bills.getBill(invceCode, bi) == true )
                     {
+                        //push data to domino server
+                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrder(QJsonObject)), this, SLOT(eventPlaceOrder(QJsonObject)), Qt::UniqueConnection);
+                        this->placeorder2dominoserver();
+
                         // tạo nội dung xuất ra máy in
                         QString printdata = bi.toPrinter(barcode,
                                                          invceCode,
@@ -870,10 +873,13 @@ void MainController::onNotify(const QString &message)
                                                          getAppMachine(),
                                                          getTitleEng(),
                                                          discount, payment);
-                        printBill(invceCode, printdata);
-                    }
+                        g_invceCode = invceCode;
+                        g_printdata = printdata;
+                        g_invceDate = invceDate;
+                        g_barcode   = barcode;
+                        g_balance   = balance;
 
-                    emit notifySucc(0, invceCode, invceDate, barcode, balance); // send notify error code = 0
+                    }
                 }
                 else {
                     emit notifySucc(1, invceCode, invceDate, barcode, balance); // send notify error code = 1
@@ -896,6 +902,40 @@ void MainController::onNotify(const QString &message)
                 wsClient->sendTextMessage(msg);
             }
         }
+    }
+}
+
+void MainController::eventPlaceOrder(const QJsonObject &result) {
+    qDebug() << "eventPlaceOrder: " << result;
+    QJsonObject order_reply;
+    QString storeOrderID = "";
+    QString order_status = "";
+    bool result_response = false;
+    QJsonObject dt = result;
+    if(dt.contains("OrderReply")) {
+        order_reply = dt["OrderReply"].toObject();
+        if(order_reply.contains("Status")) {
+            order_status = order_reply["Status"].toString();
+        }
+        if(order_reply.contains("StoreOrderID")) {
+            storeOrderID = order_reply["StoreOrderID"].toString();
+            storeOrderID = storeOrderID.split("#").length() > 1 ? storeOrderID.split("#")[1] : "#";
+            g_storeOrderID = storeOrderID;
+        }
+
+        if(order_status == "0") {
+            result_response = true;
+        }
+    }
+
+    if(result_response) {
+        // printbill
+        qDebug() << "start print bill";
+        printBill(g_invceCode, g_printdata);
+        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
+    } else {
+        //thong bao loi - gui request len server de hoan tien
+        emit notifySucc(1, g_invceCode, g_invceDate, g_barcode, g_balance);
     }
 }
 
@@ -2302,7 +2342,9 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
     }
 
     pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB1);
-    pdf.codeLine(QString("Hoa don:\t%1").arg(jso["receiptNum"].toString()));
+    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()));
+    pdf.codeLine(QString("Hoa don Domino:\t%1").arg(g_storeOrderID));
+    pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name));
     pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()));
 
     pdf.codeChars('-', PAGESZ, pdf.Justify_center);

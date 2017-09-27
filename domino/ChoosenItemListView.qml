@@ -238,7 +238,7 @@ Item {
                                                                                        horizontalAlignment === Text.AlignRight ? 1 : 8
                     verticalAlignment:  Text.AlignVCenter
                     horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
-                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignHCenter:Text.AlignRight))
+                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignRight : Text.AlignHCenter))
 
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.verticalCenterOffset: 1

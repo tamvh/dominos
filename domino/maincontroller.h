@@ -289,6 +289,7 @@ public slots:
 
     void onStoreProducts(const QJsonObject &storeProducts);
     void onStoreInformation(const QJsonObject &storeInformation);
+    void eventPlaceOrder(const QJsonObject &result);
 private:
     void placeorder2dominoserver();
     void doScanDock();
@@ -381,6 +382,13 @@ private:
     QString m_customer_hinhthuc;
     QJsonArray m_foods;
     QJsonArray m_prods_from_dominos;
+private:
+    QString g_invceCode;
+    QString g_printdata;
+    QString g_invceDate;
+    QString g_barcode;
+    QString g_balance;
+    QString g_storeOrderID;
 };
 
 #endif // MAINCONTROLLER_H

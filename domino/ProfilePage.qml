@@ -84,7 +84,7 @@ Popup {
             }
             Rectangle {
                 height: 1
-                width: parent.width
+                width: 814
                 color: "#777777"
             }
         }
@@ -215,37 +215,37 @@ Popup {
 
                     onNotifySucc: {
                         var bClose = true;
-                        if (errcode === 0 ) {
+//                        if (errcode === 0 ) {
 
-                            if (autoThanhtoan.checked === true) {
-                                if ( mainController.getPaymentMethod() === 1 ) {
-                                    // === 1 : zalopay
-                                    // reset QR code
-                                    payZaloDialog.resetQRCode();
-                                    payZaloDialog.resetTimer();
+//                            if (g_autoThanhtoan === true) {
+//                                if ( mainController.getPaymentMethod() === 1 ) {
+//                                    // === 1 : zalopay
+//                                    // reset QR code
+//                                    payZaloDialog.resetQRCode();
+//                                    payZaloDialog.resetTimer();
 
-                                    // tiếp tục thanh toán cho khách kế tiếp cùng hóa đơn
-                                    //var foodItems = choosenItemListView.generateBillDetail()
-                                    payZaloDialog.foId = mainController.pay(textThanhtienValue.text, window.global_foodItems, 1);
-                                }
-                                else if ( mainController.getPaymentMethod() === 2 ) {
-                                    // === 2 : card
-                                }
-                                else if ( mainController.getPaymentMethod() === 4 ) {
-                                    // === 4 : cash - tiền mặt
-                                    cashAlert.open();
-                                }
+//                                    // tiếp tục thanh toán cho khách kế tiếp cùng hóa đơn
+//                                    //var foodItems = choosenItemListView.generateBillDetail()
+//                                    payZaloDialog.foId = mainController.pay(textThanhtienValue.text, window.global_foodItems, 1);
+//                                }
+//                                else if ( mainController.getPaymentMethod() === 2 ) {
+//                                    // === 2 : card
+//                                }
+//                                else if ( mainController.getPaymentMethod() === 4 ) {
+//                                    // === 4 : cash - tiền mặt
+//                                    cashAlert.open();
+//                                }
 
-                                bClose = false;
+//                                bClose = false;
 
-                            }
-                            else {
-                                // xoá hóa đơn đã thanh toán, chờ khách tiếp theo chọn món
-                                textThanhtienValue.text = "0";
-                                button1.enabled = false;
-                                choosenItemListView.cleanup();
-                            }
-                        }
+//                            }
+//                            else {
+//                                // xoá hóa đơn đã thanh toán, chờ khách tiếp theo chọn món
+////                                textThanhtienValue.text = "0";
+////                                button1.enabled = false;
+//                                choosenItemListView.cleanup();
+//                            }
+//                        }
 
                         if (bClose == true){
                             if ( mainController.getPaymentMethod() === 1 ) {
@@ -261,6 +261,7 @@ Popup {
                                 cashAlert.close();
                             }
                         }
+                        console.log("err code: " + errcode);
 
                         // open popup dialog to guide user get the bill
                         if ((bClose == true) && (errcode == 0)) {
@@ -268,8 +269,14 @@ Popup {
                                 getBillAlert.open()
                             }
                         }
+                        if ( errcode == 1) {
+                            if (mainController.getBillAlertTimer() > 0) {
+                                getErrAlert.open()
+                            }
+                        }
                     }
                 }
+
 
             }
 

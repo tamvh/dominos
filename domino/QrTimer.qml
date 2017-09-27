@@ -43,6 +43,9 @@ Item  {
                 mainController.idleClearup();
                 systemIdleAlert.close();
             }
+            else if(parentId === 4) {
+                getErrAlert.close();
+            }
         }
 
         timerCountdown.minutesElapsed = (timeCounter)/60;

@@ -171,6 +171,7 @@ Rectangle {
                 onClicked: {
                     window.txtThanhTien = textThanhtienValue.text
                     window.global_foodItems = choosenItemListView.generateBillDetail()
+                    window.g_autoThanhtoan = autoThanhtoan.checked;
                     idProfilePage.open()
                 }
             }
@@ -179,82 +180,6 @@ Rectangle {
                 height: 5
                 width: parent.width
                 color: "#F5F5F5"
-            }
-
-
-
-            Connections {
-                target: mainController
-
-                onPaymentUpdate: {
-                    updatePaymentMethod(methods)
-                }
-
-                onPaymentMask: {
-                    updatePaymentMask(paymentMask)
-                    idPaymethod.visible = !((paymentMask===1)||(paymentMask===2)||(paymentMask===4))
-                }
-
-                onUpdateShowthanhtoancungdonhang: {
-                    updateShowthanhtoancungdonhang(isShow);
-                }
-
-                onNotifySucc: {
-                    var bClose = true;
-                    if (errcode === 0 ) {
-
-                        if (autoThanhtoan.checked === true) {
-                            if ( mainController.getPaymentMethod() === 1 ) {
-                                // === 1 : zalopay
-                                // reset QR code
-                                payZaloDialog.resetQRCode();
-                                payZaloDialog.resetTimer();
-
-                                // tiếp tục thanh toán cho khách kế tiếp cùng hóa đơn
-                                var foodItems = choosenItemListView.generateBillDetail()
-                                payZaloDialog.foId = mainController.pay(textThanhtienValue.text, foodItems, 1);
-                            }
-                            else if ( mainController.getPaymentMethod() === 2 ) {
-                                // === 2 : card
-                            }
-                            else if ( mainController.getPaymentMethod() === 4 ) {
-                                // === 4 : cash - tiền mặt
-                                cashAlert.open();
-                            }
-
-                            bClose = false;
-
-                        }
-                        else {
-                            // xoá hóa đơn đã thanh toán, chờ khách tiếp theo chọn món
-                            textThanhtienValue.text = "0";
-                            button1.enabled = false;
-                            choosenItemListView.cleanup();
-                        }
-                    }
-
-                    if (bClose == true){
-                        if ( mainController.getPaymentMethod() === 1 ) {
-                            // === : zalopay
-                            payZaloDialog.close();
-                        }
-                        else if ( mainController.getPaymentMethod() === 2 ) {
-                            // === 2 : card
-                            popQuetthe.close();
-                        }
-                        else if ( mainController.getPaymentMethod() === 4 ) {
-                            // === 4 : cash - tiền mặt
-                            cashAlert.close();
-                        }
-                    }
-
-                    // open popup dialog to guide user get the bill
-                    if ((bClose == true) && (errcode == 0)) {
-                        if (mainController.getBillAlertTimer() > 0) {
-                            getBillAlert.open()
-                        }
-                    }
-                }
             }
 
             Connections {
