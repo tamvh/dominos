@@ -254,7 +254,6 @@ Item {
                     id:mouseArea
                     anchors.fill: parent
                     onClicked: {
-                        console.log('style row: ' + styleData.row);
                         window.styleData_row = styleData.row;
                         window.prodNameInPaymenView = choosenItemModel.getProductName(styleData.row);
                         deleteItemDialog.open();

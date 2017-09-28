@@ -318,7 +318,7 @@ Rectangle {
                                 Label {
                                     text: text_price9  + " VNĐ"
                                     color: "gray"
-                                    font.pixelSize: cellFontSize + 4
+                                    font.pixelSize: 18
                                     font.strikeout: true
                                 }
                             }
@@ -372,7 +372,7 @@ Rectangle {
                                 Label {
                                     text: text_price12 + " VNĐ"
                                     color: "gray"
-                                    font.pixelSize: cellFontSize + 6
+                                    font.pixelSize: 18
                                     font.strikeout: true
                                 }
                             }
@@ -419,18 +419,20 @@ Rectangle {
                         ColumnLayout {
                             anchors.fill: parent
                             spacing: 10
-
                             Item {
                                 id: itemImage
                                 anchors.top: parent.top
-                                width:parent.width
+                                anchors.topMargin: 2
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                width:parent.width-4
                                 height:width*255/340
                                 focus: true
-
                                 Image {
                                     id: foodIcon
                                     fillMode: Image.Stretch
                                     anchors.fill: parent
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    anchors.verticalCenter: parent.verticalCenter
                                     anchors.margins: 3
                                     asynchronous: true
                                     cache: img_cache

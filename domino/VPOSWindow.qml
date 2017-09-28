@@ -251,6 +251,7 @@ ApplicationWindow {
             txtPercentCheesy.text = getPercentCheesy(nChessy);
 
             rect_pizzasize_small.border.color = "#0695D6"
+            rect_pizzasize_small.border.width = 4
         } else if(sizebanh === 9) {
             pizza_sizebanh = qsTr("9\"")
             pizza_sizebanh_id = "9"
@@ -258,6 +259,7 @@ ApplicationWindow {
             enable_cheesy = true
             opacity_cheesy = 1.0
             rect_pizzasize_avg.border.color = "#0695D6"
+            rect_pizzasize_avg.border.width = 4
         } else if(sizebanh === 12) {
             pizza_sizebanh = qsTr("12\"")
             pizza_sizebanh_id = "12"
@@ -265,6 +267,7 @@ ApplicationWindow {
             enable_cheesy = true
             opacity_cheesy = 1.0
             rect_pizzasize_big.border.color = "#0695D6"
+            rect_pizzasize_big.border.width = 4
         }
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
     }
@@ -273,6 +276,10 @@ ApplicationWindow {
         rect_pizzasize_small.border.color = "#DDDDDD"
         rect_pizzasize_avg.border.color = "#DDDDDD"
         rect_pizzasize_big.border.color = "#DDDDDD"
+
+        rect_pizzasize_small.border.width = 2
+        rect_pizzasize_avg.border.width = 2
+        rect_pizzasize_big.border.width = 2
     }
 
     function reset_color_debanh() {
@@ -281,6 +288,12 @@ ApplicationWindow {
         rectDeday.border.color = "#DDDDDD"
         rectVienphomaiMong.border.color = "#DDDDDD"
         rectVienphomaiDay.border.color = "#DDDDDD"
+
+        rectDemong.border.width =2
+        rectDevua.border.width =2
+        rectDeday.border.width =2
+        rectVienphomaiMong.border.width =2
+        rectVienphomaiDay.border.width =2
     }
 
     function check_sizebanh(sizebanh) {
@@ -306,18 +319,23 @@ ApplicationWindow {
         if(debanh === "de_mong") {
             pizza_debanh = "Đế mỏng"
             rectDemong.border.color = "#0695D6"
+            rectDemong.border.width =4
         } else if(debanh === "de_vua") {
             pizza_debanh = "Đế vừa";
             rectDevua.border.color = "#0695D6"
+            rectDevua.border.width =4
         } else if( debanh === "de_day") {
             pizza_debanh = "Đế dày";
             rectDeday.border.color = "#0695D6"
+            rectDeday.border.width =4
         } else if(debanh === "de_cheesy") {
             pizza_debanh = "Viền phô mai dày";
             rectVienphomaiDay.border.color = "#0695D6"
+            rectVienphomaiDay.border.width =4
         } else if(debanh === "de_thin_cheesy") {
             pizza_debanh = "Viền phô mai mỏng";
             rectVienphomaiMong.border.color = "#0695D6"
+            rectVienphomaiMong.border.width =4
         }
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
     }

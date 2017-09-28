@@ -244,19 +244,23 @@ Rectangle {
                     Item {
                         id: itemImage
                         anchors.top: parent.top
-                        width:parent.width
-                        height:width*255/330
+                        anchors.topMargin: 2
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        width:parent.width-4
+                        height:width*255/340
+                        focus: true
                         Image {
                             id: foodIcon
                             fillMode: Image.Stretch
                             anchors.fill: parent
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
                             anchors.margins: 3
                             asynchronous: true
                             cache: img_cache
                             source: image
                         }
                     }
-
 
 
                     Item {
