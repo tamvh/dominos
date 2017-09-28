@@ -203,357 +203,364 @@ Rectangle {
         foodsModel.append({description: description, visible_price: visible_price, min_size: min_size, objdata: objdata, category: category, code: foodcode, name: foodname, namelatin: latin, price: priceString, price_7: price_7, price_9: price_9, price_12: price_12, image: image, img_cache: img_cache,
                               oriprice: oriString, promtype: promtype, itmviewable: true})
     }
+    Grid {
+        columns: 1
+        anchors.fill: parent
+        Rectangle {
+            id: rectTitle
+            height: 127
+            width: parent.width
+            color: "#F5F5F5"
+            GridView {
+                id: gridSubCateView
 
-    Rectangle {
-        id: rectTitle
-        height: 130
-        width: parent.width
-        color: "#F5F5F5"
-        GridView {
-            id: gridSubCateView
-
-            anchors.centerIn: parent
-            focus: true
-            model: subCateModel
-            delegate: Item {
-                property int cellFontSize: fooditemfntsize
-                RowLayout {
-                    anchors.centerIn: parent
-                    spacing: 30
-                    Item {
-                        height: 80
-                        width: 80
-                        visible: visible_price
-                        Image {
-                            fillMode: Image.Stretch
-                            anchors.fill: parent
-                            anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_7.png'
-                        }
-                    }
-                    Column {
-                        spacing: 10
-                        RowLayout {
-                            Label {
-                                visible: visible_price
-                                text: "Nhỏ(7\")"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                visible: visible_price
-                                text: "-"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                visible: visible_price
-                                text: "4 miếng"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
+                anchors.centerIn: parent
+                focus: true
+                model: subCateModel
+                delegate: Item {
+                    property int cellFontSize: fooditemfntsize
+                    RowLayout {
+                        anchors.centerIn: parent
+                        spacing: 30
+                        Item {
+                            height: 80
+                            width: 80
+                            visible: visible_price
+                            Image {
+                                fillMode: Image.Stretch
+                                anchors.fill: parent
+                                anchors.margins: 2
+                                source: 'qrc:/icons/images/app/size_7.png'
                             }
                         }
-                        RowLayout {
-                            Label {
-                                visible: visible_price
-                                text: text_price7 + " VNĐ"
-                                color: "#E61837"
-                                font.pixelSize: 30
-                                font.bold: true
+                        Column {
+                            spacing: 10
+                            RowLayout {
+                                Label {
+                                    visible: visible_price
+                                    text: "Nhỏ(7\")"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    visible: visible_price
+                                    text: "-"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    visible: visible_price
+                                    text: "4 miếng"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                            }
+                            RowLayout {
+                                Label {
+                                    visible: visible_price
+                                    text: text_price7 + " VNĐ"
+                                    color: "#E61837"
+                                    font.pixelSize: 30
+                                    font.bold: true
+                                }
                             }
                         }
-                    }
-
-
-                    Rectangle {
-                        visible: visible_price
-                        height: 60
-                        width: 10
-                        color: "transparent"
-                    }
-                    Item {
-                        height: 80
-                        width: 80
-                        Image {
-                            fillMode: Image.Stretch
-                            anchors.fill: parent
-                            anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_9.png'
-                        }
-                    }
-                    Column {
-                        spacing: 10
-                        RowLayout {
-                            Label {
-                                text: "Vừa(9\")"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                text: "-"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                text: "6 miếng"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                        }
-                        ColumnLayout {
-                            Label {
-                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9'))  + " VNĐ"
-                                color: "#E61837"
-                                font.pixelSize: 30
-                                font.bold: true
-                            }
-                            Label {
-                                text: text_price9  + " VNĐ"
-                                color: "gray"
-                                font.pixelSize: cellFontSize + 4
-                                font.strikeout: true
-                            }
-                        }
-                    }
 
 
-                    Rectangle {
-                        height: 60
-                        width: 10
-                        color: "transparent"
-                    }
-                    Item {
-                        height: 80
-                        width: 80
-                        Image {
-                            fillMode: Image.Stretch
-                            anchors.fill: parent
-                            anchors.margins: 2
-                            source: 'qrc:/icons/images/app/size_12.png'
+                        Rectangle {
+                            visible: visible_price
+                            height: 60
+                            width: 10
+                            color: "transparent"
                         }
-                    }
-                    Column {
-                        spacing: 10
-                        RowLayout {
-                            Label {
-                                text: "Nhỏ(12\")"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                text: "-"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
-                            }
-                            Label {
-                                text: "8 miếng"
-                                font.pixelSize: 18
-                                font.bold: true
-                                color: "#000000"
+                        Item {
+                            height: 80
+                            width: 80
+                            Image {
+                                fillMode: Image.Stretch
+                                anchors.fill: parent
+                                anchors.margins: 2
+                                source: 'qrc:/icons/images/app/size_9.png'
                             }
                         }
-                        ColumnLayout {
-                            Label {
-                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12'))  + " VNĐ"
-                                color: "#E61837"
-                                font.pixelSize: 30
-                                font.bold: true
+                        Column {
+                            spacing: 10
+                            RowLayout {
+                                Label {
+                                    text: "Vừa(9\")"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    text: "-"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    text: "6 miếng"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
                             }
-                            Label {
-                                text: text_price12 + " VNĐ"
-                                color: "gray"
-                                font.pixelSize: cellFontSize + 6
-                                font.strikeout: true
+                            ColumnLayout {
+                                Label {
+                                    text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9'))  + " VNĐ"
+                                    color: "#E61837"
+                                    font.pixelSize: 30
+                                    font.bold: true
+                                }
+                                Label {
+                                    text: text_price9  + " VNĐ"
+                                    color: "gray"
+                                    font.pixelSize: cellFontSize + 4
+                                    font.strikeout: true
+                                }
+                            }
+                        }
+
+
+                        Rectangle {
+                            height: 60
+                            width: 10
+                            color: "transparent"
+                        }
+                        Item {
+                            height: 80
+                            width: 80
+                            Image {
+                                fillMode: Image.Stretch
+                                anchors.fill: parent
+                                anchors.margins: 2
+                                source: 'qrc:/icons/images/app/size_12.png'
+                            }
+                        }
+                        Column {
+                            spacing: 10
+                            RowLayout {
+                                Label {
+                                    text: "Nhỏ(12\")"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    text: "-"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                                Label {
+                                    text: "8 miếng"
+                                    font.pixelSize: 18
+                                    font.bold: true
+                                    color: "#000000"
+                                }
+                            }
+                            ColumnLayout {
+                                Label {
+                                    text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12'))  + " VNĐ"
+                                    color: "#E61837"
+                                    font.pixelSize: 30
+                                    font.bold: true
+                                }
+                                Label {
+                                    text: text_price12 + " VNĐ"
+                                    color: "gray"
+                                    font.pixelSize: cellFontSize + 6
+                                    font.strikeout: true
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
 
-    GridView {
-        id: gridItemView
-        anchors.fill: parent
-        cellWidth: m_cellw
-        cellHeight: m_cellh
-        focus: true
-        anchors.top: rectTitle.bottom
-        anchors.topMargin: 130
-        model: foodsModel
 
-        delegate: Item {
-            id: item
-            width: m_cellw
-            height: m_cellh
-            property int cellPadding: 3
-            property int cellFontSize: fooditemfntsize
-
-            HalfRadiusRectangle {
-                id: halfRect
+        Rectangle {
+            height: parent.height
+            width: parent.width
+            color: "#F5F5F5"
+            GridView {
+                id: gridItemView
                 anchors.fill: parent
-                anchors.leftMargin: cellPadding
-                anchors.rightMargin: cellPadding
-                anchors.bottomMargin: cellPadding*2
-                property bool viewitem : true
+                cellWidth: m_cellw
+                cellHeight: m_cellh
+                focus: true
+                model: foodsModel
 
-                bottomRadius: 10
-                radiusWidth: 3
-                rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
-                // search-filter
-                opacity: itmviewable
+                delegate: Item {
+                    id: item
+                    width: m_cellw
+                    height: m_cellh
+                    property int cellPadding: 3
+                    property int cellFontSize: fooditemfntsize
 
-                ColumnLayout {
-                    anchors.fill: parent
-                    spacing: 10
+                    HalfRadiusRectangle {
+                        id: halfRect
+                        anchors.fill: parent
+                        anchors.leftMargin: cellPadding
+                        anchors.rightMargin: cellPadding
+                        anchors.bottomMargin: cellPadding*2
+                        property bool viewitem : true
 
-                    Item {
-                        id: itemImage
-                        anchors.top: parent.top
-                        width:parent.width
-                        height:width*255/340
-                        focus: true
+                        bottomRadius: 10
+                        radiusWidth: 3
+                        rcColor: item.GridView.isCurrentItem? "#006493":"#E2E6E7"
+                        // search-filter
+                        opacity: itmviewable
 
-                        Image {
-                            id: foodIcon
-                            fillMode: Image.Stretch
-                            anchors.fill: parent
-                            anchors.margins: 3
-                            asynchronous: true
-                            cache: img_cache
-                            source: image
-
-                        }
-                    }
-
-
-                    Item {
-                        Layout.fillWidth: true
-                        anchors.top: itemImage.bottom
-                        anchors.bottom: parent.bottom
                         ColumnLayout {
-                            anchors.centerIn: parent
-                            RowLayout {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                Label {
-                                    id:foodName
-                                    text: name
-                                    font.pixelSize: 20
-                                    font.bold: true
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    horizontalAlignment: Text.AlignHCenter
+                            anchors.fill: parent
+                            spacing: 10
 
-                                    //--- text multi lines ...
+                            Item {
+                                id: itemImage
+                                anchors.top: parent.top
+                                width:parent.width
+                                height:width*255/340
+                                focus: true
+
+                                Image {
+                                    id: foodIcon
+                                    fillMode: Image.Stretch
+                                    anchors.fill: parent
+                                    anchors.margins: 3
+                                    asynchronous: true
+                                    cache: img_cache
+                                    source: image
+
                                 }
                             }
 
-                            RowLayout {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                visible: visible_price
-                                Text {
-                                    text: oriprice
-                                    //text: promtype
-                                    color: "#4a9fe7"
-                                    font.pixelSize: cellFontSize + 2
-                                    font.strikeout: true
-                                }
 
-                                Text {
-                                    text: price
-                                    color: "red"
-                                    font.pixelSize: cellFontSize + 6
-                                }
+                            Item {
+                                Layout.fillWidth: true
+                                anchors.top: itemImage.bottom
+                                anchors.bottom: parent.bottom
+                                ColumnLayout {
+                                    anchors.centerIn: parent
+                                    RowLayout {
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Label {
+                                            id:foodName
+                                            text: name
+                                            font.pixelSize: 20
+                                            font.bold: true
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            horizontalAlignment: Text.AlignHCenter
 
-                                Text {
-                                    text: "VNĐ"
-                                    color: "red"
-                                    font.pixelSize: cellFontSize
-                                    anchors.bottom: parent.bottom
-                                    anchors.margins: 4
+                                            //--- text multi lines ...
+                                        }
+                                    }
+
+                                    RowLayout {
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        visible: visible_price
+                                        Text {
+                                            text: oriprice
+                                            //text: promtype
+                                            color: "#4a9fe7"
+                                            font.pixelSize: cellFontSize + 2
+                                            font.strikeout: true
+                                        }
+
+                                        Text {
+                                            text: price
+                                            color: "red"
+                                            font.pixelSize: cellFontSize + 6
+                                        }
+
+                                        Text {
+                                            text: "VNĐ"
+                                            color: "red"
+                                            font.pixelSize: cellFontSize
+                                            anchors.bottom: parent.bottom
+                                            anchors.margins: 4
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                if (halfRect.opacity) {
+                                    gridItemView.currentIndex = index
+                                    var name_code = "";
+                                    window.url_img = image
+                                    window.obj_data = objdata
+                                    window.pizza_prod_code = code
+                                    window.pizza_prod_name = name
+                                    window.pizza_prize = mainController.getMoneyValue(price);
+                                    window.pizza_prize_7 = price_7
+                                    window.pizza_prize_9 = price_9
+                                    window.pizza_prize_12 = price_12
+                                    var _quantity = 1;
+                                    window.pizza_money = mainController.moneyMoney(mainController.getMoneyValue(price) * _quantity)
+                                    window.min_size = min_size;
+                                    window.pizza_category = category;
+                                    var _cateName = category.split('\n')[0];
+                                    if(_cateName === "Pizza Favorite" ||
+                                            _cateName === "Pizza Classic" ||
+                                            _cateName === "Pizza Premium" ||
+                                            _cateName === "Pizza Signature") {
+                                        if(_cateName === "Pizza Signature") {
+                                            window.getMoney(_cateName, '9', 1)
+                                            window.enable_cheesy = true;
+                                        } else {
+                                            window.getMoney(_cateName, '7', 1)
+                                            window.enable_cheesy = false;
+                                        }
+                                        window.pressbtn_selected = true;
+                                        window.reset(category);
+                                        cakeInfoDialog.open()
+                                    } else {
+                                        mainController.insertItem(name_code, name.split('\n')[0], "-", "-", price, _quantity, oriprice, 0)
+                                    }
                                 }
                             }
                         }
                     }
-                }
+                    Rectangle {
+                        width: 50
+                        height: 50
+                        opacity: 1.0
+                        anchors.left: parent.left
+                        anchors.leftMargin: 6
+                        anchors.top: parent.top
+                        anchors.topMargin: 3
+                        color: "transparent"
+                        radius: 30
+                        Image {
+                            id: imgInfo
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            fillMode: Image.Pad
+                            source: "qrc:/icons/images/app/info_icon.svg"
+                        }
+                        ColorOverlay {
+                            anchors.fill: imgInfo
+                            source: imgInfo
+                            color: "#FFFFFF"
+                        }
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        if (halfRect.opacity) {
-                            gridItemView.currentIndex = index
-                            var name_code = "";
-                            window.url_img = image
-                            window.obj_data = objdata
-                            window.pizza_prod_code = code
-                            window.pizza_prod_name = name
-                            window.pizza_prize = mainController.getMoneyValue(price);
-                            window.pizza_prize_7 = price_7
-                            window.pizza_prize_9 = price_9
-                            window.pizza_prize_12 = price_12
-                            var _quantity = 1;
-                            window.pizza_money = mainController.moneyMoney(mainController.getMoneyValue(price) * _quantity)
-                            window.min_size = min_size;
-                            window.pizza_category = category;
-                            var _cateName = category.split('\n')[0];
-                            if(_cateName === "Pizza Favorite" ||
-                                    _cateName === "Pizza Classic" ||
-                                    _cateName === "Pizza Premium" ||
-                                    _cateName === "Pizza Signature") {
-                                if(_cateName === "Pizza Signature") {
-                                    window.getMoney(_cateName, '9', 1)
-                                    window.enable_cheesy = true;
-                                } else {
-                                    window.getMoney(_cateName, '7', 1)
-                                    window.enable_cheesy = false;
-                                }
-                                window.pressbtn_selected = true;
-                                window.reset(category);
-                                cakeInfoDialog.open()
-                            } else {
-                                mainController.insertItem(name_code, name.split('\n')[0], "-", "-", price, _quantity, oriprice, 0)
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                window.zoom_prod_name = name;
+                                window.zoom_prod_img = image;
+                                window.zoom_prod_thanhphan = description;
+                                zoomItemDialog.open()
                             }
                         }
-                    }
-                }
-            }
-            Rectangle {
-                width: 50
-                height: 50
-                opacity: 1.0
-                anchors.left: parent.left
-                anchors.leftMargin: 6
-                anchors.top: parent.top
-                anchors.topMargin: 3
-                color: "transparent"
-                radius: 30
-                Image {
-                    id: imgInfo
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
-                    fillMode: Image.Pad
-                    source: "qrc:/icons/images/app/info_icon.svg"
-                }
-                ColorOverlay {
-                    anchors.fill: imgInfo
-                    source: imgInfo
-                    color: "#FFFFFF"
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        window.zoom_prod_name = name;
-                        window.zoom_prod_img = image;
-                        window.zoom_prod_thanhphan = description;
-                        zoomItemDialog.open()
                     }
                 }
             }

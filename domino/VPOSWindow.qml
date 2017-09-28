@@ -1307,23 +1307,29 @@ ApplicationWindow {
                         columns: 2
                         Layout.fillHeight: true
                         ColumnLayout {
+                            id: columnDetail
                             spacing: 30
-                            width: 692
+                            width: 650
+//                            anchors.right: columnButton.left
+//                            anchors.rightMargin: 10
                             ColumnLayout {
-                                width: 692
+                                width: 650
                                 Label {
-                                    width: 692
+                                    width: 650
                                     text: "MÔ TẢ"
                                     font.pixelSize: 20
                                     font.bold: true
                                     color: "#777777"
                                 }
-                                Label {
+                                Text {
                                     id: lblChitiet
-                                    width: 692
-                                    text: (nChessy > 0) ? nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + cheesy_text : nItem + " " + pizza_prod_name.split('\n')[0] + "/" + pizza_sizebanh + "/" + pizza_debanh
+                                    Layout.fillHeight: true
+                                    Layout.fillWidth: true
+                                    width: 650
+                                    text: (nChessy > 0) ? nItem + " " + pizza_prod_name.split('\n')[0] + " / " + pizza_sizebanh + " / " + pizza_debanh + " / " + cheesy_text : nItem + " " + pizza_prod_name.split('\n')[0] + " / " + pizza_sizebanh + " / " + pizza_debanh
                                     font.pixelSize: 20
                                     font.bold: true
+                                    wrapMode: Text.Wrap
                                     color: "#000000"
                                 }
                             }
@@ -1357,6 +1363,7 @@ ApplicationWindow {
                         }
 
                         ColumnLayout {
+                            id: columnButton
                             spacing: 30
                             Row {
                                  width: 342
