@@ -21,6 +21,9 @@ VPOSWindow {
     SettingsPage {
         id: settingPage
     }
+    BlankPage {
+        id: blankPage
+    }
 
     /*  Keyboard input panel.
         The keyboard is anchored to the bottom of the application.

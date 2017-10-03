@@ -13,7 +13,8 @@ Popup {
     y: (parent.height - height)/4
     closePolicy: Popup.NoAutoClose
     focus: true
-    modal: true
+//    modal: true
+    dim: true
     topPadding: 30
     rightPadding: 30
     leftPadding: 30
@@ -300,6 +301,7 @@ Popup {
                 Material.accent: "#8397A0"
                 onClicked: {
                     init();
+                    stackView.pop()
                     profilePage.close()
                 }
             }
