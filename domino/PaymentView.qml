@@ -172,7 +172,6 @@ Rectangle {
                     window.txtThanhTien = textThanhtienValue.text
                     window.global_foodItems = choosenItemListView.generateBillDetail()
                     window.g_autoThanhtoan = autoThanhtoan.checked;
-//                    stackView.push(blankPage)
                     idProfilePage.open()
                 }
             }

@@ -864,6 +864,7 @@ void MainController::onNotify(const QString &message)
                     {
                         //push data to domino server
                         QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrder(QJsonObject)), this, SLOT(eventPlaceOrder(QJsonObject)), Qt::UniqueConnection);
+                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString)), this, SLOT(eventPlaceOrderErr(QString)), Qt::UniqueConnection);
                         this->placeorder2dominoserver();
 
                         // tạo nội dung xuất ra máy in
@@ -878,7 +879,7 @@ void MainController::onNotify(const QString &message)
                         g_invceDate = invceDate;
                         g_barcode   = barcode;
                         g_balance   = balance;
-
+                        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
                     }
                 }
                 else {
@@ -903,6 +904,13 @@ void MainController::onNotify(const QString &message)
             }
         }
     }
+}
+
+void MainController::eventPlaceOrderErr(const QString &err) {
+    qDebug() << "eventPlaceOrder Err: " << err;
+    g_storeOrderID = "#";
+    printBill(g_invceCode, g_printdata);
+
 }
 
 void MainController::eventPlaceOrder(const QJsonObject &result) {
@@ -932,7 +940,7 @@ void MainController::eventPlaceOrder(const QJsonObject &result) {
         // printbill
         qDebug() << "start print bill";
         printBill(g_invceCode, g_printdata);
-        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
+//        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
     } else {
         //thong bao loi - gui request len server de hoan tien
         emit notifySucc(1, g_invceCode, g_invceDate, g_barcode, g_balance);

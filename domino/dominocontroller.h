@@ -21,6 +21,7 @@ signals:
     void eventStoreStreets(const QJsonObject &storeProducts);
     void eventStoreCoupons(const QJsonObject &storeProducts);
     void eventPlaceOrder(const QJsonObject &storeProducts);
+    void eventPlaceOrderErr(const QString &err);
     void evenPlaceEditOrder(const QJsonObject &storeProducts);
     void evenPriceOrder(const QJsonObject &storeProducts);
     void evenGetOrderStatus(const QJsonObject &storeProducts);

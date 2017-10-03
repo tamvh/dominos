@@ -292,6 +292,7 @@ public slots:
     void onStoreProducts(const QJsonObject &storeProducts);
     void onStoreInformation(const QJsonObject &storeInformation);
     void eventPlaceOrder(const QJsonObject &result);
+    void eventPlaceOrderErr(const QString &err);
 private:
     void placeorder2dominoserver();
     void doScanDock();
