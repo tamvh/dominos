@@ -40,7 +40,7 @@ Pane {
                                 id: idDominoServerUrl
                                 enabled: true
                                 placeholderText: "http://localhost"
-                                width: admConfColwidth2
+                                width: admConfColwidth2 * 5
                                 Layout.fillWidth: true
                                 text: mainController.getDominoServerUrl()
                                 onEditingFinished: {
