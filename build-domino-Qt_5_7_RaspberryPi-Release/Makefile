@@ -623,7 +623,6 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/dynamicqml/AdminConfigPage.qml \
 		../domino/dynamicqml/UserConfigPage.qml \
 		../domino/dynamicqml/PiSettingsPage.qml \
-		../domino/dynamicqml/BlankPage.qml \
 		../domino/dynamicqml/SettingsPage.qml \
 		../domino/dynamicqml/SettingPages.qml \
 		../domino/content/TextBase.qml \
