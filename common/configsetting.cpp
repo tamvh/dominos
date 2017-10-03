@@ -87,7 +87,7 @@ void ConfigSetting::Load()
 
     couponpercent  = sets.value(QString("option/couponpercent"),   0.0).toFloat();
     idcoupon        = sets.value(QString("option/idcoupon"),     QString("ZALO40")).toString();
-    dominoServerUrl = sets.value(QString("option/dominoserverurl"),     QString("http://localhost")).toString();
+    dominoServerUrl = sets.value(QString("option/dominoserverurl"),     QString("http://113.161.67.179:59101")).toString();
     if( m_autoSave && !sets.contains("option/appname") )
     {
         Save();

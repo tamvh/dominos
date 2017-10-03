@@ -51,6 +51,7 @@ public:
     QString appTitle;       // "CĂN TIN"
     QString printerName;    // "xpriner58"
     QString dominoServerUrl;
+
     QString paymentName;    // "104.199.170.120", "payment.vng.com.vn"
     QString dockServer;     // "192.168.1.1"
     QString dockVersion;    // DockServerService version; 1.0 is original, 2.0 support extent command

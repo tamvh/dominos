@@ -385,6 +385,7 @@ private:
     QString m_customer_hinhthuc;
     QJsonArray m_foods;
     QJsonArray m_prods_from_dominos;
+    QString dominoUrl;
 private:
     QString g_invceCode;
     QString g_printdata;

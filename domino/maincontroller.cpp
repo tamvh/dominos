@@ -76,8 +76,8 @@ MainController::MainController(QObject *parent)
 
     QObject::connect(&dominoCtrl, SIGNAL(eventStoreProducts(QJsonObject)), this, SLOT(onStoreProducts(QJsonObject)), Qt::UniqueConnection);
     QObject::connect(&dominoCtrl, SIGNAL(eventStoreInformation(QJsonObject)), this, SLOT(onStoreInformation(QJsonObject)), Qt::UniqueConnection);
-
-    dominoCtrl.initizalize("TestingAndSupport", "supp0rtivemeasures", "http://113.161.67.179:59101");
+    dominoUrl = setting->dominoServerUrl; //http://113.161.67.179:59101
+    dominoCtrl.initizalize("TestingAndSupport", "supp0rtivemeasures", dominoUrl);
     dominoCtrl.getStoreProducts(55555);
     dominoCtrl.getStoreInformation(55555);
 
@@ -910,7 +910,6 @@ void MainController::eventPlaceOrderErr(const QString &err) {
     qDebug() << "eventPlaceOrder Err: " << err;
     g_storeOrderID = "#";
     printBill(g_invceCode, g_printdata);
-
 }
 
 void MainController::eventPlaceOrder(const QJsonObject &result) {
