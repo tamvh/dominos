@@ -57,6 +57,7 @@ ApplicationWindow {
     property string choose_sizebanh: qsTr("")
     property string choose_debanh: qsTr("")
     property string choose_phomai: qsTr("")
+    property string g_prod_type: qsTr("")
     property string customer_name: qsTr("")
     property string customer_hinhthuc: qsTr("dinein")
     property string name_code: qsTr("")
@@ -1432,35 +1433,36 @@ ApplicationWindow {
                                                      _name = "Thêm phô mai 50% bánh 9\"";
                                                      name_code = "O9XCHE";
                                                      _price = "10,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(nChessy === 2) {
                                                      _name = "Thêm phô mai 100% bánh 9\"";
                                                      name_code = "O9DCHE";
                                                      _price = "20,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(nChessy === 3) {
                                                      _name = "Thêm phô mai 200% bánh 9\"";
                                                      name_code = "O9TCHE";
                                                      _price = "30,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
+                                                 // vien phomai
                                                  if(pizza_debanh_id === "CC") {
                                                      _name = "Viền phô mai dày bánh 9\"";
                                                      name_code = "O9CC";
                                                      _price = "49,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(pizza_debanh_id === "TCC") {
                                                      _name = "Viền phô mai mỏng bánh 9\"";
                                                      name_code = "O9CC";
                                                      _price = "49,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
                                              }
 
@@ -1469,35 +1471,35 @@ ApplicationWindow {
                                                      _name = "Thêm phô mai 50% bánh 12\"";
                                                      name_code = "O12XCHE";
                                                      _price = "15,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(nChessy === 2) {
                                                      _name = "Thêm phô mai 100% bánh 12\"";
                                                      name_code = "O12DCHE";
                                                      _price = "30,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(nChessy === 3) {
                                                      _name = "Thêm phô mai 200% bánh 12\"";
                                                      name_code = "O12TCHE";
                                                      _price = "45,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(pizza_debanh_id === "CC") {
                                                      _name = "Viền phô mai dày bánh 12\"";
                                                      name_code = "O12CC";
                                                      _price = "69,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
 
                                                  if(pizza_debanh_id === "TCC") {
                                                      _name = "Viền phô mai mỏng bánh 12\"";
                                                      name_code = "O12CC";
                                                      _price = "69,000";
-                                                     mainController.insertItem("OPTION", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
                                                  }
                                              }
 
@@ -2504,7 +2506,7 @@ ApplicationWindow {
                     Material.primary: "#E61837"
                     Material.accent: "#E61837"
                     onClicked: {
-                        mainController.removeItemInPaymentView(styleData_row, choose_sizebanh, choose_debanh, choose_phomai);
+                        mainController.removeItemInPaymentView(styleData_row, g_prod_type, choose_sizebanh, choose_debanh, choose_phomai);
                         deleteItemDialog.close();
                     }
                 }

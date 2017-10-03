@@ -331,7 +331,7 @@ Rectangle {
                             var name_prod = name.split('\n').length > 1 ? name.split('\n')[1].toString().replace('(','').replace(')','') : name
                             console.log("name code: " + name_code);
                             var local_nChessy = 0;
-                            mainController.insertItem('', name_code, name_prod, "-", "-", local_nChessy, price, _quantity, oriprice, 0)
+                            mainController.insertItem('OTHER', name_code, name_prod, "-", "-", local_nChessy, price, _quantity, oriprice, 0)
 
                         }
                     }

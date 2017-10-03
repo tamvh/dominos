@@ -86,6 +86,14 @@ Item {
             return prod_name;
         }
 
+        function getQuantityPizza(row) {
+            var pizza_quantity = 0;
+            if(row < count) {
+                pizza_quantity = get(row).quantity;
+            }
+            return pizza_quantity;
+        }
+
         function getSizeBanh(row) {
             var size_banh = '';
             if(row < count) {
@@ -109,14 +117,6 @@ Item {
             }
             return phomai;
         }
-
-//        function getProductName(row) {
-//            var prod_name = '';
-//            if(row < count) {
-//                prod_name = get(row).item_name;
-//            }
-//            return prod_name;
-//        }
 
         function getTypeProduct(row) {
             var prod_type = '';
@@ -161,6 +161,64 @@ Item {
             updateTotalMoney()
         }
 
+        function removeItemPizza(local_prodtype, size_banh, de_banh, phomai) {
+            for (var i = 0; i < count; i++) {
+                if(size_banh === get(i).size &&
+                        de_banh === get(i).debanh &&
+                        phomai === get(i).phomai &&
+                        get(i).type === local_prodtype) {
+                    console.log("row pizza: " + JSON.stringify(get(i)));
+                    remove(i, 1);
+                    break;
+                }
+            }
+            updateTotalMoney()
+        }
+
+        function removePizzaOptionPlusChessy(pizza_quantity, local_prodtype, size_banh, phomai) {
+            for (var i = 0; i < count; i++) {
+                if(size_banh === get(i).size &&
+                        phomai === get(i).phomai &&
+                        get(i).type === local_prodtype) {
+                    console.log("pizza_quantity: " + pizza_quantity);
+                    console.log("row option: " + JSON.stringify(get(i)));
+                    if(pizza_quantity < get(i).quantity) {
+                        var quantityValue = get(i).quantity - pizza_quantity;
+                        var amountValue = quantityValue * mainController.getMoneyValue(get(i).price);
+                        var amountString = mainController.formatMoney(amountValue);
+                        setProperty(i, "quantity", quantityValue);
+                        setProperty(i, "amount", amountString);
+                    } else {
+                         remove(i, 1);
+                    }
+                    break;
+                }
+            }
+            updateTotalMoney()
+        }
+
+        function removePizzaOptionDebanhPhomai(pizza_quantity, local_prodtype, size_banh, de_banh) {
+            for (var i = 0; i < count; i++) {
+                if(size_banh === get(i).size &&
+                        de_banh === get(i).debanh &&
+                        get(i).type === local_prodtype) {
+                    console.log("pizza_quantity: " + pizza_quantity);
+                    console.log("row option: " + JSON.stringify(get(i)));
+                    if(pizza_quantity < get(i).quantity) {
+                        var quantityValue = get(i).quantity - pizza_quantity;
+                        var amountValue = quantityValue * mainController.getMoneyValue(get(i).price);
+                        var amountString = mainController.formatMoney(amountValue);
+                        setProperty(i, "quantity", quantityValue);
+                        setProperty(i, "amount", amountString);
+                    } else {
+                         remove(i, 1);
+                    }
+                    break;
+                }
+            }
+            updateTotalMoney()
+        }
+
         function removeItem(row1, size_banh, de_banh, phomai) {
             var i;
             console.log("size banh: " + size_banh);
@@ -173,6 +231,10 @@ Item {
             console.log("count after: " + count);
             console.log("quantity_pizza: " + quantity_pizza);
 
+
+            var l = count;
+            var item, ax;
+
             for (i = 0; i < count; i++) {
                 console.log("row: " + JSON.stringify(get(i)));
                 if(size_banh === get(i).size &&
@@ -180,7 +242,7 @@ Item {
                         phomai === get(i).phomai &&
                         get(i).type !== "PIZZA") {
 
-                    console.log("quantity: " + quantity_pizza);
+                    console.log(": " + quantity_pizza);
                     console.log("quantity item: " + get(i).quantity);
                     if(quantity_pizza < get(i).quantity) {
                         var quantityValue = get(i).quantity - quantity_pizza;
@@ -196,6 +258,10 @@ Item {
             }
 
 
+            updateTotalMoney()
+        }
+        function removeItemOther(row1) {
+            remove(row1, 1);
             updateTotalMoney()
         }
 
@@ -332,7 +398,8 @@ Item {
                         window.choose_sizebanh = choosenItemModel.getSizeBanh(styleData.row);
                         window.choose_debanh = choosenItemModel.getDeBanh(styleData.row);
                         window.choose_phomai = choosenItemModel.getPhoMai(styleData.row);
-                        if(choosenItemModel.getTypeProduct(styleData.row) === "OPTION") {
+                        window.g_prod_type = choosenItemModel.getTypeProduct(styleData.row);
+                        if(window.g_prod_type === "OPTION_THEMPHOMAI" || window.g_prod_type === "OPTION_DEVIENPHOMAI") {
                             // khong the xoa duoc
                             deleteOptionPizzaDialog.open();
                         } else {
@@ -362,7 +429,16 @@ Item {
             }
 
             onRemoveItemPaymentView: {
-                choosenItemModel.removeItem(row, size_banh, de_banh, phomai);
+                if(prod_type === "OTHER") {
+                    choosenItemModel.removeItemOther(row);
+                }
+
+                if(prod_type === "PIZZA") {
+                    var local_quantity = choosenItemModel.getQuantityPizza(row);
+                    choosenItemModel.removePizzaOptionPlusChessy(local_quantity, "OPTION_THEMPHOMAI", size_banh, phomai)
+                    choosenItemModel.removePizzaOptionDebanhPhomai(local_quantity, "OPTION_DEVIENPHOMAI", size_banh, de_banh)
+                    choosenItemModel.removeItemPizza("PIZZA", size_banh, de_banh, phomai);
+                }
             }
         }
     }

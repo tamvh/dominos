@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainController_t {
-    QByteArrayData data[301];
-    char stringdata0[3822];
+    QByteArrayData data[302];
+    char stringdata0[3832];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -103,234 +103,235 @@ QT_MOC_LITERAL(69, 706, 18), // "dominosSetProdName"
 QT_MOC_LITERAL(70, 725, 13), // "QSet<QString>"
 QT_MOC_LITERAL(71, 739, 21), // "removeItemPaymentView"
 QT_MOC_LITERAL(72, 761, 3), // "row"
-QT_MOC_LITERAL(73, 765, 9), // "size_banh"
-QT_MOC_LITERAL(74, 775, 7), // "de_banh"
-QT_MOC_LITERAL(75, 783, 12), // "onCancelDone"
-QT_MOC_LITERAL(76, 796, 13), // "onCancelError"
-QT_MOC_LITERAL(77, 810, 12), // "onRejectDone"
-QT_MOC_LITERAL(78, 823, 13), // "onRejectError"
-QT_MOC_LITERAL(79, 837, 13), // "onPayZaloDone"
-QT_MOC_LITERAL(80, 851, 14), // "onPayZaloError"
-QT_MOC_LITERAL(81, 866, 5), // "error"
-QT_MOC_LITERAL(82, 872, 8), // "onNotify"
-QT_MOC_LITERAL(83, 881, 7), // "message"
-QT_MOC_LITERAL(84, 889, 13), // "onMifareFound"
-QT_MOC_LITERAL(85, 903, 2), // "id"
-QT_MOC_LITERAL(86, 906, 20), // "onCenterServiceFound"
-QT_MOC_LITERAL(87, 927, 2), // "ip"
-QT_MOC_LITERAL(88, 930, 4), // "port"
-QT_MOC_LITERAL(89, 935, 11), // "onFoodsDone"
-QT_MOC_LITERAL(90, 947, 12), // "onFoodsError"
-QT_MOC_LITERAL(91, 960, 18), // "onUpdatedFoodsData"
-QT_MOC_LITERAL(92, 979, 22), // "onCheckUpdateFoodsData"
-QT_MOC_LITERAL(93, 1002, 27), // "onCheckUpdateFoodsDataError"
-QT_MOC_LITERAL(94, 1030, 7), // "onLogin"
-QT_MOC_LITERAL(95, 1038, 5), // "uname"
-QT_MOC_LITERAL(96, 1044, 3), // "pwd"
-QT_MOC_LITERAL(97, 1048, 8), // "isBaocao"
-QT_MOC_LITERAL(98, 1057, 11), // "onLoginDone"
-QT_MOC_LITERAL(99, 1069, 12), // "onLoginError"
-QT_MOC_LITERAL(100, 1082, 8), // "onBaocao"
-QT_MOC_LITERAL(101, 1091, 12), // "onBaocaoDone"
-QT_MOC_LITERAL(102, 1104, 13), // "onBaocaoError"
-QT_MOC_LITERAL(103, 1118, 9), // "doPayCard"
-QT_MOC_LITERAL(104, 1128, 10), // "doGetPmsid"
-QT_MOC_LITERAL(105, 1139, 12), // "merchantCode"
-QT_MOC_LITERAL(106, 1152, 5), // "devId"
-QT_MOC_LITERAL(107, 1158, 4), // "biId"
-QT_MOC_LITERAL(108, 1163, 9), // "payMethod"
-QT_MOC_LITERAL(109, 1173, 15), // "onPmsidDoneZalo"
-QT_MOC_LITERAL(110, 1189, 15), // "onPmsidDoneCash"
-QT_MOC_LITERAL(111, 1205, 12), // "onPmsidError"
-QT_MOC_LITERAL(112, 1218, 9), // "doPayZalo"
-QT_MOC_LITERAL(113, 1228, 5), // "sesId"
-QT_MOC_LITERAL(114, 1234, 9), // "doPayCash"
-QT_MOC_LITERAL(115, 1244, 13), // "onPayCashDone"
-QT_MOC_LITERAL(116, 1258, 14), // "onPayCashError"
-QT_MOC_LITERAL(117, 1273, 12), // "foodsRequest"
-QT_MOC_LITERAL(118, 1286, 19), // "checkUpdateFoodData"
-QT_MOC_LITERAL(119, 1306, 16), // "timerStartUpdate"
-QT_MOC_LITERAL(120, 1323, 13), // "timerDoUpdate"
-QT_MOC_LITERAL(121, 1337, 11), // "timerReboot"
-QT_MOC_LITERAL(122, 1349, 15), // "timerSystemIdle"
-QT_MOC_LITERAL(123, 1365, 15), // "onStoreProducts"
-QT_MOC_LITERAL(124, 1381, 13), // "storeProducts"
-QT_MOC_LITERAL(125, 1395, 18), // "onStoreInformation"
-QT_MOC_LITERAL(126, 1414, 16), // "storeInformation"
-QT_MOC_LITERAL(127, 1431, 15), // "eventPlaceOrder"
-QT_MOC_LITERAL(128, 1447, 6), // "result"
-QT_MOC_LITERAL(129, 1454, 11), // "isDebugmode"
-QT_MOC_LITERAL(130, 1466, 11), // "isRaspberry"
-QT_MOC_LITERAL(131, 1478, 13), // "isCashAllowed"
-QT_MOC_LITERAL(132, 1492, 13), // "isCardAllowed"
-QT_MOC_LITERAL(133, 1506, 7), // "appQuit"
-QT_MOC_LITERAL(134, 1514, 12), // "searchFilter"
-QT_MOC_LITERAL(135, 1527, 8), // "foodname"
-QT_MOC_LITERAL(136, 1536, 10), // "searchFood"
-QT_MOC_LITERAL(137, 1547, 10), // "viet2latin"
-QT_MOC_LITERAL(138, 1558, 3), // "pay"
-QT_MOC_LITERAL(139, 1562, 13), // "customer_name"
-QT_MOC_LITERAL(140, 1576, 17), // "customer_hinhthuc"
-QT_MOC_LITERAL(141, 1594, 5), // "foods"
-QT_MOC_LITERAL(142, 1600, 10), // "insertItem"
-QT_MOC_LITERAL(143, 1611, 11), // "formatMoney"
-QT_MOC_LITERAL(144, 1623, 10), // "moneyValue"
-QT_MOC_LITERAL(145, 1634, 13), // "getMoneyValue"
-QT_MOC_LITERAL(146, 1648, 11), // "moneyString"
-QT_MOC_LITERAL(147, 1660, 10), // "moneyMoney"
-QT_MOC_LITERAL(148, 1671, 5), // "money"
-QT_MOC_LITERAL(149, 1677, 16), // "updateTotalMoney"
-QT_MOC_LITERAL(150, 1694, 20), // "updateCardWaitingPay"
-QT_MOC_LITERAL(151, 1715, 7), // "waiting"
-QT_MOC_LITERAL(152, 1723, 9), // "printBill"
-QT_MOC_LITERAL(153, 1733, 6), // "ivcode"
-QT_MOC_LITERAL(154, 1740, 9), // "printData"
-QT_MOC_LITERAL(155, 1750, 10), // "cancelBill"
-QT_MOC_LITERAL(156, 1761, 4), // "foId"
-QT_MOC_LITERAL(157, 1766, 5), // "total"
-QT_MOC_LITERAL(158, 1772, 10), // "stopDevice"
-QT_MOC_LITERAL(159, 1783, 10), // "getPrinter"
-QT_MOC_LITERAL(160, 1794, 10), // "setPrinter"
-QT_MOC_LITERAL(161, 1805, 7), // "prnName"
-QT_MOC_LITERAL(162, 1813, 10), // "getPayment"
-QT_MOC_LITERAL(163, 1824, 18), // "getDominoServerUrl"
-QT_MOC_LITERAL(164, 1843, 13), // "getUrlService"
-QT_MOC_LITERAL(165, 1857, 19), // "getTransferProtocol"
-QT_MOC_LITERAL(166, 1877, 19), // "setTransferProtocol"
-QT_MOC_LITERAL(167, 1897, 8), // "transpro"
-QT_MOC_LITERAL(168, 1906, 10), // "initSocket"
-QT_MOC_LITERAL(169, 1917, 10), // "setPayment"
-QT_MOC_LITERAL(170, 1928, 11), // "paymentName"
-QT_MOC_LITERAL(171, 1940, 18), // "setDominoServerUrl"
-QT_MOC_LITERAL(172, 1959, 3), // "url"
-QT_MOC_LITERAL(173, 1963, 16), // "setPaymentMethod"
-QT_MOC_LITERAL(174, 1980, 13), // "paymentMethod"
-QT_MOC_LITERAL(175, 1994, 16), // "getPaymentMethod"
-QT_MOC_LITERAL(176, 2011, 14), // "setPaymentMask"
-QT_MOC_LITERAL(177, 2026, 7), // "payment"
-QT_MOC_LITERAL(178, 2034, 5), // "onoff"
-QT_MOC_LITERAL(179, 2040, 14), // "getPaymentMask"
-QT_MOC_LITERAL(180, 2055, 13), // "getDockServer"
-QT_MOC_LITERAL(181, 2069, 13), // "setDockServer"
-QT_MOC_LITERAL(182, 2083, 10), // "dockServer"
-QT_MOC_LITERAL(183, 2094, 8), // "scanDock"
-QT_MOC_LITERAL(184, 2103, 6), // "doAuto"
-QT_MOC_LITERAL(185, 2110, 11), // "isConnected"
-QT_MOC_LITERAL(186, 2122, 13), // "connectToDock"
-QT_MOC_LITERAL(187, 2136, 8), // "serverIp"
-QT_MOC_LITERAL(188, 2145, 18), // "disconnectFromDock"
-QT_MOC_LITERAL(189, 2164, 16), // "testReaderDevice"
-QT_MOC_LITERAL(190, 2181, 3), // "run"
-QT_MOC_LITERAL(191, 2185, 10), // "updateWifi"
-QT_MOC_LITERAL(192, 2196, 4), // "ssid"
-QT_MOC_LITERAL(193, 2201, 3), // "key"
-QT_MOC_LITERAL(194, 2205, 7), // "encrypt"
-QT_MOC_LITERAL(195, 2213, 12), // "updateWifiPi"
-QT_MOC_LITERAL(196, 2226, 9), // "interface"
-QT_MOC_LITERAL(197, 2236, 9), // "scan_ssid"
-QT_MOC_LITERAL(198, 2246, 10), // "wifiStatus"
-QT_MOC_LITERAL(199, 2257, 8), // "testPing"
-QT_MOC_LITERAL(200, 2266, 4), // "host"
-QT_MOC_LITERAL(201, 2271, 11), // "restartDock"
-QT_MOC_LITERAL(202, 2283, 9), // "restartPi"
-QT_MOC_LITERAL(203, 2293, 6), // "haltPi"
-QT_MOC_LITERAL(204, 2300, 18), // "checkPrinterStatus"
-QT_MOC_LITERAL(205, 2319, 9), // "printTest"
-QT_MOC_LITERAL(206, 2329, 10), // "getLocalIp"
-QT_MOC_LITERAL(207, 2340, 11), // "getAppIndex"
-QT_MOC_LITERAL(208, 2352, 10), // "getAppName"
-QT_MOC_LITERAL(209, 2363, 10), // "setAppName"
-QT_MOC_LITERAL(210, 2374, 7), // "appName"
-QT_MOC_LITERAL(211, 2382, 11), // "getAppTitle"
-QT_MOC_LITERAL(212, 2394, 11), // "getTitleEng"
-QT_MOC_LITERAL(213, 2406, 11), // "setAppTitle"
-QT_MOC_LITERAL(214, 2418, 15), // "getMachineIndex"
-QT_MOC_LITERAL(215, 2434, 13), // "getAppMachine"
-QT_MOC_LITERAL(216, 2448, 14), // "getRechargeNum"
-QT_MOC_LITERAL(217, 2463, 14), // "setRechargeNum"
-QT_MOC_LITERAL(218, 2478, 5), // "mcNum"
-QT_MOC_LITERAL(219, 2484, 19), // "getFoodRefreshTimer"
-QT_MOC_LITERAL(220, 2504, 19), // "setFoodRefreshTimer"
-QT_MOC_LITERAL(221, 2524, 5), // "timer"
-QT_MOC_LITERAL(222, 2530, 17), // "getBillAlertTimer"
-QT_MOC_LITERAL(223, 2548, 17), // "setBillAlertTimer"
-QT_MOC_LITERAL(224, 2566, 27), // "getShowThanhtoancungdonhang"
-QT_MOC_LITERAL(225, 2594, 27), // "setShowThanhtoancungdonhang"
-QT_MOC_LITERAL(226, 2622, 20), // "getConfigQrcodeRatio"
-QT_MOC_LITERAL(227, 2643, 20), // "setConfigQrcodeRatio"
-QT_MOC_LITERAL(228, 2664, 5), // "ratio"
-QT_MOC_LITERAL(229, 2670, 25), // "getConfigFoodItemFontsize"
-QT_MOC_LITERAL(230, 2696, 25), // "setConfigFoodItemFontsize"
-QT_MOC_LITERAL(231, 2722, 7), // "fntsize"
-QT_MOC_LITERAL(232, 2730, 25), // "getConfigBillItemFontsize"
-QT_MOC_LITERAL(233, 2756, 25), // "setConfigBillItemFontsize"
-QT_MOC_LITERAL(234, 2782, 16), // "getConfigSobanin"
-QT_MOC_LITERAL(235, 2799, 16), // "setConfigSobanin"
-QT_MOC_LITERAL(236, 2816, 3), // "num"
-QT_MOC_LITERAL(237, 2820, 17), // "getConfigTenbanin"
-QT_MOC_LITERAL(238, 2838, 17), // "setConfigTenbanin"
-QT_MOC_LITERAL(239, 2856, 19), // "getConfigBillPreinf"
-QT_MOC_LITERAL(240, 2876, 19), // "setConfigBillPreinf"
-QT_MOC_LITERAL(241, 2896, 4), // "info"
-QT_MOC_LITERAL(242, 2901, 20), // "getConfigBillPostinf"
-QT_MOC_LITERAL(243, 2922, 20), // "setConfigBillPostinf"
-QT_MOC_LITERAL(244, 2943, 20), // "getConfigDockversion"
-QT_MOC_LITERAL(245, 2964, 20), // "setConfigDockversion"
-QT_MOC_LITERAL(246, 2985, 7), // "version"
-QT_MOC_LITERAL(247, 2993, 20), // "getConfigPrintersize"
-QT_MOC_LITERAL(248, 3014, 20), // "setConfigPrintersize"
-QT_MOC_LITERAL(249, 3035, 8), // "pagesize"
-QT_MOC_LITERAL(250, 3044, 19), // "getUserEnableConfig"
-QT_MOC_LITERAL(251, 3064, 19), // "setUserEnableConfig"
-QT_MOC_LITERAL(252, 3084, 10), // "enableconf"
-QT_MOC_LITERAL(253, 3095, 21), // "getConfigRebootDatePi"
-QT_MOC_LITERAL(254, 3117, 21), // "setConfigRebootDatePi"
-QT_MOC_LITERAL(255, 3139, 9), // "dayofweek"
-QT_MOC_LITERAL(256, 3149, 2), // "on"
-QT_MOC_LITERAL(257, 3152, 21), // "getConfigRebootTimePi"
-QT_MOC_LITERAL(258, 3174, 21), // "setConfigRebootTimePi"
-QT_MOC_LITERAL(259, 3196, 5), // "value"
-QT_MOC_LITERAL(260, 3202, 14), // "getRestartTime"
-QT_MOC_LITERAL(261, 3217, 14), // "getCurrentTime"
-QT_MOC_LITERAL(262, 3232, 17), // "getConfigUsername"
-QT_MOC_LITERAL(263, 3250, 16), // "getConfigUserpwd"
-QT_MOC_LITERAL(264, 3267, 22), // "getConfigSearchadvance"
-QT_MOC_LITERAL(265, 3290, 22), // "setConfigSearchadvance"
-QT_MOC_LITERAL(266, 3313, 13), // "searchadvance"
-QT_MOC_LITERAL(267, 3327, 23), // "getConfigShowBaocaoDate"
-QT_MOC_LITERAL(268, 3351, 23), // "setConfigShowBaocaoDate"
-QT_MOC_LITERAL(269, 3375, 8), // "showDate"
-QT_MOC_LITERAL(270, 3384, 22), // "getConfigCenterService"
-QT_MOC_LITERAL(271, 3407, 22), // "setConfigCenterService"
-QT_MOC_LITERAL(272, 3430, 15), // "centerServiceIp"
-QT_MOC_LITERAL(273, 3446, 17), // "getConfigIdletime"
-QT_MOC_LITERAL(274, 3464, 17), // "setConfigIdletime"
-QT_MOC_LITERAL(275, 3482, 11), // "setIdCoupon"
-QT_MOC_LITERAL(276, 3494, 11), // "getIdCoupon"
-QT_MOC_LITERAL(277, 3506, 18), // "setIdCouponPercent"
-QT_MOC_LITERAL(278, 3525, 7), // "percent"
-QT_MOC_LITERAL(279, 3533, 18), // "getIdCouponPercent"
-QT_MOC_LITERAL(280, 3552, 10), // "saveConfig"
-QT_MOC_LITERAL(281, 3563, 16), // "sendCancelBillUI"
-QT_MOC_LITERAL(282, 3580, 20), // "getBaocaoCurrentTime"
-QT_MOC_LITERAL(283, 3601, 8), // "inBaocao"
-QT_MOC_LITERAL(284, 3610, 4), // "date"
-QT_MOC_LITERAL(285, 3615, 6), // "bcType"
-QT_MOC_LITERAL(286, 3622, 9), // "userLogin"
-QT_MOC_LITERAL(287, 3632, 18), // "uiFoodupdateStatus"
-QT_MOC_LITERAL(288, 3651, 6), // "uiType"
-QT_MOC_LITERAL(289, 3658, 10), // "getAccount"
-QT_MOC_LITERAL(290, 3669, 14), // "getDiskPrepare"
-QT_MOC_LITERAL(291, 3684, 14), // "getDiskReserve"
-QT_MOC_LITERAL(292, 3699, 11), // "idleClearup"
-QT_MOC_LITERAL(293, 3711, 9), // "idleReset"
-QT_MOC_LITERAL(294, 3721, 14), // "getProductCode"
-QT_MOC_LITERAL(295, 3736, 8), // "pro_name"
-QT_MOC_LITERAL(296, 3745, 9), // "prod_size"
-QT_MOC_LITERAL(297, 3755, 16), // "prod_plavor_code"
-QT_MOC_LITERAL(298, 3772, 14), // "getPriceCoupon"
-QT_MOC_LITERAL(299, 3787, 10), // "pizza_size"
-QT_MOC_LITERAL(300, 3798, 23) // "removeItemInPaymentView"
+QT_MOC_LITERAL(73, 765, 9), // "prod_type"
+QT_MOC_LITERAL(74, 775, 9), // "size_banh"
+QT_MOC_LITERAL(75, 785, 7), // "de_banh"
+QT_MOC_LITERAL(76, 793, 12), // "onCancelDone"
+QT_MOC_LITERAL(77, 806, 13), // "onCancelError"
+QT_MOC_LITERAL(78, 820, 12), // "onRejectDone"
+QT_MOC_LITERAL(79, 833, 13), // "onRejectError"
+QT_MOC_LITERAL(80, 847, 13), // "onPayZaloDone"
+QT_MOC_LITERAL(81, 861, 14), // "onPayZaloError"
+QT_MOC_LITERAL(82, 876, 5), // "error"
+QT_MOC_LITERAL(83, 882, 8), // "onNotify"
+QT_MOC_LITERAL(84, 891, 7), // "message"
+QT_MOC_LITERAL(85, 899, 13), // "onMifareFound"
+QT_MOC_LITERAL(86, 913, 2), // "id"
+QT_MOC_LITERAL(87, 916, 20), // "onCenterServiceFound"
+QT_MOC_LITERAL(88, 937, 2), // "ip"
+QT_MOC_LITERAL(89, 940, 4), // "port"
+QT_MOC_LITERAL(90, 945, 11), // "onFoodsDone"
+QT_MOC_LITERAL(91, 957, 12), // "onFoodsError"
+QT_MOC_LITERAL(92, 970, 18), // "onUpdatedFoodsData"
+QT_MOC_LITERAL(93, 989, 22), // "onCheckUpdateFoodsData"
+QT_MOC_LITERAL(94, 1012, 27), // "onCheckUpdateFoodsDataError"
+QT_MOC_LITERAL(95, 1040, 7), // "onLogin"
+QT_MOC_LITERAL(96, 1048, 5), // "uname"
+QT_MOC_LITERAL(97, 1054, 3), // "pwd"
+QT_MOC_LITERAL(98, 1058, 8), // "isBaocao"
+QT_MOC_LITERAL(99, 1067, 11), // "onLoginDone"
+QT_MOC_LITERAL(100, 1079, 12), // "onLoginError"
+QT_MOC_LITERAL(101, 1092, 8), // "onBaocao"
+QT_MOC_LITERAL(102, 1101, 12), // "onBaocaoDone"
+QT_MOC_LITERAL(103, 1114, 13), // "onBaocaoError"
+QT_MOC_LITERAL(104, 1128, 9), // "doPayCard"
+QT_MOC_LITERAL(105, 1138, 10), // "doGetPmsid"
+QT_MOC_LITERAL(106, 1149, 12), // "merchantCode"
+QT_MOC_LITERAL(107, 1162, 5), // "devId"
+QT_MOC_LITERAL(108, 1168, 4), // "biId"
+QT_MOC_LITERAL(109, 1173, 9), // "payMethod"
+QT_MOC_LITERAL(110, 1183, 15), // "onPmsidDoneZalo"
+QT_MOC_LITERAL(111, 1199, 15), // "onPmsidDoneCash"
+QT_MOC_LITERAL(112, 1215, 12), // "onPmsidError"
+QT_MOC_LITERAL(113, 1228, 9), // "doPayZalo"
+QT_MOC_LITERAL(114, 1238, 5), // "sesId"
+QT_MOC_LITERAL(115, 1244, 9), // "doPayCash"
+QT_MOC_LITERAL(116, 1254, 13), // "onPayCashDone"
+QT_MOC_LITERAL(117, 1268, 14), // "onPayCashError"
+QT_MOC_LITERAL(118, 1283, 12), // "foodsRequest"
+QT_MOC_LITERAL(119, 1296, 19), // "checkUpdateFoodData"
+QT_MOC_LITERAL(120, 1316, 16), // "timerStartUpdate"
+QT_MOC_LITERAL(121, 1333, 13), // "timerDoUpdate"
+QT_MOC_LITERAL(122, 1347, 11), // "timerReboot"
+QT_MOC_LITERAL(123, 1359, 15), // "timerSystemIdle"
+QT_MOC_LITERAL(124, 1375, 15), // "onStoreProducts"
+QT_MOC_LITERAL(125, 1391, 13), // "storeProducts"
+QT_MOC_LITERAL(126, 1405, 18), // "onStoreInformation"
+QT_MOC_LITERAL(127, 1424, 16), // "storeInformation"
+QT_MOC_LITERAL(128, 1441, 15), // "eventPlaceOrder"
+QT_MOC_LITERAL(129, 1457, 6), // "result"
+QT_MOC_LITERAL(130, 1464, 11), // "isDebugmode"
+QT_MOC_LITERAL(131, 1476, 11), // "isRaspberry"
+QT_MOC_LITERAL(132, 1488, 13), // "isCashAllowed"
+QT_MOC_LITERAL(133, 1502, 13), // "isCardAllowed"
+QT_MOC_LITERAL(134, 1516, 7), // "appQuit"
+QT_MOC_LITERAL(135, 1524, 12), // "searchFilter"
+QT_MOC_LITERAL(136, 1537, 8), // "foodname"
+QT_MOC_LITERAL(137, 1546, 10), // "searchFood"
+QT_MOC_LITERAL(138, 1557, 10), // "viet2latin"
+QT_MOC_LITERAL(139, 1568, 3), // "pay"
+QT_MOC_LITERAL(140, 1572, 13), // "customer_name"
+QT_MOC_LITERAL(141, 1586, 17), // "customer_hinhthuc"
+QT_MOC_LITERAL(142, 1604, 5), // "foods"
+QT_MOC_LITERAL(143, 1610, 10), // "insertItem"
+QT_MOC_LITERAL(144, 1621, 11), // "formatMoney"
+QT_MOC_LITERAL(145, 1633, 10), // "moneyValue"
+QT_MOC_LITERAL(146, 1644, 13), // "getMoneyValue"
+QT_MOC_LITERAL(147, 1658, 11), // "moneyString"
+QT_MOC_LITERAL(148, 1670, 10), // "moneyMoney"
+QT_MOC_LITERAL(149, 1681, 5), // "money"
+QT_MOC_LITERAL(150, 1687, 16), // "updateTotalMoney"
+QT_MOC_LITERAL(151, 1704, 20), // "updateCardWaitingPay"
+QT_MOC_LITERAL(152, 1725, 7), // "waiting"
+QT_MOC_LITERAL(153, 1733, 9), // "printBill"
+QT_MOC_LITERAL(154, 1743, 6), // "ivcode"
+QT_MOC_LITERAL(155, 1750, 9), // "printData"
+QT_MOC_LITERAL(156, 1760, 10), // "cancelBill"
+QT_MOC_LITERAL(157, 1771, 4), // "foId"
+QT_MOC_LITERAL(158, 1776, 5), // "total"
+QT_MOC_LITERAL(159, 1782, 10), // "stopDevice"
+QT_MOC_LITERAL(160, 1793, 10), // "getPrinter"
+QT_MOC_LITERAL(161, 1804, 10), // "setPrinter"
+QT_MOC_LITERAL(162, 1815, 7), // "prnName"
+QT_MOC_LITERAL(163, 1823, 10), // "getPayment"
+QT_MOC_LITERAL(164, 1834, 18), // "getDominoServerUrl"
+QT_MOC_LITERAL(165, 1853, 13), // "getUrlService"
+QT_MOC_LITERAL(166, 1867, 19), // "getTransferProtocol"
+QT_MOC_LITERAL(167, 1887, 19), // "setTransferProtocol"
+QT_MOC_LITERAL(168, 1907, 8), // "transpro"
+QT_MOC_LITERAL(169, 1916, 10), // "initSocket"
+QT_MOC_LITERAL(170, 1927, 10), // "setPayment"
+QT_MOC_LITERAL(171, 1938, 11), // "paymentName"
+QT_MOC_LITERAL(172, 1950, 18), // "setDominoServerUrl"
+QT_MOC_LITERAL(173, 1969, 3), // "url"
+QT_MOC_LITERAL(174, 1973, 16), // "setPaymentMethod"
+QT_MOC_LITERAL(175, 1990, 13), // "paymentMethod"
+QT_MOC_LITERAL(176, 2004, 16), // "getPaymentMethod"
+QT_MOC_LITERAL(177, 2021, 14), // "setPaymentMask"
+QT_MOC_LITERAL(178, 2036, 7), // "payment"
+QT_MOC_LITERAL(179, 2044, 5), // "onoff"
+QT_MOC_LITERAL(180, 2050, 14), // "getPaymentMask"
+QT_MOC_LITERAL(181, 2065, 13), // "getDockServer"
+QT_MOC_LITERAL(182, 2079, 13), // "setDockServer"
+QT_MOC_LITERAL(183, 2093, 10), // "dockServer"
+QT_MOC_LITERAL(184, 2104, 8), // "scanDock"
+QT_MOC_LITERAL(185, 2113, 6), // "doAuto"
+QT_MOC_LITERAL(186, 2120, 11), // "isConnected"
+QT_MOC_LITERAL(187, 2132, 13), // "connectToDock"
+QT_MOC_LITERAL(188, 2146, 8), // "serverIp"
+QT_MOC_LITERAL(189, 2155, 18), // "disconnectFromDock"
+QT_MOC_LITERAL(190, 2174, 16), // "testReaderDevice"
+QT_MOC_LITERAL(191, 2191, 3), // "run"
+QT_MOC_LITERAL(192, 2195, 10), // "updateWifi"
+QT_MOC_LITERAL(193, 2206, 4), // "ssid"
+QT_MOC_LITERAL(194, 2211, 3), // "key"
+QT_MOC_LITERAL(195, 2215, 7), // "encrypt"
+QT_MOC_LITERAL(196, 2223, 12), // "updateWifiPi"
+QT_MOC_LITERAL(197, 2236, 9), // "interface"
+QT_MOC_LITERAL(198, 2246, 9), // "scan_ssid"
+QT_MOC_LITERAL(199, 2256, 10), // "wifiStatus"
+QT_MOC_LITERAL(200, 2267, 8), // "testPing"
+QT_MOC_LITERAL(201, 2276, 4), // "host"
+QT_MOC_LITERAL(202, 2281, 11), // "restartDock"
+QT_MOC_LITERAL(203, 2293, 9), // "restartPi"
+QT_MOC_LITERAL(204, 2303, 6), // "haltPi"
+QT_MOC_LITERAL(205, 2310, 18), // "checkPrinterStatus"
+QT_MOC_LITERAL(206, 2329, 9), // "printTest"
+QT_MOC_LITERAL(207, 2339, 10), // "getLocalIp"
+QT_MOC_LITERAL(208, 2350, 11), // "getAppIndex"
+QT_MOC_LITERAL(209, 2362, 10), // "getAppName"
+QT_MOC_LITERAL(210, 2373, 10), // "setAppName"
+QT_MOC_LITERAL(211, 2384, 7), // "appName"
+QT_MOC_LITERAL(212, 2392, 11), // "getAppTitle"
+QT_MOC_LITERAL(213, 2404, 11), // "getTitleEng"
+QT_MOC_LITERAL(214, 2416, 11), // "setAppTitle"
+QT_MOC_LITERAL(215, 2428, 15), // "getMachineIndex"
+QT_MOC_LITERAL(216, 2444, 13), // "getAppMachine"
+QT_MOC_LITERAL(217, 2458, 14), // "getRechargeNum"
+QT_MOC_LITERAL(218, 2473, 14), // "setRechargeNum"
+QT_MOC_LITERAL(219, 2488, 5), // "mcNum"
+QT_MOC_LITERAL(220, 2494, 19), // "getFoodRefreshTimer"
+QT_MOC_LITERAL(221, 2514, 19), // "setFoodRefreshTimer"
+QT_MOC_LITERAL(222, 2534, 5), // "timer"
+QT_MOC_LITERAL(223, 2540, 17), // "getBillAlertTimer"
+QT_MOC_LITERAL(224, 2558, 17), // "setBillAlertTimer"
+QT_MOC_LITERAL(225, 2576, 27), // "getShowThanhtoancungdonhang"
+QT_MOC_LITERAL(226, 2604, 27), // "setShowThanhtoancungdonhang"
+QT_MOC_LITERAL(227, 2632, 20), // "getConfigQrcodeRatio"
+QT_MOC_LITERAL(228, 2653, 20), // "setConfigQrcodeRatio"
+QT_MOC_LITERAL(229, 2674, 5), // "ratio"
+QT_MOC_LITERAL(230, 2680, 25), // "getConfigFoodItemFontsize"
+QT_MOC_LITERAL(231, 2706, 25), // "setConfigFoodItemFontsize"
+QT_MOC_LITERAL(232, 2732, 7), // "fntsize"
+QT_MOC_LITERAL(233, 2740, 25), // "getConfigBillItemFontsize"
+QT_MOC_LITERAL(234, 2766, 25), // "setConfigBillItemFontsize"
+QT_MOC_LITERAL(235, 2792, 16), // "getConfigSobanin"
+QT_MOC_LITERAL(236, 2809, 16), // "setConfigSobanin"
+QT_MOC_LITERAL(237, 2826, 3), // "num"
+QT_MOC_LITERAL(238, 2830, 17), // "getConfigTenbanin"
+QT_MOC_LITERAL(239, 2848, 17), // "setConfigTenbanin"
+QT_MOC_LITERAL(240, 2866, 19), // "getConfigBillPreinf"
+QT_MOC_LITERAL(241, 2886, 19), // "setConfigBillPreinf"
+QT_MOC_LITERAL(242, 2906, 4), // "info"
+QT_MOC_LITERAL(243, 2911, 20), // "getConfigBillPostinf"
+QT_MOC_LITERAL(244, 2932, 20), // "setConfigBillPostinf"
+QT_MOC_LITERAL(245, 2953, 20), // "getConfigDockversion"
+QT_MOC_LITERAL(246, 2974, 20), // "setConfigDockversion"
+QT_MOC_LITERAL(247, 2995, 7), // "version"
+QT_MOC_LITERAL(248, 3003, 20), // "getConfigPrintersize"
+QT_MOC_LITERAL(249, 3024, 20), // "setConfigPrintersize"
+QT_MOC_LITERAL(250, 3045, 8), // "pagesize"
+QT_MOC_LITERAL(251, 3054, 19), // "getUserEnableConfig"
+QT_MOC_LITERAL(252, 3074, 19), // "setUserEnableConfig"
+QT_MOC_LITERAL(253, 3094, 10), // "enableconf"
+QT_MOC_LITERAL(254, 3105, 21), // "getConfigRebootDatePi"
+QT_MOC_LITERAL(255, 3127, 21), // "setConfigRebootDatePi"
+QT_MOC_LITERAL(256, 3149, 9), // "dayofweek"
+QT_MOC_LITERAL(257, 3159, 2), // "on"
+QT_MOC_LITERAL(258, 3162, 21), // "getConfigRebootTimePi"
+QT_MOC_LITERAL(259, 3184, 21), // "setConfigRebootTimePi"
+QT_MOC_LITERAL(260, 3206, 5), // "value"
+QT_MOC_LITERAL(261, 3212, 14), // "getRestartTime"
+QT_MOC_LITERAL(262, 3227, 14), // "getCurrentTime"
+QT_MOC_LITERAL(263, 3242, 17), // "getConfigUsername"
+QT_MOC_LITERAL(264, 3260, 16), // "getConfigUserpwd"
+QT_MOC_LITERAL(265, 3277, 22), // "getConfigSearchadvance"
+QT_MOC_LITERAL(266, 3300, 22), // "setConfigSearchadvance"
+QT_MOC_LITERAL(267, 3323, 13), // "searchadvance"
+QT_MOC_LITERAL(268, 3337, 23), // "getConfigShowBaocaoDate"
+QT_MOC_LITERAL(269, 3361, 23), // "setConfigShowBaocaoDate"
+QT_MOC_LITERAL(270, 3385, 8), // "showDate"
+QT_MOC_LITERAL(271, 3394, 22), // "getConfigCenterService"
+QT_MOC_LITERAL(272, 3417, 22), // "setConfigCenterService"
+QT_MOC_LITERAL(273, 3440, 15), // "centerServiceIp"
+QT_MOC_LITERAL(274, 3456, 17), // "getConfigIdletime"
+QT_MOC_LITERAL(275, 3474, 17), // "setConfigIdletime"
+QT_MOC_LITERAL(276, 3492, 11), // "setIdCoupon"
+QT_MOC_LITERAL(277, 3504, 11), // "getIdCoupon"
+QT_MOC_LITERAL(278, 3516, 18), // "setIdCouponPercent"
+QT_MOC_LITERAL(279, 3535, 7), // "percent"
+QT_MOC_LITERAL(280, 3543, 18), // "getIdCouponPercent"
+QT_MOC_LITERAL(281, 3562, 10), // "saveConfig"
+QT_MOC_LITERAL(282, 3573, 16), // "sendCancelBillUI"
+QT_MOC_LITERAL(283, 3590, 20), // "getBaocaoCurrentTime"
+QT_MOC_LITERAL(284, 3611, 8), // "inBaocao"
+QT_MOC_LITERAL(285, 3620, 4), // "date"
+QT_MOC_LITERAL(286, 3625, 6), // "bcType"
+QT_MOC_LITERAL(287, 3632, 9), // "userLogin"
+QT_MOC_LITERAL(288, 3642, 18), // "uiFoodupdateStatus"
+QT_MOC_LITERAL(289, 3661, 6), // "uiType"
+QT_MOC_LITERAL(290, 3668, 10), // "getAccount"
+QT_MOC_LITERAL(291, 3679, 14), // "getDiskPrepare"
+QT_MOC_LITERAL(292, 3694, 14), // "getDiskReserve"
+QT_MOC_LITERAL(293, 3709, 11), // "idleClearup"
+QT_MOC_LITERAL(294, 3721, 9), // "idleReset"
+QT_MOC_LITERAL(295, 3731, 14), // "getProductCode"
+QT_MOC_LITERAL(296, 3746, 8), // "pro_name"
+QT_MOC_LITERAL(297, 3755, 9), // "prod_size"
+QT_MOC_LITERAL(298, 3765, 16), // "prod_plavor_code"
+QT_MOC_LITERAL(299, 3782, 14), // "getPriceCoupon"
+QT_MOC_LITERAL(300, 3797, 10), // "pizza_size"
+QT_MOC_LITERAL(301, 3808, 23) // "removeItemInPaymentView"
 
     },
     "MainController\0foodReset\0\0foodUpdate\0"
@@ -353,12 +354,12 @@ QT_MOC_LITERAL(300, 3798, 23) // "removeItemInPaymentView"
     "biid\0loginRequest\0login\0baocaoRequest\0"
     "idleTimeout\0dominosData\0dominosSetProdName\0"
     "QSet<QString>\0removeItemPaymentView\0"
-    "row\0size_banh\0de_banh\0onCancelDone\0"
-    "onCancelError\0onRejectDone\0onRejectError\0"
-    "onPayZaloDone\0onPayZaloError\0error\0"
-    "onNotify\0message\0onMifareFound\0id\0"
-    "onCenterServiceFound\0ip\0port\0onFoodsDone\0"
-    "onFoodsError\0onUpdatedFoodsData\0"
+    "row\0prod_type\0size_banh\0de_banh\0"
+    "onCancelDone\0onCancelError\0onRejectDone\0"
+    "onRejectError\0onPayZaloDone\0onPayZaloError\0"
+    "error\0onNotify\0message\0onMifareFound\0"
+    "id\0onCenterServiceFound\0ip\0port\0"
+    "onFoodsDone\0onFoodsError\0onUpdatedFoodsData\0"
     "onCheckUpdateFoodsData\0"
     "onCheckUpdateFoodsDataError\0onLogin\0"
     "uname\0pwd\0isBaocao\0onLoginDone\0"
@@ -488,177 +489,177 @@ static const uint qt_meta_data_MainController[] = {
       67,    0, 1134,    2, 0x06 /* Public */,
       68,    1, 1135,    2, 0x06 /* Public */,
       69,    1, 1138,    2, 0x06 /* Public */,
-      71,    4, 1141,    2, 0x06 /* Public */,
+      71,    5, 1141,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      75,    1, 1150,    2, 0x0a /* Public */,
-      76,    2, 1153,    2, 0x0a /* Public */,
-      77,    1, 1158,    2, 0x0a /* Public */,
-      78,    2, 1161,    2, 0x0a /* Public */,
-      79,    1, 1166,    2, 0x0a /* Public */,
-      80,    2, 1169,    2, 0x0a /* Public */,
-      82,    1, 1174,    2, 0x0a /* Public */,
-      84,    1, 1177,    2, 0x0a /* Public */,
-      86,    2, 1180,    2, 0x0a /* Public */,
-      89,    1, 1185,    2, 0x0a /* Public */,
-      90,    2, 1188,    2, 0x0a /* Public */,
-      91,    1, 1193,    2, 0x0a /* Public */,
-      92,    1, 1196,    2, 0x0a /* Public */,
-      93,    2, 1199,    2, 0x0a /* Public */,
-      94,    3, 1204,    2, 0x0a /* Public */,
-      98,    1, 1211,    2, 0x0a /* Public */,
-      99,    2, 1214,    2, 0x0a /* Public */,
-     100,    0, 1219,    2, 0x0a /* Public */,
-     101,    1, 1220,    2, 0x0a /* Public */,
-     102,    2, 1223,    2, 0x0a /* Public */,
-     103,    1, 1228,    2, 0x0a /* Public */,
-     104,    4, 1231,    2, 0x0a /* Public */,
-     109,    1, 1240,    2, 0x0a /* Public */,
-     110,    1, 1243,    2, 0x0a /* Public */,
-     111,    2, 1246,    2, 0x0a /* Public */,
-     112,    2, 1251,    2, 0x0a /* Public */,
-     114,    2, 1256,    2, 0x0a /* Public */,
-     115,    1, 1261,    2, 0x0a /* Public */,
-     116,    2, 1264,    2, 0x0a /* Public */,
-     117,    0, 1269,    2, 0x0a /* Public */,
-     118,    0, 1270,    2, 0x0a /* Public */,
-     119,    0, 1271,    2, 0x0a /* Public */,
-     120,    0, 1272,    2, 0x0a /* Public */,
-     121,    0, 1273,    2, 0x0a /* Public */,
-     122,    0, 1274,    2, 0x0a /* Public */,
-     123,    1, 1275,    2, 0x0a /* Public */,
-     125,    1, 1278,    2, 0x0a /* Public */,
-     127,    1, 1281,    2, 0x0a /* Public */,
+      76,    1, 1152,    2, 0x0a /* Public */,
+      77,    2, 1155,    2, 0x0a /* Public */,
+      78,    1, 1160,    2, 0x0a /* Public */,
+      79,    2, 1163,    2, 0x0a /* Public */,
+      80,    1, 1168,    2, 0x0a /* Public */,
+      81,    2, 1171,    2, 0x0a /* Public */,
+      83,    1, 1176,    2, 0x0a /* Public */,
+      85,    1, 1179,    2, 0x0a /* Public */,
+      87,    2, 1182,    2, 0x0a /* Public */,
+      90,    1, 1187,    2, 0x0a /* Public */,
+      91,    2, 1190,    2, 0x0a /* Public */,
+      92,    1, 1195,    2, 0x0a /* Public */,
+      93,    1, 1198,    2, 0x0a /* Public */,
+      94,    2, 1201,    2, 0x0a /* Public */,
+      95,    3, 1206,    2, 0x0a /* Public */,
+      99,    1, 1213,    2, 0x0a /* Public */,
+     100,    2, 1216,    2, 0x0a /* Public */,
+     101,    0, 1221,    2, 0x0a /* Public */,
+     102,    1, 1222,    2, 0x0a /* Public */,
+     103,    2, 1225,    2, 0x0a /* Public */,
+     104,    1, 1230,    2, 0x0a /* Public */,
+     105,    4, 1233,    2, 0x0a /* Public */,
+     110,    1, 1242,    2, 0x0a /* Public */,
+     111,    1, 1245,    2, 0x0a /* Public */,
+     112,    2, 1248,    2, 0x0a /* Public */,
+     113,    2, 1253,    2, 0x0a /* Public */,
+     115,    2, 1258,    2, 0x0a /* Public */,
+     116,    1, 1263,    2, 0x0a /* Public */,
+     117,    2, 1266,    2, 0x0a /* Public */,
+     118,    0, 1271,    2, 0x0a /* Public */,
+     119,    0, 1272,    2, 0x0a /* Public */,
+     120,    0, 1273,    2, 0x0a /* Public */,
+     121,    0, 1274,    2, 0x0a /* Public */,
+     122,    0, 1275,    2, 0x0a /* Public */,
+     123,    0, 1276,    2, 0x0a /* Public */,
+     124,    1, 1277,    2, 0x0a /* Public */,
+     126,    1, 1280,    2, 0x0a /* Public */,
+     128,    1, 1283,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-     129,    0, 1284,    2, 0x02 /* Public */,
-     130,    0, 1285,    2, 0x02 /* Public */,
-     131,    0, 1286,    2, 0x02 /* Public */,
-     132,    0, 1287,    2, 0x02 /* Public */,
-     133,    0, 1288,    2, 0x02 /* Public */,
-     134,    2, 1289,    2, 0x02 /* Public */,
-     136,    1, 1294,    2, 0x02 /* Public */,
-     137,    1, 1297,    2, 0x02 /* Public */,
-     138,    5, 1300,    2, 0x02 /* Public */,
-     142,   10, 1311,    2, 0x02 /* Public */,
-     143,    1, 1332,    2, 0x02 /* Public */,
-     145,    1, 1335,    2, 0x02 /* Public */,
-     147,    1, 1338,    2, 0x02 /* Public */,
-     149,    1, 1341,    2, 0x02 /* Public */,
-     150,    1, 1344,    2, 0x02 /* Public */,
-     152,    2, 1347,    2, 0x02 /* Public */,
-     155,    3, 1352,    2, 0x02 /* Public */,
-     158,    0, 1359,    2, 0x02 /* Public */,
-     159,    0, 1360,    2, 0x02 /* Public */,
-     160,    1, 1361,    2, 0x02 /* Public */,
-     162,    0, 1364,    2, 0x02 /* Public */,
-     163,    0, 1365,    2, 0x02 /* Public */,
-     164,    0, 1366,    2, 0x02 /* Public */,
-     165,    0, 1367,    2, 0x02 /* Public */,
-     166,    2, 1368,    2, 0x02 /* Public */,
-     166,    1, 1373,    2, 0x22 /* Public | MethodCloned */,
-     169,    2, 1376,    2, 0x02 /* Public */,
-     169,    1, 1381,    2, 0x22 /* Public | MethodCloned */,
-     171,    1, 1384,    2, 0x02 /* Public */,
-     173,    1, 1387,    2, 0x02 /* Public */,
-     175,    0, 1390,    2, 0x02 /* Public */,
-     176,    2, 1391,    2, 0x02 /* Public */,
-     179,    0, 1396,    2, 0x02 /* Public */,
-     180,    0, 1397,    2, 0x02 /* Public */,
-     181,    1, 1398,    2, 0x02 /* Public */,
-     183,    1, 1401,    2, 0x02 /* Public */,
-     183,    0, 1404,    2, 0x22 /* Public | MethodCloned */,
-     185,    0, 1405,    2, 0x02 /* Public */,
-     186,    1, 1406,    2, 0x02 /* Public */,
-     188,    0, 1409,    2, 0x02 /* Public */,
-     189,    1, 1410,    2, 0x02 /* Public */,
-     191,    3, 1413,    2, 0x02 /* Public */,
-     191,    2, 1420,    2, 0x22 /* Public | MethodCloned */,
-     195,    5, 1425,    2, 0x02 /* Public */,
-     195,    4, 1436,    2, 0x22 /* Public | MethodCloned */,
-     195,    3, 1445,    2, 0x22 /* Public | MethodCloned */,
-     198,    1, 1452,    2, 0x02 /* Public */,
-     198,    0, 1455,    2, 0x22 /* Public | MethodCloned */,
-     199,    1, 1456,    2, 0x02 /* Public */,
-     201,    0, 1459,    2, 0x02 /* Public */,
-     202,    0, 1460,    2, 0x02 /* Public */,
-     203,    0, 1461,    2, 0x02 /* Public */,
-     204,    0, 1462,    2, 0x02 /* Public */,
-     205,    1, 1463,    2, 0x02 /* Public */,
-     206,    0, 1466,    2, 0x02 /* Public */,
-     207,    0, 1467,    2, 0x02 /* Public */,
-     208,    0, 1468,    2, 0x02 /* Public */,
-     209,    2, 1469,    2, 0x02 /* Public */,
-     209,    1, 1474,    2, 0x22 /* Public | MethodCloned */,
-     211,    0, 1477,    2, 0x02 /* Public */,
-     212,    0, 1478,    2, 0x02 /* Public */,
-     213,    1, 1479,    2, 0x02 /* Public */,
-     214,    0, 1482,    2, 0x02 /* Public */,
-     215,    0, 1483,    2, 0x02 /* Public */,
-     216,    0, 1484,    2, 0x02 /* Public */,
-     217,    1, 1485,    2, 0x02 /* Public */,
-     219,    0, 1488,    2, 0x02 /* Public */,
-     220,    1, 1489,    2, 0x02 /* Public */,
-     222,    0, 1492,    2, 0x02 /* Public */,
-     223,    1, 1493,    2, 0x02 /* Public */,
-     224,    0, 1496,    2, 0x02 /* Public */,
-     225,    1, 1497,    2, 0x02 /* Public */,
-     226,    0, 1500,    2, 0x02 /* Public */,
-     227,    1, 1501,    2, 0x02 /* Public */,
-     229,    0, 1504,    2, 0x02 /* Public */,
-     230,    1, 1505,    2, 0x02 /* Public */,
-     232,    0, 1508,    2, 0x02 /* Public */,
-     233,    1, 1509,    2, 0x02 /* Public */,
-     234,    0, 1512,    2, 0x02 /* Public */,
-     235,    1, 1513,    2, 0x02 /* Public */,
-     237,    0, 1516,    2, 0x02 /* Public */,
-     238,    1, 1517,    2, 0x02 /* Public */,
-     239,    0, 1520,    2, 0x02 /* Public */,
-     240,    1, 1521,    2, 0x02 /* Public */,
-     242,    0, 1524,    2, 0x02 /* Public */,
-     243,    1, 1525,    2, 0x02 /* Public */,
-     244,    0, 1528,    2, 0x02 /* Public */,
-     245,    1, 1529,    2, 0x02 /* Public */,
-     247,    0, 1532,    2, 0x02 /* Public */,
-     248,    1, 1533,    2, 0x02 /* Public */,
-     250,    0, 1536,    2, 0x02 /* Public */,
-     251,    1, 1537,    2, 0x02 /* Public */,
-     253,    0, 1540,    2, 0x02 /* Public */,
-     254,    2, 1541,    2, 0x02 /* Public */,
-     257,    1, 1546,    2, 0x02 /* Public */,
-     257,    0, 1549,    2, 0x22 /* Public | MethodCloned */,
-     258,    2, 1550,    2, 0x02 /* Public */,
-     258,    1, 1555,    2, 0x22 /* Public | MethodCloned */,
-     260,    0, 1558,    2, 0x02 /* Public */,
-     261,    1, 1559,    2, 0x02 /* Public */,
-     262,    0, 1562,    2, 0x02 /* Public */,
-     263,    0, 1563,    2, 0x02 /* Public */,
-     264,    0, 1564,    2, 0x02 /* Public */,
-     265,    1, 1565,    2, 0x02 /* Public */,
-     267,    0, 1568,    2, 0x02 /* Public */,
-     268,    1, 1569,    2, 0x02 /* Public */,
-     270,    0, 1572,    2, 0x02 /* Public */,
-     271,    1, 1573,    2, 0x02 /* Public */,
-     273,    0, 1576,    2, 0x02 /* Public */,
-     274,    1, 1577,    2, 0x02 /* Public */,
-     275,    1, 1580,    2, 0x02 /* Public */,
-     276,    0, 1583,    2, 0x02 /* Public */,
-     277,    1, 1584,    2, 0x02 /* Public */,
-     279,    0, 1587,    2, 0x02 /* Public */,
-     280,    0, 1588,    2, 0x02 /* Public */,
-     281,    0, 1589,    2, 0x02 /* Public */,
-     282,    0, 1590,    2, 0x02 /* Public */,
-     283,    2, 1591,    2, 0x02 /* Public */,
-     286,    2, 1596,    2, 0x02 /* Public */,
-     287,    1, 1601,    2, 0x02 /* Public */,
-     289,    0, 1604,    2, 0x02 /* Public */,
-     290,    0, 1605,    2, 0x02 /* Public */,
-     291,    0, 1606,    2, 0x02 /* Public */,
-     292,    0, 1607,    2, 0x02 /* Public */,
-     293,    0, 1608,    2, 0x02 /* Public */,
-     294,    3, 1609,    2, 0x02 /* Public */,
-     298,    2, 1616,    2, 0x02 /* Public */,
-     300,    4, 1621,    2, 0x02 /* Public */,
+     130,    0, 1286,    2, 0x02 /* Public */,
+     131,    0, 1287,    2, 0x02 /* Public */,
+     132,    0, 1288,    2, 0x02 /* Public */,
+     133,    0, 1289,    2, 0x02 /* Public */,
+     134,    0, 1290,    2, 0x02 /* Public */,
+     135,    2, 1291,    2, 0x02 /* Public */,
+     137,    1, 1296,    2, 0x02 /* Public */,
+     138,    1, 1299,    2, 0x02 /* Public */,
+     139,    5, 1302,    2, 0x02 /* Public */,
+     143,   10, 1313,    2, 0x02 /* Public */,
+     144,    1, 1334,    2, 0x02 /* Public */,
+     146,    1, 1337,    2, 0x02 /* Public */,
+     148,    1, 1340,    2, 0x02 /* Public */,
+     150,    1, 1343,    2, 0x02 /* Public */,
+     151,    1, 1346,    2, 0x02 /* Public */,
+     153,    2, 1349,    2, 0x02 /* Public */,
+     156,    3, 1354,    2, 0x02 /* Public */,
+     159,    0, 1361,    2, 0x02 /* Public */,
+     160,    0, 1362,    2, 0x02 /* Public */,
+     161,    1, 1363,    2, 0x02 /* Public */,
+     163,    0, 1366,    2, 0x02 /* Public */,
+     164,    0, 1367,    2, 0x02 /* Public */,
+     165,    0, 1368,    2, 0x02 /* Public */,
+     166,    0, 1369,    2, 0x02 /* Public */,
+     167,    2, 1370,    2, 0x02 /* Public */,
+     167,    1, 1375,    2, 0x22 /* Public | MethodCloned */,
+     170,    2, 1378,    2, 0x02 /* Public */,
+     170,    1, 1383,    2, 0x22 /* Public | MethodCloned */,
+     172,    1, 1386,    2, 0x02 /* Public */,
+     174,    1, 1389,    2, 0x02 /* Public */,
+     176,    0, 1392,    2, 0x02 /* Public */,
+     177,    2, 1393,    2, 0x02 /* Public */,
+     180,    0, 1398,    2, 0x02 /* Public */,
+     181,    0, 1399,    2, 0x02 /* Public */,
+     182,    1, 1400,    2, 0x02 /* Public */,
+     184,    1, 1403,    2, 0x02 /* Public */,
+     184,    0, 1406,    2, 0x22 /* Public | MethodCloned */,
+     186,    0, 1407,    2, 0x02 /* Public */,
+     187,    1, 1408,    2, 0x02 /* Public */,
+     189,    0, 1411,    2, 0x02 /* Public */,
+     190,    1, 1412,    2, 0x02 /* Public */,
+     192,    3, 1415,    2, 0x02 /* Public */,
+     192,    2, 1422,    2, 0x22 /* Public | MethodCloned */,
+     196,    5, 1427,    2, 0x02 /* Public */,
+     196,    4, 1438,    2, 0x22 /* Public | MethodCloned */,
+     196,    3, 1447,    2, 0x22 /* Public | MethodCloned */,
+     199,    1, 1454,    2, 0x02 /* Public */,
+     199,    0, 1457,    2, 0x22 /* Public | MethodCloned */,
+     200,    1, 1458,    2, 0x02 /* Public */,
+     202,    0, 1461,    2, 0x02 /* Public */,
+     203,    0, 1462,    2, 0x02 /* Public */,
+     204,    0, 1463,    2, 0x02 /* Public */,
+     205,    0, 1464,    2, 0x02 /* Public */,
+     206,    1, 1465,    2, 0x02 /* Public */,
+     207,    0, 1468,    2, 0x02 /* Public */,
+     208,    0, 1469,    2, 0x02 /* Public */,
+     209,    0, 1470,    2, 0x02 /* Public */,
+     210,    2, 1471,    2, 0x02 /* Public */,
+     210,    1, 1476,    2, 0x22 /* Public | MethodCloned */,
+     212,    0, 1479,    2, 0x02 /* Public */,
+     213,    0, 1480,    2, 0x02 /* Public */,
+     214,    1, 1481,    2, 0x02 /* Public */,
+     215,    0, 1484,    2, 0x02 /* Public */,
+     216,    0, 1485,    2, 0x02 /* Public */,
+     217,    0, 1486,    2, 0x02 /* Public */,
+     218,    1, 1487,    2, 0x02 /* Public */,
+     220,    0, 1490,    2, 0x02 /* Public */,
+     221,    1, 1491,    2, 0x02 /* Public */,
+     223,    0, 1494,    2, 0x02 /* Public */,
+     224,    1, 1495,    2, 0x02 /* Public */,
+     225,    0, 1498,    2, 0x02 /* Public */,
+     226,    1, 1499,    2, 0x02 /* Public */,
+     227,    0, 1502,    2, 0x02 /* Public */,
+     228,    1, 1503,    2, 0x02 /* Public */,
+     230,    0, 1506,    2, 0x02 /* Public */,
+     231,    1, 1507,    2, 0x02 /* Public */,
+     233,    0, 1510,    2, 0x02 /* Public */,
+     234,    1, 1511,    2, 0x02 /* Public */,
+     235,    0, 1514,    2, 0x02 /* Public */,
+     236,    1, 1515,    2, 0x02 /* Public */,
+     238,    0, 1518,    2, 0x02 /* Public */,
+     239,    1, 1519,    2, 0x02 /* Public */,
+     240,    0, 1522,    2, 0x02 /* Public */,
+     241,    1, 1523,    2, 0x02 /* Public */,
+     243,    0, 1526,    2, 0x02 /* Public */,
+     244,    1, 1527,    2, 0x02 /* Public */,
+     245,    0, 1530,    2, 0x02 /* Public */,
+     246,    1, 1531,    2, 0x02 /* Public */,
+     248,    0, 1534,    2, 0x02 /* Public */,
+     249,    1, 1535,    2, 0x02 /* Public */,
+     251,    0, 1538,    2, 0x02 /* Public */,
+     252,    1, 1539,    2, 0x02 /* Public */,
+     254,    0, 1542,    2, 0x02 /* Public */,
+     255,    2, 1543,    2, 0x02 /* Public */,
+     258,    1, 1548,    2, 0x02 /* Public */,
+     258,    0, 1551,    2, 0x22 /* Public | MethodCloned */,
+     259,    2, 1552,    2, 0x02 /* Public */,
+     259,    1, 1557,    2, 0x22 /* Public | MethodCloned */,
+     261,    0, 1560,    2, 0x02 /* Public */,
+     262,    1, 1561,    2, 0x02 /* Public */,
+     263,    0, 1564,    2, 0x02 /* Public */,
+     264,    0, 1565,    2, 0x02 /* Public */,
+     265,    0, 1566,    2, 0x02 /* Public */,
+     266,    1, 1567,    2, 0x02 /* Public */,
+     268,    0, 1570,    2, 0x02 /* Public */,
+     269,    1, 1571,    2, 0x02 /* Public */,
+     271,    0, 1574,    2, 0x02 /* Public */,
+     272,    1, 1575,    2, 0x02 /* Public */,
+     274,    0, 1578,    2, 0x02 /* Public */,
+     275,    1, 1579,    2, 0x02 /* Public */,
+     276,    1, 1582,    2, 0x02 /* Public */,
+     277,    0, 1585,    2, 0x02 /* Public */,
+     278,    1, 1586,    2, 0x02 /* Public */,
+     280,    0, 1589,    2, 0x02 /* Public */,
+     281,    0, 1590,    2, 0x02 /* Public */,
+     282,    0, 1591,    2, 0x02 /* Public */,
+     283,    0, 1592,    2, 0x02 /* Public */,
+     284,    2, 1593,    2, 0x02 /* Public */,
+     287,    2, 1598,    2, 0x02 /* Public */,
+     288,    1, 1603,    2, 0x02 /* Public */,
+     290,    0, 1606,    2, 0x02 /* Public */,
+     291,    0, 1607,    2, 0x02 /* Public */,
+     292,    0, 1608,    2, 0x02 /* Public */,
+     293,    0, 1609,    2, 0x02 /* Public */,
+     294,    0, 1610,    2, 0x02 /* Public */,
+     295,    3, 1611,    2, 0x02 /* Public */,
+     299,    2, 1618,    2, 0x02 /* Public */,
+     301,    5, 1623,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -694,7 +695,7 @@ static const uint qt_meta_data_MainController[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QJsonObject,   40,
     QMetaType::Void, 0x80000000 | 70,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::QString,   72,   73,   74,   26,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   72,   73,   74,   75,   26,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QVariant,   40,
@@ -702,39 +703,39 @@ static const uint qt_meta_data_MainController[] = {
     QMetaType::Void, QMetaType::QVariant,   40,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   14,
-    QMetaType::Void, QMetaType::QString,   83,
-    QMetaType::Void, QMetaType::QString,   85,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,   87,   88,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   14,
+    QMetaType::Void, QMetaType::QString,   84,
+    QMetaType::Void, QMetaType::QString,   86,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,   88,   89,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   83,
-    QMetaType::Void, QMetaType::QString,   83,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   84,
+    QMetaType::Void, QMetaType::QString,   84,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   83,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Bool,   95,   96,   97,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   84,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Bool,   96,   97,   98,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   14,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   14,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   14,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   14,
     QMetaType::Void, QMetaType::QString,   56,
-    QMetaType::Bool, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Int,  105,  106,  107,  108,
+    QMetaType::Bool, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Int,  106,  107,  108,  109,
     QMetaType::Void, QMetaType::QVariant,   40,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   14,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  113,  107,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  113,  107,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   14,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  114,  108,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  114,  108,
     QMetaType::Void, QMetaType::QVariant,   40,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   81,   83,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   82,   84,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QJsonObject,  124,
-    QMetaType::Void, QMetaType::QJsonObject,  126,
-    QMetaType::Void, QMetaType::QJsonObject,  128,
+    QMetaType::Void, QMetaType::QJsonObject,  125,
+    QMetaType::Void, QMetaType::QJsonObject,  127,
+    QMetaType::Void, QMetaType::QJsonObject,  129,
 
  // methods: parameters
     QMetaType::Bool,
@@ -742,129 +743,129 @@ static const uint qt_meta_data_MainController[] = {
     QMetaType::Bool,
     QMetaType::Bool,
     QMetaType::Void,
-    QMetaType::Bool, QMetaType::QString, QMetaType::QString,  135,    6,
+    QMetaType::Bool, QMetaType::QString, QMetaType::QString,  136,    6,
     QMetaType::Void, QMetaType::QString,    6,
     QMetaType::QString, QMetaType::QString,   23,
-    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QJsonArray, QMetaType::Int,  139,  140,   29,  141,  108,
+    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QJsonArray, QMetaType::Int,  140,  141,   29,  142,  109,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Long, QMetaType::QString, QMetaType::QString,   21,   22,   23,   24,   25,   26,   28,   27,   30,   31,
-    QMetaType::QString, QMetaType::LongLong,  144,
-    QMetaType::LongLong, QMetaType::QString,  146,
-    QMetaType::QString, QMetaType::QString,  148,
-    QMetaType::Void, QMetaType::LongLong,  144,
-    QMetaType::Void, QMetaType::Bool,  151,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  153,  154,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  156,    8,  157,
+    QMetaType::QString, QMetaType::LongLong,  145,
+    QMetaType::LongLong, QMetaType::QString,  147,
+    QMetaType::QString, QMetaType::QString,  149,
+    QMetaType::Void, QMetaType::LongLong,  145,
+    QMetaType::Void, QMetaType::Bool,  152,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  154,  155,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  157,    8,  158,
     QMetaType::Void,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  161,
+    QMetaType::Void, QMetaType::QString,  162,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  167,  168,
-    QMetaType::Void, QMetaType::QString,  167,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  170,  168,
-    QMetaType::Void, QMetaType::QString,  170,
-    QMetaType::Void, QMetaType::QString,  172,
-    QMetaType::Void, QMetaType::Int,  174,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  168,  169,
+    QMetaType::Void, QMetaType::QString,  168,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  171,  169,
+    QMetaType::Void, QMetaType::QString,  171,
+    QMetaType::Void, QMetaType::QString,  173,
+    QMetaType::Void, QMetaType::Int,  175,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  177,  178,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  178,  179,
     QMetaType::Int,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  182,
-    QMetaType::Void, QMetaType::Bool,  184,
+    QMetaType::Void, QMetaType::QString,  183,
+    QMetaType::Void, QMetaType::Bool,  185,
     QMetaType::Void,
     QMetaType::Bool,
-    QMetaType::Bool, QMetaType::QString,  187,
+    QMetaType::Bool, QMetaType::QString,  188,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,  190,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  192,  193,  194,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  192,  193,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool,  196,  192,  193,  194,  197,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  196,  192,  193,  194,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  196,  192,  193,
-    QMetaType::Void, QMetaType::QString,  196,
+    QMetaType::Void, QMetaType::Bool,  191,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  193,  194,  195,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  193,  194,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool,  197,  193,  194,  195,  198,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  197,  193,  194,  195,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  197,  193,  194,
+    QMetaType::Void, QMetaType::QString,  197,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,  200,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,  201,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QJsonArray,  141,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QJsonArray,  142,
     QMetaType::QString,
     QMetaType::Int,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  210,  168,
-    QMetaType::Void, QMetaType::QString,  210,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  211,  169,
+    QMetaType::Void, QMetaType::QString,  211,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,   60,
     QMetaType::Int,
     QMetaType::QString,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  218,
+    QMetaType::Void, QMetaType::Int,  219,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  221,
+    QMetaType::Void, QMetaType::Int,  222,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  221,
+    QMetaType::Void, QMetaType::Int,  222,
     QMetaType::Bool,
     QMetaType::Void, QMetaType::Bool,   54,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::Float,  228,
+    QMetaType::Void, QMetaType::Float,  229,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  231,
+    QMetaType::Void, QMetaType::Int,  232,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  231,
+    QMetaType::Void, QMetaType::Int,  232,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  236,
+    QMetaType::Void, QMetaType::Int,  237,
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,   23,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  241,
+    QMetaType::Void, QMetaType::QString,  242,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  241,
+    QMetaType::Void, QMetaType::QString,  242,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  246,
+    QMetaType::Void, QMetaType::QString,  247,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  249,
+    QMetaType::Void, QMetaType::QString,  250,
     QMetaType::Bool,
-    QMetaType::Void, QMetaType::Bool,  252,
+    QMetaType::Void, QMetaType::Bool,  253,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  255,  256,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  256,  257,
     QMetaType::Int, QMetaType::Int,   21,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,  259,   21,
-    QMetaType::Void, QMetaType::Int,  259,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,  260,   21,
+    QMetaType::Void, QMetaType::Int,  260,
     QMetaType::QString,
-    QMetaType::QString, QMetaType::Bool,  256,
+    QMetaType::QString, QMetaType::Bool,  257,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::Bool,
-    QMetaType::Void, QMetaType::Bool,  266,
+    QMetaType::Void, QMetaType::Bool,  267,
     QMetaType::Bool,
-    QMetaType::Void, QMetaType::Bool,  269,
+    QMetaType::Void, QMetaType::Bool,  270,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  272,
+    QMetaType::Void, QMetaType::QString,  273,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  221,
-    QMetaType::Void, QMetaType::QString,   85,
+    QMetaType::Void, QMetaType::Int,  222,
+    QMetaType::Void, QMetaType::QString,   86,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::Float,  278,
-    QMetaType::QString,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,  284,  285,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   95,   96,
-    QMetaType::Void, QMetaType::Int,  288,
-    QMetaType::QString,
-    QMetaType::QString,
+    QMetaType::Void, QMetaType::Float,  279,
     QMetaType::QString,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  295,  296,  297,
-    QMetaType::LongLong, QMetaType::LongLong, QMetaType::QString,   28,  299,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::QString,   72,   73,   74,   26,
+    QMetaType::QString,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,  285,  286,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   96,   97,
+    QMetaType::Void, QMetaType::Int,  289,
+    QMetaType::QString,
+    QMetaType::QString,
+    QMetaType::QString,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  296,  297,  298,
+    QMetaType::LongLong, QMetaType::LongLong, QMetaType::QString,   28,  300,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   72,   73,   74,   75,   26,
 
        0        // eod
 };
@@ -908,7 +909,7 @@ void MainController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 30: _t->idleTimeout(); break;
         case 31: _t->dominosData((*reinterpret_cast< const QJsonObject(*)>(_a[1]))); break;
         case 32: _t->dominosSetProdName((*reinterpret_cast< const QSet<QString>(*)>(_a[1]))); break;
-        case 33: _t->removeItemPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4]))); break;
+        case 33: _t->removeItemPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< const QString(*)>(_a[5]))); break;
         case 34: _t->onCancelDone((*reinterpret_cast< const QVariant(*)>(_a[1]))); break;
         case 35: _t->onCancelError((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
         case 36: _t->onRejectDone((*reinterpret_cast< const QVariant(*)>(_a[1]))); break;
@@ -1135,7 +1136,7 @@ void MainController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 198: { long long _r = _t->getPriceCoupon((*reinterpret_cast< long long(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< long long*>(_a[0]) = _r; }  break;
-        case 199: _t->removeItemInPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4]))); break;
+        case 199: _t->removeItemInPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< const QString(*)>(_a[5]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -1384,7 +1385,7 @@ void MainController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             }
         }
         {
-            typedef void (MainController::*_t)(int , const QString & , const QString & , const QString & );
+            typedef void (MainController::*_t)(int , const QString & , const QString & , const QString & , const QString & );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainController::removeItemPaymentView)) {
                 *result = 33;
                 return;
@@ -1654,9 +1655,9 @@ void MainController::dominosSetProdName(const QSet<QString> & _t1)
 }
 
 // SIGNAL 33
-void MainController::removeItemPaymentView(int _t1, const QString & _t2, const QString & _t3, const QString & _t4)
+void MainController::removeItemPaymentView(int _t1, const QString & _t2, const QString & _t3, const QString & _t4, const QString & _t5)
 {
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)) };
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)) };
     QMetaObject::activate(this, &staticMetaObject, 33, _a);
 }
 QT_END_MOC_NAMESPACE

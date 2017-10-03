@@ -2909,7 +2909,7 @@ long long MainController::getPriceCoupon(long long price, const QString &pizza_s
     return promote_price;
 }
 
-void MainController::removeItemInPaymentView(int row, const QString& size_banh, const QString& de_banh, const QString& phomai) {
-    emit removeItemPaymentView(row, size_banh, de_banh, phomai);
+void MainController::removeItemInPaymentView(int row, const QString& prod_type, const QString& size_banh, const QString& de_banh, const QString& phomai) {
+    emit removeItemPaymentView(row, prod_type, size_banh, de_banh, phomai);
 }
 
