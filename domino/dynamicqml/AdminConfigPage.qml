@@ -38,7 +38,7 @@ Pane {
                             }
                             TextField {
                                 id: idDominoServerUrl
-                                enabled: mainController.isDebugmode() ? true : false
+                                enabled: true
                                 placeholderText: "http://localhost"
                                 width: admConfColwidth2
                                 Layout.fillWidth: true
