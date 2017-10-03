@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Window 2.2
-import QtQuick.VirtualKeyboard 2.2
-import QtQuick.VirtualKeyboard.Settings 2.2
+import QtQuick.VirtualKeyboard 2.1
+import QtQuick.VirtualKeyboard.Settings 2.1
 
 import MainController 1.0
 import QmlDefine 1.0
