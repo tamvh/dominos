@@ -330,8 +330,8 @@ Rectangle {
                             window.pizza_category = category;
                             var name_prod = name.split('\n').length > 1 ? name.split('\n')[1].toString().replace('(','').replace(')','') : name
                             console.log("name code: " + name_code);
-
-                            mainController.insertItem('', name_code, name_prod, "-", "-", price, _quantity, oriprice, 0)
+                            var local_nChessy = 0;
+                            mainController.insertItem('', name_code, name_prod, "-", "-", local_nChessy, price, _quantity, oriprice, 0)
 
                         }
                     }
