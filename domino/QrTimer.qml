@@ -42,6 +42,8 @@ Item  {
             else if (parentId === 3) {
                 mainController.idleClearup();
                 systemIdleAlert.close();
+                idProfilePage.close();
+                deleteItemDialog.close();
             }
             else if(parentId === 4) {
                 getErrAlert.close();

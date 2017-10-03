@@ -3,6 +3,9 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
+import QtQuick.VirtualKeyboard 2.1
+import QtQuick.VirtualKeyboard.Settings 2.2
+import "content"
 
 Popup {
     id: profilePage
@@ -10,7 +13,7 @@ Popup {
     y: (parent.height - height)/4
     closePolicy: Popup.NoAutoClose
     focus: true
-//    modal:true
+    modal: true
     topPadding: 30
     rightPadding: 30
     leftPadding: 30
@@ -46,6 +49,12 @@ Popup {
         }
     }
 
+    onVisibleChanged: {
+        txtCustomerName.text = "";
+        txtCustomerName.focus = true;
+        inputPanel.focus = true;
+    }
+
     contentItem: ColumnLayout   {
         id: appOptionColumn
         Layout.alignment: Qt.AlignHCenter
@@ -73,12 +82,13 @@ Popup {
                 id: txtCustomerName
                 width: 814
                 text: ''
-                focus: true
                 font.pixelSize: 36
+                z:0
                 onTextChanged: {
                     var n = txtCustomerName.text.trim().length;
                     enable_btnThanhToan(n);
                 }
+
             }
             Rectangle {
                 height: 1
@@ -189,9 +199,6 @@ Popup {
                     else {
                        appMessage.showMessage("Xin lỗi, chương trình này chỉ hỗ trợ thanh toán bằng Zalopay!")
                     }
-
-                    txtCustomerName.text = "";
-                    txtCustomerName.focus = true;
                     init();
                     profilePage.close()
                 }
@@ -292,8 +299,6 @@ Popup {
                 Material.primary: "#8397A0"
                 Material.accent: "#8397A0"
                 onClicked: {
-                    txtCustomerName.text = "";
-                    txtCustomerName.focus = true;
                     init();
                     profilePage.close()
                 }

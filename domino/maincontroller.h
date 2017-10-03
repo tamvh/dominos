@@ -59,7 +59,7 @@ public:
     Q_INVOKABLE QString pay(const QString &customer_name, const QString &customer_hinhthuc, const QString& amount, const QJsonArray &foods, int payMethod);
 
     // thêm món ăn vào danh sách hóa đơn
-    Q_INVOKABLE void insertItem(const QString& code_name, const QString& name, const QString& size, const QString& debanh, const QString& price, long quantity, const QString &oriprice, const QString &promtype);
+    Q_INVOKABLE void insertItem(const QString& type, const QString& code_name, const QString& name, const QString& size, const QString& debanh, const QString& phomai, const QString& price, long quantity, const QString &oriprice, const QString &promtype);
 
     Q_INVOKABLE QString formatMoney(long long moneyValue);
     Q_INVOKABLE long long getMoneyValue(const QString &moneyString);
@@ -77,10 +77,12 @@ public:
     Q_INVOKABLE QString getPrinter();
     Q_INVOKABLE void setPrinter(QString prnName);
     Q_INVOKABLE QString getPayment();
+    Q_INVOKABLE QString getDominoServerUrl();
     Q_INVOKABLE QString getUrlService();
     Q_INVOKABLE QString getTransferProtocol();
     Q_INVOKABLE void setTransferProtocol(const QString& transpro, bool initSocket=true);
     Q_INVOKABLE void setPayment(QString paymentName, bool initSocket=true);
+    Q_INVOKABLE void setDominoServerUrl(QString url);
     Q_INVOKABLE void setPaymentMethod(int paymentMethod); // 1:zalopay; 2:card; 4:cash
     Q_INVOKABLE int  getPaymentMethod();
     Q_INVOKABLE void setPaymentMask(int payment, bool onoff);
@@ -183,7 +185,7 @@ public:
     Q_INVOKABLE void    idleReset() { m_lastTimeActivity = (QDateTime::currentMSecsSinceEpoch()); }
     Q_INVOKABLE QString getProductCode(const QString &pro_name, const QString &prod_size, const QString &prod_plavor_code);
     Q_INVOKABLE long long getPriceCoupon(long long price, const QString& pizza_size);
-    Q_INVOKABLE void    removeItemInPaymentView(int row);
+    Q_INVOKABLE void    removeItemInPaymentView(int row, const QString& size_banh, const QString& de_banh, const QString& phomai);
 
     virtual bool eventFilter(QObject *watched, QEvent *event) {
         if( event->type() == QEvent::KeyPress ||
@@ -203,7 +205,7 @@ signals:
     void paySucc(const QString& invcecode, const QString& qrcode, int discount, const QString& oripay, const QString& discpay);
     void payError(const QString& msg);
     void notifySucc(int errcode, const QString& invcecode, const QString& invcetime, const QString& barcode, const QString &balance);
-    void addItem(const QString& code_name, const QString& name, const QString& size, const QString& debanh, long quantity, long long price, const QString& amount, const QString &oriprice, const QString &promtype);
+    void addItem(const QString& type, const QString& code_name, const QString& name, const QString& size, const QString& debanh, const QString& phomai, long quantity, long long price, const QString& amount, const QString &oriprice, const QString &promtype);
     void cancelBillItem();
     void cancellBillCloseQRDialog();
     void updateAmount(const QString& amount);
@@ -240,7 +242,7 @@ signals:
 
     void dominosData(const QJsonObject &data);
     void dominosSetProdName(const QSet<QString> &data);
-    void removeItemPaymentView(int row);
+    void removeItemPaymentView(int row, const QString& size_banh, const QString& de_banh, const QString& phomai);
 
 public slots:
     void onCancelDone(const QVariant &data);

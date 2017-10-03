@@ -87,7 +87,7 @@ void ConfigSetting::Load()
 
     couponpercent  = sets.value(QString("option/couponpercent"),   0.0).toFloat();
     idcoupon        = sets.value(QString("option/idcoupon"),     QString("ZALO40")).toString();
-
+    dominoServerUrl = sets.value(QString("option/dominoserverurl"),     QString("http://localhost")).toString();
     if( m_autoSave && !sets.contains("option/appname") )
     {
         Save();
@@ -213,6 +213,8 @@ void ConfigSetting::Save()
     sets.setValue(QString("option/idcoupon"), idcoupon);
     sets.sync();
     sets.setValue(QString("option/couponpercent"), couponpercent);
+    sets.sync();
+    sets.setValue(QString("option/dominoserverurl"), dominoServerUrl);
     sets.sync();
 }
 
@@ -547,5 +549,11 @@ void ConfigSetting::setIdCouponPercent(float percent) {
     couponpercent = percent;
     QSettings sets("vng", "vpos");
     sets.setValue(QString("option/couponpercent"), couponpercent);
+    sets.sync();
+}
+
+void ConfigSetting::setDominoServerUrl(const QString &url) {
+    QSettings sets("vng", "vpos");
+    sets.setValue(QString("option/dominoserverurl"), url);
     sets.sync();
 }

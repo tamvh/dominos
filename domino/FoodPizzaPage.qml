@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
@@ -258,13 +258,17 @@ Rectangle {
                                     color: "#000000"
                                 }
                             }
-                            RowLayout {
+                            ColumnLayout {
                                 Label {
                                     visible: visible_price
                                     text: text_price7 + " VNĐ"
                                     color: "#E61837"
                                     font.pixelSize: 30
                                     font.bold: true
+                                }
+                                Label {
+                                    text: " "
+                                    font.pixelSize: 18
                                 }
                             }
                         }
@@ -344,7 +348,7 @@ Rectangle {
                             spacing: 10
                             RowLayout {
                                 Label {
-                                    text: "Nhỏ(12\")"
+                                    text: "Lớn(12\")"
                                     font.pixelSize: 18
                                     font.bold: true
                                     color: "#000000"
@@ -422,11 +426,10 @@ Rectangle {
                             Item {
                                 id: itemImage
                                 anchors.top: parent.top
-                                anchors.topMargin: 2
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                width:parent.width-4
+                                width:parent.width
                                 height:width*255/340
                                 focus: true
+
                                 Image {
                                     id: foodIcon
                                     fillMode: Image.Stretch
@@ -437,9 +440,12 @@ Rectangle {
                                     asynchronous: true
                                     cache: img_cache
                                     source: image
-
                                 }
+
+
                             }
+
+
 
 
                             Item {

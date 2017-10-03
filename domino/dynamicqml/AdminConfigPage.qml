@@ -28,6 +28,26 @@ Pane {
                     ColumnLayout {
                         Layout.fillWidth: true
                         spacing: 10
+                        Row {
+                            Layout.fillWidth: true
+                            spacing: 10
+                            Label {
+                                width: admConfColwidth1
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "-   Máy chủ Domino:"
+                            }
+                            TextField {
+                                id: idDominoServerUrl
+                                enabled: mainController.isDebugmode() ? true : false
+                                placeholderText: "http://localhost"
+                                width: admConfColwidth2
+                                Layout.fillWidth: true
+                                text: mainController.getDominoServerUrl()
+                                onEditingFinished: {
+                                    mainController.setDominoServerUrl(text)
+                                }
+                            }
+                        }
 
                         Row {
                             Layout.fillWidth: true

@@ -244,9 +244,7 @@ Rectangle {
                     Item {
                         id: itemImage
                         anchors.top: parent.top
-                        anchors.topMargin: 2
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        width:parent.width-4
+                        width:parent.width
                         height:width*255/340
                         focus: true
                         Image {
@@ -333,7 +331,7 @@ Rectangle {
                             var name_prod = name.split('\n').length > 1 ? name.split('\n')[1].toString().replace('(','').replace(')','') : name
                             console.log("name code: " + name_code);
 
-                            mainController.insertItem(name_code, name_prod, "-", "-", price, _quantity, oriprice, 0)
+                            mainController.insertItem('', name_code, name_prod, "-", "-", price, _quantity, oriprice, 0)
 
                         }
                     }

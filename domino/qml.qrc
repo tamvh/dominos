@@ -17,6 +17,8 @@
         <file>pi-main.qml</file>
         <file>dynamicqml/SettingsPage.qml</file>
         <file>dynamicqml/PiSettingsPage.qml</file>
+        <file>content/TextBase.qml</file>
+        <file>content/TextField.qml</file>
         <file>VPOSWindow.qml</file>
         <file>QrTimer.qml</file>
         <file>dynamicqml/SettingPages.qml</file>
@@ -32,6 +34,7 @@
         <file>TitleSubPage.qml</file>
         <file>FoodPizzaPage.qml</file>
         <file>AboutPage.qml</file>
+        <file>dynamicqml/BlankPage.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>

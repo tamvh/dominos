@@ -86,6 +86,46 @@ Item {
             return prod_name;
         }
 
+        function getSizeBanh(row) {
+            var size_banh = '';
+            if(row < count) {
+                size_banh = get(row).size;
+            }
+            return size_banh;
+        }
+
+        function getDeBanh(row) {
+            var de_banh = '';
+            if(row < count) {
+                de_banh = get(row).debanh;
+            }
+            return de_banh;
+        }
+
+        function getPhoMai(row) {
+            var phomai = '';
+            if(row < count) {
+                phomai = get(row).phomai;
+            }
+            return phomai;
+        }
+
+//        function getProductName(row) {
+//            var prod_name = '';
+//            if(row < count) {
+//                prod_name = get(row).item_name;
+//            }
+//            return prod_name;
+//        }
+
+        function getTypeProduct(row) {
+            var prod_type = '';
+            if(row < count) {
+                prod_type = get(row).type;
+            }
+            return prod_type;
+        }
+
         function updateTotalMoney() {
             var i
             var toTal = 0
@@ -96,7 +136,7 @@ Item {
             mainController.updateTotalMoney(toTal)
         }
 
-        function addItem(code_name, name, size, debanh, quantity, price, amount, oriprice, promtype) {
+        function addItem(type, code_name, name, size, debanh, phomai, quantity, price, amount, oriprice, promtype) {
             var quantityValue
             var amountValue
             var index
@@ -104,7 +144,7 @@ Item {
             if (index < 0) {
                 quantityValue = mainController.getMoneyValue(quantity)
                 amountValue = mainController.moneyMoney(quantityValue * mainController.getMoneyValue(price))
-                choosenItemModel.append({"code_name": code_name, "item_name": name, size: size, debanh: debanh, "quantity": quantityValue, "price": mainController.moneyMoney(price), "amount": amountValue, "cancel": "X",
+                choosenItemModel.append({"type": type,"code_name": code_name, "item_name": name, size: size, debanh: debanh, "phomai" : phomai, "quantity": quantityValue, "price": mainController.moneyMoney(price), "amount": amountValue, "cancel": "X",
                                             "oriprice": oriprice, "promtype": promtype})
             } else {
                 quantityValue = get(index).quantity
@@ -121,8 +161,41 @@ Item {
             updateTotalMoney()
         }
 
-        function removeItem(row1) {
-            remove(row1, 1)
+        function removeItem(row1, size_banh, de_banh, phomai) {
+            var i;
+            console.log("size banh: " + size_banh);
+            console.log("de banh: " + de_banh);
+            console.log("pho mai: " + phomai);
+            var quantity_pizza = 0;
+            quantity_pizza = get(row1).quantity;
+            console.log("count before: " + count);
+            remove(row1, 1);
+            console.log("count after: " + count);
+            console.log("quantity_pizza: " + quantity_pizza);
+
+            for (i = 0; i < count; i++) {
+                console.log("row: " + JSON.stringify(get(i)));
+                if(size_banh === get(i).size &&
+                        de_banh === get(i).debanh &&
+                        phomai === get(i).phomai &&
+                        get(i).type !== "PIZZA") {
+
+                    console.log("quantity: " + quantity_pizza);
+                    console.log("quantity item: " + get(i).quantity);
+                    if(quantity_pizza < get(i).quantity) {
+                        var quantityValue = get(i).quantity - quantity_pizza;
+                        var amountValue = quantityValue * mainController.getMoneyValue(get(i).price);
+                        var amountString = mainController.formatMoney(amountValue);
+                        setProperty(i, "quantity", quantityValue);
+                        setProperty(i, "amount", amountString);
+                    } else {
+                         remove(i, 1);
+                        i--;
+                    }
+                }
+            }
+
+
             updateTotalMoney()
         }
 
@@ -256,7 +329,15 @@ Item {
                     onClicked: {
                         window.styleData_row = styleData.row;
                         window.prodNameInPaymenView = choosenItemModel.getProductName(styleData.row);
-                        deleteItemDialog.open();
+                        window.choose_sizebanh = choosenItemModel.getSizeBanh(styleData.row);
+                        window.choose_debanh = choosenItemModel.getDeBanh(styleData.row);
+                        window.choose_phomai = choosenItemModel.getPhoMai(styleData.row);
+                        if(choosenItemModel.getTypeProduct(styleData.row) === "OPTION") {
+                            // khong the xoa duoc
+                            deleteOptionPizzaDialog.open();
+                        } else {
+                            deleteItemDialog.open();
+                        }
                     }
                 }
             }
@@ -272,7 +353,7 @@ Item {
         Connections {
             target: mainController
             onAddItem: {
-                choosenItemModel.addItem(code_name, name, size, debanh, quantity, price, amount, oriprice, promtype)
+                choosenItemModel.addItem(type, code_name, name, size, debanh, phomai, quantity, price, amount, oriprice, promtype)
             }
 
             onCancelBillItem: {
@@ -281,7 +362,7 @@ Item {
             }
 
             onRemoveItemPaymentView: {
-                choosenItemModel.removeItem(row)
+                choosenItemModel.removeItem(row, size_banh, de_banh, phomai);
             }
         }
     }

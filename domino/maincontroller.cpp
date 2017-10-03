@@ -738,10 +738,10 @@ void MainController::onPayCashError(const int &error, const QString &message)
     http2 = NULL;
 }
 
-void MainController::insertItem(const QString& code_name, const QString& name, const QString& size, const QString& debanh, const QString& price, long quantity, const QString &oriprice, const QString &promtype)
+void MainController::insertItem(const QString& type, const QString& code_name, const QString& name, const QString& size, const QString& debanh, const QString& phomai, const QString& price, long quantity, const QString &oriprice, const QString &promtype)
 {
     long long priceNum = getMoneyValue(price);
-    emit addItem(code_name, name, size, debanh, quantity, priceNum, price, oriprice, promtype);
+    emit addItem(type, code_name, name, size, debanh, phomai, quantity, priceNum, price, oriprice, promtype);
 }
 
 void MainController::printTest(const QJsonArray &foods)
@@ -1767,6 +1767,9 @@ QString MainController::getPayment()
 {
     return setting->paymentName;
 }
+QString MainController::getDominoServerUrl() {
+    return setting->dominoServerUrl;
+}
 
 QString MainController::getUrlService()
 {
@@ -1815,6 +1818,9 @@ void MainController::setPayment(QString paymentName, bool initSocket)
         emit foodReset();
         checkUpdateFoodData();
     }
+}
+void MainController::setDominoServerUrl(QString url) {
+    setting->setDominoServerUrl(url);
 }
 
 void MainController::setPaymentMethod(int paymentMethod)
@@ -2903,7 +2909,7 @@ long long MainController::getPriceCoupon(long long price, const QString &pizza_s
     return promote_price;
 }
 
-void MainController::removeItemInPaymentView(int row) {
-    emit removeItemPaymentView(row);
+void MainController::removeItemInPaymentView(int row, const QString& size_banh, const QString& de_banh, const QString& phomai) {
+    emit removeItemPaymentView(row, size_banh, de_banh, phomai);
 }
 

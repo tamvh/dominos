@@ -615,16 +615,19 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/PaymentView.qml \
 		../domino/main.qml \
 		../domino/ProfilePage.qml \
-		../domino/VPOSWindow.qml \
 		../domino/FoodPage.qml \
+		../domino/VPOSWindow.qml \
 		../domino/VposPage.qml \
 		../domino/HalfRadiusRectangle.qml \
 		../domino/VPOSScrollBar.qml \
 		../domino/dynamicqml/AdminConfigPage.qml \
 		../domino/dynamicqml/UserConfigPage.qml \
 		../domino/dynamicqml/PiSettingsPage.qml \
+		../domino/dynamicqml/BlankPage.qml \
 		../domino/dynamicqml/SettingsPage.qml \
 		../domino/dynamicqml/SettingPages.qml \
+		../domino/content/TextBase.qml \
+		../domino/content/TextField.qml \
 		../domino/images/billonprinter.png \
 		../domino/images/check-64.png \
 		../domino/images/checkicon.png \

@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 #ifdef USE_VT_KB
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
 #endif
-
+    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
     qDebug() << "VPOS started!!!";
 
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -61,11 +61,12 @@ int main(int argc, char *argv[])
 
     delete conf;
 
-#ifdef USE_VT_KB
+//#ifdef USE_VT_KB
+//    engine.load(QUrl(QLatin1String("qrc:/pi-main.qml")));
+//#else
+//    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+//#endif
     engine.load(QUrl(QLatin1String("qrc:/pi-main.qml")));
-#else
-    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
-#endif
 
 #ifdef USE_SYSLOG
     int ret = app.exec();
