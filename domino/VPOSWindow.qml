@@ -83,7 +83,8 @@ ApplicationWindow {
 
     property bool pressbtn_selected: true
     property bool g_autoThanhtoan: false
-
+    property bool window_enable: true
+    property int window_opacity: 1.0
 
 
     Material.primary: "#006493"
@@ -418,6 +419,7 @@ ApplicationWindow {
     }
 
     header: ToolBar {
+        enabled: window.window_enable
         Rectangle {
             anchors.fill: parent
             LinearGradient {

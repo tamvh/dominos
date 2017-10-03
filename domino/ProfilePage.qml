@@ -14,7 +14,7 @@ Popup {
     closePolicy: Popup.NoAutoClose
     focus: true
 //    modal: true
-    dim: true
+//    dim: true
     topPadding: 30
     rightPadding: 30
     leftPadding: 30
@@ -201,6 +201,8 @@ Popup {
                        appMessage.showMessage("Xin lỗi, chương trình này chỉ hỗ trợ thanh toán bằng Zalopay!")
                     }
                     init();
+                    window.window_enable = true
+                    window.window_opacity = 1.0
                     profilePage.close()
                 }
                 Connections {
@@ -300,8 +302,9 @@ Popup {
                 Material.primary: "#8397A0"
                 Material.accent: "#8397A0"
                 onClicked: {
-                    init();
-//                    stackView.pop()
+                    init();                    
+                    window.window_enable = true
+                    window.window_opacity = 1.0
                     profilePage.close()
                 }
             }

@@ -21,7 +21,8 @@ import QtQuick.Layouts 1.3
 
 Page {
     id: page
-
+    enabled: window.window_enable
+    opacity: window.window_opacity
     RowLayout {
         anchors.fill: parent
 
