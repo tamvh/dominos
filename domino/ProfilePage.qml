@@ -301,7 +301,7 @@ Popup {
                 Material.accent: "#8397A0"
                 onClicked: {
                     init();
-                    stackView.pop()
+//                    stackView.pop()
                     profilePage.close()
                 }
             }
