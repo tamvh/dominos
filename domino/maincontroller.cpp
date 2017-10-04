@@ -2357,12 +2357,12 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
         pdf.codeFontBold(false);
         pdf.codeFeedline();
     }
-
-    pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB22);
-    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()), pdf.Justify_left, TAB22);
-    pdf.codeLine(QString("Hoa don Domino:\t%1").arg(g_storeOrderID), pdf.Justify_left, TAB22);
-    pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name), pdf.Justify_left, TAB22);
-    pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()), pdf.Justify_left, TAB22);
+    QString vposInvoice = jso["receiptNum"].toString();
+    pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB2);
+//    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Hoa don:\t%1").arg(g_storeOrderID), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name), pdf.Justify_left, TAB2);
+    pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()), pdf.Justify_left, TAB2);
 
     pdf.codeChars('-', PAGESZ, pdf.Justify_center);
 
@@ -2452,6 +2452,8 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
 
     pdf.codeChars('-', PAGESZ, pdf.Justify_left);
     pdf.codeFeedline(1);
+
+    pdf.codeLine(QString("%1").arg(vposInvoice), pdf.Justify_center);
 
     pdf.codeBarcode(jso["barcode"].toString(), 2, 80, pdf.Justify_center);
     pdf.codeFeedline(1);
