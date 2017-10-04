@@ -5,8 +5,13 @@ import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import QtQuick.VirtualKeyboard 2.1
 import QtQuick.VirtualKeyboard.Settings 2.1
+import QtQuick.Controls.Styles 1.4
 import "content"
-
+import QtQuick 2.4
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.4
+import QtQuick.Controls 2.0
+import QtQuick.Window 2.2
 Popup {
     id: profilePage
     x: (parent.width - width)/2
@@ -79,22 +84,19 @@ Popup {
                 font.pixelSize: 24
                 color: "#777777"
             }
-            TextInput {
+
+            TextField {
                 id: txtCustomerName
                 width: 814
+                Layout.fillWidth: true
                 text: ''
+                Material.primary: "#0695D6"
+                Material.accent: "#0695D6"
                 font.pixelSize: 36
-                z:0
                 onTextChanged: {
                     var n = txtCustomerName.text.trim().length;
                     enable_btnThanhToan(n);
                 }
-
-            }
-            Rectangle {
-                height: 1
-                width: parent.width
-                color: "#777777"
             }
         }
 
