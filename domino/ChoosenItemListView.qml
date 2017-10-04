@@ -279,7 +279,7 @@ Item {
         anchors.right: parent.right
         anchors.bottom: idXoachon.top
 
-        property int colRatio: width/22
+        property int colRatio: width/24
 
         horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
 
@@ -295,7 +295,7 @@ Item {
             resizable: false
             movable: false
             role: "quantity"
-            title: qsTr("SL")
+            title: qsTr("SL  ")
             width: tableViewChoosen.colRatio*2
             //width: Units.dp(75) > 20 ? Units.dp(75) : 75
         }
@@ -314,6 +314,14 @@ Item {
             title: qsTr("Thành tiền")
             width: tableViewChoosen.colRatio*4
             //width: Units.dp(75)
+        }
+        TableViewColumn {
+            resizable: false
+            movable: false
+            role: "cancel"
+            title: qsTr("")
+            width: tableViewChoosen.colRatio*2
+            delegate: imageDelegate
         }
 
         model: choosenItemModel
@@ -334,7 +342,7 @@ Item {
                     verticalAlignment: Text.AlignVCenter
                     //horizontalAlignment: (styleData.column === 0 ? Text.AlignLeft : Text.AlignHCenter)
                     horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
-                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignHCenter:Text.AlignRight))
+                                                                   ((styleData.column === 2 || styleData.column === 3 || styleData.column === 4) ? Text.AlignHCenter:Text.AlignRight))
                     text: styleData.value
                     font.pixelSize: 16
                     font.bold: true
@@ -376,7 +384,7 @@ Item {
                     x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
                                                                                        horizontalAlignment === Text.AlignRight ? 1 : 8
                     verticalAlignment:  Text.AlignVCenter
-                    horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                    horizontalAlignment: ((styleData.column === 0 || styleData.column === 4) ? Text.AlignLeft :
                                                                    ((styleData.column === 2 || styleData.column === 3) ? Text.AlignRight : Text.AlignHCenter))
 
                     anchors.verticalCenter: parent.verticalCenter
@@ -384,7 +392,7 @@ Item {
                     elide: styleData.elideMode
                     text: styleData.value !== undefined ? styleData.value : ""
                     font.pixelSize: 18
-                    font.bold: (styleData.column === 0 || styleData.column === 1) ? false : true
+                    font.bold: (styleData.column === 0 || styleData.column === 1 || styleData.column === 4) ? false : true
                     color: "#000000"
                     renderType: Settings.isMobile ? Text.QtRendering : Text.NativeRendering
                 }
@@ -414,6 +422,19 @@ Item {
                 height: Screen.devicePixelRatio <= 2? 60: 60
                 property color selectedColor: control.activeFocus ? "#07c" : "#999"
                 color: styleData.selected ? selectedColor : !styleData.alternate ? "#FFFFFF" : "#F5F5F5"
+            }
+        }
+
+        Component {
+            id: imageDelegate
+            Item {
+                anchors.fill: parent
+                Image {
+                    fillMode: Image.Pad
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/icons/images/app/close_red.png"
+                }
             }
         }
 
