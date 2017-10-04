@@ -942,7 +942,9 @@ void MainController::eventPlaceOrder(const QJsonObject &result) {
 //        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
     } else {
         //thong bao loi - gui request len server de hoan tien
-        emit notifySucc(1, g_invceCode, g_invceDate, g_barcode, g_balance);
+        g_storeOrderID = "#";
+        printBill(g_invceCode, g_printdata);
+//        emit notifySucc(1, g_invceCode, g_invceDate, g_barcode, g_balance);
     }
 }
 
@@ -2918,5 +2920,10 @@ long long MainController::getPriceCoupon(long long price, const QString &pizza_s
 
 void MainController::removeItemInPaymentView(int row, const QString& prod_type, const QString& size_banh, const QString& de_banh, const QString& phomai) {
     emit removeItemPaymentView(row, prod_type, size_banh, de_banh, phomai);
+}
+
+void MainController::closeThanhtoan(int popupid) {
+    qDebug() << "begin close";
+    emit closePopup(popupid, "");
 }
 

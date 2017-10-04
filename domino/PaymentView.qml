@@ -173,7 +173,9 @@ Rectangle {
                     window.global_foodItems = choosenItemListView.generateBillDetail()
                     window.g_autoThanhtoan = autoThanhtoan.checked;
                     window.window_enable = false
-                    window.window_opacity = 0.9
+                    window.window_opacity = 0.4
+                    window.window_zindex = 1
+                    rectMainPage.z = 1;
                     idProfilePage.open()
                 }
             }
@@ -186,6 +188,10 @@ Rectangle {
 
             Connections {
                 target: mainController
+                onClosePopup: {
+                    console.log("receive close thanh toan");
+                    rectMainPage.z = -1;
+                }
 
                 onPaymentUpdate: {
                     updatePaymentMethod(methods)

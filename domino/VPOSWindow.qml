@@ -85,6 +85,7 @@ ApplicationWindow {
     property bool g_autoThanhtoan: false
     property bool window_enable: true
     property int window_opacity: 1.0
+    property int window_zindex: -1
 
 
     Material.primary: "#006493"
@@ -2155,15 +2156,6 @@ ApplicationWindow {
                     getErrAlert.close()
                 }
             }
-        }
-
-        onOpened: {
-            getErrTimer.parentId = 4;
-            getErrTimer.restartTimerCounter();
-        }
-
-        onClosed: {
-            getErrTimer.stopTimerCounter();
         }
     }
 

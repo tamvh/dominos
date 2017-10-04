@@ -596,6 +596,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/pi-main.qml \
 		../domino/FoodTab.qml \
 		../domino/qtquickcontrols2.conf \
+		../domino/RectMain.qml \
 		../domino/ChoosenItemListView.qml \
 		../domino/SwipeMenu.qml \
 		../domino/ItemViewDetail.qml \

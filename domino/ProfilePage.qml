@@ -202,8 +202,8 @@ Popup {
                     }
                     init();
                     window.window_enable = true
-                    window.window_opacity = 1.0
                     profilePage.close()
+                    mainController.closeThanhtoan(0);
                 }
                 Connections {
                     target: mainController
@@ -304,8 +304,8 @@ Popup {
                 onClicked: {
                     init();                    
                     window.window_enable = true
-                    window.window_opacity = 1.0
                     profilePage.close()
+                    mainController.closeThanhtoan(0);
                 }
             }
 

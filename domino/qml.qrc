@@ -34,6 +34,7 @@
         <file>TitleSubPage.qml</file>
         <file>FoodPizzaPage.qml</file>
         <file>AboutPage.qml</file>
+        <file>RectMain.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>

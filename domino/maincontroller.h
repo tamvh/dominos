@@ -186,7 +186,7 @@ public:
     Q_INVOKABLE QString getProductCode(const QString &pro_name, const QString &prod_size, const QString &prod_plavor_code);
     Q_INVOKABLE long long getPriceCoupon(long long price, const QString& pizza_size);
     Q_INVOKABLE void    removeItemInPaymentView(int row, const QString& prod_type, const QString& size_banh, const QString& de_banh, const QString& phomai);
-
+    Q_INVOKABLE void    closeThanhtoan(int popupid);
     virtual bool eventFilter(QObject *watched, QEvent *event) {
         if( event->type() == QEvent::KeyPress ||
             event->type() == QEvent::MouseMove )
@@ -243,7 +243,7 @@ signals:
     void dominosData(const QJsonObject &data);
     void dominosSetProdName(const QSet<QString> &data);
     void removeItemPaymentView(int row, const QString& prod_type, const QString& size_banh, const QString& de_banh, const QString& phomai);
-
+    void closePopup(int popupid, const QString& msg);
 public slots:
     void onCancelDone(const QVariant &data);
     void onCancelError(const int&, const QString&);

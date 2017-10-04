@@ -21,11 +21,15 @@ import QtQuick.Layouts 1.3
 
 Page {
     id: page
-    enabled: window.window_enable
-    opacity: window.window_opacity
+    RectMain {
+        id: rectMainPage
+        anchors.fill: parent
+        z: -1
+        opacity: 0.8
+    }
     RowLayout {
         anchors.fill: parent
-
+        enabled: window.window_enable
         Rectangle {
             id: idFrame
             anchors.left: parent.left
