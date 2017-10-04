@@ -77,12 +77,21 @@ Popup {
 
         ColumnLayout {
             width: 814
-            Label {
-                width: 814
-                text: "TÊN KHÁCH HÀNG"
-                font.bold: true
-                font.pixelSize: 24
-                color: "#777777"
+            RowLayout {
+                spacing: 10
+                Label {
+                    width: 814
+                    text: "TÊN KHÁCH HÀNG"
+                    font.bold: true
+                    font.pixelSize: 24
+                    color: "#777777"
+                }
+                Label {
+                    id: lblWarning
+                    text: "(*) Tên Khách Hàng không được quá " + txtCustomerName.maximumLength + " kí tự"
+                    font.pixelSize: 18
+                    color: "white"
+                }
             }
 
             TextField {
@@ -93,9 +102,15 @@ Popup {
                 Material.primary: "#0695D6"
                 Material.accent: "#0695D6"
                 font.pixelSize: 36
+                maximumLength: 20
                 onTextChanged: {
                     var n = txtCustomerName.text.trim().length;
                     enable_btnThanhToan(n);
+                    if(txtCustomerName.text.trim().length === 20) {
+                        lblWarning.color = "red";
+                    } else {
+                        lblWarning.color = "white";
+                    }
                 }
             }
         }
