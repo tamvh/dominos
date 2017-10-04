@@ -2296,12 +2296,11 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
                                                 const QString &banin, bool cutpageSeperate)
 {
     int PAGESZ = 33;
-    int TAB1, TAB2, TAB22, TAB3, TAB4;
+    int TAB1, TAB2, TAB3, TAB4;
 
     if (setting->printerSize == "small") {
         PAGESZ = 33;
         TAB1 = 10;
-        TAB22 = 12;
         TAB2 = 12;
         TAB3 = 23;
         TAB4 = 33;
@@ -2309,7 +2308,6 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
     else {
         PAGESZ = 48;
         TAB1 = 12;
-        TAB22 = 17;
         TAB2 = 27;
         TAB3 = 38;
         TAB4 = 48;
