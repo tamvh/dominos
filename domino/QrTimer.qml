@@ -44,6 +44,8 @@ Item  {
                 systemIdleAlert.close();
                 idProfilePage.close();
                 deleteItemDialog.close();
+                window.window_enable = true
+                mainController.closeThanhtoan(0);
             }
             else if(parentId === 4) {
                 getErrAlert.close();
