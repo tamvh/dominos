@@ -615,6 +615,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/PaymentPage.qml \
 		../domino/PaymentView.qml \
 		../domino/main.qml \
+		../domino/ImageHalfRadiusRect.qml \
 		../domino/ProfilePage.qml \
 		../domino/FoodPage.qml \
 		../domino/VPOSWindow.qml \
