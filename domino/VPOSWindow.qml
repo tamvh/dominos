@@ -1374,8 +1374,6 @@ ApplicationWindow {
                                         font.pixelSize: 20
                                         font.strikeout: true
                                         font.bold: true
-                                        anchors.right: txtPizza_money.left
-                                        anchors.rightMargin: 10
                                     }
 
                                     Text {
