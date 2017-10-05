@@ -1099,7 +1099,7 @@ ApplicationWindow {
                                     Column {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         Label {
-                                            text: "Phô mai mỏng"
+                                            text: "Đế viền\nphô mai mỏng"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             font.pixelSize: 18
@@ -1142,7 +1142,7 @@ ApplicationWindow {
                                     Column {
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         Label {
-                                            text: "Phô mai dày"
+                                            text: "Đế viền\nphô mai dày"
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             font.pixelSize: 18
