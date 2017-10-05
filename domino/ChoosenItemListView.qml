@@ -161,11 +161,12 @@ Item {
             updateTotalMoney()
         }
 
-        function removeItemPizza(local_prodtype, size_banh, de_banh, phomai) {
+        function removeItemPizza(local_prodtype, local_productName, size_banh, de_banh, phomai) {
             for (var i = 0; i < count; i++) {
                 if(size_banh === get(i).size &&
                         de_banh === get(i).debanh &&
                         phomai === get(i).phomai &&
+                        local_productName === get(i).item_name &&
                         get(i).type === local_prodtype) {
                     console.log("row pizza: " + JSON.stringify(get(i)));
                     remove(i, 1);
@@ -378,7 +379,7 @@ Item {
                 Text {
                     id: label
                     objectName: "label"
-                    width: parent.width - x - (horizontalAlignment === Text.AlignRight ? 8 : 1)
+                    width: parent.width
                     x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
                                                                                        horizontalAlignment === Text.AlignRight ? 1 : 8
                     verticalAlignment:  Text.AlignVCenter
@@ -488,9 +489,10 @@ Item {
 
                 if(prod_type === "PIZZA") {
                     var local_quantity = choosenItemModel.getQuantityPizza(row);
+                    var local_productName = choosenItemModel.getProductName(row);
                     choosenItemModel.removePizzaOptionPlusChessy(local_quantity, "OPTION_THEMPHOMAI", size_banh, phomai)
                     choosenItemModel.removePizzaOptionDebanhPhomai(local_quantity, "OPTION_DEVIENPHOMAI", size_banh, de_banh)
-                    choosenItemModel.removeItemPizza("PIZZA", size_banh, de_banh, phomai);
+                    choosenItemModel.removeItemPizza("PIZZA", local_productName, size_banh, de_banh, phomai);
                 }
             }
         }
