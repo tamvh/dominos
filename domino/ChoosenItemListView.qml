@@ -279,7 +279,7 @@ Item {
         anchors.right: parent.right
         anchors.bottom: idXoachon.top
 
-        property int colRatio: width/24
+        property int colRatio: width/27
 
         horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
 
@@ -287,15 +287,15 @@ Item {
             resizable: false
             movable: false
             role: "item_name"
-            title: qsTr("  Tên hàng")
-            width: tableViewChoosen.colRatio*11
+            title: qsTr("  TÊN HÀNG")
+            width: tableViewChoosen.colRatio*13
             //width: Units.dp(150) > 20 ? Units.dp(150) : 150
         }
         TableViewColumn {
             resizable: false
             movable: false
             role: "quantity"
-            title: qsTr("SL  ")
+            title: qsTr("SL")
             width: tableViewChoosen.colRatio*2
             //width: Units.dp(75) > 20 ? Units.dp(75) : 75
         }
@@ -303,15 +303,15 @@ Item {
             resizable: false
             movable: false
             role: "price"
-            title: qsTr("Giá")
-            width: tableViewChoosen.colRatio*4
+            title: qsTr("GIÁ      ")
+            width: tableViewChoosen.colRatio*5
             //width: Units.dp(75)
         }
         TableViewColumn {
             resizable: false
             movable: false
             role: "amount"
-            title: qsTr("Thành tiền")
+            title: qsTr("THÀNH TIỀN")
             width: tableViewChoosen.colRatio*5
             //width: Units.dp(75)
         }
@@ -334,18 +334,16 @@ Item {
                 color: "transparent"
             }
             headerDelegate: Rectangle {
-                implicitHeight: Screen.devicePixelRatio <= 2? 60: 60
+                implicitHeight: 60
                 color: "#DBF0FA"
                 Text {
                     id: textItem
                     anchors.fill: parent
                     verticalAlignment: Text.AlignVCenter
-                    //horizontalAlignment: (styleData.column === 0 ? Text.AlignLeft : Text.AlignHCenter)
                     horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
-                                                                   ((styleData.column === 2 || styleData.column === 3 || styleData.column === 4) ? Text.AlignHCenter:Text.AlignRight))
+                                                                   ((styleData.column === 1 || styleData.column === 2 || styleData.column === 3 || styleData.column === 4) ? Text.AlignRight:Text.AlignHCenter))
                     text: styleData.value
-                    font.pixelSize: 16
-                    font.bold: true
+                    font.pixelSize: 18
                     elide: Text.ElideRight
                     color: "#000000"
                     renderType: Settings.isMobile ? Text.QtRendering : Text.NativeRendering
@@ -384,8 +382,8 @@ Item {
                     x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
                                                                                        horizontalAlignment === Text.AlignRight ? 1 : 8
                     verticalAlignment:  Text.AlignVCenter
-                    horizontalAlignment: ((styleData.column === 0 || styleData.column === 4) ? Text.AlignLeft :
-                                                                   ((styleData.column === 2 || styleData.column === 3) ? Text.AlignRight : Text.AlignHCenter))
+                    horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                                                                   ((styleData.column === 1 || styleData.column === 2 || styleData.column === 3) ? Text.AlignRight : Text.AlignHCenter))
 
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.verticalCenterOffset: 1
@@ -433,7 +431,23 @@ Item {
                     fillMode: Image.Pad
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    source: "qrc:/icons/images/app/close_red.png"
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            window.styleData_row = styleData.row;
+                            window.prodNameInPaymenView = choosenItemModel.getProductName(styleData.row);
+                            window.choose_sizebanh = choosenItemModel.getSizeBanh(styleData.row);
+                            window.choose_debanh = choosenItemModel.getDeBanh(styleData.row);
+                            window.choose_phomai = choosenItemModel.getPhoMai(styleData.row);
+                            window.g_prod_type = choosenItemModel.getTypeProduct(styleData.row);
+                            if(window.g_prod_type === "OPTION_THEMPHOMAI" || window.g_prod_type === "OPTION_DEVIENPHOMAI") {
+                                // khong the xoa duoc
+                                deleteOptionPizzaDialog.open();
+                            } else {
+                                deleteItemDialog.open();
+                            }
+                        }
+                    }source: "qrc:/icons/images/app/close_red.png"
                 }
             }
         }
