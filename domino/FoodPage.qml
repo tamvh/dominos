@@ -257,6 +257,19 @@ Rectangle {
                             asynchronous: true
                             cache: img_cache
                             source: image
+                            layer.enabled: true
+                            layer.effect: OpacityMask {
+                                maskSource: Item {
+                                    width: foodIcon.width
+                                    height: foodIcon.height
+                                    ImageHalfRadiusRect {
+                                        anchors.centerIn: parent
+                                        width: foodIcon.width
+                                        height: foodIcon.height
+                                        bottomRadius: 7
+                                    }
+                                }
+                            }
                         }
                     }
 

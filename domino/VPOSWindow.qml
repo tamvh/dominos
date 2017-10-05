@@ -1368,16 +1368,18 @@ ApplicationWindow {
                                 }
                                 RowLayout {
                                     Layout.fillWidth: true
-                                    spacing: 7
                                     Text {
                                         text: pizza_money_root
                                         color: "#9B9B9B"
                                         font.pixelSize: 20
                                         font.strikeout: true
                                         font.bold: true
+                                        anchors.right: txtPizza_money.left
+                                        anchors.rightMargin: 10
                                     }
 
                                     Text {
+                                        id: txtPizza_money
                                         text: pizza_money + " VNĐ"
                                         color: "#E61837"
                                         font.pixelSize: 30

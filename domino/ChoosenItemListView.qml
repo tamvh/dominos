@@ -431,23 +431,24 @@ Item {
                     fillMode: Image.Pad
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.verticalCenter: parent.verticalCenter
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            window.styleData_row = styleData.row;
-                            window.prodNameInPaymenView = choosenItemModel.getProductName(styleData.row);
-                            window.choose_sizebanh = choosenItemModel.getSizeBanh(styleData.row);
-                            window.choose_debanh = choosenItemModel.getDeBanh(styleData.row);
-                            window.choose_phomai = choosenItemModel.getPhoMai(styleData.row);
-                            window.g_prod_type = choosenItemModel.getTypeProduct(styleData.row);
-                            if(window.g_prod_type === "OPTION_THEMPHOMAI" || window.g_prod_type === "OPTION_DEVIENPHOMAI") {
-                                // khong the xoa duoc
-                                deleteOptionPizzaDialog.open();
-                            } else {
-                                deleteItemDialog.open();
-                            }
+                    source: "qrc:/icons/images/app/close_red.png"
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        window.styleData_row = styleData.row;
+                        window.prodNameInPaymenView = choosenItemModel.getProductName(styleData.row);
+                        window.choose_sizebanh = choosenItemModel.getSizeBanh(styleData.row);
+                        window.choose_debanh = choosenItemModel.getDeBanh(styleData.row);
+                        window.choose_phomai = choosenItemModel.getPhoMai(styleData.row);
+                        window.g_prod_type = choosenItemModel.getTypeProduct(styleData.row);
+                        if(window.g_prod_type === "OPTION_THEMPHOMAI" || window.g_prod_type === "OPTION_DEVIENPHOMAI") {
+                            // khong the xoa duoc
+                            deleteOptionPizzaDialog.open();
+                        } else {
+                            deleteItemDialog.open();
                         }
-                    }source: "qrc:/icons/images/app/close_red.png"
+                    }
                 }
             }
         }
