@@ -1527,7 +1527,7 @@ ApplicationWindow {
                                                             anchors.verticalCenter: parent.verticalCenter
                                                             text: productName
                                                             font.pixelSize: 20
-                                                            color: "#000000"
+                                                            color: "#4A4A4A"
                                                         }
                                                     }
                                                     Rectangle {
@@ -1537,7 +1537,7 @@ ApplicationWindow {
                                                             anchors.centerIn: parent
                                                             text: productQuantity
                                                             font.pixelSize: 20
-                                                            color: "#000000"
+                                                            color: "#4A4A4A"
                                                         }
                                                     }
                                                     Rectangle {
@@ -1549,7 +1549,7 @@ ApplicationWindow {
                                                             text: productMoney
                                                             font.bold: true
                                                             font.pixelSize: 20
-                                                            color: "#000000"
+                                                            color: "#4A4A4A"
                                                         }
                                                     }
                                                 }
