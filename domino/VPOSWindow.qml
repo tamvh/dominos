@@ -38,6 +38,7 @@ ApplicationWindow {
     property string pizza_prod_code: qsTr("")
     property string pizza_prod_name: qsTr("")
     property string pizza_debanh_id: qsTr("TC")
+    property string pizza_debanh_str: qsTr("de_mong")
     property string pizza_sizebanh_id: qsTr("7")
     property string pizza_sizebanh: qsTr("7\"")
     property string pizza_debanh: qsTr("Đế mỏng")
@@ -188,54 +189,42 @@ ApplicationWindow {
             promote_price = pizza_prize;
             pizza_prize = "";
         }
-        pizza_money_root = mainController.moneyMoney(soluong * mainController.getMoneyValue(pizza_prize));
-        if(pizza_money_root === "0") {
-            pizza_money_root = "";
-        }
         local_money = soluong * mainController.getMoneyValue(promote_price);
+        pizza_money = local_money;
         if(pizza_sizebanh_id === "9") {
             if(nChessy === 1) {
                 local_money = local_money + soluong*10000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*10000);
             }
             if(nChessy === 2) {
                 local_money = local_money + soluong*20000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*20000);
             }
             if(nChessy === 3) {
                 local_money = local_money + soluong*30000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*30000);
             }
         }
 
         if(pizza_sizebanh_id === "12") {
             if(nChessy === 1) {
                 local_money = local_money + soluong*15000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*15000);
             }
             if(nChessy === 2) {
                 local_money = local_money + soluong*30000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*30000);
             }
             if(nChessy === 3) {
                 local_money = local_money + soluong*45000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*45000);
             }
         }
 
         if(pizza_debanh_id === "CC" || pizza_debanh_id === "TCC") {
             if(pizza_sizebanh_id === "9") {
                 local_money = local_money + soluong*49000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*49000);
             }
             if(pizza_sizebanh_id === "12") {
                 local_money = local_money + soluong*69000;
-                pizza_money_root = mainController.moneyMoney(mainController.getMoneyValue(pizza_money_root) + soluong*69000);
             }
         }
 
-        pizza_money = mainController.moneyMoney(local_money);
-
+        txtTotalAmount.text = mainController.moneyMoney(local_money) + " VNĐ";
     }
 
     function select_sizebanh(sizebanh) {
@@ -274,7 +263,11 @@ ApplicationWindow {
             rect_pizzasize_big.border.color = "#0695D6"
             rect_pizzasize_big.border.width = 4
         }
+
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
+        appendPizza();
+        appendThemphomai();
+        appendDebanh();
     }
 
     function reset_color_sizebanh() {
@@ -321,6 +314,7 @@ ApplicationWindow {
     function select_debanh(debanh) {
         check_debanh(debanh);
         reset_color_debanh()
+        pizza_debanh_str = debanh;
         if(debanh === "de_mong") {
             pizza_debanh = "Đế mỏng"
             rectDemong.border.color = "#0695D6"
@@ -343,6 +337,8 @@ ApplicationWindow {
             rectVienphomaiMong.border.width =4
         }
         getMoney(pizza_category, pizza_sizebanh_id, nItem)
+        appendDebanh();
+        appendThemphomai();
     }
 
     function check_debanh(debanh) {
@@ -390,6 +386,9 @@ ApplicationWindow {
         pizza_debanh_id = "TC";
         txtPercentCheesy.text = getPercentCheesy(0);
         btnSelectItem.enabled = pressbtn_selected;
+        initappendPizza();
+        appendThemphomai();
+        appendDebanh();
     }
 
     function getPercentCheesy(n){
@@ -407,8 +406,112 @@ ApplicationWindow {
             _percentcheesy = "200%";
             cheesy_text = "Thêm phô mai: 200%";
         }
+        appendThemphomai();
         return _percentcheesy;
     }
+
+    function initappendPizza() {
+        itemPizzaModel.clear()
+        var append_name = window.pizza_prod_name.split("\n").length>1 ? window.pizza_prod_name.split("\n")[1].toString().replace(")", "").replace("(", "") : window.pizza_prod_name.split("\n")[0]        
+        itemPizzaModel.append({productType: "PIZZA", productName: append_name, productQuantity: nItem + "", productMoney: mainController.moneyMoney(window.pizza_money)})
+        itemPizzaModel.append({productType: "THEMPHOMAI", productName: "Thêm phô mai", productQuantity: "-", productMoney: "-"})
+        itemPizzaModel.append({productType: "DEVIENPHOMAI", productName: "Đế viền phô mai", productQuantity: "-", productMoney: "-"})
+        txtTotalAmount.text = mainController.moneyMoney(window.pizza_money) + " VNĐ";
+    }
+    function appendPizza() {
+        for(var i = 0; i< itemPizzaModel.count; i++) {
+            if(itemPizzaModel.get(i).productType === "PIZZA") {
+                console.log("append pizza")
+                itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
+                itemPizzaModel.setProperty(i, "productMoney", mainController.moneyMoney(window.pizza_money));
+            }
+        }
+    }
+    function appendDebanh() {
+        var _price = 0;
+        var productMoney = "";
+        for(var i = 0; i< itemPizzaModel.count; i++) {
+            if(itemPizzaModel.get(i).productType === "DEVIENPHOMAI") {
+                console.log("append de vien pho mai")
+                if(pizza_debanh_str === "de_cheesy") {
+                    itemPizzaModel.setProperty(i, "productName", "Đế viền phô mai dày");
+                    itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
+                    if(pizza_sizebanh_id === "9") {
+                        _price = 49000;
+                    }
+
+                    if(pizza_sizebanh_id === "12") {
+                        _price = 69000;
+                    }
+                    productMoney = mainController.moneyMoney(_price * nItem)
+                    itemPizzaModel.setProperty(i, "productMoney", productMoney);
+                } else if(pizza_debanh_str === "de_thin_cheesy") {
+                    itemPizzaModel.setProperty(i, "productName", "Đế viền phô mai mỏng");
+                    itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
+                    if(pizza_sizebanh_id === "9") {
+                        _price = 49000;
+                    }
+
+                    if(pizza_sizebanh_id === "12") {
+                        _price = 69000;
+                    }
+                    productMoney = mainController.moneyMoney(_price * nItem)
+                    itemPizzaModel.setProperty(i, "productMoney", productMoney);
+                } else {
+                    itemPizzaModel.setProperty(i, "productName", "Đế viền phô mai");
+                    itemPizzaModel.setProperty(i, "productQuantity", "-");
+                    itemPizzaModel.setProperty(i, "productMoney", "-");
+                }
+            }
+        }
+    }
+
+    function appendThemphomai() {
+        var _price = 0;
+        for(var i = 0; i< itemPizzaModel.count; i++) {
+            if(itemPizzaModel.get(i).productType === "THEMPHOMAI") {
+                console.log("append them pho mai")
+                if(nChessy !== 0) {
+                    itemPizzaModel.setProperty(i, "productName", cheesy_text);
+                    itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
+                    if(pizza_sizebanh_id === "9") {
+                        if(nChessy === 1) {
+                            _price = 10000;
+                        }
+
+                        if(nChessy === 2) {
+                            _price = 20000;
+                        }
+
+                        if(nChessy === 3) {
+                            _price = 30000;
+                        }
+                    }
+
+                    if(pizza_sizebanh_id === "12") {
+                        if(nChessy === 1) {
+                            _price = 15000;
+                        }
+
+                        if(nChessy === 2) {
+                            _price = 30000;
+                        }
+
+                        if(nChessy === 3) {
+                            _price = 45000;
+                        }
+                    }
+                    var productMoney = mainController.moneyMoney(_price * nItem)
+                    itemPizzaModel.setProperty(i, "productMoney", productMoney);
+                } else {
+                    itemPizzaModel.setProperty(i, "productName", "Thêm phô mai");
+                    itemPizzaModel.setProperty(i, "productQuantity", "-");
+                    itemPizzaModel.setProperty(i, "productMoney", "-");
+                }
+            }
+        }
+    }
+
 
     Component.onCompleted: {
         titleLabel.text = mainController.getAppMachine();
@@ -717,6 +820,9 @@ ApplicationWindow {
             open()
         }
     }
+    ListModel {
+        id: itemPizzaModel
+    }
 
     Popup {
         id: cakeInfoDialog
@@ -725,12 +831,12 @@ ApplicationWindow {
         x: (window.width - width) / 2
         y: Math.abs(window.height -  cakeInfoDialog.height)/3
         closePolicy: Popup.NoAutoClose
-        width: 1660
-        height: 740
-        topPadding: 30
-        rightPadding: 30
-        leftPadding: 30
-        bottomPadding: 30
+        width: 1565
+        height: 780
+        topPadding: 40
+        rightPadding: 40
+        leftPadding: 40
+        bottomPadding: 40
         Column {
             id: columnContentCakeInfo
             spacing: 20
@@ -746,7 +852,7 @@ ApplicationWindow {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: 36
                     font.bold: true
-                    text: "VUI LÒNG CHỌN THÔNG TIN LOẠI BÁNH"
+                    text: "VUI LÒNG CHỌN LOẠI BÁNH"
                     color: "#0078AE"
                 }
             }
@@ -1273,6 +1379,9 @@ ApplicationWindow {
                                                     nItem -= 1
                                                     txtTotalItem.text = nItem
                                                     getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                                    appendPizza();
+                                                    appendThemphomai();
+                                                    appendDebanh();
                                                 }
                                             }
                                         }
@@ -1310,6 +1419,9 @@ ApplicationWindow {
                                                 nItem += 1
                                                 txtTotalItem.text = nItem
                                                 getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                                appendPizza();
+                                                appendThemphomai();
+                                                appendDebanh();
                                             }
                                         }
                                     }
@@ -1322,16 +1434,15 @@ ApplicationWindow {
                     width: 50
                 }
                 Column {
-                    width: 485
+                    width: 390
                     anchors.top: parent.top
 
                     Column {
-                        width: 485
-                        spacing: 10
+                        width: 390
                         topPadding: globalPadding
                         bottomPadding: globalPadding
                         Rectangle {
-                            width: 485
+                            width: 390
                             height: 70
                             Label {
                                 anchors.centerIn: parent
@@ -1342,12 +1453,11 @@ ApplicationWindow {
                             }
                         }
                         ColumnLayout {
-                            width: 485
+                            width: 390
                             Rectangle {
                                 height: 70
-                                width: 485
+                                width: 390
                                 RowLayout {
-                                    spacing: 10
                                     Rectangle {
                                         height: 70
                                         width: 250
@@ -1361,7 +1471,7 @@ ApplicationWindow {
                                     }
                                     Rectangle {
                                         height: 70
-                                        width: 57
+                                        width: 30
                                         Label {
                                             anchors.centerIn: parent
                                             text: "SL"
@@ -1372,7 +1482,7 @@ ApplicationWindow {
                                     }
                                     Rectangle {
                                         height: 70
-                                        width: 157
+                                        width: 100
                                         Label {
                                             anchors.verticalCenter: parent.verticalCenter
                                             anchors.right: parent.right
@@ -1384,49 +1494,31 @@ ApplicationWindow {
                                     }
                                 }
                             }
+                            Rectangle {
+                                width: 390
+                                height: 1
+                                color: "#EEEEEE"
+                            }
                             ColumnLayout {
-                                width: 485
-                                ListModel {
-                                    id: libraryModel
-                                    ListElement {
-                                        productName: "Pizza gà sốt tương kiểu Nhật"
-                                        productQuantity: "1"
-                                        productMoney: "12,000"
-                                    }
-                                    ListElement {
-                                        productName: "Thêm phô mai"
-                                        productQuantity: "1"
-                                        productMoney: "12,000"
-                                    }
-                                    ListElement {
-                                        productName: "Đế viền phô mai"
-                                        productQuantity: "1"
-                                        productMoney: "12,000"
-                                    }
-                                }
-
+                                width: 390
                                 GridView {
                                     focus: true
-                                    model: libraryModel
-                                    cellWidth: 485
+                                    model: itemPizzaModel
+                                    cellWidth: 390
                                     cellHeight: 50
                                     height: 160
                                     delegate: Item {
                                         id: item
-                                        width: 485
+                                        width: 390
                                         height: 50
                                         ColumnLayout {
-                                            Rectangle {
-                                                width: 485
-                                                height: 1
-                                                color: "#EEEEEE"
-                                            }
+
                                             Rectangle {
                                                 height: 50
-                                                width: 250
+                                                width: 390
                                                 RowLayout {
                                                     anchors.verticalCenter: parent.verticalCenter
-                                                    width: 485
+                                                    width: 390
                                                     height: 50
                                                     Rectangle {
                                                         height: 50
@@ -1440,7 +1532,7 @@ ApplicationWindow {
                                                     }
                                                     Rectangle {
                                                         height: 50
-                                                        width: 57
+                                                        width: 30
                                                         Label {
                                                             anchors.centerIn: parent
                                                             text: productQuantity
@@ -1450,7 +1542,7 @@ ApplicationWindow {
                                                     }
                                                     Rectangle {
                                                         height: 50
-                                                        width: 157
+                                                        width: 100
                                                         Label {
                                                             anchors.verticalCenter: parent.verticalCenter
                                                             anchors.right: parent.right
@@ -1464,7 +1556,7 @@ ApplicationWindow {
                                             }
 
                                             Rectangle {
-                                                width: 485
+                                                width: 390
                                                 height: 1
                                                 color: "#EEEEEE"
                                             }
@@ -1475,11 +1567,12 @@ ApplicationWindow {
 
                             Rectangle {
                                 height: 50
-                                width: 485
+                                width: 390
                                 RowLayout {
+                                    width: 390
                                     Rectangle {
                                         height: 50
-                                        width: 285
+                                        width: 190
                                         Label {
                                             anchors.verticalCenter: parent.verticalCenter
                                             text: "TỔNG CỘNG"
@@ -1493,9 +1586,10 @@ ApplicationWindow {
                                         height: 50
                                         width: 200
                                         Label {
+                                            id: txtTotalAmount
                                             anchors.verticalCenter: parent.verticalCenter
                                             anchors.right: parent.right
-                                            text: "1,000,000 VNĐ"
+                                            text: pizza_money + " VNĐ"
                                             font.bold: true
                                             font.pixelSize: 30
                                             color: "#E61837"
@@ -1505,20 +1599,21 @@ ApplicationWindow {
                             }
                             ColumnLayout {
                                 height: 35
-                                width: 485
+                                width: 390
                             }
 
                             ColumnLayout {
                                 id: columnButton
-                                spacing: 20
+                                width: 390
+                                spacing: 30
                                 Row {
-                                     width: 485
+                                     width: 390
                                      anchors.right: parent.right
                                      anchors.rightMargin: 0
                                      Rectangle {
                                          id: btnSelectItem
                                          height: 70
-                                         width: 485
+                                         width: 390
                                          color: "#0695D6"
                                          radius: 5
 
@@ -1635,11 +1730,11 @@ ApplicationWindow {
                                 }
 
                                 Row {
-                                    width: 485
+                                    width: 390
                                     Rectangle {
                                         id: btnCancelSelectItem
                                         height: 70
-                                        width:  485
+                                        width:  390
                                         color: "#8397A0"
                                         radius: 5
                                         Label {
