@@ -2924,6 +2924,11 @@ void MainController::removeItemInPaymentView(int row, const QString& prod_type, 
 
 void MainController::closeThanhtoan(int popupid) {
     qDebug() << "begin close";
-    emit closePopup(popupid, "");
+    if(popupid == 0) {
+        emit closePopup(popupid, "");
+    }
+    if(popupid == 1) {
+        emit closePopupSelectPizza(popupid, "");
+    }
 }
 

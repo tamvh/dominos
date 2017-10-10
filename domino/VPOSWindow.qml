@@ -6,7 +6,6 @@ import QtQuick.Controls.Universal 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
-
 import MainController 1.0
 import QmlDefine 1.0
 import "dynamicqml"
@@ -726,15 +725,14 @@ ApplicationWindow {
         x: (window.width - width) / 2
         y: Math.abs(window.height -  cakeInfoDialog.height)/3
         closePolicy: Popup.NoAutoClose
-        width: 1095
-        height: 922
+        width: 1660
+        height: 740
         topPadding: 30
         rightPadding: 30
         leftPadding: 30
         bottomPadding: 30
         Column {
             id: columnContentCakeInfo
-            anchors.horizontalCenter: parent.horizontalCenter
             spacing: 20
 
             Column {
@@ -753,786 +751,910 @@ ApplicationWindow {
                 }
             }
 
-
-            ColumnLayout {
-                spacing: 30
-                width: 1035
-                Row {
-                    ColumnLayout {
-                        spacing: 10
-                        Label {
-                            text: "TÊN BÁNH"
-                            font.pixelSize: 20
-                            font.bold: true
-                            color: "#777777"
-                        }
-                        Label {
-                            text: window.pizza_prod_name.replace('\n', ' ')
-                            font.pixelSize: 24
-                            font.bold: true
-                            color: "#000000"
+            RowLayout {
+                ColumnLayout {
+                    id: columnOptionPizza
+                    spacing: 30
+                    width: 1035
+                    Row {
+                        ColumnLayout {
+                            spacing: 10
+                            Label {
+                                text: "TÊN BÁNH"
+                                font.pixelSize: 20
+                                font.bold: true
+                                color: "#777777"
+                            }
+                            Label {
+                                text: window.pizza_prod_name.replace('\n', ' ')
+                                font.pixelSize: 24
+                                font.bold: true
+                                color: "#000000"
+                            }
                         }
                     }
-                }
-                Row {
-                    ColumnLayout {
-                        spacing: 10
-                        Label {
-                            text: "SIZE BÁNH"
-                            font.pixelSize: 20
-                            font.bold: true
-                            color: "#777777"
-                        }
-                        RowLayout {
-                            id: idKichthuocBanh
-                            width: 1035
-                            spacing: 30
-                            Rectangle {
-                                id: rect_pizzasize_small
-                                opacity: opacity_rect_pizzasize_small
-                                width: 325
-                                height: 112
-                                radius: 10
-                                border.width: 2
-                                border.color: "#0695D6"
-                                RowLayout {
-                                    id: pizzasize_7
-                                    anchors.centerIn: parent
-                                    Item {
-                                        height: 72
-                                        width: 72
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/size_7.png'
+                    Row {
+                        ColumnLayout {
+                            spacing: 10
+                            Label {
+                                text: "SIZE BÁNH"
+                                font.pixelSize: 20
+                                font.bold: true
+                                color: "#777777"
+                            }
+                            RowLayout {
+                                id: idKichthuocBanh
+                                width: 1035
+                                spacing: 30
+                                Rectangle {
+                                    id: rect_pizzasize_small
+                                    opacity: opacity_rect_pizzasize_small
+                                    width: 325
+                                    height: 135
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#0695D6"
+                                    RowLayout {
+                                        id: pizzasize_7
+                                        anchors.centerIn: parent
+                                        Item {
+                                            height: 72
+                                            width: 72
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/size_7.png'
+                                            }
+                                        }
+                                        ColumnLayout {
+                                            Label {
+                                                text: "Cỡ nhỏ (7\") - 4 miếng"
+                                                font.bold: true
+                                                font.pixelSize: 18
+                                                color: "#000000"
+                                            }
+                                            Label {
+                                                text: pizza_prize_7 + " VNĐ"
+                                                font.bold: true
+                                                font.pixelSize: 30
+                                                color: "#000000"
+                                            }
                                         }
                                     }
+
+
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            select_sizebanh(7)
+                                        }
+                                    }
+                                }
+                                Rectangle {
+                                    id: rect_pizzasize_avg
+                                    width: 325
+                                    height: 135
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    RowLayout {
+                                        id: pizzasize_9
+                                        anchors.centerIn: parent
+                                        Item {
+                                            height: 72
+                                            width: 72
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                anchors.margins: 2
+                                                source: 'qrc:/icons/images/app/size_9.png'
+                                            }
+                                        }
+                                        Column {
+                                            Label {
+                                                text: "Cỡ vừa (9\") - 6 miếng"
+                                                font.bold: true
+                                                font.pixelSize: 18
+                                                color: "#000000"
+                                            }
+                                            Label {
+                                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_9), "12")) + "VNĐ"
+                                                font.bold: true
+                                                font.pixelSize: 30
+                                                color: "#000000"
+                                            }
+                                            Label {
+                                                text: pizza_prize_9 + " VNĐ"
+                                                font.bold: true
+                                                font.pixelSize: 20
+                                                font.strikeout: true
+                                                color: "#9B9B9B"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            select_sizebanh(9)
+                                        }
+                                    }
+                                }
+                                Rectangle {
+                                    id: rect_pizzasize_big
+                                    width: 325
+                                    height: 135
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    RowLayout {
+                                        id: pizzasize_12
+                                        anchors.centerIn: parent
+                                        Item {
+                                            height: 72
+                                            width: 72
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                anchors.margins: 2
+                                                source: 'qrc:/icons/images/app/size_12.png'
+                                            }
+                                        }
+                                        Column {
+                                            Label {
+                                                text: "Cỡ to (12\") - 8 miếng"
+                                                font.bold: true
+                                                font.pixelSize: 18
+                                                color: "#000000"
+                                            }
+                                            Label {
+                                                text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_12), "12")) + "VNĐ"
+                                                font.bold: true
+                                                font.pixelSize: 30
+                                                color: "#000000"
+                                            }
+                                            Label {
+                                                text: pizza_prize_12 + " VNĐ"
+                                                font.bold: true
+                                                font.pixelSize: 20
+                                                font.strikeout: true
+                                                color: "#9B9B9B"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            select_sizebanh(12)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    Row {
+                        ColumnLayout {
+                            spacing: 10
+                            Label {
+                                text: "ĐẾ BÁNH"
+                                font.pixelSize: 20
+                                font.bold: true
+                                color: "#777777"
+                            }
+                            RowLayout {
+                                id: idDebanh
+                                width: 1035
+                                spacing: 35.5
+                                Rectangle {
+                                    id: rectDemong
+                                    width: 178
+                                    height: 125
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#0695D6"
                                     ColumnLayout {
-                                        Label {
-                                            text: "Cỡ nhỏ (7\") - 4 miếng"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
+                                        anchors.centerIn: parent
+                                        spacing: 10
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Item {
+                                            height: 26.53
+                                            width: 71
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/icon-thickness-thin.svg'
+                                            }
                                         }
-                                        Label {
-                                            text: pizza_prize_7 + " VNĐ"
-                                            font.bold: true
-                                            font.pixelSize: 30
-                                            color: "#000000"
+                                        Column {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Label {
+                                                text: "Đế mỏng"
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                horizontalAlignment: Text.AlignHCenter
+                                                font.pixelSize: 18
+                                                font.bold: true
+                                                color: "#000000"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pizza_debanh_id = "TC"
+                                            select_debanh("de_mong")
+                                        }
+                                    }
+                                }
+                                Rectangle {
+                                    id: rectDevua
+                                    enabled: enable_cheesy
+                                    opacity: opacity_cheesy
+                                    width: 178
+                                    height: 125
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    ColumnLayout {
+                                        anchors.centerIn: parent
+                                        spacing: 10
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Item {
+                                            height: 26.53
+                                            width: 71
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/icon-thickness-med.svg'
+                                            }
+                                        }
+                                        Column {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Label {
+                                                text: "Đế vừa"
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                horizontalAlignment: Text.AlignHCenter
+                                                font.pixelSize: 18
+                                                font.bold: true
+                                                color: "#000000"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pizza_debanh_id = "NY"
+                                            select_debanh("de_vua")
+                                        }
+                                    }
+
+                                }
+                                Rectangle {
+                                    id: rectDeday
+                                    width: 178
+                                    height: 125
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    ColumnLayout {
+                                        anchors.centerIn: parent
+                                        spacing: 10
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Item {
+                                            height: 26.53
+                                            width: 71
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/icon-thickness-thick.svg'
+                                            }
+                                        }
+                                        Column {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Label {
+                                                text: "Đế dày"
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                horizontalAlignment: Text.AlignHCenter
+                                                font.pixelSize: 18
+                                                font.bold: true
+                                                color: "#000000"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pizza_debanh_id = "HT"
+                                            select_debanh("de_day")
+                                        }
+                                    }
+                                }
+                                Rectangle {
+                                    id: rectVienphomaiMong
+                                    enabled: enable_cheesy
+                                    opacity: opacity_cheesy
+                                    width: 178
+                                    height: 125
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    ColumnLayout {
+                                        anchors.centerIn: parent
+                                        spacing: 10
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Item {
+                                            height: 26.53
+                                            width: 71
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/icon-cheese-side-thin.svg'
+                                            }
+                                        }
+                                        Column {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Label {
+                                                text: "Đế viền\nphô mai mỏng"
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                horizontalAlignment: Text.AlignHCenter
+                                                font.pixelSize: 18
+                                                font.bold: true
+                                                color: "#000000"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pizza_debanh_id = "TCC"
+                                            select_debanh("de_thin_cheesy")
+                                        }
+                                    }
+                                }
+                                Rectangle {
+                                    id: rectVienphomaiDay
+                                    enabled: enable_cheesy
+                                    opacity: opacity_cheesy
+                                    width: 178
+                                    height: 125
+                                    radius: 10
+                                    border.width: 2
+                                    border.color: "#DDDDDD"
+                                    ColumnLayout {
+                                        anchors.centerIn: parent
+                                        spacing: 10
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        Item {
+                                            height: 26.53
+                                            width: 71
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Image {
+                                                fillMode: Image.Stretch
+                                                anchors.fill: parent
+                                                source: 'qrc:/icons/images/app/icon-cheese-side-thick.svg'
+                                            }
+                                        }
+                                        Column {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            Label {
+                                                text: "Đế viền\nphô mai dày"
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                horizontalAlignment: Text.AlignHCenter
+                                                font.pixelSize: 18
+                                                font.bold: true
+                                                color: "#000000"
+                                            }
+                                        }
+                                    }
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pizza_debanh_id = "CC"
+                                            select_debanh("de_cheesy")
                                         }
                                     }
                                 }
 
-
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        select_sizebanh(7)
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                id: rect_pizzasize_avg
-                                width: 325
-                                height: 112
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                RowLayout {
-                                    id: pizzasize_9
-                                    anchors.centerIn: parent
-                                    Item {
-                                        height: 72
-                                        width: 72
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            anchors.margins: 2
-                                            source: 'qrc:/icons/images/app/size_9.png'
-                                        }
-                                    }
-                                    Column {
-                                        Label {
-                                            text: "Cỡ vừa (9\") - 6 miếng"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
-                                        }
-                                        Label {
-                                            text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_9), "12")) + "VNĐ"
-                                            font.bold: true
-                                            font.pixelSize: 30
-                                            color: "#000000"
-                                        }
-                                        Label {
-                                            text: pizza_prize_9 + " VNĐ"
-                                            font.bold: true
-                                            font.pixelSize: 20
-                                            font.strikeout: true
-                                            color: "#9B9B9B"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        select_sizebanh(9)
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                id: rect_pizzasize_big
-                                width: 325
-                                height: 112
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                RowLayout {
-                                    id: pizzasize_12
-                                    anchors.centerIn: parent
-                                    Item {
-                                        height: 72
-                                        width: 72
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            anchors.margins: 2
-                                            source: 'qrc:/icons/images/app/size_12.png'
-                                        }
-                                    }
-                                    Column {
-                                        Label {
-                                            text: "Cỡ to (12\") - 8 miếng"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
-                                        }
-                                        Label {
-                                            text: mainController.moneyMoney(mainController.getPriceCoupon(mainController.getMoneyValue(pizza_prize_12), "12")) + "VNĐ"
-                                            font.bold: true
-                                            font.pixelSize: 30
-                                            color: "#000000"
-                                        }
-                                        Label {
-                                            text: pizza_prize_12 + " VNĐ"
-                                            font.bold: true
-                                            font.pixelSize: 20
-                                            font.strikeout: true
-                                            color: "#9B9B9B"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        select_sizebanh(12)
-                                    }
-                                }
                             }
                         }
                     }
-                }
 
-                Row {
-                    ColumnLayout {
-                        spacing: 10
-                        Label {
-                            text: "ĐẾ BÁNH"
-                            font.pixelSize: 20
-                            font.bold: true
-                            color: "#777777"
-                        }
+                    Row {
                         RowLayout {
-                            id: idDebanh
-                            width: 1035
-                            spacing: 35.5
-                            Rectangle {
-                                id: rectDemong
-                                width: 178
-                                height: 106
-                                radius: 10
-                                border.width: 2
-                                border.color: "#0695D6"
-                                ColumnLayout {
-                                    anchors.centerIn: parent
-                                    spacing: 10
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    Item {
-                                        height: 26.53
-                                        width: 71
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-thickness-thin.svg'
-                                        }
-                                    }
-                                    Column {
-                                        anchors.horizontalCenter: parent.horizontalCenter
+                            spacing: 80
+                            ColumnLayout {
+                                spacing: 10
+                                Label {
+                                    text: "THÊM PHÔ MAI"
+                                    enabled: enable_cheesy
+                                    opacity: opacity_cheesy
+                                    font.pixelSize: 20
+                                    font.bold: true
+                                    color: "#777777"
+                                }
+                                Row {
+                                    width: 300
+                                    enabled: enable_cheesy
+                                    opacity: opacity_cheesy
+                                    Rectangle {
+                                        height: 60
+                                        width:  60
+                                        color: "#0695D6"
+                                        radius: 3
                                         Label {
-                                            text: "Đế mỏng"
-                                            anchors.horizontalCenter: parent.horizontalCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            font.pixelSize: 18
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
                                             font.bold: true
-                                            color: "#000000"
+                                            text: "-"
+                                            color: "white"
                                         }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        pizza_debanh_id = "TC"
-                                        select_debanh("de_mong")
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                id: rectDevua
-                                enabled: enable_cheesy
-                                opacity: opacity_cheesy
-                                width: 178
-                                height: 106
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                ColumnLayout {
-                                    anchors.centerIn: parent
-                                    spacing: 10
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    Item {
-                                        height: 26.53
-                                        width: 71
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Image {
-                                            fillMode: Image.Stretch
+                                        MouseArea {
                                             anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-thickness-med.svg'
-                                        }
-                                    }
-                                    Column {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Label {
-                                            text: "Đế vừa"
-                                            anchors.horizontalCenter: parent.horizontalCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            font.pixelSize: 18
-                                            font.bold: true
-                                            color: "#000000"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        pizza_debanh_id = "NY"
-                                        select_debanh("de_vua")
-                                    }
-                                }
-
-                            }
-                            Rectangle {
-                                id: rectDeday
-                                width: 178
-                                height: 106
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                ColumnLayout {
-                                    anchors.centerIn: parent
-                                    spacing: 10
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    Item {
-                                        height: 26.53
-                                        width: 71
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-thickness-thick.svg'
-                                        }
-                                    }
-                                    Column {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Label {
-                                            text: "Đế dày"
-                                            anchors.horizontalCenter: parent.horizontalCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            font.pixelSize: 18
-                                            font.bold: true
-                                            color: "#000000"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        pizza_debanh_id = "HT"
-                                        select_debanh("de_day")
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                id: rectVienphomaiMong
-                                enabled: enable_cheesy
-                                opacity: opacity_cheesy
-                                width: 178
-                                height: 106
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                ColumnLayout {
-                                    anchors.centerIn: parent
-                                    spacing: 10
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    Item {
-                                        height: 26.53
-                                        width: 71
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-cheese-side-thin.svg'
-                                        }
-                                    }
-                                    Column {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Label {
-                                            text: "Đế viền\nphô mai mỏng"
-                                            anchors.horizontalCenter: parent.horizontalCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            font.pixelSize: 18
-                                            font.bold: true
-                                            color: "#000000"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        pizza_debanh_id = "TCC"
-                                        select_debanh("de_thin_cheesy")
-                                    }
-                                }
-                            }
-                            Rectangle {
-                                id: rectVienphomaiDay
-                                enabled: enable_cheesy
-                                opacity: opacity_cheesy
-                                width: 178
-                                height: 106
-                                radius: 10
-                                border.width: 2
-                                border.color: "#DDDDDD"
-                                ColumnLayout {
-                                    anchors.centerIn: parent
-                                    spacing: 10
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    Item {
-                                        height: 26.53
-                                        width: 71
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Image {
-                                            fillMode: Image.Stretch
-                                            anchors.fill: parent
-                                            source: 'qrc:/icons/images/app/icon-cheese-side-thick.svg'
-                                        }
-                                    }
-                                    Column {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        Label {
-                                            text: "Đế viền\nphô mai dày"
-                                            anchors.horizontalCenter: parent.horizontalCenter
-                                            horizontalAlignment: Text.AlignHCenter
-                                            font.pixelSize: 18
-                                            font.bold: true
-                                            color: "#000000"
-                                        }
-                                    }
-                                }
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        pizza_debanh_id = "CC"
-                                        select_debanh("de_cheesy")
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-                }
-
-                Row {
-                    RowLayout {
-                        spacing: 80
-                        ColumnLayout {
-                            spacing: 10
-                            Label {
-                                text: "THÊM PHÔ MAI"
-                                enabled: enable_cheesy
-                                opacity: opacity_cheesy
-                                font.pixelSize: 20
-                                font.bold: true
-                                color: "#777777"
-                            }
-                            Row {
-                                width: 300
-                                enabled: enable_cheesy
-                                opacity: opacity_cheesy
-                                Rectangle {
-                                    height: 60
-                                    width:  60
-                                    color: "#0695D6"
-                                    radius: 3
-                                    Label {
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        text: "-"
-                                        color: "white"
-                                    }
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            if(nChessy > 0) {
-                                                nChessy -= 1;
-                                                txtPercentCheesy.text = getPercentCheesy(nChessy);
-                                                getMoney(pizza_category, pizza_sizebanh_id, nItem);
+                                            onClicked: {
+                                                if(nChessy > 0) {
+                                                    nChessy -= 1;
+                                                    txtPercentCheesy.text = getPercentCheesy(nChessy);
+                                                    getMoney(pizza_category, pizza_sizebanh_id, nItem);
+                                                }
                                             }
                                         }
                                     }
-                                }
 
-                                Rectangle {
-                                    height: 60
-                                    width:  130
-                                    color: "#F2F2F2"
-                                    Label {
-                                        id:txtPercentCheesy
-                                        text: getPercentCheesy(nChessy)
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        color: "#000000"
+                                    Rectangle {
+                                        height: 60
+                                        width:  130
+                                        color: "#F2F2F2"
+                                        Label {
+                                            id:txtPercentCheesy
+                                            text: getPercentCheesy(nChessy)
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
+                                            font.bold: true
+                                            color: "#000000"
+                                        }
                                     }
-                                }
 
-                                Rectangle {
-                                    height: 60
-                                    width:  60
-                                    color: "#0695D6"
-                                    radius: 3
-                                    Label {
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        text: "+"
-                                        color: "white"
-                                    }
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            if(nChessy < 3) {
-                                                nChessy += 1
-                                                txtPercentCheesy.text = getPercentCheesy(nChessy);
-                                                getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                    Rectangle {
+                                        height: 60
+                                        width:  60
+                                        color: "#0695D6"
+                                        radius: 3
+                                        Label {
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
+                                            font.bold: true
+                                            text: "+"
+                                            color: "white"
+                                        }
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                if(nChessy < 3) {
+                                                    nChessy += 1
+                                                    txtPercentCheesy.text = getPercentCheesy(nChessy);
+                                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
 
-                        ColumnLayout {
-                            spacing: 10
-                            Label {
-                                text: "SỐ LƯỢNG"
-                                font.pixelSize: 20
-                                font.bold: true
-                                color: "#777777"
-                            }
-                            Row {
-                                width: 300
-                                Rectangle {
-                                    height: 60
-                                    width:  60
-                                    color: "#0695D6"
-                                    radius: 3
-                                    Label {
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        text: "-"
-                                        color: "white"
+                            ColumnLayout {
+                                spacing: 10
+                                Label {
+                                    text: "SỐ LƯỢNG"
+                                    font.pixelSize: 20
+                                    font.bold: true
+                                    color: "#777777"
+                                }
+                                Row {
+                                    width: 300
+                                    Rectangle {
+                                        height: 60
+                                        width:  60
+                                        color: "#0695D6"
+                                        radius: 3
+                                        Label {
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
+                                            font.bold: true
+                                            text: "-"
+                                            color: "white"
+                                        }
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                if(nItem > 1) {
+                                                    nItem -= 1
+                                                    txtTotalItem.text = nItem
+                                                    getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                                }
+                                            }
+                                        }
                                     }
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            if(nItem > 1) {
-                                                nItem -= 1
+
+                                    Rectangle {
+                                        height: 60
+                                        width:  130
+                                        color: "#F2F2F2"
+                                        Label {
+                                            id:txtTotalItem
+                                            text: nItem
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
+                                            font.bold: true
+                                            color: "#000000"
+                                        }
+                                    }
+
+                                    Rectangle {
+                                        height: 60
+                                        width:  60
+                                        color: "#0695D6"
+                                        radius: 3
+                                        Label {
+                                            anchors.centerIn: parent
+                                            font.pointSize: 24
+                                            font.bold: true
+                                            text: "+"
+                                            color: "white"
+                                        }
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                nItem += 1
                                                 txtTotalItem.text = nItem
                                                 getMoney(pizza_category, pizza_sizebanh_id, nItem)
                                             }
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+                ColumnLayout {
+                    width: 50
+                }
+                Column {
+                    width: 485
+                    anchors.top: parent.top
 
-                                Rectangle {
-                                    height: 60
-                                    width:  130
-                                    color: "#F2F2F2"
-                                    Label {
-                                        id:txtTotalItem
-                                        text: nItem
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        color: "#000000"
+                    Column {
+                        width: 485
+                        spacing: 10
+                        topPadding: globalPadding
+                        bottomPadding: globalPadding
+                        Rectangle {
+                            width: 485
+                            height: 70
+                            Label {
+                                anchors.centerIn: parent
+                                font.pixelSize: 30
+                                font.bold: true
+                                text: "TẠM TÍNH"
+                                color: "#000000"
+                            }
+                        }
+                        ColumnLayout {
+                            width: 485
+                            Rectangle {
+                                height: 70
+                                width: 485
+                                RowLayout {
+                                    spacing: 10
+                                    Rectangle {
+                                        height: 70
+                                        width: 250
+                                        Label {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            text: "MÓN ĂN"
+                                            font.bold: true
+                                            font.pixelSize: 18
+                                            color: "#000000"
+                                        }
                                     }
-                                }
-
-                                Rectangle {
-                                    height: 60
-                                    width:  60
-                                    color: "#0695D6"
-                                    radius: 3
-                                    Label {
-                                        anchors.centerIn: parent
-                                        font.pointSize: 24
-                                        font.bold: true
-                                        text: "+"
-                                        color: "white"
+                                    Rectangle {
+                                        height: 70
+                                        width: 57
+                                        Label {
+                                            anchors.centerIn: parent
+                                            text: "SL"
+                                            font.bold: true
+                                            font.pixelSize: 18
+                                            color: "#000000"
+                                        }
                                     }
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            nItem += 1
-                                            txtTotalItem.text = nItem
-                                            getMoney(pizza_category, pizza_sizebanh_id, nItem)
+                                    Rectangle {
+                                        height: 70
+                                        width: 157
+                                        Label {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            anchors.right: parent.right
+                                            text: "GIÁ (VNĐ)"
+                                            font.bold: true
+                                            font.pixelSize: 18
+                                            color: "#000000"
                                         }
                                     }
                                 }
                             }
-                        }
-                    }
-                }
-
-                Row {
-                    Rectangle {
-                        height: 1
-                        width: 1035
-                        color: "#E0E0E0"
-                    }
-                }
-
-                Row {
-                    Grid {
-                        columns: 2
-                        Layout.fillHeight: true
-                        ColumnLayout {
-                            id: columnDetail
-                            spacing: 30
-                            width: 650
-//                            anchors.right: columnButton.left
-//                            anchors.rightMargin: 10
                             ColumnLayout {
-                                width: 650
-                                Label {
-                                    width: 650
-                                    text: "MÔ TẢ"
-                                    font.pixelSize: 20
-                                    font.bold: true
-                                    color: "#777777"
+                                width: 485
+                                ListModel {
+                                    id: libraryModel
+                                    ListElement {
+                                        productName: "Pizza gà sốt tương kiểu Nhật"
+                                        productQuantity: "1"
+                                        productMoney: "12,000"
+                                    }
+                                    ListElement {
+                                        productName: "Thêm phô mai"
+                                        productQuantity: "1"
+                                        productMoney: "12,000"
+                                    }
+                                    ListElement {
+                                        productName: "Đế viền phô mai"
+                                        productQuantity: "1"
+                                        productMoney: "12,000"
+                                    }
                                 }
-                                Text {
-                                    id: lblChitiet
-                                    Layout.fillHeight: true
-                                    Layout.fillWidth: true
-                                    width: 650
-                                    text: (nChessy > 0) ? nItem + " " + pizza_prod_name.split('\n')[0] + " / " + pizza_sizebanh + " / " + pizza_debanh + " / " + cheesy_text : nItem + " " + pizza_prod_name.split('\n')[0] + " / " + pizza_sizebanh + " / " + pizza_debanh
-                                    font.pixelSize: 20
-                                    font.bold: true
-                                    wrapMode: Text.Wrap
-                                    color: "#000000"
+
+                                GridView {
+                                    focus: true
+                                    model: libraryModel
+                                    cellWidth: 485
+                                    cellHeight: 50
+                                    height: 160
+                                    delegate: Item {
+                                        id: item
+                                        width: 485
+                                        height: 50
+                                        ColumnLayout {
+                                            Rectangle {
+                                                width: 485
+                                                height: 1
+                                                color: "#EEEEEE"
+                                            }
+                                            Rectangle {
+                                                height: 50
+                                                width: 250
+                                                RowLayout {
+                                                    anchors.verticalCenter: parent.verticalCenter
+                                                    width: 485
+                                                    height: 50
+                                                    Rectangle {
+                                                        height: 50
+                                                        width: 250
+                                                        Label {
+                                                            anchors.verticalCenter: parent.verticalCenter
+                                                            text: productName
+                                                            font.pixelSize: 20
+                                                            color: "#000000"
+                                                        }
+                                                    }
+                                                    Rectangle {
+                                                        height: 50
+                                                        width: 57
+                                                        Label {
+                                                            anchors.centerIn: parent
+                                                            text: productQuantity
+                                                            font.pixelSize: 20
+                                                            color: "#000000"
+                                                        }
+                                                    }
+                                                    Rectangle {
+                                                        height: 50
+                                                        width: 157
+                                                        Label {
+                                                            anchors.verticalCenter: parent.verticalCenter
+                                                            anchors.right: parent.right
+                                                            text: productMoney
+                                                            font.bold: true
+                                                            font.pixelSize: 20
+                                                            color: "#000000"
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                width: 485
+                                                height: 1
+                                                color: "#EEEEEE"
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                            ColumnLayout {
-                                width: 692
-                                Label {
-                                    text: "THÀNH TIỀN"
-                                    font.pixelSize: 20
-                                    font.bold: true
-                                    color: "#777777"
-                                }
+
+                            Rectangle {
+                                height: 50
+                                width: 485
                                 RowLayout {
-                                    Layout.fillWidth: true
-                                    Text {
-                                        text: pizza_money_root
-                                        color: "#9B9B9B"
-                                        font.pixelSize: 20
-                                        font.strikeout: true
-                                        font.bold: true
+                                    Rectangle {
+                                        height: 50
+                                        width: 285
+                                        Label {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            text: "TỔNG CỘNG"
+                                            font.bold: true
+                                            font.pixelSize: 20
+                                            color: "#000000"
+                                        }
                                     }
 
-                                    Text {
-                                        id: txtPizza_money
-                                        text: pizza_money + " VNĐ"
-                                        color: "#E61837"
-                                        font.pixelSize: 30
-                                        font.bold: true
+                                    Rectangle {
+                                        height: 50
+                                        width: 200
+                                        Label {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            anchors.right: parent.right
+                                            text: "1,000,000 VNĐ"
+                                            font.bold: true
+                                            font.pixelSize: 30
+                                            color: "#E61837"
+                                        }
                                     }
                                 }
                             }
-                        }
+                            ColumnLayout {
+                                height: 35
+                                width: 485
+                            }
 
-                        ColumnLayout {
-                            id: columnButton
-                            spacing: 30
-                            Row {
-                                 width: 342
-                                 spacing: 30
-                                 anchors.right: parent.right
-                                 anchors.rightMargin: 0
-                                 Rectangle {
-                                     id: btnSelectItem
-                                     height: 80
-                                     width: 342
-                                     color: "#0695D6"
-                                     radius: 5
-                                     Label {
-                                         anchors.centerIn: parent
-                                         font.pixelSize: 30
-                                         font.bold: true
-                                         text: "ĐỒNG Ý"
-                                         color: "#FFFFFF"
-                                     }
-                                     MouseArea{
-                                         anchors.fill: parent
-                                         onClicked: {
-                                             pressbtn_selected = false;
-                                             btnSelectItem.enabled = pressbtn_selected;
-                                             var _prod_name = pizza_prod_name.split('\n').length > 1 ? pizza_prod_name.split('\n')[1].toString().replace('(','').replace(')',''): pizza_prod_name;
-                                             var _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh;
-                                             if(nChessy > 0) {
-                                                _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + cheesy_text;
+                            ColumnLayout {
+                                id: columnButton
+                                spacing: 20
+                                Row {
+                                     width: 485
+                                     anchors.right: parent.right
+                                     anchors.rightMargin: 0
+                                     Rectangle {
+                                         id: btnSelectItem
+                                         height: 70
+                                         width: 485
+                                         color: "#0695D6"
+                                         radius: 5
+
+                                         Label {
+                                             anchors.centerIn: parent
+                                             font.pixelSize: 30
+                                             text: "ĐỒNG Ý"
+                                             color: "#FFFFFF"
+                                         }
+                                         MouseArea{
+                                             anchors.fill: parent
+                                             onClicked: {
+                                                 pressbtn_selected = false;
+                                                 btnSelectItem.enabled = pressbtn_selected;
+                                                 var _prod_name = pizza_prod_name.split('\n').length > 1 ? pizza_prod_name.split('\n')[1].toString().replace('(','').replace(')',''): pizza_prod_name;
+                                                 var _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh;
+                                                 if(nChessy > 0) {
+                                                    _name = _prod_name + "/" + pizza_sizebanh + "/" + pizza_debanh + "/" + cheesy_text;
+                                                 }
+                                                 var _price = mainController.moneyMoney(promote_price);
+                                                 var _oriprice = 0;
+                                                 var _quantity = nItem;
+                                                 name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
+                                                 if(name_code === '12TCCCB') {
+                                                     name_code = '2TCCCB';
+                                                 }
+                                                 if(name_code === '12HTMRITA') {
+                                                     name_code = '12HTMAR';
+                                                 }
+                                                 console.log("Name Code: " + name_code);
+                                                 mainController.insertItem("PIZZA", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+
+                                                 if(pizza_sizebanh_id === "9") {
+                                                     if(nChessy === 1) {
+                                                         _name = "Thêm phô mai 50% bánh 9\"";
+                                                         name_code = "O9XCHE";
+                                                         _price = "10,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(nChessy === 2) {
+                                                         _name = "Thêm phô mai 100% bánh 9\"";
+                                                         name_code = "O9DCHE";
+                                                         _price = "20,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(nChessy === 3) {
+                                                         _name = "Thêm phô mai 200% bánh 9\"";
+                                                         name_code = "O9TCHE";
+                                                         _price = "30,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     // vien phomai
+                                                     if(pizza_debanh_id === "CC") {
+                                                         _name = "Viền phô mai dày bánh 9\"";
+                                                         name_code = "O9CC";
+                                                         _price = "49,000";
+                                                         mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(pizza_debanh_id === "TCC") {
+                                                         _name = "Viền phô mai mỏng bánh 9\"";
+                                                         name_code = "O9CC";
+                                                         _price = "49,000";
+                                                         mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+                                                 }
+
+                                                 if(pizza_sizebanh_id === "12") {
+                                                     if(nChessy === 1) {
+                                                         _name = "Thêm phô mai 50% bánh 12\"";
+                                                         name_code = "O12XCHE";
+                                                         _price = "15,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(nChessy === 2) {
+                                                         _name = "Thêm phô mai 100% bánh 12\"";
+                                                         name_code = "O12DCHE";
+                                                         _price = "30,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(nChessy === 3) {
+                                                         _name = "Thêm phô mai 200% bánh 12\"";
+                                                         name_code = "O12TCHE";
+                                                         _price = "45,000";
+                                                         mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(pizza_debanh_id === "CC") {
+                                                         _name = "Viền phô mai dày bánh 12\"";
+                                                         name_code = "O12CC";
+                                                         _price = "69,000";
+                                                         mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+
+                                                     if(pizza_debanh_id === "TCC") {
+                                                         _name = "Viền phô mai mỏng bánh 12\"";
+                                                         name_code = "O12CC";
+                                                         _price = "69,000";
+                                                         mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
+                                                     }
+                                                 }
+
+                                                 reset();
+                                                 cakeInfoDialog.close();
+                                                 mainController.closeThanhtoan(1);
                                              }
-                                             var _price = mainController.moneyMoney(promote_price);
-                                             var _oriprice = 0;
-                                             var _quantity = nItem;
-                                             name_code = pizza_sizebanh_id + pizza_debanh_id + pizza_prod_code;
-                                             if(name_code === '12TCCCB') {
-                                                 name_code = '2TCCCB';
-                                             }
-                                             if(name_code === '12HTMRITA') {
-                                                 name_code = '12HTMAR';
-                                             }
-                                             console.log("Name Code: " + name_code);
-                                             mainController.insertItem("PIZZA", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-
-                                             if(pizza_sizebanh_id === "9") {
-                                                 if(nChessy === 1) {
-                                                     _name = "Thêm phô mai 50% bánh 9\"";
-                                                     name_code = "O9XCHE";
-                                                     _price = "10,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(nChessy === 2) {
-                                                     _name = "Thêm phô mai 100% bánh 9\"";
-                                                     name_code = "O9DCHE";
-                                                     _price = "20,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(nChessy === 3) {
-                                                     _name = "Thêm phô mai 200% bánh 9\"";
-                                                     name_code = "O9TCHE";
-                                                     _price = "30,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 // vien phomai
-                                                 if(pizza_debanh_id === "CC") {
-                                                     _name = "Viền phô mai dày bánh 9\"";
-                                                     name_code = "O9CC";
-                                                     _price = "49,000";
-                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(pizza_debanh_id === "TCC") {
-                                                     _name = "Viền phô mai mỏng bánh 9\"";
-                                                     name_code = "O9CC";
-                                                     _price = "49,000";
-                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-                                             }
-
-                                             if(pizza_sizebanh_id === "12") {
-                                                 if(nChessy === 1) {
-                                                     _name = "Thêm phô mai 50% bánh 12\"";
-                                                     name_code = "O12XCHE";
-                                                     _price = "15,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(nChessy === 2) {
-                                                     _name = "Thêm phô mai 100% bánh 12\"";
-                                                     name_code = "O12DCHE";
-                                                     _price = "30,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(nChessy === 3) {
-                                                     _name = "Thêm phô mai 200% bánh 12\"";
-                                                     name_code = "O12TCHE";
-                                                     _price = "45,000";
-                                                     mainController.insertItem("OPTION_THEMPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(pizza_debanh_id === "CC") {
-                                                     _name = "Viền phô mai dày bánh 12\"";
-                                                     name_code = "O12CC";
-                                                     _price = "69,000";
-                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-
-                                                 if(pizza_debanh_id === "TCC") {
-                                                     _name = "Viền phô mai mỏng bánh 12\"";
-                                                     name_code = "O12CC";
-                                                     _price = "69,000";
-                                                     mainController.insertItem("OPTION_DEVIENPHOMAI", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
-                                                 }
-                                             }
-
-                                             reset();
-                                             cakeInfoDialog.close();
                                          }
                                      }
-                                 }
-                            }
+                                }
 
-                            Row {
-                                width: 342
-                                Rectangle {
-                                    id: btnCancelSelectItem
-                                    height: 80
-                                    width:  342
-                                    color: "#8397A0"
-                                    radius: 5
-                                    Label {
-                                        anchors.centerIn: parent
-                                        font.pixelSize: 30
-                                        font.bold: true
-                                        text: "HỦY"
-                                        color: "#FFFFFF"
-                                    }
-                                    MouseArea {
-                                        anchors.fill: parent
-                                        onClicked: {
-                                            reset();
-                                            cakeInfoDialog.close()
+                                Row {
+                                    width: 485
+                                    Rectangle {
+                                        id: btnCancelSelectItem
+                                        height: 70
+                                        width:  485
+                                        color: "#8397A0"
+                                        radius: 5
+                                        Label {
+                                            anchors.centerIn: parent
+                                            font.pixelSize: 30
+                                            text: "HỦY"
+                                            color: "#FFFFFF"
+                                        }
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                reset();
+                                                cakeInfoDialog.close()
+                                                mainController.closeThanhtoan(1);
+                                            }
                                         }
                                     }
                                 }
@@ -1540,14 +1662,14 @@ ApplicationWindow {
                         }
                     }
                 }
+                Row {
+                    width: parent.width
+                    spacing: globalPadding
+                    topPadding: globalPadding
+
+                }
             }
 
-            Row {
-                width: parent.width
-                spacing: globalPadding
-                topPadding: globalPadding
-
-            }
         }
     }
 

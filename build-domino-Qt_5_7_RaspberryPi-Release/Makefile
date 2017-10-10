@@ -597,11 +597,13 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/FoodTab.qml \
 		../domino/qtquickcontrols2.conf \
 		../domino/RectMain.qml \
+		../domino/FlatButton.qml \
 		../domino/ChoosenItemListView.qml \
 		../domino/SwipeMenu.qml \
 		../domino/ItemViewDetail.qml \
 		../domino/AccountPage.qml \
 		../domino/TitleSubPage.qml \
+		../domino/PaperRipple.qml \
 		../domino/LoginPage.qml \
 		../domino/KitchenPage.qml \
 		../domino/KitchenDishReserve.qml \

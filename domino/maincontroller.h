@@ -244,6 +244,7 @@ signals:
     void dominosSetProdName(const QSet<QString> &data);
     void removeItemPaymentView(int row, const QString& prod_type, const QString& size_banh, const QString& de_banh, const QString& phomai);
     void closePopup(int popupid, const QString& msg);
+    void closePopupSelectPizza(int popupid, const QString& msg);
 public slots:
     void onCancelDone(const QVariant &data);
     void onCancelError(const int&, const QString&);

@@ -36,6 +36,8 @@
         <file>AboutPage.qml</file>
         <file>RectMain.qml</file>
         <file>ImageHalfRadiusRect.qml</file>
+        <file>PaperRipple.qml</file>
+        <file>FlatButton.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>

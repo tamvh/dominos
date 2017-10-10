@@ -405,6 +405,17 @@ Rectangle {
                     height: m_cellh
                     property int cellPadding: 3
                     property int cellFontSize: fooditemfntsize
+                    Rectangle {
+                        id: rectItemFood
+                        anchors.fill: parent
+                        z: -1
+                        color: "#006493"
+                        opacity: 0.4
+                        anchors.leftMargin: cellPadding
+                        anchors.rightMargin: cellPadding
+                        anchors.bottomMargin: cellPadding*2
+                        radius: 10
+                    }
 
                     HalfRadiusRectangle {
                         id: halfRect
@@ -508,6 +519,7 @@ Rectangle {
                         MouseArea {
                             anchors.fill: parent
                             onClicked: {
+                                rectItemFood.z = 1;
                                 if (halfRect.opacity) {
                                     gridItemView.currentIndex = index
                                     var name_code = "";
@@ -542,6 +554,14 @@ Rectangle {
                                         mainController.insertItem(name_code, name.split('\n')[0], "-", "-", price, _quantity, oriprice, 0)
                                     }
                                 }
+
+                            }
+                        }
+                        Connections {
+                            target: mainController
+                            onClosePopupSelectPizza: {
+                                console.log("receive close popup select pizza");
+                                rectItemFood.z = -1;
                             }
                         }
                     }

@@ -6,7 +6,6 @@ Rectangle {
     property int bottomRadius: 10
     property int radiusWidth: 3
     property color rcColor: "#006493"
-
     Rectangle {
         anchors.bottom: parent.bottom
         anchors.left: parent.left

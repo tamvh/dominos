@@ -344,7 +344,8 @@ Item {
                     horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
                                                                    ((styleData.column === 1 || styleData.column === 2 || styleData.column === 3 || styleData.column === 4) ? Text.AlignRight:Text.AlignHCenter))
                     text: styleData.value
-                    font.pixelSize: 18
+                    font.pixelSize: 16
+                    font.bold: true
                     elide: Text.ElideRight
                     color: "#000000"
                     renderType: Settings.isMobile ? Text.QtRendering : Text.NativeRendering
@@ -475,6 +476,7 @@ Item {
             target: mainController
             onAddItem: {
                 choosenItemModel.addItem(type, code_name, name, size, debanh, phomai, quantity, price, amount, oriprice, promtype)
+                mainController.closeThanhtoan(1);
             }
 
             onCancelBillItem: {
