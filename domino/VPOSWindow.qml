@@ -831,8 +831,6 @@ ApplicationWindow {
         x: (window.width - width) / 2
         y: Math.abs(window.height -  cakeInfoDialog.height)/3
         closePolicy: Popup.NoAutoClose
-        width: 1565
-        height: 780
         topPadding: 40
         rightPadding: 40
         leftPadding: 40
@@ -840,7 +838,8 @@ ApplicationWindow {
         Column {
             id: columnContentCakeInfo
             spacing: 20
-
+//            width: 1565
+//            height: 780
             Column {
                 id: columnHeader
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -1431,7 +1430,15 @@ ApplicationWindow {
                     }
                 }
                 ColumnLayout {
-                    width: 50
+                    width: 25
+                }
+                Rectangle {
+                    height: 500
+                    width: 1
+                    color: "#EEEEEE"
+                }
+                ColumnLayout {
+                    width: 25
                 }
                 Column {
                     width: 390
@@ -1454,43 +1461,39 @@ ApplicationWindow {
                         }
                         ColumnLayout {
                             width: 390
-                            Rectangle {
-                                height: 70
-                                width: 390
-                                RowLayout {
-                                    Rectangle {
-                                        height: 70
-                                        width: 250
-                                        Label {
-                                            anchors.verticalCenter: parent.verticalCenter
-                                            text: "MÓN ĂN"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
-                                        }
+                            RowLayout {
+                                Rectangle {
+                                    height: 50
+                                    width: 250
+                                    Label {
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        text: "MÓN ĂN"
+                                        font.bold: true
+                                        font.pixelSize: 18
+                                        color: "#000000"
                                     }
-                                    Rectangle {
-                                        height: 70
-                                        width: 30
-                                        Label {
-                                            anchors.centerIn: parent
-                                            text: "SL"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
-                                        }
+                                }
+                                Rectangle {
+                                    height: 50
+                                    width: 30
+                                    Label {
+                                        anchors.centerIn: parent
+                                        text: "SL"
+                                        font.bold: true
+                                        font.pixelSize: 18
+                                        color: "#000000"
                                     }
-                                    Rectangle {
-                                        height: 70
-                                        width: 100
-                                        Label {
-                                            anchors.verticalCenter: parent.verticalCenter
-                                            anchors.right: parent.right
-                                            text: "GIÁ (VNĐ)"
-                                            font.bold: true
-                                            font.pixelSize: 18
-                                            color: "#000000"
-                                        }
+                                }
+                                Rectangle {
+                                    height: 50
+                                    width: 100
+                                    Label {
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        anchors.right: parent.right
+                                        text: "GIÁ (VNĐ)"
+                                        font.bold: true
+                                        font.pixelSize: 18
+                                        color: "#000000"
                                     }
                                 }
                             }
@@ -1601,6 +1604,7 @@ ApplicationWindow {
                                 height: 35
                                 width: 390
                             }
+
 
                             ColumnLayout {
                                 id: columnButton
