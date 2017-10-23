@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainController_t {
-    QByteArrayData data[307];
-    char stringdata0[3907];
+    QByteArrayData data[310];
+    char stringdata0[3943];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -199,144 +199,147 @@ QT_MOC_LITERAL(165, 1864, 10), // "setPrinter"
 QT_MOC_LITERAL(166, 1875, 7), // "prnName"
 QT_MOC_LITERAL(167, 1883, 10), // "getPayment"
 QT_MOC_LITERAL(168, 1894, 18), // "getDominoServerUrl"
-QT_MOC_LITERAL(169, 1913, 13), // "getUrlService"
-QT_MOC_LITERAL(170, 1927, 19), // "getTransferProtocol"
-QT_MOC_LITERAL(171, 1947, 19), // "setTransferProtocol"
-QT_MOC_LITERAL(172, 1967, 8), // "transpro"
-QT_MOC_LITERAL(173, 1976, 10), // "initSocket"
-QT_MOC_LITERAL(174, 1987, 10), // "setPayment"
-QT_MOC_LITERAL(175, 1998, 11), // "paymentName"
-QT_MOC_LITERAL(176, 2010, 18), // "setDominoServerUrl"
-QT_MOC_LITERAL(177, 2029, 3), // "url"
-QT_MOC_LITERAL(178, 2033, 16), // "setPaymentMethod"
-QT_MOC_LITERAL(179, 2050, 13), // "paymentMethod"
-QT_MOC_LITERAL(180, 2064, 16), // "getPaymentMethod"
-QT_MOC_LITERAL(181, 2081, 14), // "setPaymentMask"
-QT_MOC_LITERAL(182, 2096, 7), // "payment"
-QT_MOC_LITERAL(183, 2104, 5), // "onoff"
-QT_MOC_LITERAL(184, 2110, 14), // "getPaymentMask"
-QT_MOC_LITERAL(185, 2125, 13), // "getDockServer"
-QT_MOC_LITERAL(186, 2139, 13), // "setDockServer"
-QT_MOC_LITERAL(187, 2153, 10), // "dockServer"
-QT_MOC_LITERAL(188, 2164, 8), // "scanDock"
-QT_MOC_LITERAL(189, 2173, 6), // "doAuto"
-QT_MOC_LITERAL(190, 2180, 11), // "isConnected"
-QT_MOC_LITERAL(191, 2192, 13), // "connectToDock"
-QT_MOC_LITERAL(192, 2206, 8), // "serverIp"
-QT_MOC_LITERAL(193, 2215, 18), // "disconnectFromDock"
-QT_MOC_LITERAL(194, 2234, 16), // "testReaderDevice"
-QT_MOC_LITERAL(195, 2251, 3), // "run"
-QT_MOC_LITERAL(196, 2255, 10), // "updateWifi"
-QT_MOC_LITERAL(197, 2266, 4), // "ssid"
-QT_MOC_LITERAL(198, 2271, 3), // "key"
-QT_MOC_LITERAL(199, 2275, 7), // "encrypt"
-QT_MOC_LITERAL(200, 2283, 12), // "updateWifiPi"
-QT_MOC_LITERAL(201, 2296, 9), // "interface"
-QT_MOC_LITERAL(202, 2306, 9), // "scan_ssid"
-QT_MOC_LITERAL(203, 2316, 10), // "wifiStatus"
-QT_MOC_LITERAL(204, 2327, 8), // "testPing"
-QT_MOC_LITERAL(205, 2336, 4), // "host"
-QT_MOC_LITERAL(206, 2341, 11), // "restartDock"
-QT_MOC_LITERAL(207, 2353, 9), // "restartPi"
-QT_MOC_LITERAL(208, 2363, 6), // "haltPi"
-QT_MOC_LITERAL(209, 2370, 18), // "checkPrinterStatus"
-QT_MOC_LITERAL(210, 2389, 9), // "printTest"
-QT_MOC_LITERAL(211, 2399, 10), // "getLocalIp"
-QT_MOC_LITERAL(212, 2410, 11), // "getAppIndex"
-QT_MOC_LITERAL(213, 2422, 10), // "getAppName"
-QT_MOC_LITERAL(214, 2433, 10), // "setAppName"
-QT_MOC_LITERAL(215, 2444, 7), // "appName"
-QT_MOC_LITERAL(216, 2452, 11), // "getAppTitle"
-QT_MOC_LITERAL(217, 2464, 11), // "getTitleEng"
-QT_MOC_LITERAL(218, 2476, 11), // "setAppTitle"
-QT_MOC_LITERAL(219, 2488, 15), // "getMachineIndex"
-QT_MOC_LITERAL(220, 2504, 13), // "getAppMachine"
-QT_MOC_LITERAL(221, 2518, 14), // "getRechargeNum"
-QT_MOC_LITERAL(222, 2533, 14), // "setRechargeNum"
-QT_MOC_LITERAL(223, 2548, 5), // "mcNum"
-QT_MOC_LITERAL(224, 2554, 19), // "getFoodRefreshTimer"
-QT_MOC_LITERAL(225, 2574, 19), // "setFoodRefreshTimer"
-QT_MOC_LITERAL(226, 2594, 5), // "timer"
-QT_MOC_LITERAL(227, 2600, 17), // "getBillAlertTimer"
-QT_MOC_LITERAL(228, 2618, 17), // "setBillAlertTimer"
-QT_MOC_LITERAL(229, 2636, 27), // "getShowThanhtoancungdonhang"
-QT_MOC_LITERAL(230, 2664, 27), // "setShowThanhtoancungdonhang"
-QT_MOC_LITERAL(231, 2692, 20), // "getConfigQrcodeRatio"
-QT_MOC_LITERAL(232, 2713, 20), // "setConfigQrcodeRatio"
-QT_MOC_LITERAL(233, 2734, 5), // "ratio"
-QT_MOC_LITERAL(234, 2740, 25), // "getConfigFoodItemFontsize"
-QT_MOC_LITERAL(235, 2766, 25), // "setConfigFoodItemFontsize"
-QT_MOC_LITERAL(236, 2792, 7), // "fntsize"
-QT_MOC_LITERAL(237, 2800, 25), // "getConfigBillItemFontsize"
-QT_MOC_LITERAL(238, 2826, 25), // "setConfigBillItemFontsize"
-QT_MOC_LITERAL(239, 2852, 16), // "getConfigSobanin"
-QT_MOC_LITERAL(240, 2869, 16), // "setConfigSobanin"
-QT_MOC_LITERAL(241, 2886, 3), // "num"
-QT_MOC_LITERAL(242, 2890, 17), // "getConfigTenbanin"
-QT_MOC_LITERAL(243, 2908, 17), // "setConfigTenbanin"
-QT_MOC_LITERAL(244, 2926, 19), // "getConfigBillPreinf"
-QT_MOC_LITERAL(245, 2946, 19), // "setConfigBillPreinf"
-QT_MOC_LITERAL(246, 2966, 4), // "info"
-QT_MOC_LITERAL(247, 2971, 20), // "getConfigBillPostinf"
-QT_MOC_LITERAL(248, 2992, 20), // "setConfigBillPostinf"
-QT_MOC_LITERAL(249, 3013, 20), // "getConfigDockversion"
-QT_MOC_LITERAL(250, 3034, 20), // "setConfigDockversion"
-QT_MOC_LITERAL(251, 3055, 7), // "version"
-QT_MOC_LITERAL(252, 3063, 20), // "getConfigPrintersize"
-QT_MOC_LITERAL(253, 3084, 20), // "setConfigPrintersize"
-QT_MOC_LITERAL(254, 3105, 8), // "pagesize"
-QT_MOC_LITERAL(255, 3114, 19), // "getUserEnableConfig"
-QT_MOC_LITERAL(256, 3134, 19), // "setUserEnableConfig"
-QT_MOC_LITERAL(257, 3154, 10), // "enableconf"
-QT_MOC_LITERAL(258, 3165, 21), // "getConfigRebootDatePi"
-QT_MOC_LITERAL(259, 3187, 21), // "setConfigRebootDatePi"
-QT_MOC_LITERAL(260, 3209, 9), // "dayofweek"
-QT_MOC_LITERAL(261, 3219, 2), // "on"
-QT_MOC_LITERAL(262, 3222, 21), // "getConfigRebootTimePi"
-QT_MOC_LITERAL(263, 3244, 21), // "setConfigRebootTimePi"
-QT_MOC_LITERAL(264, 3266, 5), // "value"
-QT_MOC_LITERAL(265, 3272, 14), // "getRestartTime"
-QT_MOC_LITERAL(266, 3287, 14), // "getCurrentTime"
-QT_MOC_LITERAL(267, 3302, 17), // "getConfigUsername"
-QT_MOC_LITERAL(268, 3320, 16), // "getConfigUserpwd"
-QT_MOC_LITERAL(269, 3337, 22), // "getConfigSearchadvance"
-QT_MOC_LITERAL(270, 3360, 22), // "setConfigSearchadvance"
-QT_MOC_LITERAL(271, 3383, 13), // "searchadvance"
-QT_MOC_LITERAL(272, 3397, 23), // "getConfigShowBaocaoDate"
-QT_MOC_LITERAL(273, 3421, 23), // "setConfigShowBaocaoDate"
-QT_MOC_LITERAL(274, 3445, 8), // "showDate"
-QT_MOC_LITERAL(275, 3454, 22), // "getConfigCenterService"
-QT_MOC_LITERAL(276, 3477, 22), // "setConfigCenterService"
-QT_MOC_LITERAL(277, 3500, 15), // "centerServiceIp"
-QT_MOC_LITERAL(278, 3516, 17), // "getConfigIdletime"
-QT_MOC_LITERAL(279, 3534, 17), // "setConfigIdletime"
-QT_MOC_LITERAL(280, 3552, 11), // "setIdCoupon"
-QT_MOC_LITERAL(281, 3564, 11), // "getIdCoupon"
-QT_MOC_LITERAL(282, 3576, 18), // "setIdCouponPercent"
-QT_MOC_LITERAL(283, 3595, 7), // "percent"
-QT_MOC_LITERAL(284, 3603, 18), // "getIdCouponPercent"
-QT_MOC_LITERAL(285, 3622, 10), // "saveConfig"
-QT_MOC_LITERAL(286, 3633, 16), // "sendCancelBillUI"
-QT_MOC_LITERAL(287, 3650, 20), // "getBaocaoCurrentTime"
-QT_MOC_LITERAL(288, 3671, 8), // "inBaocao"
-QT_MOC_LITERAL(289, 3680, 4), // "date"
-QT_MOC_LITERAL(290, 3685, 6), // "bcType"
-QT_MOC_LITERAL(291, 3692, 9), // "userLogin"
-QT_MOC_LITERAL(292, 3702, 18), // "uiFoodupdateStatus"
-QT_MOC_LITERAL(293, 3721, 6), // "uiType"
-QT_MOC_LITERAL(294, 3728, 10), // "getAccount"
-QT_MOC_LITERAL(295, 3739, 14), // "getDiskPrepare"
-QT_MOC_LITERAL(296, 3754, 14), // "getDiskReserve"
-QT_MOC_LITERAL(297, 3769, 11), // "idleClearup"
-QT_MOC_LITERAL(298, 3781, 9), // "idleReset"
-QT_MOC_LITERAL(299, 3791, 14), // "getProductCode"
-QT_MOC_LITERAL(300, 3806, 8), // "pro_name"
-QT_MOC_LITERAL(301, 3815, 9), // "prod_size"
-QT_MOC_LITERAL(302, 3825, 16), // "prod_plavor_code"
-QT_MOC_LITERAL(303, 3842, 14), // "getPriceCoupon"
-QT_MOC_LITERAL(304, 3857, 10), // "pizza_size"
-QT_MOC_LITERAL(305, 3868, 23), // "removeItemInPaymentView"
-QT_MOC_LITERAL(306, 3892, 14) // "closeThanhtoan"
+QT_MOC_LITERAL(169, 1913, 14), // "getDominoStore"
+QT_MOC_LITERAL(170, 1928, 13), // "getUrlService"
+QT_MOC_LITERAL(171, 1942, 19), // "getTransferProtocol"
+QT_MOC_LITERAL(172, 1962, 19), // "setTransferProtocol"
+QT_MOC_LITERAL(173, 1982, 8), // "transpro"
+QT_MOC_LITERAL(174, 1991, 10), // "initSocket"
+QT_MOC_LITERAL(175, 2002, 10), // "setPayment"
+QT_MOC_LITERAL(176, 2013, 11), // "paymentName"
+QT_MOC_LITERAL(177, 2025, 18), // "setDominoServerUrl"
+QT_MOC_LITERAL(178, 2044, 3), // "url"
+QT_MOC_LITERAL(179, 2048, 14), // "setDominoStore"
+QT_MOC_LITERAL(180, 2063, 5), // "store"
+QT_MOC_LITERAL(181, 2069, 16), // "setPaymentMethod"
+QT_MOC_LITERAL(182, 2086, 13), // "paymentMethod"
+QT_MOC_LITERAL(183, 2100, 16), // "getPaymentMethod"
+QT_MOC_LITERAL(184, 2117, 14), // "setPaymentMask"
+QT_MOC_LITERAL(185, 2132, 7), // "payment"
+QT_MOC_LITERAL(186, 2140, 5), // "onoff"
+QT_MOC_LITERAL(187, 2146, 14), // "getPaymentMask"
+QT_MOC_LITERAL(188, 2161, 13), // "getDockServer"
+QT_MOC_LITERAL(189, 2175, 13), // "setDockServer"
+QT_MOC_LITERAL(190, 2189, 10), // "dockServer"
+QT_MOC_LITERAL(191, 2200, 8), // "scanDock"
+QT_MOC_LITERAL(192, 2209, 6), // "doAuto"
+QT_MOC_LITERAL(193, 2216, 11), // "isConnected"
+QT_MOC_LITERAL(194, 2228, 13), // "connectToDock"
+QT_MOC_LITERAL(195, 2242, 8), // "serverIp"
+QT_MOC_LITERAL(196, 2251, 18), // "disconnectFromDock"
+QT_MOC_LITERAL(197, 2270, 16), // "testReaderDevice"
+QT_MOC_LITERAL(198, 2287, 3), // "run"
+QT_MOC_LITERAL(199, 2291, 10), // "updateWifi"
+QT_MOC_LITERAL(200, 2302, 4), // "ssid"
+QT_MOC_LITERAL(201, 2307, 3), // "key"
+QT_MOC_LITERAL(202, 2311, 7), // "encrypt"
+QT_MOC_LITERAL(203, 2319, 12), // "updateWifiPi"
+QT_MOC_LITERAL(204, 2332, 9), // "interface"
+QT_MOC_LITERAL(205, 2342, 9), // "scan_ssid"
+QT_MOC_LITERAL(206, 2352, 10), // "wifiStatus"
+QT_MOC_LITERAL(207, 2363, 8), // "testPing"
+QT_MOC_LITERAL(208, 2372, 4), // "host"
+QT_MOC_LITERAL(209, 2377, 11), // "restartDock"
+QT_MOC_LITERAL(210, 2389, 9), // "restartPi"
+QT_MOC_LITERAL(211, 2399, 6), // "haltPi"
+QT_MOC_LITERAL(212, 2406, 18), // "checkPrinterStatus"
+QT_MOC_LITERAL(213, 2425, 9), // "printTest"
+QT_MOC_LITERAL(214, 2435, 10), // "getLocalIp"
+QT_MOC_LITERAL(215, 2446, 11), // "getAppIndex"
+QT_MOC_LITERAL(216, 2458, 10), // "getAppName"
+QT_MOC_LITERAL(217, 2469, 10), // "setAppName"
+QT_MOC_LITERAL(218, 2480, 7), // "appName"
+QT_MOC_LITERAL(219, 2488, 11), // "getAppTitle"
+QT_MOC_LITERAL(220, 2500, 11), // "getTitleEng"
+QT_MOC_LITERAL(221, 2512, 11), // "setAppTitle"
+QT_MOC_LITERAL(222, 2524, 15), // "getMachineIndex"
+QT_MOC_LITERAL(223, 2540, 13), // "getAppMachine"
+QT_MOC_LITERAL(224, 2554, 14), // "getRechargeNum"
+QT_MOC_LITERAL(225, 2569, 14), // "setRechargeNum"
+QT_MOC_LITERAL(226, 2584, 5), // "mcNum"
+QT_MOC_LITERAL(227, 2590, 19), // "getFoodRefreshTimer"
+QT_MOC_LITERAL(228, 2610, 19), // "setFoodRefreshTimer"
+QT_MOC_LITERAL(229, 2630, 5), // "timer"
+QT_MOC_LITERAL(230, 2636, 17), // "getBillAlertTimer"
+QT_MOC_LITERAL(231, 2654, 17), // "setBillAlertTimer"
+QT_MOC_LITERAL(232, 2672, 27), // "getShowThanhtoancungdonhang"
+QT_MOC_LITERAL(233, 2700, 27), // "setShowThanhtoancungdonhang"
+QT_MOC_LITERAL(234, 2728, 20), // "getConfigQrcodeRatio"
+QT_MOC_LITERAL(235, 2749, 20), // "setConfigQrcodeRatio"
+QT_MOC_LITERAL(236, 2770, 5), // "ratio"
+QT_MOC_LITERAL(237, 2776, 25), // "getConfigFoodItemFontsize"
+QT_MOC_LITERAL(238, 2802, 25), // "setConfigFoodItemFontsize"
+QT_MOC_LITERAL(239, 2828, 7), // "fntsize"
+QT_MOC_LITERAL(240, 2836, 25), // "getConfigBillItemFontsize"
+QT_MOC_LITERAL(241, 2862, 25), // "setConfigBillItemFontsize"
+QT_MOC_LITERAL(242, 2888, 16), // "getConfigSobanin"
+QT_MOC_LITERAL(243, 2905, 16), // "setConfigSobanin"
+QT_MOC_LITERAL(244, 2922, 3), // "num"
+QT_MOC_LITERAL(245, 2926, 17), // "getConfigTenbanin"
+QT_MOC_LITERAL(246, 2944, 17), // "setConfigTenbanin"
+QT_MOC_LITERAL(247, 2962, 19), // "getConfigBillPreinf"
+QT_MOC_LITERAL(248, 2982, 19), // "setConfigBillPreinf"
+QT_MOC_LITERAL(249, 3002, 4), // "info"
+QT_MOC_LITERAL(250, 3007, 20), // "getConfigBillPostinf"
+QT_MOC_LITERAL(251, 3028, 20), // "setConfigBillPostinf"
+QT_MOC_LITERAL(252, 3049, 20), // "getConfigDockversion"
+QT_MOC_LITERAL(253, 3070, 20), // "setConfigDockversion"
+QT_MOC_LITERAL(254, 3091, 7), // "version"
+QT_MOC_LITERAL(255, 3099, 20), // "getConfigPrintersize"
+QT_MOC_LITERAL(256, 3120, 20), // "setConfigPrintersize"
+QT_MOC_LITERAL(257, 3141, 8), // "pagesize"
+QT_MOC_LITERAL(258, 3150, 19), // "getUserEnableConfig"
+QT_MOC_LITERAL(259, 3170, 19), // "setUserEnableConfig"
+QT_MOC_LITERAL(260, 3190, 10), // "enableconf"
+QT_MOC_LITERAL(261, 3201, 21), // "getConfigRebootDatePi"
+QT_MOC_LITERAL(262, 3223, 21), // "setConfigRebootDatePi"
+QT_MOC_LITERAL(263, 3245, 9), // "dayofweek"
+QT_MOC_LITERAL(264, 3255, 2), // "on"
+QT_MOC_LITERAL(265, 3258, 21), // "getConfigRebootTimePi"
+QT_MOC_LITERAL(266, 3280, 21), // "setConfigRebootTimePi"
+QT_MOC_LITERAL(267, 3302, 5), // "value"
+QT_MOC_LITERAL(268, 3308, 14), // "getRestartTime"
+QT_MOC_LITERAL(269, 3323, 14), // "getCurrentTime"
+QT_MOC_LITERAL(270, 3338, 17), // "getConfigUsername"
+QT_MOC_LITERAL(271, 3356, 16), // "getConfigUserpwd"
+QT_MOC_LITERAL(272, 3373, 22), // "getConfigSearchadvance"
+QT_MOC_LITERAL(273, 3396, 22), // "setConfigSearchadvance"
+QT_MOC_LITERAL(274, 3419, 13), // "searchadvance"
+QT_MOC_LITERAL(275, 3433, 23), // "getConfigShowBaocaoDate"
+QT_MOC_LITERAL(276, 3457, 23), // "setConfigShowBaocaoDate"
+QT_MOC_LITERAL(277, 3481, 8), // "showDate"
+QT_MOC_LITERAL(278, 3490, 22), // "getConfigCenterService"
+QT_MOC_LITERAL(279, 3513, 22), // "setConfigCenterService"
+QT_MOC_LITERAL(280, 3536, 15), // "centerServiceIp"
+QT_MOC_LITERAL(281, 3552, 17), // "getConfigIdletime"
+QT_MOC_LITERAL(282, 3570, 17), // "setConfigIdletime"
+QT_MOC_LITERAL(283, 3588, 11), // "setIdCoupon"
+QT_MOC_LITERAL(284, 3600, 11), // "getIdCoupon"
+QT_MOC_LITERAL(285, 3612, 18), // "setIdCouponPercent"
+QT_MOC_LITERAL(286, 3631, 7), // "percent"
+QT_MOC_LITERAL(287, 3639, 18), // "getIdCouponPercent"
+QT_MOC_LITERAL(288, 3658, 10), // "saveConfig"
+QT_MOC_LITERAL(289, 3669, 16), // "sendCancelBillUI"
+QT_MOC_LITERAL(290, 3686, 20), // "getBaocaoCurrentTime"
+QT_MOC_LITERAL(291, 3707, 8), // "inBaocao"
+QT_MOC_LITERAL(292, 3716, 4), // "date"
+QT_MOC_LITERAL(293, 3721, 6), // "bcType"
+QT_MOC_LITERAL(294, 3728, 9), // "userLogin"
+QT_MOC_LITERAL(295, 3738, 18), // "uiFoodupdateStatus"
+QT_MOC_LITERAL(296, 3757, 6), // "uiType"
+QT_MOC_LITERAL(297, 3764, 10), // "getAccount"
+QT_MOC_LITERAL(298, 3775, 14), // "getDiskPrepare"
+QT_MOC_LITERAL(299, 3790, 14), // "getDiskReserve"
+QT_MOC_LITERAL(300, 3805, 11), // "idleClearup"
+QT_MOC_LITERAL(301, 3817, 9), // "idleReset"
+QT_MOC_LITERAL(302, 3827, 14), // "getProductCode"
+QT_MOC_LITERAL(303, 3842, 8), // "pro_name"
+QT_MOC_LITERAL(304, 3851, 9), // "prod_size"
+QT_MOC_LITERAL(305, 3861, 16), // "prod_plavor_code"
+QT_MOC_LITERAL(306, 3878, 14), // "getPriceCoupon"
+QT_MOC_LITERAL(307, 3893, 10), // "pizza_size"
+QT_MOC_LITERAL(308, 3904, 23), // "removeItemInPaymentView"
+QT_MOC_LITERAL(309, 3928, 14) // "closeThanhtoan"
 
     },
     "MainController\0foodReset\0\0foodUpdate\0"
@@ -390,16 +393,16 @@ QT_MOC_LITERAL(306, 3892, 14) // "closeThanhtoan"
     "waiting\0printBill\0ivcode\0printData\0"
     "cancelBill\0foId\0total\0stopDevice\0"
     "getPrinter\0setPrinter\0prnName\0getPayment\0"
-    "getDominoServerUrl\0getUrlService\0"
-    "getTransferProtocol\0setTransferProtocol\0"
-    "transpro\0initSocket\0setPayment\0"
-    "paymentName\0setDominoServerUrl\0url\0"
-    "setPaymentMethod\0paymentMethod\0"
-    "getPaymentMethod\0setPaymentMask\0payment\0"
-    "onoff\0getPaymentMask\0getDockServer\0"
-    "setDockServer\0dockServer\0scanDock\0"
-    "doAuto\0isConnected\0connectToDock\0"
-    "serverIp\0disconnectFromDock\0"
+    "getDominoServerUrl\0getDominoStore\0"
+    "getUrlService\0getTransferProtocol\0"
+    "setTransferProtocol\0transpro\0initSocket\0"
+    "setPayment\0paymentName\0setDominoServerUrl\0"
+    "url\0setDominoStore\0store\0setPaymentMethod\0"
+    "paymentMethod\0getPaymentMethod\0"
+    "setPaymentMask\0payment\0onoff\0"
+    "getPaymentMask\0getDockServer\0setDockServer\0"
+    "dockServer\0scanDock\0doAuto\0isConnected\0"
+    "connectToDock\0serverIp\0disconnectFromDock\0"
     "testReaderDevice\0run\0updateWifi\0ssid\0"
     "key\0encrypt\0updateWifiPi\0interface\0"
     "scan_ssid\0wifiStatus\0testPing\0host\0"
@@ -455,7 +458,7 @@ static const uint qt_meta_data_MainController[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-     204,   14, // methods
+     206,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -463,214 +466,216 @@ static const uint qt_meta_data_MainController[] = {
       36,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0, 1034,    2, 0x06 /* Public */,
-       3,    1, 1035,    2, 0x06 /* Public */,
-       5,    1, 1038,    2, 0x06 /* Public */,
-       7,    5, 1041,    2, 0x06 /* Public */,
-      13,    1, 1052,    2, 0x06 /* Public */,
-      15,    5, 1055,    2, 0x06 /* Public */,
-      20,   11, 1066,    2, 0x06 /* Public */,
-      32,    0, 1089,    2, 0x06 /* Public */,
-      33,    0, 1090,    2, 0x06 /* Public */,
-      34,    1, 1091,    2, 0x06 /* Public */,
-      35,    1, 1094,    2, 0x06 /* Public */,
-      37,    1, 1097,    2, 0x06 /* Public */,
-      39,    1, 1100,    2, 0x06 /* Public */,
-      41,    1, 1103,    2, 0x06 /* Public */,
-      42,    1, 1106,    2, 0x06 /* Public */,
-      43,    1, 1109,    2, 0x06 /* Public */,
-      44,    0, 1112,    2, 0x06 /* Public */,
-      45,    1, 1113,    2, 0x06 /* Public */,
-      46,    1, 1116,    2, 0x06 /* Public */,
-      48,    1, 1119,    2, 0x06 /* Public */,
-      50,    1, 1122,    2, 0x06 /* Public */,
-      52,    1, 1125,    2, 0x06 /* Public */,
-      53,    1, 1128,    2, 0x06 /* Public */,
-      55,    1, 1131,    2, 0x06 /* Public */,
-      57,    2, 1134,    2, 0x06 /* Public */,
-      59,    1, 1139,    2, 0x06 /* Public */,
-      61,    2, 1142,    2, 0x06 /* Public */,
-      64,    0, 1147,    2, 0x06 /* Public */,
-      65,    2, 1148,    2, 0x06 /* Public */,
-      66,    0, 1153,    2, 0x06 /* Public */,
-      67,    0, 1154,    2, 0x06 /* Public */,
-      68,    1, 1155,    2, 0x06 /* Public */,
-      69,    1, 1158,    2, 0x06 /* Public */,
-      71,    5, 1161,    2, 0x06 /* Public */,
-      76,    2, 1172,    2, 0x06 /* Public */,
-      78,    2, 1177,    2, 0x06 /* Public */,
+       1,    0, 1044,    2, 0x06 /* Public */,
+       3,    1, 1045,    2, 0x06 /* Public */,
+       5,    1, 1048,    2, 0x06 /* Public */,
+       7,    5, 1051,    2, 0x06 /* Public */,
+      13,    1, 1062,    2, 0x06 /* Public */,
+      15,    5, 1065,    2, 0x06 /* Public */,
+      20,   11, 1076,    2, 0x06 /* Public */,
+      32,    0, 1099,    2, 0x06 /* Public */,
+      33,    0, 1100,    2, 0x06 /* Public */,
+      34,    1, 1101,    2, 0x06 /* Public */,
+      35,    1, 1104,    2, 0x06 /* Public */,
+      37,    1, 1107,    2, 0x06 /* Public */,
+      39,    1, 1110,    2, 0x06 /* Public */,
+      41,    1, 1113,    2, 0x06 /* Public */,
+      42,    1, 1116,    2, 0x06 /* Public */,
+      43,    1, 1119,    2, 0x06 /* Public */,
+      44,    0, 1122,    2, 0x06 /* Public */,
+      45,    1, 1123,    2, 0x06 /* Public */,
+      46,    1, 1126,    2, 0x06 /* Public */,
+      48,    1, 1129,    2, 0x06 /* Public */,
+      50,    1, 1132,    2, 0x06 /* Public */,
+      52,    1, 1135,    2, 0x06 /* Public */,
+      53,    1, 1138,    2, 0x06 /* Public */,
+      55,    1, 1141,    2, 0x06 /* Public */,
+      57,    2, 1144,    2, 0x06 /* Public */,
+      59,    1, 1149,    2, 0x06 /* Public */,
+      61,    2, 1152,    2, 0x06 /* Public */,
+      64,    0, 1157,    2, 0x06 /* Public */,
+      65,    2, 1158,    2, 0x06 /* Public */,
+      66,    0, 1163,    2, 0x06 /* Public */,
+      67,    0, 1164,    2, 0x06 /* Public */,
+      68,    1, 1165,    2, 0x06 /* Public */,
+      69,    1, 1168,    2, 0x06 /* Public */,
+      71,    5, 1171,    2, 0x06 /* Public */,
+      76,    2, 1182,    2, 0x06 /* Public */,
+      78,    2, 1187,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      79,    1, 1182,    2, 0x0a /* Public */,
-      80,    2, 1185,    2, 0x0a /* Public */,
-      81,    1, 1190,    2, 0x0a /* Public */,
-      82,    2, 1193,    2, 0x0a /* Public */,
-      83,    1, 1198,    2, 0x0a /* Public */,
-      84,    2, 1201,    2, 0x0a /* Public */,
-      86,    1, 1206,    2, 0x0a /* Public */,
-      88,    1, 1209,    2, 0x0a /* Public */,
-      90,    2, 1212,    2, 0x0a /* Public */,
-      93,    1, 1217,    2, 0x0a /* Public */,
-      94,    2, 1220,    2, 0x0a /* Public */,
-      95,    1, 1225,    2, 0x0a /* Public */,
-      96,    1, 1228,    2, 0x0a /* Public */,
-      97,    2, 1231,    2, 0x0a /* Public */,
-      98,    3, 1236,    2, 0x0a /* Public */,
-     102,    1, 1243,    2, 0x0a /* Public */,
-     103,    2, 1246,    2, 0x0a /* Public */,
-     104,    0, 1251,    2, 0x0a /* Public */,
-     105,    1, 1252,    2, 0x0a /* Public */,
-     106,    2, 1255,    2, 0x0a /* Public */,
-     107,    1, 1260,    2, 0x0a /* Public */,
-     108,    4, 1263,    2, 0x0a /* Public */,
-     113,    1, 1272,    2, 0x0a /* Public */,
-     114,    1, 1275,    2, 0x0a /* Public */,
-     115,    2, 1278,    2, 0x0a /* Public */,
-     116,    2, 1283,    2, 0x0a /* Public */,
-     118,    2, 1288,    2, 0x0a /* Public */,
-     119,    1, 1293,    2, 0x0a /* Public */,
-     120,    2, 1296,    2, 0x0a /* Public */,
-     121,    0, 1301,    2, 0x0a /* Public */,
-     122,    0, 1302,    2, 0x0a /* Public */,
-     123,    0, 1303,    2, 0x0a /* Public */,
-     124,    0, 1304,    2, 0x0a /* Public */,
-     125,    0, 1305,    2, 0x0a /* Public */,
-     126,    0, 1306,    2, 0x0a /* Public */,
-     127,    1, 1307,    2, 0x0a /* Public */,
-     129,    1, 1310,    2, 0x0a /* Public */,
-     131,    1, 1313,    2, 0x0a /* Public */,
-     133,    1, 1316,    2, 0x0a /* Public */,
+      79,    1, 1192,    2, 0x0a /* Public */,
+      80,    2, 1195,    2, 0x0a /* Public */,
+      81,    1, 1200,    2, 0x0a /* Public */,
+      82,    2, 1203,    2, 0x0a /* Public */,
+      83,    1, 1208,    2, 0x0a /* Public */,
+      84,    2, 1211,    2, 0x0a /* Public */,
+      86,    1, 1216,    2, 0x0a /* Public */,
+      88,    1, 1219,    2, 0x0a /* Public */,
+      90,    2, 1222,    2, 0x0a /* Public */,
+      93,    1, 1227,    2, 0x0a /* Public */,
+      94,    2, 1230,    2, 0x0a /* Public */,
+      95,    1, 1235,    2, 0x0a /* Public */,
+      96,    1, 1238,    2, 0x0a /* Public */,
+      97,    2, 1241,    2, 0x0a /* Public */,
+      98,    3, 1246,    2, 0x0a /* Public */,
+     102,    1, 1253,    2, 0x0a /* Public */,
+     103,    2, 1256,    2, 0x0a /* Public */,
+     104,    0, 1261,    2, 0x0a /* Public */,
+     105,    1, 1262,    2, 0x0a /* Public */,
+     106,    2, 1265,    2, 0x0a /* Public */,
+     107,    1, 1270,    2, 0x0a /* Public */,
+     108,    4, 1273,    2, 0x0a /* Public */,
+     113,    1, 1282,    2, 0x0a /* Public */,
+     114,    1, 1285,    2, 0x0a /* Public */,
+     115,    2, 1288,    2, 0x0a /* Public */,
+     116,    2, 1293,    2, 0x0a /* Public */,
+     118,    2, 1298,    2, 0x0a /* Public */,
+     119,    1, 1303,    2, 0x0a /* Public */,
+     120,    2, 1306,    2, 0x0a /* Public */,
+     121,    0, 1311,    2, 0x0a /* Public */,
+     122,    0, 1312,    2, 0x0a /* Public */,
+     123,    0, 1313,    2, 0x0a /* Public */,
+     124,    0, 1314,    2, 0x0a /* Public */,
+     125,    0, 1315,    2, 0x0a /* Public */,
+     126,    0, 1316,    2, 0x0a /* Public */,
+     127,    1, 1317,    2, 0x0a /* Public */,
+     129,    1, 1320,    2, 0x0a /* Public */,
+     131,    1, 1323,    2, 0x0a /* Public */,
+     133,    1, 1326,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-     134,    0, 1319,    2, 0x02 /* Public */,
-     135,    0, 1320,    2, 0x02 /* Public */,
-     136,    0, 1321,    2, 0x02 /* Public */,
-     137,    0, 1322,    2, 0x02 /* Public */,
-     138,    0, 1323,    2, 0x02 /* Public */,
-     139,    2, 1324,    2, 0x02 /* Public */,
-     141,    1, 1329,    2, 0x02 /* Public */,
-     142,    1, 1332,    2, 0x02 /* Public */,
-     143,    5, 1335,    2, 0x02 /* Public */,
-     147,   10, 1346,    2, 0x02 /* Public */,
-     148,    1, 1367,    2, 0x02 /* Public */,
-     150,    1, 1370,    2, 0x02 /* Public */,
-     152,    1, 1373,    2, 0x02 /* Public */,
-     154,    1, 1376,    2, 0x02 /* Public */,
-     155,    1, 1379,    2, 0x02 /* Public */,
-     157,    2, 1382,    2, 0x02 /* Public */,
-     160,    3, 1387,    2, 0x02 /* Public */,
-     163,    0, 1394,    2, 0x02 /* Public */,
-     164,    0, 1395,    2, 0x02 /* Public */,
-     165,    1, 1396,    2, 0x02 /* Public */,
-     167,    0, 1399,    2, 0x02 /* Public */,
-     168,    0, 1400,    2, 0x02 /* Public */,
-     169,    0, 1401,    2, 0x02 /* Public */,
-     170,    0, 1402,    2, 0x02 /* Public */,
-     171,    2, 1403,    2, 0x02 /* Public */,
-     171,    1, 1408,    2, 0x22 /* Public | MethodCloned */,
-     174,    2, 1411,    2, 0x02 /* Public */,
-     174,    1, 1416,    2, 0x22 /* Public | MethodCloned */,
-     176,    1, 1419,    2, 0x02 /* Public */,
-     178,    1, 1422,    2, 0x02 /* Public */,
-     180,    0, 1425,    2, 0x02 /* Public */,
-     181,    2, 1426,    2, 0x02 /* Public */,
-     184,    0, 1431,    2, 0x02 /* Public */,
-     185,    0, 1432,    2, 0x02 /* Public */,
-     186,    1, 1433,    2, 0x02 /* Public */,
-     188,    1, 1436,    2, 0x02 /* Public */,
-     188,    0, 1439,    2, 0x22 /* Public | MethodCloned */,
-     190,    0, 1440,    2, 0x02 /* Public */,
-     191,    1, 1441,    2, 0x02 /* Public */,
-     193,    0, 1444,    2, 0x02 /* Public */,
-     194,    1, 1445,    2, 0x02 /* Public */,
-     196,    3, 1448,    2, 0x02 /* Public */,
-     196,    2, 1455,    2, 0x22 /* Public | MethodCloned */,
-     200,    5, 1460,    2, 0x02 /* Public */,
-     200,    4, 1471,    2, 0x22 /* Public | MethodCloned */,
-     200,    3, 1480,    2, 0x22 /* Public | MethodCloned */,
-     203,    1, 1487,    2, 0x02 /* Public */,
-     203,    0, 1490,    2, 0x22 /* Public | MethodCloned */,
-     204,    1, 1491,    2, 0x02 /* Public */,
-     206,    0, 1494,    2, 0x02 /* Public */,
-     207,    0, 1495,    2, 0x02 /* Public */,
-     208,    0, 1496,    2, 0x02 /* Public */,
-     209,    0, 1497,    2, 0x02 /* Public */,
-     210,    1, 1498,    2, 0x02 /* Public */,
-     211,    0, 1501,    2, 0x02 /* Public */,
-     212,    0, 1502,    2, 0x02 /* Public */,
-     213,    0, 1503,    2, 0x02 /* Public */,
-     214,    2, 1504,    2, 0x02 /* Public */,
-     214,    1, 1509,    2, 0x22 /* Public | MethodCloned */,
-     216,    0, 1512,    2, 0x02 /* Public */,
-     217,    0, 1513,    2, 0x02 /* Public */,
-     218,    1, 1514,    2, 0x02 /* Public */,
-     219,    0, 1517,    2, 0x02 /* Public */,
-     220,    0, 1518,    2, 0x02 /* Public */,
-     221,    0, 1519,    2, 0x02 /* Public */,
-     222,    1, 1520,    2, 0x02 /* Public */,
-     224,    0, 1523,    2, 0x02 /* Public */,
-     225,    1, 1524,    2, 0x02 /* Public */,
-     227,    0, 1527,    2, 0x02 /* Public */,
-     228,    1, 1528,    2, 0x02 /* Public */,
-     229,    0, 1531,    2, 0x02 /* Public */,
-     230,    1, 1532,    2, 0x02 /* Public */,
-     231,    0, 1535,    2, 0x02 /* Public */,
-     232,    1, 1536,    2, 0x02 /* Public */,
-     234,    0, 1539,    2, 0x02 /* Public */,
-     235,    1, 1540,    2, 0x02 /* Public */,
-     237,    0, 1543,    2, 0x02 /* Public */,
-     238,    1, 1544,    2, 0x02 /* Public */,
-     239,    0, 1547,    2, 0x02 /* Public */,
-     240,    1, 1548,    2, 0x02 /* Public */,
-     242,    0, 1551,    2, 0x02 /* Public */,
-     243,    1, 1552,    2, 0x02 /* Public */,
-     244,    0, 1555,    2, 0x02 /* Public */,
-     245,    1, 1556,    2, 0x02 /* Public */,
-     247,    0, 1559,    2, 0x02 /* Public */,
-     248,    1, 1560,    2, 0x02 /* Public */,
-     249,    0, 1563,    2, 0x02 /* Public */,
-     250,    1, 1564,    2, 0x02 /* Public */,
-     252,    0, 1567,    2, 0x02 /* Public */,
-     253,    1, 1568,    2, 0x02 /* Public */,
-     255,    0, 1571,    2, 0x02 /* Public */,
-     256,    1, 1572,    2, 0x02 /* Public */,
-     258,    0, 1575,    2, 0x02 /* Public */,
-     259,    2, 1576,    2, 0x02 /* Public */,
-     262,    1, 1581,    2, 0x02 /* Public */,
-     262,    0, 1584,    2, 0x22 /* Public | MethodCloned */,
-     263,    2, 1585,    2, 0x02 /* Public */,
-     263,    1, 1590,    2, 0x22 /* Public | MethodCloned */,
-     265,    0, 1593,    2, 0x02 /* Public */,
-     266,    1, 1594,    2, 0x02 /* Public */,
-     267,    0, 1597,    2, 0x02 /* Public */,
-     268,    0, 1598,    2, 0x02 /* Public */,
-     269,    0, 1599,    2, 0x02 /* Public */,
-     270,    1, 1600,    2, 0x02 /* Public */,
-     272,    0, 1603,    2, 0x02 /* Public */,
-     273,    1, 1604,    2, 0x02 /* Public */,
-     275,    0, 1607,    2, 0x02 /* Public */,
-     276,    1, 1608,    2, 0x02 /* Public */,
-     278,    0, 1611,    2, 0x02 /* Public */,
-     279,    1, 1612,    2, 0x02 /* Public */,
-     280,    1, 1615,    2, 0x02 /* Public */,
-     281,    0, 1618,    2, 0x02 /* Public */,
-     282,    1, 1619,    2, 0x02 /* Public */,
-     284,    0, 1622,    2, 0x02 /* Public */,
-     285,    0, 1623,    2, 0x02 /* Public */,
-     286,    0, 1624,    2, 0x02 /* Public */,
-     287,    0, 1625,    2, 0x02 /* Public */,
-     288,    2, 1626,    2, 0x02 /* Public */,
-     291,    2, 1631,    2, 0x02 /* Public */,
-     292,    1, 1636,    2, 0x02 /* Public */,
-     294,    0, 1639,    2, 0x02 /* Public */,
-     295,    0, 1640,    2, 0x02 /* Public */,
-     296,    0, 1641,    2, 0x02 /* Public */,
-     297,    0, 1642,    2, 0x02 /* Public */,
-     298,    0, 1643,    2, 0x02 /* Public */,
-     299,    3, 1644,    2, 0x02 /* Public */,
-     303,    2, 1651,    2, 0x02 /* Public */,
-     305,    5, 1656,    2, 0x02 /* Public */,
-     306,    1, 1667,    2, 0x02 /* Public */,
+     134,    0, 1329,    2, 0x02 /* Public */,
+     135,    0, 1330,    2, 0x02 /* Public */,
+     136,    0, 1331,    2, 0x02 /* Public */,
+     137,    0, 1332,    2, 0x02 /* Public */,
+     138,    0, 1333,    2, 0x02 /* Public */,
+     139,    2, 1334,    2, 0x02 /* Public */,
+     141,    1, 1339,    2, 0x02 /* Public */,
+     142,    1, 1342,    2, 0x02 /* Public */,
+     143,    5, 1345,    2, 0x02 /* Public */,
+     147,   10, 1356,    2, 0x02 /* Public */,
+     148,    1, 1377,    2, 0x02 /* Public */,
+     150,    1, 1380,    2, 0x02 /* Public */,
+     152,    1, 1383,    2, 0x02 /* Public */,
+     154,    1, 1386,    2, 0x02 /* Public */,
+     155,    1, 1389,    2, 0x02 /* Public */,
+     157,    2, 1392,    2, 0x02 /* Public */,
+     160,    3, 1397,    2, 0x02 /* Public */,
+     163,    0, 1404,    2, 0x02 /* Public */,
+     164,    0, 1405,    2, 0x02 /* Public */,
+     165,    1, 1406,    2, 0x02 /* Public */,
+     167,    0, 1409,    2, 0x02 /* Public */,
+     168,    0, 1410,    2, 0x02 /* Public */,
+     169,    0, 1411,    2, 0x02 /* Public */,
+     170,    0, 1412,    2, 0x02 /* Public */,
+     171,    0, 1413,    2, 0x02 /* Public */,
+     172,    2, 1414,    2, 0x02 /* Public */,
+     172,    1, 1419,    2, 0x22 /* Public | MethodCloned */,
+     175,    2, 1422,    2, 0x02 /* Public */,
+     175,    1, 1427,    2, 0x22 /* Public | MethodCloned */,
+     177,    1, 1430,    2, 0x02 /* Public */,
+     179,    1, 1433,    2, 0x02 /* Public */,
+     181,    1, 1436,    2, 0x02 /* Public */,
+     183,    0, 1439,    2, 0x02 /* Public */,
+     184,    2, 1440,    2, 0x02 /* Public */,
+     187,    0, 1445,    2, 0x02 /* Public */,
+     188,    0, 1446,    2, 0x02 /* Public */,
+     189,    1, 1447,    2, 0x02 /* Public */,
+     191,    1, 1450,    2, 0x02 /* Public */,
+     191,    0, 1453,    2, 0x22 /* Public | MethodCloned */,
+     193,    0, 1454,    2, 0x02 /* Public */,
+     194,    1, 1455,    2, 0x02 /* Public */,
+     196,    0, 1458,    2, 0x02 /* Public */,
+     197,    1, 1459,    2, 0x02 /* Public */,
+     199,    3, 1462,    2, 0x02 /* Public */,
+     199,    2, 1469,    2, 0x22 /* Public | MethodCloned */,
+     203,    5, 1474,    2, 0x02 /* Public */,
+     203,    4, 1485,    2, 0x22 /* Public | MethodCloned */,
+     203,    3, 1494,    2, 0x22 /* Public | MethodCloned */,
+     206,    1, 1501,    2, 0x02 /* Public */,
+     206,    0, 1504,    2, 0x22 /* Public | MethodCloned */,
+     207,    1, 1505,    2, 0x02 /* Public */,
+     209,    0, 1508,    2, 0x02 /* Public */,
+     210,    0, 1509,    2, 0x02 /* Public */,
+     211,    0, 1510,    2, 0x02 /* Public */,
+     212,    0, 1511,    2, 0x02 /* Public */,
+     213,    1, 1512,    2, 0x02 /* Public */,
+     214,    0, 1515,    2, 0x02 /* Public */,
+     215,    0, 1516,    2, 0x02 /* Public */,
+     216,    0, 1517,    2, 0x02 /* Public */,
+     217,    2, 1518,    2, 0x02 /* Public */,
+     217,    1, 1523,    2, 0x22 /* Public | MethodCloned */,
+     219,    0, 1526,    2, 0x02 /* Public */,
+     220,    0, 1527,    2, 0x02 /* Public */,
+     221,    1, 1528,    2, 0x02 /* Public */,
+     222,    0, 1531,    2, 0x02 /* Public */,
+     223,    0, 1532,    2, 0x02 /* Public */,
+     224,    0, 1533,    2, 0x02 /* Public */,
+     225,    1, 1534,    2, 0x02 /* Public */,
+     227,    0, 1537,    2, 0x02 /* Public */,
+     228,    1, 1538,    2, 0x02 /* Public */,
+     230,    0, 1541,    2, 0x02 /* Public */,
+     231,    1, 1542,    2, 0x02 /* Public */,
+     232,    0, 1545,    2, 0x02 /* Public */,
+     233,    1, 1546,    2, 0x02 /* Public */,
+     234,    0, 1549,    2, 0x02 /* Public */,
+     235,    1, 1550,    2, 0x02 /* Public */,
+     237,    0, 1553,    2, 0x02 /* Public */,
+     238,    1, 1554,    2, 0x02 /* Public */,
+     240,    0, 1557,    2, 0x02 /* Public */,
+     241,    1, 1558,    2, 0x02 /* Public */,
+     242,    0, 1561,    2, 0x02 /* Public */,
+     243,    1, 1562,    2, 0x02 /* Public */,
+     245,    0, 1565,    2, 0x02 /* Public */,
+     246,    1, 1566,    2, 0x02 /* Public */,
+     247,    0, 1569,    2, 0x02 /* Public */,
+     248,    1, 1570,    2, 0x02 /* Public */,
+     250,    0, 1573,    2, 0x02 /* Public */,
+     251,    1, 1574,    2, 0x02 /* Public */,
+     252,    0, 1577,    2, 0x02 /* Public */,
+     253,    1, 1578,    2, 0x02 /* Public */,
+     255,    0, 1581,    2, 0x02 /* Public */,
+     256,    1, 1582,    2, 0x02 /* Public */,
+     258,    0, 1585,    2, 0x02 /* Public */,
+     259,    1, 1586,    2, 0x02 /* Public */,
+     261,    0, 1589,    2, 0x02 /* Public */,
+     262,    2, 1590,    2, 0x02 /* Public */,
+     265,    1, 1595,    2, 0x02 /* Public */,
+     265,    0, 1598,    2, 0x22 /* Public | MethodCloned */,
+     266,    2, 1599,    2, 0x02 /* Public */,
+     266,    1, 1604,    2, 0x22 /* Public | MethodCloned */,
+     268,    0, 1607,    2, 0x02 /* Public */,
+     269,    1, 1608,    2, 0x02 /* Public */,
+     270,    0, 1611,    2, 0x02 /* Public */,
+     271,    0, 1612,    2, 0x02 /* Public */,
+     272,    0, 1613,    2, 0x02 /* Public */,
+     273,    1, 1614,    2, 0x02 /* Public */,
+     275,    0, 1617,    2, 0x02 /* Public */,
+     276,    1, 1618,    2, 0x02 /* Public */,
+     278,    0, 1621,    2, 0x02 /* Public */,
+     279,    1, 1622,    2, 0x02 /* Public */,
+     281,    0, 1625,    2, 0x02 /* Public */,
+     282,    1, 1626,    2, 0x02 /* Public */,
+     283,    1, 1629,    2, 0x02 /* Public */,
+     284,    0, 1632,    2, 0x02 /* Public */,
+     285,    1, 1633,    2, 0x02 /* Public */,
+     287,    0, 1636,    2, 0x02 /* Public */,
+     288,    0, 1637,    2, 0x02 /* Public */,
+     289,    0, 1638,    2, 0x02 /* Public */,
+     290,    0, 1639,    2, 0x02 /* Public */,
+     291,    2, 1640,    2, 0x02 /* Public */,
+     294,    2, 1645,    2, 0x02 /* Public */,
+     295,    1, 1650,    2, 0x02 /* Public */,
+     297,    0, 1653,    2, 0x02 /* Public */,
+     298,    0, 1654,    2, 0x02 /* Public */,
+     299,    0, 1655,    2, 0x02 /* Public */,
+     300,    0, 1656,    2, 0x02 /* Public */,
+     301,    0, 1657,    2, 0x02 /* Public */,
+     302,    3, 1658,    2, 0x02 /* Public */,
+     306,    2, 1665,    2, 0x02 /* Public */,
+     308,    5, 1670,    2, 0x02 /* Public */,
+     309,    1, 1681,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -774,33 +779,35 @@ static const uint qt_meta_data_MainController[] = {
     QMetaType::Void, QMetaType::QString,  166,
     QMetaType::QString,
     QMetaType::QString,
-    QMetaType::QString,
-    QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  172,  173,
-    QMetaType::Void, QMetaType::QString,  172,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  175,  173,
-    QMetaType::Void, QMetaType::QString,  175,
-    QMetaType::Void, QMetaType::QString,  177,
-    QMetaType::Void, QMetaType::Int,  179,
-    QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  182,  183,
     QMetaType::Int,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  187,
-    QMetaType::Void, QMetaType::Bool,  189,
+    QMetaType::QString,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  173,  174,
+    QMetaType::Void, QMetaType::QString,  173,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  176,  174,
+    QMetaType::Void, QMetaType::QString,  176,
+    QMetaType::Void, QMetaType::QString,  178,
+    QMetaType::Void, QMetaType::Int,  180,
+    QMetaType::Void, QMetaType::Int,  182,
+    QMetaType::Int,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  185,  186,
+    QMetaType::Int,
+    QMetaType::QString,
+    QMetaType::Void, QMetaType::QString,  190,
+    QMetaType::Void, QMetaType::Bool,  192,
     QMetaType::Void,
     QMetaType::Bool,
-    QMetaType::Bool, QMetaType::QString,  192,
+    QMetaType::Bool, QMetaType::QString,  195,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,  195,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  197,  198,  199,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,  197,  198,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool,  201,  197,  198,  199,  202,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  201,  197,  198,  199,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  201,  197,  198,
-    QMetaType::Void, QMetaType::QString,  201,
+    QMetaType::Void, QMetaType::Bool,  198,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  200,  201,  202,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,  200,  201,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool,  204,  200,  201,  202,  205,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  204,  200,  201,  202,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,  204,  200,  201,
+    QMetaType::Void, QMetaType::QString,  204,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,  205,
+    QMetaType::Void, QMetaType::QString,  208,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -809,76 +816,76 @@ static const uint qt_meta_data_MainController[] = {
     QMetaType::QString,
     QMetaType::Int,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  215,  173,
-    QMetaType::Void, QMetaType::QString,  215,
+    QMetaType::Void, QMetaType::QString, QMetaType::Bool,  218,  174,
+    QMetaType::Void, QMetaType::QString,  218,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,   60,
     QMetaType::Int,
     QMetaType::QString,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  223,
-    QMetaType::Int,
     QMetaType::Void, QMetaType::Int,  226,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  226,
+    QMetaType::Void, QMetaType::Int,  229,
+    QMetaType::Int,
+    QMetaType::Void, QMetaType::Int,  229,
     QMetaType::Bool,
     QMetaType::Void, QMetaType::Bool,   54,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::Float,  233,
+    QMetaType::Void, QMetaType::Float,  236,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  236,
+    QMetaType::Void, QMetaType::Int,  239,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  236,
+    QMetaType::Void, QMetaType::Int,  239,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  241,
+    QMetaType::Void, QMetaType::Int,  244,
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,   23,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  246,
+    QMetaType::Void, QMetaType::QString,  249,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  246,
-    QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  251,
+    QMetaType::Void, QMetaType::QString,  249,
     QMetaType::QString,
     QMetaType::Void, QMetaType::QString,  254,
+    QMetaType::QString,
+    QMetaType::Void, QMetaType::QString,  257,
     QMetaType::Bool,
-    QMetaType::Void, QMetaType::Bool,  257,
+    QMetaType::Void, QMetaType::Bool,  260,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  260,  261,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,  263,  264,
     QMetaType::Int, QMetaType::Int,   21,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,  264,   21,
-    QMetaType::Void, QMetaType::Int,  264,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,  267,   21,
+    QMetaType::Void, QMetaType::Int,  267,
     QMetaType::QString,
-    QMetaType::QString, QMetaType::Bool,  261,
+    QMetaType::QString, QMetaType::Bool,  264,
     QMetaType::QString,
     QMetaType::QString,
-    QMetaType::Bool,
-    QMetaType::Void, QMetaType::Bool,  271,
     QMetaType::Bool,
     QMetaType::Void, QMetaType::Bool,  274,
+    QMetaType::Bool,
+    QMetaType::Void, QMetaType::Bool,  277,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString,  277,
+    QMetaType::Void, QMetaType::QString,  280,
     QMetaType::Int,
-    QMetaType::Void, QMetaType::Int,  226,
+    QMetaType::Void, QMetaType::Int,  229,
     QMetaType::Void, QMetaType::QString,   89,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::Float,  283,
+    QMetaType::Void, QMetaType::Float,  286,
     QMetaType::QString,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::QString,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,  289,  290,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,  292,  293,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,   99,  100,
-    QMetaType::Void, QMetaType::Int,  293,
+    QMetaType::Void, QMetaType::Int,  296,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  300,  301,  302,
-    QMetaType::LongLong, QMetaType::LongLong, QMetaType::QString,   28,  304,
+    QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,  303,  304,  305,
+    QMetaType::LongLong, QMetaType::LongLong, QMetaType::QString,   28,  307,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   72,   73,   74,   75,   26,
     QMetaType::Void, QMetaType::Int,   77,
 
@@ -1002,160 +1009,163 @@ void MainController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         case 96: { QString _r = _t->getDominoServerUrl();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 97: { QString _r = _t->getUrlService();
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 98: { QString _r = _t->getTransferProtocol();
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 99: _t->setTransferProtocol((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 100: _t->setTransferProtocol((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 101: _t->setPayment((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 102: _t->setPayment((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 103: _t->setDominoServerUrl((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 104: _t->setPaymentMethod((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 105: { int _r = _t->getPaymentMethod();
+        case 97: { int _r = _t->getDominoStore();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 106: _t->setPaymentMask((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 107: { int _r = _t->getPaymentMask();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 108: { QString _r = _t->getDockServer();
+        case 98: { QString _r = _t->getUrlService();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 109: _t->setDockServer((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 110: _t->scanDock((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 111: _t->scanDock(); break;
-        case 112: { bool _r = _t->isConnected();
+        case 99: { QString _r = _t->getTransferProtocol();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 100: _t->setTransferProtocol((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 101: _t->setTransferProtocol((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 102: _t->setPayment((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 103: _t->setPayment((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 104: _t->setDominoServerUrl((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 105: _t->setDominoStore((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 106: _t->setPaymentMethod((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 107: { int _r = _t->getPaymentMethod();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 108: _t->setPaymentMask((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 109: { int _r = _t->getPaymentMask();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 110: { QString _r = _t->getDockServer();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 111: _t->setDockServer((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 112: _t->scanDock((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 113: _t->scanDock(); break;
+        case 114: { bool _r = _t->isConnected();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 113: { bool _r = _t->connectToDock((*reinterpret_cast< const QString(*)>(_a[1])));
+        case 115: { bool _r = _t->connectToDock((*reinterpret_cast< const QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 114: _t->disconnectFromDock(); break;
-        case 115: _t->testReaderDevice((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 116: _t->updateWifi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3]))); break;
-        case 117: _t->updateWifi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
-        case 118: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
-        case 119: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4]))); break;
-        case 120: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3]))); break;
-        case 121: _t->wifiStatus((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 122: _t->wifiStatus(); break;
-        case 123: _t->testPing((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 124: _t->restartDock(); break;
-        case 125: _t->restartPi(); break;
-        case 126: _t->haltPi(); break;
-        case 127: _t->checkPrinterStatus(); break;
-        case 128: _t->printTest((*reinterpret_cast< const QJsonArray(*)>(_a[1]))); break;
-        case 129: { QString _r = _t->getLocalIp();
+        case 116: _t->disconnectFromDock(); break;
+        case 117: _t->testReaderDevice((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 118: _t->updateWifi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3]))); break;
+        case 119: _t->updateWifi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 120: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
+        case 121: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4]))); break;
+        case 122: _t->updateWifiPi((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3]))); break;
+        case 123: _t->wifiStatus((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 124: _t->wifiStatus(); break;
+        case 125: _t->testPing((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 126: _t->restartDock(); break;
+        case 127: _t->restartPi(); break;
+        case 128: _t->haltPi(); break;
+        case 129: _t->checkPrinterStatus(); break;
+        case 130: _t->printTest((*reinterpret_cast< const QJsonArray(*)>(_a[1]))); break;
+        case 131: { QString _r = _t->getLocalIp();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 130: { int _r = _t->getAppIndex();
+        case 132: { int _r = _t->getAppIndex();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 131: { QString _r = _t->getAppName();
+        case 133: { QString _r = _t->getAppName();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 132: _t->setAppName((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 133: _t->setAppName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 134: { QString _r = _t->getAppTitle();
+        case 134: _t->setAppName((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 135: _t->setAppName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 136: { QString _r = _t->getAppTitle();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 135: { QString _r = _t->getTitleEng();
+        case 137: { QString _r = _t->getTitleEng();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 136: _t->setAppTitle((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 137: { int _r = _t->getMachineIndex();
+        case 138: _t->setAppTitle((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 139: { int _r = _t->getMachineIndex();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 138: { QString _r = _t->getAppMachine();
+        case 140: { QString _r = _t->getAppMachine();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 139: { int _r = _t->getRechargeNum();
+        case 141: { int _r = _t->getRechargeNum();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 140: _t->setRechargeNum((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 141: { int _r = _t->getFoodRefreshTimer();
+        case 142: _t->setRechargeNum((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 143: { int _r = _t->getFoodRefreshTimer();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 142: _t->setFoodRefreshTimer((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 143: { int _r = _t->getBillAlertTimer();
+        case 144: _t->setFoodRefreshTimer((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 145: { int _r = _t->getBillAlertTimer();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 144: _t->setBillAlertTimer((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 145: { bool _r = _t->getShowThanhtoancungdonhang();
+        case 146: _t->setBillAlertTimer((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 147: { bool _r = _t->getShowThanhtoancungdonhang();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 146: _t->setShowThanhtoancungdonhang((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 147: { QString _r = _t->getConfigQrcodeRatio();
+        case 148: _t->setShowThanhtoancungdonhang((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 149: { QString _r = _t->getConfigQrcodeRatio();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 148: _t->setConfigQrcodeRatio((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 149: { int _r = _t->getConfigFoodItemFontsize();
+        case 150: _t->setConfigQrcodeRatio((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 151: { int _r = _t->getConfigFoodItemFontsize();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 150: _t->setConfigFoodItemFontsize((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 151: { int _r = _t->getConfigBillItemFontsize();
+        case 152: _t->setConfigFoodItemFontsize((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 153: { int _r = _t->getConfigBillItemFontsize();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 152: _t->setConfigBillItemFontsize((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 153: { int _r = _t->getConfigSobanin();
+        case 154: _t->setConfigBillItemFontsize((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 155: { int _r = _t->getConfigSobanin();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 154: _t->setConfigSobanin((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 155: { QString _r = _t->getConfigTenbanin();
+        case 156: _t->setConfigSobanin((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 157: { QString _r = _t->getConfigTenbanin();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 156: _t->setConfigTenbanin((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 157: { QString _r = _t->getConfigBillPreinf();
+        case 158: _t->setConfigTenbanin((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 159: { QString _r = _t->getConfigBillPreinf();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 158: _t->setConfigBillPreinf((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 159: { QString _r = _t->getConfigBillPostinf();
+        case 160: _t->setConfigBillPreinf((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 161: { QString _r = _t->getConfigBillPostinf();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 160: _t->setConfigBillPostinf((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 161: { QString _r = _t->getConfigDockversion();
+        case 162: _t->setConfigBillPostinf((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 163: { QString _r = _t->getConfigDockversion();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 162: _t->setConfigDockversion((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 163: { QString _r = _t->getConfigPrintersize();
+        case 164: _t->setConfigDockversion((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 165: { QString _r = _t->getConfigPrintersize();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 164: _t->setConfigPrintersize((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 165: { bool _r = _t->getUserEnableConfig();
+        case 166: _t->setConfigPrintersize((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 167: { bool _r = _t->getUserEnableConfig();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 166: _t->setUserEnableConfig((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 167: { int _r = _t->getConfigRebootDatePi();
+        case 168: _t->setUserEnableConfig((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 169: { int _r = _t->getConfigRebootDatePi();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 168: _t->setConfigRebootDatePi((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 169: { int _r = _t->getConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1])));
+        case 170: _t->setConfigRebootDatePi((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 171: { int _r = _t->getConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 170: { int _r = _t->getConfigRebootTimePi();
+        case 172: { int _r = _t->getConfigRebootTimePi();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 171: _t->setConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 172: _t->setConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 173: { QString _r = _t->getRestartTime();
+        case 173: _t->setConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 174: _t->setConfigRebootTimePi((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 175: { QString _r = _t->getRestartTime();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 174: { QString _r = _t->getCurrentTime((*reinterpret_cast< bool(*)>(_a[1])));
+        case 176: { QString _r = _t->getCurrentTime((*reinterpret_cast< bool(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 175: { QString _r = _t->getConfigUsername();
+        case 177: { QString _r = _t->getConfigUsername();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 176: { QString _r = _t->getConfigUserpwd();
+        case 178: { QString _r = _t->getConfigUserpwd();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 177: { bool _r = _t->getConfigSearchadvance();
+        case 179: { bool _r = _t->getConfigSearchadvance();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 178: _t->setConfigSearchadvance((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 179: { bool _r = _t->getConfigShowBaocaoDate();
+        case 180: _t->setConfigSearchadvance((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 181: { bool _r = _t->getConfigShowBaocaoDate();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 180: _t->setConfigShowBaocaoDate((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 181: { QString _r = _t->getConfigCenterService();
+        case 182: _t->setConfigShowBaocaoDate((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 183: { QString _r = _t->getConfigCenterService();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 182: _t->setConfigCenterService((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 183: { int _r = _t->getConfigIdletime();
+        case 184: _t->setConfigCenterService((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 185: { int _r = _t->getConfigIdletime();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 184: _t->setConfigIdletime((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 185: _t->setIdCoupon((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 186: { QString _r = _t->getIdCoupon();
+        case 186: _t->setConfigIdletime((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 187: _t->setIdCoupon((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 188: { QString _r = _t->getIdCoupon();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 187: _t->setIdCouponPercent((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 188: { QString _r = _t->getIdCouponPercent();
+        case 189: _t->setIdCouponPercent((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 190: { QString _r = _t->getIdCouponPercent();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 189: _t->saveConfig(); break;
-        case 190: _t->sendCancelBillUI(); break;
-        case 191: { QString _r = _t->getBaocaoCurrentTime();
+        case 191: _t->saveConfig(); break;
+        case 192: _t->sendCancelBillUI(); break;
+        case 193: { QString _r = _t->getBaocaoCurrentTime();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 192: _t->inBaocao((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 193: _t->userLogin((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
-        case 194: _t->uiFoodupdateStatus((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 195: { QString _r = _t->getAccount();
+        case 194: _t->inBaocao((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 195: _t->userLogin((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 196: _t->uiFoodupdateStatus((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 197: { QString _r = _t->getAccount();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 196: { QString _r = _t->getDiskPrepare();
+        case 198: { QString _r = _t->getDiskPrepare();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 197: { QString _r = _t->getDiskReserve();
+        case 199: { QString _r = _t->getDiskReserve();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 198: _t->idleClearup(); break;
-        case 199: _t->idleReset(); break;
-        case 200: { QString _r = _t->getProductCode((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])));
+        case 200: _t->idleClearup(); break;
+        case 201: _t->idleReset(); break;
+        case 202: { QString _r = _t->getProductCode((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 201: { long long _r = _t->getPriceCoupon((*reinterpret_cast< long long(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])));
+        case 203: { long long _r = _t->getPriceCoupon((*reinterpret_cast< long long(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< long long*>(_a[0]) = _r; }  break;
-        case 202: _t->removeItemInPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< const QString(*)>(_a[5]))); break;
-        case 203: _t->closeThanhtoan((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 204: _t->removeItemInPaymentView((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< const QString(*)>(_a[4])),(*reinterpret_cast< const QString(*)>(_a[5]))); break;
+        case 205: _t->closeThanhtoan((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -1452,13 +1462,13 @@ int MainController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 204)
+        if (_id < 206)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 204;
+        _id -= 206;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 204)
+        if (_id < 206)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 204;
+        _id -= 206;
     }
     return _id;
 }

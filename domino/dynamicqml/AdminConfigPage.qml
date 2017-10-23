@@ -48,6 +48,26 @@ Pane {
                                 }
                             }
                         }
+                        Row {
+                            Layout.fillWidth: true
+                            spacing: 10
+                            Label {
+                                width: admConfColwidth1
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "-   Store Domino:"
+                            }
+                            TextField {
+                                id: idStoreDomino
+                                enabled: true
+                                placeholderText: "55555"
+                                width: admConfColwidth2 * 5
+                                Layout.fillWidth: true
+                                text: mainController.getDominoStore()
+                                onEditingFinished: {
+                                    mainController.setDominoStore(text)
+                                }
+                            }
+                        }
 
                         Row {
                             Layout.fillWidth: true
@@ -88,7 +108,7 @@ Pane {
                                 id: idServerUrl
                                 enabled: mainController.isDebugmode() ? true : false
                                 placeholderText: "vpos.zing.vn/vpos"
-                                width: admConfColwidth2
+                                width: admConfColwidth2 * 5
                                 Layout.fillWidth: true
                                 text: mainController.getPayment()
                                 onEditingFinished: {
@@ -254,12 +274,12 @@ Pane {
                             }
                         }
 
-                        Button {
-                            text: "Food court . . ."
-                            onClicked: {
-                                stackView.push(accountPage)
-                            }
-                        }
+//                        Button {
+//                            text: "Food court . . ."
+//                            onClicked: {
+//                                stackView.push(accountPage)
+//                            }
+//                        }
                     }
 
                     Row {

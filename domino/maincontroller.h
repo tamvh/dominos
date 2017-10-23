@@ -78,11 +78,13 @@ public:
     Q_INVOKABLE void setPrinter(QString prnName);
     Q_INVOKABLE QString getPayment();
     Q_INVOKABLE QString getDominoServerUrl();
+    Q_INVOKABLE int getDominoStore();
     Q_INVOKABLE QString getUrlService();
     Q_INVOKABLE QString getTransferProtocol();
     Q_INVOKABLE void setTransferProtocol(const QString& transpro, bool initSocket=true);
     Q_INVOKABLE void setPayment(QString paymentName, bool initSocket=true);
     Q_INVOKABLE void setDominoServerUrl(QString url);
+    Q_INVOKABLE void setDominoStore(int store);
     Q_INVOKABLE void setPaymentMethod(int paymentMethod); // 1:zalopay; 2:card; 4:cash
     Q_INVOKABLE int  getPaymentMethod();
     Q_INVOKABLE void setPaymentMask(int payment, bool onoff);
@@ -387,6 +389,7 @@ private:
     QJsonArray m_foods;
     QJsonArray m_prods_from_dominos;
     QString dominoUrl;
+    int     dominoStore;
 private:
     QString g_invceCode;
     QString g_printdata;

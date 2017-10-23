@@ -69,6 +69,8 @@ MainController::MainController(QObject *parent)
 
     m_qullLUT = 0;
     m_httpCheckUpdate = NULL;
+    dominoStore = setting->dominoStore;
+    qDebug() << "domino store: " << QString::number(dominoStore);
     QObject::connect(this, SIGNAL(notifyFoodRequest()), this, SLOT(foodsRequest()), Qt::QueuedConnection);
     QObject::connect(&m_tmCheckUpdateFood, SIGNAL(timeout()), this, SLOT(timerDoUpdate()), Qt::QueuedConnection);
     QObject::connect(this, SIGNAL(onPayZalo(QString,QString)), this, SLOT(doPayZalo(QString,QString)));
@@ -78,8 +80,8 @@ MainController::MainController(QObject *parent)
     QObject::connect(&dominoCtrl, SIGNAL(eventStoreInformation(QJsonObject)), this, SLOT(onStoreInformation(QJsonObject)), Qt::UniqueConnection);
     dominoUrl = setting->dominoServerUrl; //http://113.161.67.179:59101
     dominoCtrl.initizalize("TestingAndSupport", "supp0rtivemeasures", dominoUrl);
-    dominoCtrl.getStoreProducts(55555);
-    dominoCtrl.getStoreInformation(55555);
+    dominoCtrl.getStoreProducts(dominoStore);
+    dominoCtrl.getStoreInformation(dominoStore);
 
     if (!isDebugmode()) {
         m_tmCheckUpdateFood.start(setting->foodRefreshTimer*1000);
@@ -1776,6 +1778,11 @@ QString MainController::getPayment()
 {
     return setting->paymentName;
 }
+
+int MainController::getDominoStore() {
+    return setting->dominoStore;
+}
+
 QString MainController::getDominoServerUrl() {
     return setting->dominoServerUrl;
 }
@@ -1828,8 +1835,13 @@ void MainController::setPayment(QString paymentName, bool initSocket)
         checkUpdateFoodData();
     }
 }
+
 void MainController::setDominoServerUrl(QString url) {
     setting->setDominoServerUrl(url);
+}
+
+void MainController::setDominoStore(int store) {
+    setting->setDominoStore(store);
 }
 
 void MainController::setPaymentMethod(int paymentMethod)
@@ -2820,7 +2832,7 @@ void MainController::placeorder2dominoserver() {
     QJsonObject order;
     json_order["@language"] = "en-USA";
     json_order["@currency"]  = "en-USD";
-    json_order["StoreID"] = "55555";
+    json_order["StoreID"] = QString::number(dominoStore);
     json_order["ServiceMethod"] = m_customer_hinhthuc;
     json_order["OrderTakeSeconds"] = "37";
     json_order["DeliveryInstructions"] = "";

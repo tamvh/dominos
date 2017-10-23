@@ -44,6 +44,7 @@ public:
     void setIdCoupon(const QString & id);
     void setIdCouponPercent(float percent);
     void setDominoServerUrl(const QString & url);
+    void setDominoStore(int store);
 
 
     QString transProtocol;  // http / https
@@ -51,6 +52,7 @@ public:
     QString appTitle;       // "CĂN TIN"
     QString printerName;    // "xpriner58"
     QString dominoServerUrl;
+    int     dominoStore;
 
     QString paymentName;    // "104.199.170.120", "payment.vng.com.vn"
     QString dockServer;     // "192.168.1.1"

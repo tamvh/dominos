@@ -663,7 +663,6 @@ ApplicationWindow {
                     ToolButton {
                         id: vposButton
                         property int settingFlags1: 0
-                        property int settingFlags2: 0
                         contentItem: Image {
                             fillMode: Image.Pad
                             horizontalAlignment: Image.AlignHCenter
