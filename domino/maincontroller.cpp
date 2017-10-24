@@ -2839,7 +2839,7 @@ void MainController::placeorder2dominoserver() {
 
     QJsonObject json_OrderSource;
     json_OrderSource["OrganizationURI"] = "dominos.com";
-    json_OrderSource["OrderMethod"] = "Call Center";
+    json_OrderSource["OrderMethod"] = "Zalo";
     json_OrderSource["OrderTaker"] = "Mike";
     json_order["OrderSource"] = json_OrderSource;
 
@@ -2861,7 +2861,7 @@ void MainController::placeorder2dominoserver() {
     QJsonObject json_Name;
     json_Name["@type"] = "Name-US";
     json_Name["FirstName"] = m_customer_name;
-    json_Name["LastName"] = m_customer_name;
+    json_Name["LastName"] =  " - ZALOPAY";
     json_Customer["Name"] = json_Name;
     QJsonObject json_CustomerTypeInfo;
     json_CustomerTypeInfo["@type"] = "";

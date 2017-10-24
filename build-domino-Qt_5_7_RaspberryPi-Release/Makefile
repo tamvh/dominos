@@ -244,6 +244,7 @@ DIST          = ../domino/fonts/UnisectVnu \
 		/opt/build/qt5pi/qt5host/mkspecs/features/qt_config.prf \
 		/opt/build/qt5pi/qt5host/mkspecs/devices/linux-rpi3-g++/qmake.conf \
 		/opt/build/qt5pi/qt5host/mkspecs/features/spec_post.prf \
+		../domino/.qmake.stash \
 		/opt/build/qt5pi/qt5host/mkspecs/features/exclusive_builds.prf \
 		/opt/build/qt5pi/qt5host/mkspecs/features/default_pre.prf \
 		../domino/deployment.pri \
@@ -409,6 +410,7 @@ Makefile: ../domino/domino.pro /opt/build/qt5pi/qt5host/mkspecs/devices/linux-rp
 		/opt/build/qt5pi/qt5host/mkspecs/features/qt_config.prf \
 		/opt/build/qt5pi/qt5host/mkspecs/devices/linux-rpi3-g++/qmake.conf \
 		/opt/build/qt5pi/qt5host/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/build/qt5pi/qt5host/mkspecs/features/exclusive_builds.prf \
 		/opt/build/qt5pi/qt5host/mkspecs/features/default_pre.prf \
 		../domino/deployment.pri \
@@ -511,6 +513,7 @@ Makefile: ../domino/domino.pro /opt/build/qt5pi/qt5host/mkspecs/devices/linux-rp
 /opt/build/qt5pi/qt5host/mkspecs/features/qt_config.prf:
 /opt/build/qt5pi/qt5host/mkspecs/devices/linux-rpi3-g++/qmake.conf:
 /opt/build/qt5pi/qt5host/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/build/qt5pi/qt5host/mkspecs/features/exclusive_builds.prf:
 /opt/build/qt5pi/qt5host/mkspecs/features/default_pre.prf:
 ../domino/deployment.pri:

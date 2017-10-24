@@ -1,5 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
+import QtQuick.Controls 1.4
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
@@ -1460,113 +1461,113 @@ ApplicationWindow {
                         }
                         ColumnLayout {
                             width: 390
-                            RowLayout {
-                                Rectangle {
-                                    height: 50
+                            height: 210
+                            TableView {
+                                anchors.fill: parent
+                                anchors.top: parent.top
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                Layout.fillHeight: true
+                                horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+                                verticalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+                                TableViewColumn {
+                                    role: "productName"
+                                    title: "  MÓN ĂN"
                                     width: 250
-                                    Label {
-                                        anchors.verticalCenter: parent.verticalCenter
-                                        text: "MÓN ĂN"
-                                        font.bold: true
-                                        font.pixelSize: 18
-                                        color: "#000000"
-                                    }
                                 }
-                                Rectangle {
-                                    height: 50
-                                    width: 30
-                                    Label {
-                                        anchors.centerIn: parent
-                                        text: "SL"
-                                        font.bold: true
-                                        font.pixelSize: 18
-                                        color: "#000000"
-                                    }
+                                TableViewColumn {
+                                    role: "productQuantity"
+                                    title: "SL"
+                                    width: 40
                                 }
-                                Rectangle {
-                                    height: 50
+                                TableViewColumn {
+                                    role: "productMoney"
+                                    title: "GIÁ (VNĐ)"
                                     width: 100
-                                    Label {
-                                        anchors.verticalCenter: parent.verticalCenter
-                                        anchors.right: parent.right
-                                        text: "GIÁ (VNĐ)"
-                                        font.bold: true
-                                        font.pixelSize: 18
-                                        color: "#000000"
+                                }
+                                model: itemPizzaModel
+                                style: TableViewStyle {
+                                    frame: Rectangle {
+                                        border {
+                                            color: "transparent" // color of the border
+                                        }
+                                        color: "transparent"
+                                    }
+                                    headerDelegate: Rectangle {
+                                        implicitHeight: 50
+                                        color: "#F5F5F5"
+                                        Text {
+                                            id: textItem
+                                            anchors.fill: parent
+                                            verticalAlignment: Text.AlignVCenter
+                                            text: styleData.value
+                                            font.pixelSize: 16
+                                            font.bold: true
+                                            elide: Text.ElideRight
+                                            color: "#000000"
+                                        }
+
+                                        Rectangle {
+                                            width: parent.width
+                                            height: 1
+                                            y: parent.height
+                                            color: "white"
+                                        }
+
+                                        Rectangle {
+                                            width: parent.width
+                                            height: 1
+                                            y: parent.height
+                                            color: "white"
+                                        }
+
+                                        Rectangle {
+                                            width: parent.width
+                                            height: 1
+                                            y:0
+                                            color: "white"
+                                        }
+                                    }
+
+                                    itemDelegate: Item {
+                                        height: 50
+                                        property int implicitWidth: label.implicitWidth + 20
+
+                                        Text {
+                                            id: label
+                                            objectName: "label"
+                                            width: parent.width
+                                            x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
+                                                                                                               horizontalAlignment === Text.AlignRight ? 1 : 8
+                                            verticalAlignment:  Text.AlignVCenter
+
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            anchors.verticalCenterOffset: 1
+                                            elide: styleData.elideMode
+                                            text: styleData.value !== undefined ? styleData.value : ""
+                                            font.pixelSize: 18
+                                            color: "#000000"
+                                        }
+                                    }
+
+                                    rowDelegate: Rectangle {
+                                        id: abc
+                                        height: 50
                                     }
                                 }
                             }
+                        }
+                        ColumnLayout {
+                            width: 390
+                            height: 1
                             Rectangle {
                                 width: 390
                                 height: 1
                                 color: "#EEEEEE"
                             }
-                            ColumnLayout {
-                                width: 390
-                                GridView {
-                                    focus: true
-                                    model: itemPizzaModel
-                                    cellWidth: 390
-                                    cellHeight: 50
-                                    height: 160
-                                    delegate: Item {
-                                        id: item
-                                        width: 390
-                                        height: 50
-                                        ColumnLayout {
-
-                                            Rectangle {
-                                                height: 50
-                                                width: 390
-                                                RowLayout {
-                                                    anchors.verticalCenter: parent.verticalCenter
-                                                    width: 390
-                                                    height: 50
-                                                    Rectangle {
-                                                        height: 50
-                                                        width: 250
-                                                        Label {
-                                                            anchors.verticalCenter: parent.verticalCenter
-                                                            text: productName
-                                                            font.pixelSize: 20
-                                                            color: "#4A4A4A"
-                                                        }
-                                                    }
-                                                    Rectangle {
-                                                        height: 50
-                                                        width: 30
-                                                        Label {
-                                                            anchors.centerIn: parent
-                                                            text: productQuantity
-                                                            font.pixelSize: 20
-                                                            color: "#4A4A4A"
-                                                        }
-                                                    }
-                                                    Rectangle {
-                                                        height: 50
-                                                        width: 100
-                                                        Label {
-                                                            anchors.verticalCenter: parent.verticalCenter
-                                                            anchors.right: parent.right
-                                                            text: productMoney
-                                                            font.bold: true
-                                                            font.pixelSize: 20
-                                                            color: "#4A4A4A"
-                                                        }
-                                                    }
-                                                }
-                                            }
-
-                                            Rectangle {
-                                                width: 390
-                                                height: 1
-                                                color: "#EEEEEE"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
+                        }
+                        ColumnLayout {
+                            width: 390
                             Rectangle {
                                 height: 50
                                 width: 390
