@@ -1473,12 +1473,12 @@ ApplicationWindow {
                                 TableViewColumn {
                                     role: "productName"
                                     title: "  MÓN ĂN"
-                                    width: 220
+                                    width: 230
                                 }
                                 TableViewColumn {
                                     role: "productQuantity"
                                     title: "    SL"
-                                    width: 40
+                                    width: 50
                                 }
                                 TableViewColumn {
                                     role: "productMoney"
