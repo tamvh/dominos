@@ -1473,11 +1473,11 @@ ApplicationWindow {
                                 TableViewColumn {
                                     role: "productName"
                                     title: "  MÓN ĂN"
-                                    width: 250
+                                    width: 220
                                 }
                                 TableViewColumn {
                                     role: "productQuantity"
-                                    title: "SL"
+                                    title: "    SL"
                                     width: 40
                                 }
                                 TableViewColumn {
@@ -1496,10 +1496,14 @@ ApplicationWindow {
                                     headerDelegate: Rectangle {
                                         implicitHeight: 50
                                         color: "#F5F5F5"
+
                                         Text {
                                             id: textItem
                                             anchors.fill: parent
                                             verticalAlignment: Text.AlignVCenter
+                                            horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                                                                                                               ((styleData.column === 2) ? Text.AlignRight : Text.AlignHCenter))
+
                                             text: styleData.value
                                             font.pixelSize: 16
                                             font.bold: true
@@ -1540,7 +1544,8 @@ ApplicationWindow {
                                             x: (styleData.hasOwnProperty("depth") && styleData.column === 0) ? 0 :
                                                                                                                horizontalAlignment === Text.AlignRight ? 1 : 8
                                             verticalAlignment:  Text.AlignVCenter
-
+                                            horizontalAlignment: ((styleData.column === 0) ? Text.AlignLeft :
+                                                                                                               ((styleData.column === 2) ? Text.AlignRight : Text.AlignHCenter))
                                             anchors.verticalCenter: parent.verticalCenter
                                             anchors.verticalCenterOffset: 1
                                             elide: styleData.elideMode
