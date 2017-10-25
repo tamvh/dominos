@@ -462,6 +462,7 @@ QString MainController::pay(const QString &customer_name, const QString &custome
     m_customer_hinhthuc = customer_hinhthuc;
     m_customer_name = customer_name;
     m_foods = foods;
+    qDebug() << "m_food: " << m_foods;
     if ( (payMethod == PAY_ZALO) ||
          (merchantCode.compare("mqshops") == 0) ||
          (merchantCode.compare("vpos") == 0) )
@@ -2878,10 +2879,13 @@ void MainController::placeorder2dominoserver() {
 
     QJsonArray json_arr_OrderItems;
     QJsonObject json_OrderItems;
+    int total_amout = 0;
     bool find_pizza_discount_40 = false;
     for(int i = 0; i< m_foods.count(); i++) {
+
         QJsonObject json_OrderItem;
         QJsonObject item = m_foods.at(i).toObject();
+        total_amout = total_amout + item["amount"].toInt();
         json_OrderItem["ProductCode"] = item["code_name"];
         if(item["size"] == "9\"" || item["size"] == "12\"") {
             json_OrderItem["ProductName"] = item["size"];
@@ -2908,9 +2912,14 @@ void MainController::placeorder2dominoserver() {
     json_OrderItems["OrderItem"] = json_arr_OrderItems;
     json_order["OrderItems"] = json_OrderItems;
 
-    QJsonObject json_CashPayment;
-    json_CashPayment["CashPayment"] = "";
-    json_order["Payment"] = json_CashPayment;
+    QJsonObject j_creditcardpayment;
+    QJsonObject item_creditcardpayment;
+    item_creditcardpayment["PaymentAmount"] = total_amout;
+    item_creditcardpayment["CreditCardType"] = "Zalo Pay";
+    item_creditcardpayment["CreditCardTypeId"] = 15;
+    j_creditcardpayment["CreditCardPayment"] = item_creditcardpayment;
+    json_order["Payment"] = j_creditcardpayment;
+
 
     json_order["LoyaltyNumber"] = "1234567891234567899";
 
