@@ -103,6 +103,7 @@ Popup {
                 Material.accent: "#0695D6"
                 font.pixelSize: 36
                 maximumLength: 20
+                inputMethodHints: Qt.ImhUppercaseOnly
                 onTextChanged: {
                     var n = txtCustomerName.text.trim().length;
                     enable_btnThanhToan(n);
