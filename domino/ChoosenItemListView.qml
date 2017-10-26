@@ -296,7 +296,7 @@ Item {
             resizable: false
             movable: false
             role: "quantity"
-            title: qsTr("SL")
+            title: qsTr("   SL")
             width: tableViewChoosen.colRatio*2
             //width: Units.dp(75) > 20 ? Units.dp(75) : 75
         }
@@ -304,7 +304,7 @@ Item {
             resizable: false
             movable: false
             role: "price"
-            title: qsTr("GIÁ      ")
+            title: qsTr("GIÁ   ")
             width: tableViewChoosen.colRatio*5
             //width: Units.dp(75)
         }

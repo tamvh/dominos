@@ -435,7 +435,7 @@ ApplicationWindow {
             if(itemPizzaModel.get(i).productType === "DEVIENPHOMAI") {
                 console.log("append de vien pho mai")
                 if(pizza_debanh_str === "de_cheesy") {
-                    itemPizzaModel.setProperty(i, "productName", "Đế viền phô mai dày");
+                    itemPizzaModel.setProperty(i, "productName", "Đế dày viền phô mai");
                     itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
                     if(pizza_sizebanh_id === "9") {
                         _price = 49000;
@@ -447,7 +447,7 @@ ApplicationWindow {
                     productMoney = mainController.moneyMoney(_price * nItem)
                     itemPizzaModel.setProperty(i, "productMoney", productMoney);
                 } else if(pizza_debanh_str === "de_thin_cheesy") {
-                    itemPizzaModel.setProperty(i, "productName", "Đế viền phô mai mỏng");
+                    itemPizzaModel.setProperty(i, "productName", "Đế mỏng viền phô mai");
                     itemPizzaModel.setProperty(i, "productQuantity", nItem + "");
                     if(pizza_sizebanh_id === "9") {
                         _price = 49000;
@@ -1203,7 +1203,7 @@ ApplicationWindow {
                                         Column {
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             Label {
-                                                text: "Đế viền\nphô mai mỏng"
+                                                text: "Đế mỏng\nviền phô mai"
                                                 anchors.horizontalCenter: parent.horizontalCenter
                                                 horizontalAlignment: Text.AlignHCenter
                                                 font.pixelSize: 18
@@ -1246,7 +1246,7 @@ ApplicationWindow {
                                         Column {
                                             anchors.horizontalCenter: parent.horizontalCenter
                                             Label {
-                                                text: "Đế viền\nphô mai dày"
+                                                text: "Đế dày\nviền phô mai"
                                                 anchors.horizontalCenter: parent.horizontalCenter
                                                 horizontalAlignment: Text.AlignHCenter
                                                 font.pixelSize: 18
@@ -2477,7 +2477,7 @@ ApplicationWindow {
             onPrinterReadyChanged: {
                 if (ready === false) {
                     //printerMessageDialog.showMessage(false, "Máy in chưa sẵn sàng vui lòng kiểm tra lại máy in")
-                    //appMessage.showMessage("Máy in chưa sẵn sàng !!!")
+                    appMessage.showMessage("Máy in chưa sẵn sàng !!!")
                 } else {
                     printerMessageDialog.showMessage(true, "Máy in đã sẵn sàng")
                     appMessage.showMessage("Máy in đã sẵn sàng")
