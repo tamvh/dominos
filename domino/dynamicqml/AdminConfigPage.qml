@@ -75,38 +75,10 @@ Pane {
                             Label {
                                 width: admConfColwidth1
                                 anchors.verticalCenter: parent.verticalCenter
-                                text: "-   Máy chủ: "
-                            }
-                            ComboBox {
-                                id: idServer
-                                width: admConfColwidth2
-                                Layout.fillWidth: true
-                                model: ListModel {
-                                    id: cbServer
-                                    ListElement { text: "vpos"; server: "vpos.zing.vn/vpos"}
-                                    ListElement { text: "gbcstaging"; server: "gbcstaging.zing.vn/vpos"}
-                                    ListElement { text: "gbcdev"; server: "gbcdev.zing.vn/vpos"}
-                                }
-                                textRole: "text"
-                                currentIndex: mainController.getPayment() === "gbcstaging.zing.vn/vpos"
-                                onCurrentIndexChanged: {
-                                    mainController.setPayment(cbServer.get(currentIndex).server)
-                                    idServerUrl.text = mainController.getPayment();
-                                }
-                            }
-                        }
-
-                        Row {
-                            Layout.fillWidth: true
-                            spacing: 10
-                            Label {
-                                width: admConfColwidth1
-                                anchors.verticalCenter: parent.verticalCenter
                                 text: "-   Máy chủ URL:"
                             }
                             TextField {
                                 id: idServerUrl
-                                enabled: mainController.isDebugmode() ? true : false
                                 placeholderText: "vpos.zing.vn/vpos"
                                 width: admConfColwidth2 * 5
                                 Layout.fillWidth: true
@@ -118,7 +90,6 @@ Pane {
                         }
 
                         Row {
-                            visible: mainController.isDebugmode()
                             Layout.fillWidth: true
                             spacing: 10
                             Label {

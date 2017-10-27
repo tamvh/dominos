@@ -50,8 +50,7 @@ void ConfigSetting::Load()
         appTitle = getTitle_version1(appName); // support title of privious-version
     }
 
-    //paymentName     = sets.value(QString("option/payment"),         QString("vpos.zing.vn/vpos")).toString();
-    paymentName = "gbcstaging.zing.vn/vpos";
+    paymentName     = sets.value(QString("option/payment"),         QString("gbcstaging.zing.vn/vpos")).toString();
     transProtocol   = sets.value(QString("option/transferprotocol"),QString("https")).toString();
     printerName     = sets.value(QString("option/printer"),         QString("xpriner58")).toString();
     dockServer      = sets.value(QString("option/dock"),            QString("192.168.1.1")).toString();
