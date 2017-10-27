@@ -554,13 +554,15 @@ void ConfigSetting::setIdCouponPercent(float percent) {
 }
 
 void ConfigSetting::setDominoServerUrl(const QString &url) {
+    dominoServerUrl = url;
     QSettings sets("vng", "vpos");
-    sets.setValue(QString("option/dominoserverurl"), url);
+    sets.setValue(QString("option/dominoserverurl"), dominoServerUrl);
     sets.sync();
 }
 
 void ConfigSetting::setDominoStore(int store) {
+    dominoStore = store;
     QSettings sets("vng", "vpos");
-    sets.setValue(QString("option/dominostore"), store);
+    sets.setValue(QString("option/dominostore"), dominoStore);
     sets.sync();
 }
