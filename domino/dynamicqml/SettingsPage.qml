@@ -288,6 +288,44 @@ Component {
                                 mainController.testPing(txtHost.text)
                             }
                         }
+
+
+
+                        TextEdit {
+                            id: telnetResult
+                            width: parent.width
+                            height: 200
+                            text: "telnet result"
+                            focus: true
+
+                            function updateResult(data) {
+                                text = data
+                            }
+                        }
+
+                        RowLayout {
+                            TextField {
+                                id: txtTHost
+                                text: "113.161.67.179"
+                                Layout.fillWidth: true
+                            }
+                            TextField {
+                                id: txtTPort
+                                text: "59101"
+                                Layout.fillWidth: true
+                            }
+                        }
+
+
+
+                        Button {
+                            text:"Telnet"
+                            onClicked: {
+                                progressScan.updateVisible(true)
+                                telnetResult.text = "Telnet result"
+                                mainController.testTelnet(txtTHost.text, txtTPort.text)
+                            }
+                        }
                     }
 
                     Column {

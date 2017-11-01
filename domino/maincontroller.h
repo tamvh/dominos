@@ -102,6 +102,7 @@ public:
     Q_INVOKABLE void updateWifiPi(const QString& interface, const QString &ssid, const QString &key, const QString &encrypt = QString("psk2-mixed"), bool scan_ssid = false);
     Q_INVOKABLE void wifiStatus(const QString& interface = QString("wlan0"));
     Q_INVOKABLE void testPing(const QString& host);
+    Q_INVOKABLE void testTelnet(const QString& host, int port);
     Q_INVOKABLE void restartDock();
     Q_INVOKABLE void restartPi();
     Q_INVOKABLE void haltPi();
@@ -301,6 +302,7 @@ private:
     void doScanDock();
     void doScanDockAutosetting();
     void doPing(const QString& host);
+    void doTelnet(const QString& host, int port);
     void doWifiStatus(const QString& interface);
     void updateWSServerIp();
     void initialWebSocket(bool forceStop=false);

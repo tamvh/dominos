@@ -1502,6 +1502,18 @@ void MainController::doPing(const QString& host)
 #endif
 }
 
+void MainController::doTelnet(const QString &host, int port) {
+    QProcess ps;
+    QByteArray ba;
+    ps.start("telnet " + host + " " + QString::number(port));
+    if (ps.waitForStarted(-1)) {
+        while(ps.waitForReadyRead(-1)) {
+            ba += ps.readAllStandardOutput();
+        }
+    }
+    qDebug() << "output telnet: " + QString(ba);
+}
+
 void MainController::doWifiStatus(const QString &interface)
 {
 #ifndef Q_OS_IOS
@@ -2035,6 +2047,10 @@ void MainController::wifiStatus(const QString &interface)
 void MainController::testPing(const QString& host)
 {
     QFuture<void> future = QtConcurrent::run(this, &MainController::doPing, host);
+}
+
+void MainController::testTelnet(const QString &host, int port) {
+    QFuture<void> future = QtConcurrent::run(this, &MainController::doTelnet, host, port);
 }
 
 void MainController::restartDock()
