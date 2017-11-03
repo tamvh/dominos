@@ -1506,13 +1506,13 @@ void MainController::doTelnet(const QString &host, int port) {
     qDebug()<<"start telnet";
     QProcess ps;
     QByteArray ba;
-    emit loadingDone();
     ps.start("telnet " + host + " " + QString::number(port));
     if (ps.waitForStarted(-1)) {
         while(ps.waitForReadyRead(-1)) {
             ba = ps.readAllStandardOutput();
             qDebug() << "output telnet succ: " + QString(ba);
             emit telnetDone(QString(ba));
+            ps.kill();
         }
     } else {
         qDebug() << "output telnet err: " + QString(ba);
@@ -1522,23 +1522,31 @@ void MainController::doTelnet(const QString &host, int port) {
 
 void MainController::doTelnetDomino(const QString &host, int port) {
     qDebug()<<"start telnet";
-    QProcess ps;
+    ps_telnet_domino = new QProcess();
     QByteArray ba;
     emit loadingDone();
-    ps.start("telnet " + host + " " + QString::number(port));
-    if (ps.waitForStarted(-1)) {
-        while(ps.waitForReadyRead(-1)) {
-            ba = ps.readAllStandardOutput();
+    ps_telnet_domino->start("telnet " + host + " " + QString::number(port));
+    if (ps_telnet_domino->waitForStarted(-1)) {
+        qDebug() << "waitForStarted";
+        while(ps_telnet_domino->waitForReadyRead(-1)) {
+            ba = ps_telnet_domino->readAllStandardOutput();
             qDebug() << "DOMINO.output telnet succ: " + QString(ba);
             if(QString(ba).contains("Connected")) {
                 emit telnetResult(true);
-                ps.close();
+                ps_telnet_domino->kill();
             }
-
         }
     } else {
         qDebug() << "DOMINO.output telnet err: " + QString(ba);
         emit telnetResult(false);
+    }
+}
+
+void MainController::killProcessTelnetDomino() {
+    qDebug() << "kill process telnet";
+    if(ps_telnet_domino != NULL) {
+        qDebug() << "start kill";
+        ps_telnet_domino->kill();
     }
 }
 

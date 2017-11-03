@@ -6,6 +6,7 @@
 #include <QDateTime>
 #include <QJsonArray>
 #include <QEvent>
+#include <QProcess>
 #include <QSet>
 #include "http/httpbase.h"
 #include "http/httpbase2.h"
@@ -108,6 +109,7 @@ public:
     Q_INVOKABLE void testPing(const QString& host);
     Q_INVOKABLE void testTelnet(const QString& host, int port);
     Q_INVOKABLE void telnetDominoServer();
+    Q_INVOKABLE void killProcessTelnetDomino();
     Q_INVOKABLE void restartDock();
     Q_INVOKABLE void restartPi();
     Q_INVOKABLE void haltPi();
@@ -375,7 +377,7 @@ private:
     int     m_bcType;       // baocaoX=0, baocaoZ=1, baocaoDetail=2
     QString m_usrPwd;       // user's login password
     bool    m_login4Baocao;
-
+    QProcess* ps_telnet_domino;
 public:
     QString httpTranspro;   // http / https
     QString wsTranspro;     // ws / wss

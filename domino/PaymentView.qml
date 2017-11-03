@@ -170,6 +170,7 @@ Rectangle {
                 Material.accent: "#0695D6"
 
                 onClicked: {
+                    mainController.killProcessTelnetDomino();
                     mainController.telnetDominoServer()
                 }
             }
@@ -204,6 +205,7 @@ Rectangle {
                             idProfilePage.open()
                         }
                     } else {
+                        mainController.killProcessTelnetDomino();
                         count_telnet = 0;
                         timerLoading.stop();
                         idLoadingPage.close();

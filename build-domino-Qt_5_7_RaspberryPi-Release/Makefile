@@ -1469,6 +1469,9 @@ moc_maincontroller.cpp: /opt/build/qt5pi/qt5pi/include/QtCore/QObject \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qjsonarray.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qjsonvalue.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QEvent \
+		/opt/build/qt5pi/qt5pi/include/QtCore/QProcess \
+		/opt/build/qt5pi/qt5pi/include/QtCore/qprocess.h \
+		/opt/build/qt5pi/qt5pi/include/QtCore/qiodevice.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QSet \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qset.h \
 		../domino/http/httpbase.h \
@@ -1479,7 +1482,6 @@ moc_maincontroller.cpp: /opt/build/qt5pi/qt5pi/include/QtCore/QObject \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qsslsocket.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qtcpsocket.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qabstractsocket.h \
-		/opt/build/qt5pi/qt5pi/include/QtCore/qiodevice.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qdebug.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qmap.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qtextstream.h \
@@ -2384,6 +2386,7 @@ main.o: ../domino/main.cpp /opt/build/qt5pi/qt5pi/include/QtGui/QGuiApplication 
 		/opt/build/qt5pi/qt5pi/include/QtCore/QDateTime \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QJsonArray \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QEvent \
+		/opt/build/qt5pi/qt5pi/include/QtCore/QProcess \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QSet \
 		../domino/http/httpbase.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/QNetworkAccessManager \
@@ -3695,6 +3698,9 @@ maincontroller.o: ../domino/maincontroller.cpp ../domino/maincontroller.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qjsonarray.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qjsonvalue.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QEvent \
+		/opt/build/qt5pi/qt5pi/include/QtCore/QProcess \
+		/opt/build/qt5pi/qt5pi/include/QtCore/qprocess.h \
+		/opt/build/qt5pi/qt5pi/include/QtCore/qiodevice.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/QSet \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qset.h \
 		../domino/http/httpbase.h \
@@ -3705,7 +3711,6 @@ maincontroller.o: ../domino/maincontroller.cpp ../domino/maincontroller.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qsslsocket.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qtcpsocket.h \
 		/opt/build/qt5pi/qt5pi/include/QtNetwork/qabstractsocket.h \
-		/opt/build/qt5pi/qt5pi/include/QtCore/qiodevice.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qdebug.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qmap.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qtextstream.h \
@@ -3836,7 +3841,6 @@ maincontroller.o: ../domino/maincontroller.cpp ../domino/maincontroller.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qfilesystemwatcher.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qlockfile.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qloggingcategory.h \
-		/opt/build/qt5pi/qt5pi/include/QtCore/qprocess.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qresource.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qsavefile.h \
 		/opt/build/qt5pi/qt5pi/include/QtCore/qsettings.h \
