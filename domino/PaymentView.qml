@@ -183,13 +183,13 @@ Rectangle {
 
             Timer {
                 id: timerLoading
-                interval: 1000;
+                interval: 100;
                 running: false;
                 repeat: true;
                 onTriggered: {
                     console.log("start count telnet");
                     count_telnet += 1;
-                    if(count_telnet <= 5) {
+                    if(count_telnet <= 50) {
                         if(telnet_result) {
                             idLoadingPage.close();
                             window.txtThanhTien = textThanhtienValue.text
