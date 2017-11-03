@@ -45,14 +45,17 @@ public:
     void setIdCouponPercent(float percent);
     void setDominoServerUrl(const QString & url);
     void setDominoStore(int store);
-
+    void setHostTelnet(const QString& host);
+    void setPortTelnet(int port);
 
     QString transProtocol;  // http / https
     QString appName;        // "canteenvng", "vpos", ...
     QString appTitle;       // "CĂN TIN"
     QString printerName;    // "xpriner58"
     QString dominoServerUrl;
+    QString hostTelnet;
     int     dominoStore;
+    int     portTelnet;
 
     QString paymentName;    // "104.199.170.120", "payment.vng.com.vn"
     QString dockServer;     // "192.168.1.1"

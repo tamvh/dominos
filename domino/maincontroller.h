@@ -78,6 +78,10 @@ public:
     Q_INVOKABLE void setPrinter(QString prnName);
     Q_INVOKABLE QString getPayment();
     Q_INVOKABLE QString getDominoServerUrl();
+    Q_INVOKABLE QString getHostTelnet();
+    Q_INVOKABLE int  getPortTelnet();
+    Q_INVOKABLE void setHostTelnet(QString host);
+    Q_INVOKABLE void setPortTelnet(int port);
     Q_INVOKABLE int getDominoStore();
     Q_INVOKABLE QString getUrlService();
     Q_INVOKABLE QString getTransferProtocol();
@@ -103,6 +107,7 @@ public:
     Q_INVOKABLE void wifiStatus(const QString& interface = QString("wlan0"));
     Q_INVOKABLE void testPing(const QString& host);
     Q_INVOKABLE void testTelnet(const QString& host, int port);
+    Q_INVOKABLE void telnetDominoServer();
     Q_INVOKABLE void restartDock();
     Q_INVOKABLE void restartPi();
     Q_INVOKABLE void haltPi();
@@ -215,6 +220,9 @@ signals:
     void scanDockDone(const QStringList& listDock);
     void dockConnectionChange(bool connected);
     void pingDone(const QString& data);
+    void loadingDone();
+    void telnetDone(const QString& data);
+    void telnetResult(bool result);
     void wifiStatusDone(const QString& data);
 
     void showMessage(const QString& msg);
@@ -303,6 +311,7 @@ private:
     void doScanDockAutosetting();
     void doPing(const QString& host);
     void doTelnet(const QString& host, int port);
+    void doTelnetDomino(const QString& host, int port);
     void doWifiStatus(const QString& interface);
     void updateWSServerIp();
     void initialWebSocket(bool forceStop=false);

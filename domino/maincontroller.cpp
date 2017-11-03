@@ -1503,15 +1503,43 @@ void MainController::doPing(const QString& host)
 }
 
 void MainController::doTelnet(const QString &host, int port) {
+    qDebug()<<"start telnet";
     QProcess ps;
     QByteArray ba;
+    emit loadingDone();
     ps.start("telnet " + host + " " + QString::number(port));
     if (ps.waitForStarted(-1)) {
         while(ps.waitForReadyRead(-1)) {
-            ba += ps.readAllStandardOutput();
+            ba = ps.readAllStandardOutput();
+            qDebug() << "output telnet succ: " + QString(ba);
+            emit telnetDone(QString(ba));
         }
+    } else {
+        qDebug() << "output telnet err: " + QString(ba);
+        emit telnetDone(QString(ba));
     }
-    qDebug() << "output telnet: " + QString(ba);
+}
+
+void MainController::doTelnetDomino(const QString &host, int port) {
+    qDebug()<<"start telnet";
+    QProcess ps;
+    QByteArray ba;
+    emit loadingDone();
+    ps.start("telnet " + host + " " + QString::number(port));
+    if (ps.waitForStarted(-1)) {
+        while(ps.waitForReadyRead(-1)) {
+            ba = ps.readAllStandardOutput();
+            qDebug() << "DOMINO.output telnet succ: " + QString(ba);
+            if(QString(ba).contains("Connected")) {
+                emit telnetResult(true);
+                ps.close();
+            }
+
+        }
+    } else {
+        qDebug() << "DOMINO.output telnet err: " + QString(ba);
+        emit telnetResult(false);
+    }
 }
 
 void MainController::doWifiStatus(const QString &interface)
@@ -1800,6 +1828,14 @@ QString MainController::getDominoServerUrl() {
     return setting->dominoServerUrl;
 }
 
+int MainController::getPortTelnet() {
+    return setting->portTelnet;
+}
+
+QString MainController::getHostTelnet() {
+    return setting->hostTelnet;
+}
+
 QString MainController::getUrlService()
 {
     QStringList urls = setting->paymentName.split(".");
@@ -1855,6 +1891,14 @@ void MainController::setDominoServerUrl(QString url) {
 
 void MainController::setDominoStore(int store) {
     setting->setDominoStore(store);
+}
+
+void MainController::setHostTelnet(QString host) {
+    setting->setHostTelnet(host);
+}
+
+void MainController::setPortTelnet(int port) {
+    setting->setPortTelnet(port);
 }
 
 void MainController::setPaymentMethod(int paymentMethod)
@@ -2051,6 +2095,13 @@ void MainController::testPing(const QString& host)
 
 void MainController::testTelnet(const QString &host, int port) {
     QFuture<void> future = QtConcurrent::run(this, &MainController::doTelnet, host, port);
+}
+
+void MainController::telnetDominoServer() {
+    QString host = setting->hostTelnet;
+    int port = setting->portTelnet;
+    qDebug() << "telnetDominoServer";
+    QFuture<void> future = QtConcurrent::run(this, &MainController::doTelnetDomino, host, port);
 }
 
 void MainController::restartDock()

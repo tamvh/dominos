@@ -18,7 +18,7 @@ ApplicationWindow {
     visibility: mainController.isDebugmode() ? "Maximized" : Window.FullScreen
     flags: mainController.isDebugmode() ? Qt.Window : Qt.FramelessWindowHint | Qt.Window
     visible: true
-
+    property int settingFlags1: 0
     property string txtThanhTien: qsTr("")
     property string txtGiagoc: qsTr("")
     property int iDiscount: 0
@@ -87,6 +87,8 @@ ApplicationWindow {
     property bool window_enable: true
     property int window_opacity: 1.0
     property int window_zindex: -1
+    property bool telnet_result: false
+    property int count_telnet: 0
 
 
     Material.primary: "#006493"
@@ -537,111 +539,7 @@ ApplicationWindow {
                 }
 
                 RowLayout {
-                    id: searchBox
                     anchors.fill: parent
-                    visible: isShowSearch
-                    width: parent.width
-
-                    Rectangle {
-                        width: 3
-                    }
-
-                    ToolButton {
-                        id: tbimg1
-                        contentItem: Image {
-                            fillMode: Image.Pad
-                            horizontalAlignment: Image.AlignHCenter
-                            verticalAlignment: Image.AlignVCenter
-                            source: "qrc:/icons/icons/logo.png"
-                        }
-                    }
-
-                    Rectangle {
-                        anchors.left: tbimg1.right
-                        width: parent.width - (tbimg1.width+tbimg2.width)*2
-                        height: parent.height - 2
-                        radius: parent.height/2
-                        border.color: "#333"
-                        border.width: 1
-
-                        RowLayout {
-                            width: parent.width
-                            ToolButton {
-                                id: tbimg2
-                                contentItem: Image {
-                                    fillMode: Image.Stretch
-                                    horizontalAlignment: Image.AlignHCenter
-                                    verticalAlignment: Image.AlignVCenter
-                                    source: "qrc:/icons/icons/search_back.png"
-                                }
-                                onClicked: {
-                                    idSearchbox.text = ""
-                                    isShowSearch = !isShowSearch
-                                    mainController.uiFoodupdateStatus( isShowSearch ? -4 : 4)
-                                }
-                            }
-
-                            Image {
-                                anchors { top: parent.top; bottom: parent.bottom; right: parent.right; margins: 1 }
-                                id: clearText
-                                fillMode: Image.Pad
-                                smooth: true
-                                visible: (idSearchbox.text != "")
-                                source: "qrc:/icons/icons/delete.png"
-                                height: parent.height //- platformStyle.paddingMedium * 2
-                                width: parent.height //- platformStyle.paddingMedium * 2
-
-                                MouseArea {
-                                    id: clear
-                                    anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
-                                    height: idSearchbox.height; width: idSearchbox.height
-                                    onClicked: {
-                                        idSearchbox.text = ""
-                                        idSearchbox.forceActiveFocus()
-                                    }
-                                }
-                            }
-
-                            Timer {
-                                id: idTimer
-                                interval: 90000 //90000 = 90 seconds to clear search-filter
-                                running: false
-                                repeat: false
-                                onTriggered: searchFilter = ""
-                            }
-
-                            TextField {
-                                id: idSearchbox
-                                anchors.left: tbimg2.right
-                                anchors.right: clearText.left
-                                placeholderText: mainController.getConfigSearchadvance() ? "Tên ... hoặc các ký tự đầu, ví dụ bb = Bún Bò" : "Gõ tên ..."
-                                text: ""
-                                color: "black"
-                                focus: true
-
-                                onVisibleChanged: {
-                                    if (visible)
-                                        placeholderText = mainController.getConfigSearchadvance() ? "Tên ... hoặc các ký tự đầu, ví dụ bb = Bún Bò" : "Gõ tên ..."
-                                }
-
-                                onDisplayTextChanged: {
-                                    var srchtxt = mainController.viet2latin(text);
-                                    if (searchFilter !== srchtxt)
-                                    {
-                                        searchFilter = srchtxt;
-                                        mainController.searchFood(searchFilter);
-
-                                        idTimer.restart()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                RowLayout {
-                    anchors.fill: parent
-                    visible: !isShowSearch
 
                     ToolButton {
                         id: toolButtonBack
@@ -663,7 +561,6 @@ ApplicationWindow {
 
                     ToolButton {
                         id: vposButton
-                        property int settingFlags1: 0
                         contentItem: Image {
                             fillMode: Image.Pad
                             horizontalAlignment: Image.AlignHCenter
@@ -671,16 +568,6 @@ ApplicationWindow {
                             source: "qrc:/icons/icons/logo.png"
                         }
                         onClicked: {
-                            if (toolBtnSetting.visible === true) {
-                                toolBtnSetting.visible = mainController.isDebugmode();
-                            }
-                            else {
-                                if (settingFlags1 > 0) {
-                                    toolBtnSetting.visible = true
-                                }
-
-                                settingFlags1 = 0
-                            }
                             idAboutPage.open();
                         }
                     }
@@ -694,13 +581,29 @@ ApplicationWindow {
                     RowLayout {
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
+
                         Image {
                             id: imgLogoDominos
                             source: "qrc:/icons/images/app/dominos_logo_vertical.svg"
                             height: 45
                             width: 150
-                        }
 
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    if (toolBtnSetting.visible === true) {
+                                        toolBtnSetting.visible = mainController.isDebugmode();
+                                    }
+                                    else {
+                                        if (settingFlags1 === 5) {
+                                            console.log('open setting');
+                                            toolBtnSetting.visible = true
+                                        }
+                                    }
+                                    settingFlags1 = 0
+                                }
+                            }
+                        }
                     }
 
 
@@ -738,7 +641,7 @@ ApplicationWindow {
                             }
 
                             onClicked: {
-                                vposButton.settingFlags1++
+                                settingFlags1++
                             }
                         }
 
@@ -800,10 +703,8 @@ ApplicationWindow {
             onVisibleChanged: {
                 if (visible) {
                     toolButtonBack.visible = false
-                    userConfigButtonVisible = mainController.getUserEnableConfig()
                 } else {
                     toolButtonBack.visible = true
-                    userConfigButtonVisible = false
                 }
             }
         }
@@ -2906,6 +2807,14 @@ ApplicationWindow {
 
     AboutPage {
         id: idAboutPage
+    }
+
+    AlarmPage {
+        id: idAlarmPage
+    }
+
+    LoadingPage {
+        id: idLoadingPage
     }
 
     Connections {

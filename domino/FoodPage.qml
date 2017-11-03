@@ -364,7 +364,6 @@ Rectangle {
                 Connections {
                     target: mainController
                     onClosePopupSelectPizza: {
-                        console.log("receive close popup select pizza");
                         rectItemFood.z = -1;
                     }
                 }

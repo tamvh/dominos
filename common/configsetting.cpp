@@ -84,10 +84,14 @@ void ConfigSetting::Load()
     foodItemFontsize = sets.value(QString("option/fooditemfontsize"), 14).toInt();
     billItemFontsize = sets.value(QString("option/billitemfontsize"), 14).toInt();
 
-    couponpercent  = sets.value(QString("option/couponpercent"),   0.0).toFloat();
+    couponpercent   = sets.value(QString("option/couponpercent"),   0.0).toFloat();
     idcoupon        = sets.value(QString("option/idcoupon"),     QString("ZALO40")).toString();
     dominoServerUrl = sets.value(QString("option/dominoserverurl"),     QString("http://113.161.67.179:59101")).toString();
     dominoStore     = sets.value(QString("option/dominostore"),     55555).toInt();
+
+    hostTelnet      = sets.value(QString("option/hosttelnet"),     QString("113.161.67.179")).toString();
+    portTelnet      = sets.value(QString("option/porttelnet"),     59101).toInt();
+
     if( m_autoSave && !sets.contains("option/appname") )
     {
         Save();
@@ -217,6 +221,10 @@ void ConfigSetting::Save()
     sets.setValue(QString("option/dominoserverurl"), dominoServerUrl);
     sets.sync();
     sets.setValue(QString("option/dominostore"), dominoStore);
+    sets.sync();
+    sets.setValue(QString("option/hosttelnet"), hostTelnet);
+    sets.sync();
+    sets.setValue(QString("option/porttelnet"), portTelnet);
     sets.sync();
 }
 
@@ -566,3 +574,18 @@ void ConfigSetting::setDominoStore(int store) {
     sets.setValue(QString("option/dominostore"), dominoStore);
     sets.sync();
 }
+
+void ConfigSetting::setHostTelnet(const QString &host) {
+    hostTelnet = host;
+    QSettings sets("vng", "vpos");
+    sets.setValue(QString("option/hosttelnet"), hostTelnet);
+    sets.sync();
+}
+
+void ConfigSetting::setPortTelnet(int port) {
+    portTelnet = port;
+    QSettings sets("vng", "vpos");
+    sets.setValue(QString("option/porttelnet"), portTelnet);
+    sets.sync();
+}
+

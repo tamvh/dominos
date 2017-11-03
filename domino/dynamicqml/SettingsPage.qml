@@ -42,6 +42,11 @@ Component {
                 pingResult.updateResult(data)
             }
 
+            onTelnetDone: {
+                progressScan.updateVisible(false)
+                telnetResult.updateTelnetResult(data)
+            }
+
             onWifiStatusDone: {
                 progressScan.updateVisible(false)
                 wifiStatus.updateResult(data)
@@ -265,7 +270,7 @@ Component {
                         TextEdit {
                             id: pingResult
                             width: parent.width
-                            height: 200
+                            height: 100
                             text: "Ping result"
                             focus: true
 
@@ -294,11 +299,11 @@ Component {
                         TextEdit {
                             id: telnetResult
                             width: parent.width
-                            height: 200
+                            height: 100
                             text: "telnet result"
                             focus: true
 
-                            function updateResult(data) {
+                            function updateTelnetResult(data) {
                                 text = data
                             }
                         }
@@ -315,8 +320,6 @@ Component {
                                 Layout.fillWidth: true
                             }
                         }
-
-
 
                         Button {
                             text:"Telnet"

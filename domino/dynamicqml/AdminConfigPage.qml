@@ -34,6 +34,39 @@ Pane {
                             Label {
                                 width: admConfColwidth1
                                 anchors.verticalCenter: parent.verticalCenter
+                                text: "-   Telnet:"
+                            }
+                            RowLayout {
+                                width: admConfColwidth2 * 5
+                                TextField {
+                                    id: idHost
+                                    placeholderText: "113.161.67.179"
+                                    width: admConfColwidth2 * 4
+                                    Layout.fillWidth: true
+                                    text: mainController.getHostTelnet()
+                                    onEditingFinished: {
+                                        mainController.setHostTelnet(text)
+                                    }
+                                }
+                                TextField {
+                                    id: idPort
+                                    placeholderText: "59101"
+                                    width: admConfColwidth2
+                                    Layout.fillWidth: true
+                                    text: mainController.getPortTelnet()
+                                    onEditingFinished: {
+                                        mainController.setPortTelnet(text)
+                                    }
+                                }
+                            }
+
+                        }
+                        Row {
+                            Layout.fillWidth: true
+                            spacing: 10
+                            Label {
+                                width: admConfColwidth1
+                                anchors.verticalCenter: parent.verticalCenter
                                 text: "-   Máy chủ Domino:"
                             }
                             TextField {
@@ -48,6 +81,7 @@ Pane {
                                 }
                             }
                         }
+
                         Row {
                             Layout.fillWidth: true
                             spacing: 10

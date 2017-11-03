@@ -607,6 +607,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/LoginPage.qml \
 		../domino/KitchenPage.qml \
 		../domino/KitchenDishReserve.qml \
+		../domino/AlarmPage.qml \
 		../domino/VPOSTabBar.qml \
 		../domino/KitchenDishPrepare.qml \
 		../domino/VPOSTabButton.qml \
@@ -618,6 +619,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/PaymentView.qml \
 		../domino/main.qml \
 		../domino/ImageHalfRadiusRect.qml \
+		../domino/LoadingPage.qml \
 		../domino/ProfilePage.qml \
 		../domino/FoodPage.qml \
 		../domino/VPOSWindow.qml \
@@ -649,6 +651,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/images/app/dominos_logo.png \
 		../domino/images/app/dominos_logo_vertical.svg \
 		../domino/images/app/icon-cheese-side-thick.svg \
+		../domino/images/app/icon_maintenance.svg \
 		../domino/images/app/vpos_logo_black.png \
 		../domino/images/app/size_12.svg \
 		../domino/images/app/size_7.svg \

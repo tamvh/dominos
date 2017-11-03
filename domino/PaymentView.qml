@@ -6,6 +6,7 @@ import QtQuick.Controls.Material 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
+import QtQml 2.2
 
 
 
@@ -169,14 +170,7 @@ Rectangle {
                 Material.accent: "#0695D6"
 
                 onClicked: {
-                    window.txtThanhTien = textThanhtienValue.text
-                    window.global_foodItems = choosenItemListView.generateBillDetail()
-                    window.g_autoThanhtoan = autoThanhtoan.checked;
-                    window.window_enable = false
-                    window.window_opacity = 0.4
-                    window.window_zindex = 1
-                    rectMainPage.z = 1;
-                    idProfilePage.open()
+                    mainController.telnetDominoServer()
                 }
             }
 
@@ -186,8 +180,51 @@ Rectangle {
                 color: "#F5F5F5"
             }
 
+            Timer {
+                id: timerLoading
+                interval: 1000;
+                running: false;
+                repeat: true;
+                onTriggered: {
+                    console.log("start count telnet");
+                    count_telnet += 1;
+                    if(count_telnet <= 5) {
+                        if(telnet_result) {
+                            idLoadingPage.close();
+                            window.txtThanhTien = textThanhtienValue.text
+                            window.global_foodItems = choosenItemListView.generateBillDetail()
+                            window.g_autoThanhtoan = autoThanhtoan.checked;
+                            window.window_enable = false
+                            window.window_opacity = 0.4
+                            window.window_zindex = 1
+                            rectMainPage.z = 1;
+                            count_telnet = 0;
+                            telnet_result = false;
+                            timerLoading.stop();
+                            idProfilePage.open()
+                        }
+                    } else {
+                        count_telnet = 0;
+                        timerLoading.stop();
+                        idLoadingPage.close();
+                        idAlarmPage.open();
+                    }
+                }
+            }
+
             Connections {
                 target: mainController
+                onLoadingDone: {
+                    console.log("start loading");
+                    timerLoading.start()
+                    idLoadingPage.open();
+                }
+
+                onTelnetResult: {
+                    telnet_result = result;
+                    console.log("reuslt telnet: " + telnet_result);
+                }
+
                 onClosePopup: {
                     console.log("receive close thanh toan");
                     rectMainPage.z = -1;

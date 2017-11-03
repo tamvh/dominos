@@ -38,6 +38,8 @@
         <file>ImageHalfRadiusRect.qml</file>
         <file>PaperRipple.qml</file>
         <file>FlatButton.qml</file>
+        <file>AlarmPage.qml</file>
+        <file>LoadingPage.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>
@@ -118,6 +120,7 @@
         <file>images/app/icon-thickness-thick.svg</file>
         <file>images/app/icon-thickness-med.svg</file>
         <file>images/app/icon-thickness-thin.svg</file>
+        <file>images/app/icon_maintenance.svg</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>fonts/UnisectVnu.ttf</file>
