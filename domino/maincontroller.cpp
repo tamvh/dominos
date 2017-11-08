@@ -463,9 +463,7 @@ QString MainController::pay(const QString &customer_name, const QString &custome
     m_customer_name = customer_name;
     m_foods = foods;
     qDebug() << "m_food: " << m_foods;
-    if ( (payMethod == PAY_ZALO) ||
-         (merchantCode.compare("mqshops") == 0) ||
-         (merchantCode.compare("vpos") == 0) )
+    if ( payMethod == PAY_ZALO )
     {
         BillInfo bi;
         bi.Create(amount, foods);
