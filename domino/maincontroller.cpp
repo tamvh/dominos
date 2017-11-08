@@ -59,8 +59,6 @@ MainController::MainController(QObject *parent)
         qDebug() << "Not found dock server config, do auto scan Dock ...";
         doScanDockAutosetting();
     }
-
-//    machineName = QString("MAY-%1").arg(getRechargeNum()+1);
     machineName = "DOMINOS PIZZA";
 
     httpfood = NULL;
@@ -940,12 +938,10 @@ void MainController::eventPlaceOrder(const QJsonObject &result) {
         // printbill
         qDebug() << "start print bill";
         printBill(g_invceCode, g_printdata);
-//        emit notifySucc(0, g_invceCode, g_invceDate, g_barcode, g_balance); // send notify error code = 0
     } else {
         //thong bao loi - gui request len server de hoan tien
         g_storeOrderID = "#";
         printBill(g_invceCode, g_printdata);
-//        emit notifySucc(1, g_invceCode, g_invceDate, g_barcode, g_balance);
     }
 }
 
@@ -2442,8 +2438,6 @@ QByteArray MainController::createPrintFoodcourt(const QString& fooddata,
         pdf.codeFeedline();
     }
     QString vposInvoice = jso["receiptNum"].toString();
-//    pdf.codeLine(QString("May:\t%1").arg(jso["machine"].toString()), pdf.Justify_left, TAB1);
-//    pdf.codeLine(QString("Hoa don VPOS:\t%1").arg(jso["receiptNum"].toString()), pdf.Justify_left, TAB2);
     pdf.codeLine(QString("Hoa don:\t%1").arg(g_storeOrderID), pdf.Justify_left, TAB1);
     pdf.codeLine(QString("Ten KH:\t%1").arg(m_customer_name), pdf.Justify_left, TAB1);
     pdf.codeLine(QString("Ngay:\t%1").arg(jso["datetime"].toString()), pdf.Justify_left, TAB1);
