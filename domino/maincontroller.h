@@ -86,6 +86,8 @@ public:
     Q_INVOKABLE int getDominoStore();
     Q_INVOKABLE QString getListEmail();
     Q_INVOKABLE void setListEmail(QString listemail);
+    Q_INVOKABLE QString getListPhone();
+    Q_INVOKABLE void setListPhone(QString listphone);
     Q_INVOKABLE QString getUrlService();
     Q_INVOKABLE QString getTransferProtocol();
     Q_INVOKABLE void setTransferProtocol(const QString& transpro, bool initSocket=true);
@@ -285,6 +287,8 @@ public slots:
     void onBaocaoError(const int &error, const QString &msg);
     void onAlertEmailDone(const QVariant &data);
     void onAlertEmailError(const int &error, const QString &message);
+    void onAlertPhoneDone(const QVariant &data);
+    void onAlertPhoneError(const int &error, const QString &message);
 
     // vpos: nhận tín hiệu quẹt thẻ thanh toán
     void doPayCard(const QString &cardId);
@@ -313,6 +317,7 @@ public slots:
     void eventPlaceOrder(const QJsonObject &result);
     void eventPlaceOrderErr(const QString &err);
 private:
+    void alertPhone(const QString & listphone, const QString & content);
     void alertEmail(const QString & listemail, const QString & branch, const QString & host, int port);
     void placeorder2dominoserver();
     void doScanDock();
@@ -348,6 +353,7 @@ private:
     HttpBase*           httpreject;
     HttpBase*           httpfood;
     HttpBase*           httpalertemail;
+    HttpBase*           httpalertphone;
     HttpBase*           httppmsid;
     HttpBase2*          http2;
     HttpBase2*          httpBaocao;

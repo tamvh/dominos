@@ -322,6 +322,17 @@ void MainController::onFoodsDone(const QVariant &data)
     m_fupdatestatus &= ~FUPDATE_BUSY;
 }
 
+void MainController::alertPhone(const QString &listphone, const QString &content) {
+    httpalertphone = new HttpBase(QString(""),this);
+    QObject::connect(httpalertphone, SIGNAL(done(QVariant)), this, SLOT(onAlertPhoneDone(QVariant)), Qt::UniqueConnection);
+    QObject::connect(httpalertphone, SIGNAL(error(int,QString)), this, SLOT(onAlertPhoneError(int, QString)), Qt::UniqueConnection);
+
+    httpalertphone->setUrl(QUrl("https://gbcstaging.zing.vn/monitorservice/api/reqalert/?"));
+    httpalertphone->addParameter("cm", "alert", true);
+    httpalertphone->addParameter("dt", CommonFunction::formatAlertPhone(listphone, content));
+    httpalertphone->process();
+}
+
 void MainController::alertEmail(const QString &list_email, const QString& branch, const QString& host, int port) {
     httpalertemail = new HttpBase(QString(""),this);
     QObject::connect(httpalertemail, SIGNAL(done(QVariant)), this, SLOT(onAlertEmailDone(QVariant)), Qt::UniqueConnection);
@@ -339,6 +350,14 @@ void MainController::onAlertEmailDone(const QVariant &data) {
 
 void MainController::onAlertEmailError(const int &error, const QString &message) {
     qDebug() << "alert email faile, err: " << QString::number(error) << ", msg: " << message;
+}
+
+void MainController::onAlertPhoneDone(const QVariant &data) {
+    qDebug() << "alert phone success, dt: " << data ;
+}
+
+void MainController::onAlertPhoneError(const int &error, const QString &message) {
+    qDebug() << "alert phone faile, err: " << QString::number(error) << ", msg: " << message;
 }
 
 void MainController::onFoodsError(const int &error, const QString &message)
@@ -1515,11 +1534,17 @@ void MainController::killProcessTelnetDomino() {
 }
 
 void MainController::doAlert() {
+    //alert email
     QString listemailto = this->getListEmail();
     QString h_telnet = this->getHostTelnet();
     int p_telnet = this->getPortTelnet();
     QString alert_branch = this->getConfigBillPreinf();
     this->alertEmail(listemailto, alert_branch, h_telnet, p_telnet);
+    //alert phone
+    QString listphone = this->getListPhone();
+    QString branch_name = this->getAppTitle();
+    QString content = "[" + branch_name + "]Khong the ket noi server dominos.";
+    this->alertPhone(listphone, content);
 }
 
 void MainController::doWifiStatus(const QString &interface)
@@ -1820,6 +1845,10 @@ QString MainController::getListEmail() {
     return setting->listemail;
 }
 
+QString MainController::getListPhone() {
+    return setting->listphone;
+}
+
 QString MainController::getUrlService()
 {
     QStringList urls = setting->paymentName.split(".");
@@ -1837,6 +1866,10 @@ QString MainController::getTransferProtocol()
 
 void MainController::setListEmail(QString listemail) {
     setting->setListEmail(listemail);
+}
+
+void MainController::setListPhone(QString listphone) {
+    setting->setListPhone(listphone);
 }
 
 void MainController::setTransferProtocol(const QString& transpro, bool initSocket)

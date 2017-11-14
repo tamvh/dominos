@@ -126,7 +126,20 @@ QString CommonFunction::formatRequestFoods(const QString &appUser)
     return QString::fromUtf8(jsonDoc.toJson().data());
 }
 
-
+QString CommonFunction::formatAlertPhone(const QString &list_phone, const QString &content) {
+    QJsonObject jsonObj;
+    QList<QString> q_listphone = list_phone.split(",");
+    QJsonArray arr_listphone;
+    int n = q_listphone.size();
+    for(int i = 0; i<n; i++) {
+        arr_listphone.append(q_listphone.at(i));
+    }
+    jsonObj["type"] = "sms";
+    jsonObj["listphone"] = arr_listphone;
+    jsonObj["content"] = content;
+    QJsonDocument jsonDoc(jsonObj);
+    return QString::fromUtf8(jsonDoc.toJson().data());
+}
 
 QString CommonFunction::formatAlertEmail(
         const QString &list_email,

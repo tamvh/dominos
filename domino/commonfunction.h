@@ -20,6 +20,7 @@ public:
     static QString formatInvoiceCancel(const QString& invoiceCode, const QString &appUser);
     static QString formatRequestFoods(const QString& appUser);
     static QString formatAlertEmail(const QString &list_email, const QString& branch, const QString & host, int port);
+    static QString formatAlertPhone(const QString &list_phone, const QString& content);
     static QString formatHtml(const QString& branch, const QString & host, int port);
 
     static QString formatRequestCreateInvoice(const QString &merchantCode,

@@ -48,6 +48,7 @@ public:
     void setHostTelnet(const QString& host);
     void setPortTelnet(int port);
     void setListEmail(const QString &l_email);
+    void setListPhone(const QString &l_phone);
 
     QString transProtocol;  // http / https
     QString appName;        // "canteenvng", "vpos", ...
@@ -55,6 +56,7 @@ public:
     QString printerName;    // "xpriner58"
     QString dominoServerUrl;
     QString listemail;
+    QString listphone;
     QString hostTelnet;
     int     dominoStore;
     int     portTelnet;

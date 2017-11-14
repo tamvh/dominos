@@ -34,6 +34,28 @@ Pane {
                             Label {
                                 width: admConfColwidth1
                                 anchors.verticalCenter: parent.verticalCenter
+                                text: "-   List Phone:"
+                            }
+                            RowLayout {
+                                width: admConfColwidth2 * 5
+                                TextField {
+                                    id: idlistPhone
+                                    placeholderText: "0935954858"
+                                    width: admConfColwidth2 * 5
+                                    Layout.fillWidth: true
+                                    text: mainController.getListPhone()
+                                    onEditingFinished: {
+                                        mainController.setListPhone(text)
+                                    }
+                                }
+                            }
+                        }
+                        Row {
+                            Layout.fillWidth: true
+                            spacing: 10
+                            Label {
+                                width: admConfColwidth1
+                                anchors.verticalCenter: parent.verticalCenter
                                 text: "-   List Email:"
                             }
                             RowLayout {
@@ -301,13 +323,6 @@ Pane {
                                 mainController.setAppTitle(idAppTitle.text)
                             }
                         }
-
-//                        Button {
-//                            text: "Food court . . ."
-//                            onClicked: {
-//                                stackView.push(accountPage)
-//                            }
-//                        }
                     }
 
                     Row {

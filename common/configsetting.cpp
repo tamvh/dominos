@@ -92,6 +92,7 @@ void ConfigSetting::Load()
     hostTelnet      = sets.value(QString("option/hosttelnet"),      QString("113.161.67.179")).toString();
     portTelnet      = sets.value(QString("option/porttelnet"),      59101).toInt();
     listemail       = sets.value(QString("option/listemail"),       QString("info@vng.com.vn")).toString();
+    listphone       = sets.value(QString("option/listphone"),       QString("0935954858")).toString();
 
     if( m_autoSave && !sets.contains("option/appname") )
     {
@@ -228,6 +229,8 @@ void ConfigSetting::Save()
     sets.setValue(QString("option/porttelnet"), portTelnet);
     sets.sync();
     sets.setValue(QString("option/listemail"), listemail);
+    sets.sync();
+    sets.setValue(QString("option/listphone"), listphone);
     sets.sync();
 }
 
@@ -596,6 +599,13 @@ void ConfigSetting::setListEmail(const QString &l_email) {
     listemail = l_email;
     QSettings sets("vng", "vpos");
     sets.setValue(QString("option/listemail"), listemail);
+    sets.sync();
+}
+
+void ConfigSetting::setListPhone(const QString &l_phone) {
+    listphone = l_phone;
+    QSettings sets("vng", "vpos");
+    sets.setValue(QString("option/listphone"), listphone);
     sets.sync();
 }
 
