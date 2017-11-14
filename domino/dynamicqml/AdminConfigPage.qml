@@ -34,6 +34,29 @@ Pane {
                             Label {
                                 width: admConfColwidth1
                                 anchors.verticalCenter: parent.verticalCenter
+                                text: "-   List Email:"
+                            }
+                            RowLayout {
+                                width: admConfColwidth2 * 5
+                                TextField {
+                                    id: idlistEmail
+                                    placeholderText: "tamvh@vng.com.vn, diepdt@vng.com.vn"
+                                    width: admConfColwidth2 * 5
+                                    Layout.fillWidth: true
+                                    text: mainController.getListEmail()
+                                    onEditingFinished: {
+                                        mainController.setListEmail(text)
+                                    }
+                                }
+                            }
+
+                        }
+                        Row {
+                            Layout.fillWidth: true
+                            spacing: 10
+                            Label {
+                                width: admConfColwidth1
+                                anchors.verticalCenter: parent.verticalCenter
                                 text: "-   Telnet:"
                             }
                             RowLayout {

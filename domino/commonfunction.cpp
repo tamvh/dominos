@@ -126,6 +126,31 @@ QString CommonFunction::formatRequestFoods(const QString &appUser)
     return QString::fromUtf8(jsonDoc.toJson().data());
 }
 
+
+
+QString CommonFunction::formatAlertEmail(
+        const QString &list_email,
+        const QString& branch,
+        const QString & host,
+        int port) {
+    QJsonObject jsonObj;
+    QList<QString> q_listto = list_email.split(",");
+    QJsonArray arr_listcc;
+    QJsonArray arr_listto;
+    int n = q_listto.size();
+    for(int i = 0; i<n; i++) {
+        arr_listto.append(q_listto.at(i));
+    }
+    jsonObj["type"] = "email";
+    jsonObj["subject"] = "[DOMINOS PIZZA] THÔNG BÁO";
+    jsonObj["listcc"] = arr_listcc;
+    jsonObj["listto"] = arr_listto;
+    jsonObj["contentplaintext"] = "";
+    jsonObj["contenthtml"] = CommonFunction::formatHtml(branch, host, port);
+    QJsonDocument jsonDoc(jsonObj);
+    return QString::fromUtf8(jsonDoc.toJson().data());
+}
+
 QString CommonFunction::formatRequestGetStaffInfo(const QString& appUser,const QString& cardCode)
 {
     QJsonObject jsonObj;
@@ -135,6 +160,22 @@ QString CommonFunction::formatRequestGetStaffInfo(const QString& appUser,const Q
     QJsonDocument jsonDoc(jsonObj);
 
     return QString::fromUtf8(jsonDoc.toJson().data());
+}
+
+QString CommonFunction::formatHtml(const QString &branch, const QString & host, int port) {
+    QString content;
+    content = "<!DOCTYPE html>";
+    content += "<html>";
+    content += "<body>";
+    content += "    <p>Hi all,</p><br>";
+    content += "    <p>Quá trình telnet tới server Dominos bị lỗi, vui lòng kiểm tra lại.</p>";
+    content += "    <p>Có thể kiểm tra bằng command: <i>telnet " +host + " " + QString::number(port) + "</i></p>";
+    content += "    <p>Chi nhánh dominos: " + branch + "</p><br>";
+    content += "    <p>Thanks all</p>";
+    content += "    <p>GBC Team</p>";
+    content += "</body>";
+    content += "</html>";
+    return content;
 }
 
 int CommonFunction::parseErrcode(const QString &respone, QString &msg, QString *merchantId)

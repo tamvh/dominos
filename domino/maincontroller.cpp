@@ -164,56 +164,7 @@ void MainController::appQuit()
 
 QString MainController::getAccount()
 {
-    QList<QPair<QString, QString> > acclist;
-
-//    acclist.append(QPair<QString, QString>("vpos",          "Máy Bán Hàng"));
-//    acclist.append(QPair<QString, QString>("canteenvng",    "Căn Tin VNG"));
-//    acclist.append(QPair<QString, QString>("maybanhangtudong", "Máy Bán Hàng Tự Động"));
-
-    acclist.append(QPair<QString, QString>("ffbanhmique",   "Bánh Mì Que"));
-    acclist.append(QPair<QString, QString>("ffcobonla",     "Cỏ Bốn Lá"));
-    acclist.append(QPair<QString, QString>("ffcomtamcali",  "Cơm Tấm Cali"));
-    acclist.append(QPair<QString, QString>("ffcomngon",     "Cơm Ngon"));
-    acclist.append(QPair<QString, QString>("ffcomnieu",     "Cơm Niêu"));
-    acclist.append(QPair<QString, QString>("ffcool",        "COoooL"));
-    acclist.append(QPair<QString, QString>("ffdorayaki",    "Dorayaki"));
-    acclist.append(QPair<QString, QString>("ffphongoon",    "Phở Ngon"));
-    acclist.append(QPair<QString, QString>("fftapicocup",   "Tapico Cup"));
-    acclist.append(QPair<QString, QString>("fftokyobowl",   "Tokyo Bowl"));
-    acclist.append(QPair<QString, QString>("ffvietthai",    "Việt Thái"));
-
-    acclist.append(QPair<QString, QString>("ffhvbunsaigon", "Bún Sài Gòn"));
-    acclist.append(QPair<QString, QString>("ffhvcomngon",   "Cơm Ngon"));
-    acclist.append(QPair<QString, QString>("ffhvhighland",  "Hightland"));
-    acclist.append(QPair<QString, QString>("ffhvlaucongchua","Lẩu Công Chúa"));
-    acclist.append(QPair<QString, QString>("ffhvreddot",    "Reddot"));
-    acclist.append(QPair<QString, QString>("ffhvreddot02",  "Reddot 02"));
-    acclist.append(QPair<QString, QString>("ffhvtapio",     "Tapico"));
-    acclist.append(QPair<QString, QString>("ffhvvietsin",   "Vietsin"));
-    acclist.append(QPair<QString, QString>("ffhvinoodi",    "Vinoodi"));
-    acclist.append(QPair<QString, QString>("ffhvsavoure",   "Savoure"));
-    acclist.append(QPair<QString, QString>("ffhvnhatthienyen","Nhatthienyen"));
-    acclist.append(QPair<QString, QString>("ffhvcomtamcali","Cơm Tấm Cali"));
-    acclist.append(QPair<QString, QString>("ffhvbanhmyque", "Bánh Mì Que"));
-    acclist.append(QPair<QString, QString>("ffhvphongon",   "Phở Ngon"));
-    acclist.append(QPair<QString, QString>("ffhvdorayaki",  "Dorayaki"));
-    acclist.append(QPair<QString, QString>("ffhvhotto01",   "Hotto"));
-    acclist.append(QPair<QString, QString>("ffhvmochi",     "Mochi"));
-    acclist.append(QPair<QString, QString>("ffhvvietthai",  "Việt Thái"));
-    acclist.append(QPair<QString, QString>("ffhvfutayaki",  "Futayaki"));
-    acclist.append(QPair<QString, QString>("ffhvbudsicecream","Budsicecream"));
-    acclist.append(QPair<QString, QString>("ffhvpepperlunch","Pepper Lunch"));
-    acclist.append(QPair<QString, QString>("ffhvothuong",   "Vothuong"));
-    acclist.append(QPair<QString, QString>("ffhv99juice",   "99 Juice"));
-    acclist.append(QPair<QString, QString>("ffhvcocosushi", "Coco Sushi"));
-    acclist.append(QPair<QString, QString>("ffhvtokyo",     "Tokyo"));
-    acclist.append(QPair<QString, QString>("ffhvbap",       "Bắp"));
-    acclist.append(QPair<QString, QString>("ffhvyetgol",    "Yeygol"));
-    acclist.append(QPair<QString, QString>("ffhvcool",      "Cool"));
-    acclist.append(QPair<QString, QString>("ffhvmrdee01",   "Mr Dee"));
-    acclist.append(QPair<QString, QString>("fhvlavida",     "Lavida"));
-    acclist.append(QPair<QString, QString>("maybanhangtudong",     "Máy bán hàng"));
-    acclist.append(QPair<QString, QString>("dominos",     "Máy bán hàng"));
+    QList<QPair<QString, QString>> acclist;
 
     sortPairList(acclist);
 
@@ -369,6 +320,25 @@ void MainController::onFoodsDone(const QVariant &data)
     httpfood->deleteLater();
     httpfood = NULL;
     m_fupdatestatus &= ~FUPDATE_BUSY;
+}
+
+void MainController::alertEmail(const QString &list_email, const QString& branch, const QString& host, int port) {
+    httpalertemail = new HttpBase(QString(""),this);
+    QObject::connect(httpalertemail, SIGNAL(done(QVariant)), this, SLOT(onAlertEmailDone(QVariant)), Qt::UniqueConnection);
+    QObject::connect(httpalertemail, SIGNAL(error(int,QString)), this, SLOT(onAlertEmailError(int, QString)), Qt::UniqueConnection);
+
+    httpalertemail->setUrl(QUrl("https://gbcstaging.zing.vn/monitorservice/api/reqalert/?"));
+    httpalertemail->addParameter("cm", "alert", true);
+    httpalertemail->addParameter("dt", CommonFunction::formatAlertEmail(list_email, branch, host, port));
+    httpalertemail->process();
+}
+
+void MainController::onAlertEmailDone(const QVariant &data) {
+    qDebug() << "alert email success, dt: " << data ;
+}
+
+void MainController::onAlertEmailError(const int &error, const QString &message) {
+    qDebug() << "alert email faile, err: " << QString::number(error) << ", msg: " << message;
 }
 
 void MainController::onFoodsError(const int &error, const QString &message)
@@ -1544,6 +1514,14 @@ void MainController::killProcessTelnetDomino() {
     }
 }
 
+void MainController::doAlert() {
+    QString listemailto = this->getListEmail();
+    QString h_telnet = this->getHostTelnet();
+    int p_telnet = this->getPortTelnet();
+    QString alert_branch = this->getConfigBillPreinf();
+    this->alertEmail(listemailto, alert_branch, h_telnet, p_telnet);
+}
+
 void MainController::doWifiStatus(const QString &interface)
 {
 #ifndef Q_OS_IOS
@@ -1838,6 +1816,10 @@ QString MainController::getHostTelnet() {
     return setting->hostTelnet;
 }
 
+QString MainController::getListEmail() {
+    return setting->listemail;
+}
+
 QString MainController::getUrlService()
 {
     QStringList urls = setting->paymentName.split(".");
@@ -1851,6 +1833,10 @@ QString MainController::getUrlService()
 QString MainController::getTransferProtocol()
 {
     return httpTranspro;
+}
+
+void MainController::setListEmail(QString listemail) {
+    setting->setListEmail(listemail);
 }
 
 void MainController::setTransferProtocol(const QString& transpro, bool initSocket)

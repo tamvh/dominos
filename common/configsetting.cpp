@@ -69,7 +69,7 @@ void ConfigSetting::Load()
     searchAdvance   = sets.value(QString("option/searchadvance"),   true).toBool();
     rebootDate      = sets.value(QString("option/rebootdate"),      0).toInt();
     rebootTime      = sets.value(QString("option/reboottime"),      3).toInt();
-    idleTimer       = sets.value(QString("option/sysidletime"),    60000).toInt();
+    idleTimer       = sets.value(QString("option/sysidletime"),     60000).toInt();
 #ifdef QT_DEBUG
     userPwd         = sets.value(QString("option/userpwd"),         QString("")).toString();
 #endif
@@ -85,12 +85,13 @@ void ConfigSetting::Load()
     billItemFontsize = sets.value(QString("option/billitemfontsize"), 14).toInt();
 
     couponpercent   = sets.value(QString("option/couponpercent"),   0.0).toFloat();
-    idcoupon        = sets.value(QString("option/idcoupon"),     QString("ZALO40")).toString();
-    dominoServerUrl = sets.value(QString("option/dominoserverurl"),     QString("http://113.161.67.179:59101")).toString();
+    idcoupon        = sets.value(QString("option/idcoupon"),        QString("ZALO40")).toString();
+    dominoServerUrl = sets.value(QString("option/dominoserverurl"), QString("http://113.161.67.179:59101")).toString();
     dominoStore     = sets.value(QString("option/dominostore"),     55555).toInt();
 
-    hostTelnet      = sets.value(QString("option/hosttelnet"),     QString("113.161.67.179")).toString();
-    portTelnet      = sets.value(QString("option/porttelnet"),     59101).toInt();
+    hostTelnet      = sets.value(QString("option/hosttelnet"),      QString("113.161.67.179")).toString();
+    portTelnet      = sets.value(QString("option/porttelnet"),      59101).toInt();
+    listemail       = sets.value(QString("option/listemail"),       QString("info@vng.com.vn")).toString();
 
     if( m_autoSave && !sets.contains("option/appname") )
     {
@@ -225,6 +226,8 @@ void ConfigSetting::Save()
     sets.setValue(QString("option/hosttelnet"), hostTelnet);
     sets.sync();
     sets.setValue(QString("option/porttelnet"), portTelnet);
+    sets.sync();
+    sets.setValue(QString("option/listemail"), listemail);
     sets.sync();
 }
 
@@ -586,6 +589,13 @@ void ConfigSetting::setPortTelnet(int port) {
     portTelnet = port;
     QSettings sets("vng", "vpos");
     sets.setValue(QString("option/porttelnet"), portTelnet);
+    sets.sync();
+}
+
+void ConfigSetting::setListEmail(const QString &l_email) {
+    listemail = l_email;
+    QSettings sets("vng", "vpos");
+    sets.setValue(QString("option/listemail"), listemail);
     sets.sync();
 }
 

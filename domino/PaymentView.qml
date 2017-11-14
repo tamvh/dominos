@@ -205,6 +205,7 @@ Rectangle {
                             idProfilePage.open()
                         }
                     } else {
+                        mainController.doAlert();
                         mainController.killProcessTelnetDomino();
                         count_telnet = 0;
                         timerLoading.stop();

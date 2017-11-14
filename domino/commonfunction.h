@@ -19,6 +19,8 @@ public:
     static QString formatPayDone(const QString &invce, const QString &devid, int type, const QString &appid);
     static QString formatInvoiceCancel(const QString& invoiceCode, const QString &appUser);
     static QString formatRequestFoods(const QString& appUser);
+    static QString formatAlertEmail(const QString &list_email, const QString& branch, const QString & host, int port);
+    static QString formatHtml(const QString& branch, const QString & host, int port);
 
     static QString formatRequestCreateInvoice(const QString &merchantCode,
                                               const QString &machineName,

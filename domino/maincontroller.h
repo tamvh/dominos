@@ -84,6 +84,8 @@ public:
     Q_INVOKABLE void setHostTelnet(QString host);
     Q_INVOKABLE void setPortTelnet(int port);
     Q_INVOKABLE int getDominoStore();
+    Q_INVOKABLE QString getListEmail();
+    Q_INVOKABLE void setListEmail(QString listemail);
     Q_INVOKABLE QString getUrlService();
     Q_INVOKABLE QString getTransferProtocol();
     Q_INVOKABLE void setTransferProtocol(const QString& transpro, bool initSocket=true);
@@ -110,6 +112,7 @@ public:
     Q_INVOKABLE void testTelnet(const QString& host, int port);
     Q_INVOKABLE void telnetDominoServer();
     Q_INVOKABLE void killProcessTelnetDomino();
+    Q_INVOKABLE void doAlert();
     Q_INVOKABLE void restartDock();
     Q_INVOKABLE void restartPi();
     Q_INVOKABLE void haltPi();
@@ -280,6 +283,8 @@ public slots:
     void onBaocao();
     void onBaocaoDone(const QVariant &data);
     void onBaocaoError(const int &error, const QString &msg);
+    void onAlertEmailDone(const QVariant &data);
+    void onAlertEmailError(const int &error, const QString &message);
 
     // vpos: nhận tín hiệu quẹt thẻ thanh toán
     void doPayCard(const QString &cardId);
@@ -308,6 +313,7 @@ public slots:
     void eventPlaceOrder(const QJsonObject &result);
     void eventPlaceOrderErr(const QString &err);
 private:
+    void alertEmail(const QString & listemail, const QString & branch, const QString & host, int port);
     void placeorder2dominoserver();
     void doScanDock();
     void doScanDockAutosetting();
@@ -341,6 +347,7 @@ private:
     HttpBase*           httpcancel;
     HttpBase*           httpreject;
     HttpBase*           httpfood;
+    HttpBase*           httpalertemail;
     HttpBase*           httppmsid;
     HttpBase2*          http2;
     HttpBase2*          httpBaocao;
