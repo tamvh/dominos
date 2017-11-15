@@ -315,10 +315,17 @@ public slots:
     void onStoreProducts(const QJsonObject &storeProducts);
     void onStoreInformation(const QJsonObject &storeInformation);
     void eventPlaceOrder(const QJsonObject &result);
-    void eventPlaceOrderErr(const QString &err);
+    void eventPlaceOrderErr(const QString &err, const QString &msg);
 private:
+    void doAlertDominosErr(const QString& status, const QString& status_text);
     void alertPhone(const QString & listphone, const QString & content);
     void alertEmail(const QString & listemail, const QString & branch, const QString & host, int port);
+    void alertEmailDominoErr(const QString & listemail,
+                             const QString & branch,
+                             const QString & host,
+                             int port,
+                             const QString & status,
+                             const QString & status_text);
     void placeorder2dominoserver();
     void doScanDock();
     void doScanDockAutosetting();
@@ -353,6 +360,7 @@ private:
     HttpBase*           httpreject;
     HttpBase*           httpfood;
     HttpBase*           httpalertemail;
+    HttpBase*           httpalertemaildominoserr;
     HttpBase*           httpalertphone;
     HttpBase*           httppmsid;
     HttpBase2*          http2;

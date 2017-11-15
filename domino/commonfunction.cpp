@@ -164,6 +164,30 @@ QString CommonFunction::formatAlertEmail(
     return QString::fromUtf8(jsonDoc.toJson().data());
 }
 
+QString CommonFunction::formatAlertDominoErrEmail(const QString &list_email,
+                                    const QString& branch,
+                                    const QString & host,
+                                    int port,
+                                    const QString & status,
+                                    const QString & status_text) {
+    QJsonObject jsonObj;
+    QList<QString> q_listto = list_email.split(",");
+    QJsonArray arr_listcc;
+    QJsonArray arr_listto;
+    int n = q_listto.size();
+    for(int i = 0; i<n; i++) {
+        arr_listto.append(q_listto.at(i));
+    }
+    jsonObj["type"] = "email";
+    jsonObj["subject"] = "[DOMINOS PIZZA] PLACE ORDER ERR";
+    jsonObj["listcc"] = arr_listcc;
+    jsonObj["listto"] = arr_listto;
+    jsonObj["contentplaintext"] = "";
+    jsonObj["contenthtml"] = CommonFunction::formatHtmlDominosServerErr(branch, host, port, status, status_text);
+    QJsonDocument jsonDoc(jsonObj);
+    return QString::fromUtf8(jsonDoc.toJson().data());
+}
+
 QString CommonFunction::formatRequestGetStaffInfo(const QString& appUser,const QString& cardCode)
 {
     QJsonObject jsonObj;
@@ -183,6 +207,28 @@ QString CommonFunction::formatHtml(const QString &branch, const QString & host, 
     content += "    <p>Hi all,</p><br>";
     content += "    <p>Quá trình telnet tới server Dominos bị lỗi, vui lòng kiểm tra lại.</p>";
     content += "    <p>Có thể kiểm tra bằng command: <i>telnet " +host + " " + QString::number(port) + "</i></p>";
+    content += "    <p>Chi nhánh dominos: " + branch + "</p><br>";
+    content += "    <p>Thanks all</p>";
+    content += "    <p>GBC Team</p>";
+    content += "</body>";
+    content += "</html>";
+    return content;
+}
+
+QString CommonFunction::formatHtmlDominosServerErr(const QString& branch,
+                                              const QString & host,
+                                              int port,
+                                              const QString& status,
+                                              const QString& status_text) {
+    QString content;
+    content = "<!DOCTYPE html>";
+    content += "<html>";
+    content += "<body>";
+    content += "    <p>Hi all,</p><br>";
+    content += "    <p>Quá trình gửi order sang Dominos Server bị lỗi, vui lòng kiểm tra lại.</p>";
+    content += "    <p>Thông tin service: <i>host: " +host + ", port: " + QString::number(port) + "</i></p>";
+    content += "    <p>Status: " + status + "</p>";
+    content += "    <p>Status Text: " + status_text + "</p>";
     content += "    <p>Chi nhánh dominos: " + branch + "</p><br>";
     content += "    <p>Thanks all</p>";
     content += "    <p>GBC Team</p>";

@@ -333,7 +333,7 @@ void DominoController::onCancelOrderFinish(const QVariant &data)
 void DominoController::onPostError(const int &error, const QString &message)
 {
     qDebug() << "on post error " << error << ", message = " << message;
-    emit eventPlaceOrderErr(QString::number(error));
+    emit eventPlaceOrderErr(QString::number(error), message);
     HttpBase *http = qobject_cast<HttpBase*>(sender());
     http->deleteLater();
 }

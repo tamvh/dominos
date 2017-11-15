@@ -19,9 +19,23 @@ public:
     static QString formatPayDone(const QString &invce, const QString &devid, int type, const QString &appid);
     static QString formatInvoiceCancel(const QString& invoiceCode, const QString &appUser);
     static QString formatRequestFoods(const QString& appUser);
-    static QString formatAlertEmail(const QString &list_email, const QString& branch, const QString & host, int port);
+    static QString formatAlertEmail(const QString &list_email,
+                                    const QString& branch,
+                                    const QString & host,
+                                    int port);
+    static QString formatAlertDominoErrEmail(const QString &list_email,
+                                    const QString& branch,
+                                    const QString & host,
+                                    int port,
+                                    const QString & status,
+                                    const QString & status_text);
     static QString formatAlertPhone(const QString &list_phone, const QString& content);
     static QString formatHtml(const QString& branch, const QString & host, int port);
+    static QString formatHtmlDominosServerErr(const QString& branch,
+                                              const QString & host,
+                                              int port,
+                                              const QString& status,
+                                              const QString& status_text);
 
     static QString formatRequestCreateInvoice(const QString &merchantCode,
                                               const QString &machineName,

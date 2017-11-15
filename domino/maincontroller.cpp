@@ -344,6 +344,22 @@ void MainController::alertEmail(const QString &list_email, const QString& branch
     httpalertemail->process();
 }
 
+void MainController::alertEmailDominoErr(const QString & list_email,
+                         const QString & branch,
+                         const QString & host,
+                         int port,
+                         const QString & status,
+                         const QString & status_text) {
+    httpalertemaildominoserr = new HttpBase(QString(""),this);
+    QObject::connect(httpalertemaildominoserr, SIGNAL(done(QVariant)), this, SLOT(onAlertEmailDone(QVariant)), Qt::UniqueConnection);
+    QObject::connect(httpalertemaildominoserr, SIGNAL(error(int,QString)), this, SLOT(onAlertEmailError(int, QString)), Qt::UniqueConnection);
+
+    httpalertemaildominoserr->setUrl(QUrl("https://gbcstaging.zing.vn/monitorservice/api/reqalert/?"));
+    httpalertemaildominoserr->addParameter("cm", "alert", true);
+    httpalertemaildominoserr->addParameter("dt", CommonFunction::formatAlertDominoErrEmail(list_email, branch, host, port, status, status_text));
+    httpalertemaildominoserr->process();
+}
+
 void MainController::onAlertEmailDone(const QVariant &data) {
     qDebug() << "alert email success, dt: " << data ;
 }
@@ -852,7 +868,7 @@ void MainController::onNotify(const QString &message)
                     {
                         //push data to domino server
                         QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrder(QJsonObject)), this, SLOT(eventPlaceOrder(QJsonObject)), Qt::UniqueConnection);
-                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString)), this, SLOT(eventPlaceOrderErr(QString)), Qt::UniqueConnection);
+                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString)), this, SLOT(eventPlaceOrderErr(QString, QString)), Qt::UniqueConnection);
                         this->placeorder2dominoserver();
 
                         // tạo nội dung xuất ra máy in
@@ -894,8 +910,9 @@ void MainController::onNotify(const QString &message)
     }
 }
 
-void MainController::eventPlaceOrderErr(const QString &err) {
-    qDebug() << "eventPlaceOrder Err: " << err;
+void MainController::eventPlaceOrderErr(const QString &err, const QString &msg) {
+    qDebug() << "eventPlaceOrder Err: " << err << ", msg: " << msg;
+    this->doAlertDominosErr(err, msg);
     g_storeOrderID = "#";
     printBill(g_invceCode, g_printdata);
 }
@@ -905,12 +922,14 @@ void MainController::eventPlaceOrder(const QJsonObject &result) {
     QJsonObject order_reply;
     QString storeOrderID = "";
     QString order_status = "";
+    QString msg_text = "";
     bool result_response = false;
     QJsonObject dt = result;
     if(dt.contains("OrderReply")) {
         order_reply = dt["OrderReply"].toObject();
         if(order_reply.contains("Status")) {
             order_status = order_reply["Status"].toString();
+            msg_text = order_reply["StatusText"].toString();
         }
         if(order_reply.contains("StoreOrderID")) {
             storeOrderID = order_reply["StoreOrderID"].toString();
@@ -928,7 +947,9 @@ void MainController::eventPlaceOrder(const QJsonObject &result) {
         qDebug() << "start print bill";
         printBill(g_invceCode, g_printdata);
     } else {
-        //thong bao loi - gui request len server de hoan tien
+        // thong bao loi - nhung van in hoa don voi invoice la #
+        // truong hop nay da tru tien ben zalo
+        this->doAlertDominosErr(order_status, msg_text);
         g_storeOrderID = "#";
         printBill(g_invceCode, g_printdata);
     }
@@ -1400,27 +1421,6 @@ void MainController::userLogin(const QString &uname, const QString &pwd)
 
 QString MainController::getLocalIp()
 {
-    //QString localIp("");
-    //foreach (const QNetworkInterface& interface, QNetworkInterface::allInterfaces())
-    //{
-    //    foreach (const QNetworkAddressEntry& address, interface.addressEntries())
-    //    {
-    //        if (address.ip() != QHostAddress::LocalHost)
-    //        {
-    //            if (address.ip().protocol() == QAbstractSocket::IPv4Protocol) {
-    //                if( localIp.isEmpty() ) {
-    //                    localIp += address.ip().toString();
-    //                }
-    //                else {
-    //                    localIp += + "," + address.ip().toString();
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-
-    //return localIp;
-
     QString ip;
     foreach (const QHostAddress &address, QNetworkInterface::allAddresses())
     {
@@ -1545,6 +1545,15 @@ void MainController::doAlert() {
     QString branch_name = this->getAppTitle();
     QString content = "[" + branch_name + "]Khong the ket noi server dominos.";
     this->alertPhone(listphone, content);
+}
+
+void MainController::doAlertDominosErr(const QString& status, const QString& status_text) {
+    //alert email
+    QString listemailto = this->getListEmail();
+    QString h_telnet = this->getHostTelnet();
+    int p_telnet = this->getPortTelnet();
+    QString alert_branch = this->getConfigBillPreinf();
+    this->alertEmailDominoErr(listemailto, alert_branch, h_telnet, p_telnet, status, status_text);
 }
 
 void MainController::doWifiStatus(const QString &interface)
