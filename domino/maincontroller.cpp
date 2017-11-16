@@ -868,7 +868,7 @@ void MainController::onNotify(const QString &message)
                     {
                         //push data to domino server
                         QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrder(QJsonObject)), this, SLOT(eventPlaceOrder(QJsonObject)), Qt::UniqueConnection);
-                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString)), this, SLOT(eventPlaceOrderErr(QString, QString)), Qt::UniqueConnection);
+                        QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString, QString)), this, SLOT(eventPlaceOrderErr(QString, QString)), Qt::UniqueConnection);
                         this->placeorder2dominoserver();
 
                         // tạo nội dung xuất ra máy in
@@ -1098,6 +1098,9 @@ int MainController::getBillAlertTimer()
 {
     int build_timer = setting->billAlertTimer;
     return build_timer;
+}
+QString MainController::getGInvoiceCode() {
+    return g_storeOrderID;
 }
 
 void MainController::setBillAlertTimer(int timer)
@@ -1741,6 +1744,8 @@ void MainController::printBill(const QString& ivcode, const QString &printData)
     ReceiptPrinter printer(getPrinter(), printData);
     printer.print();
 #endif
+    //show popup sau khi in hoa don
+    emit showPopupAfterPrint(g_storeOrderID);
 }
 
 void MainController::cancelBill(const QString& foId, const QString& invcecode, const QString& total)

@@ -291,9 +291,9 @@ Popup {
 
                         // open popup dialog to guide user get the bill
                         if ((bClose == true) && (errcode == 0)) {
-                            if (mainController.getBillAlertTimer() > 0) {
-                                getBillAlert.open()
-                            }
+//                            if (mainController.getBillAlertTimer() > 0) {
+//                                getBillAlert.open()
+//                            }
                         }
                         if ( errcode == 1) {
                             if (mainController.getBillAlertTimer() > 0) {

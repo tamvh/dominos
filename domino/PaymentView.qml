@@ -297,14 +297,25 @@ Rectangle {
 
                     // open popup dialog to guide user get the bill
                     if ((bClose == true) && (errcode == 0)) {
-                        if (mainController.getBillAlertTimer() > 0) {
-                            getBillAlert.open()
-                        }
+//                        if (mainController.getBillAlertTimer() > 0) {
+
+//                        }
+                        idLoadingPage.open()
                     }
                     if ( errcode == 1) {
                         if (mainController.getBillAlertTimer() > 0) {
                             getErrAlert.open()
                         }
+                    }
+                }
+                onShowPopupAfterPrint: {
+                    var dominoInvCode = dominoInvoiceCode;
+                    idLoadingPage.close();
+                    if(dominoInvCode === "#")
+                    {
+                        idDoBillDominosErrAlert.open();
+                    } else {
+                        getBillAlert.open()
                     }
                 }
             }

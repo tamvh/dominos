@@ -50,6 +50,10 @@ Item  {
             else if(parentId === 4) {
                 getErrAlert.close();
             }
+            else if(parentId === 5) {
+                idDoBillDominosErrAlert.close();
+            }
+
         }
 
         timerCountdown.minutesElapsed = (timeCounter)/60;

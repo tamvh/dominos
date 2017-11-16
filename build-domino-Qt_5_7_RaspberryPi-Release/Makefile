@@ -593,46 +593,50 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp qrc_icons.cpp
 qrc_qml.cpp: ../domino/qml.qrc \
 		/opt/build/qt5pi/qt5host/bin/rcc \
-		../domino/pi-main.qml \
-		../domino/FoodTab.qml \
-		../domino/qtquickcontrols2.conf \
-		../domino/RectMain.qml \
-		../domino/FlatButton.qml \
-		../domino/ChoosenItemListView.qml \
-		../domino/SwipeMenu.qml \
-		../domino/ItemViewDetail.qml \
-		../domino/AccountPage.qml \
-		../domino/TitleSubPage.qml \
-		../domino/PaperRipple.qml \
-		../domino/LoginPage.qml \
-		../domino/KitchenPage.qml \
-		../domino/KitchenDishReserve.qml \
+		../domino/VPOSWindow.qml \
 		../domino/AlarmPage.qml \
-		../domino/VPOSTabBar.qml \
 		../domino/KitchenDishPrepare.qml \
-		../domino/VPOSTabButton.qml \
-		../domino/QrTimer.qml \
-		../domino/FoodPizzaPage.qml \
-		../domino/SearchPage.qml \
-		../domino/AboutPage.qml \
 		../domino/PaymentPage.qml \
-		../domino/PaymentView.qml \
+		../domino/qtquickcontrols2.conf \
+		../domino/pi-main.qml \
+		../domino/KitchenPage.qml \
+		../domino/QrTimer.qml \
+		../domino/VPOSScrollBar.qml \
+		../domino/HalfRadiusRectangle.qml \
+		../domino/VPOSTabBar.qml \
+		../domino/AboutPage.qml \
 		../domino/main.qml \
 		../domino/ImageHalfRadiusRect.qml \
-		../domino/LoadingPage.qml \
-		../domino/ProfilePage.qml \
+		../domino/SwipeMenu.qml \
+		../domino/PaperRipple.qml \
+		../domino/FoodTab.qml \
+		../domino/SearchPage.qml \
+		../domino/RectMain.qml \
+		../domino/FoodPizzaPage.qml \
+		../domino/AccountPage.qml \
+		../domino/FlatButton.qml \
+		../domino/KitchenDishReserve.qml \
 		../domino/FoodPage.qml \
-		../domino/VPOSWindow.qml \
+		../domino/WarningPlaceOrderErr.qml \
+		../domino/ChoosenItemListView.qml \
 		../domino/VposPage.qml \
-		../domino/HalfRadiusRectangle.qml \
-		../domino/VPOSScrollBar.qml \
+		../domino/ItemViewDetail.qml \
+		../domino/LoginPage.qml \
+		../domino/LoadingPage.qml \
+		../domino/PaymentView.qml \
+		../domino/ProfilePage.qml \
+		../domino/TitleSubPage.qml \
+		../domino/VPOSTabButton.qml \
+		../domino/fonts/UnisectVnu.ttf \
+		../domino/fonts/UnisectVnuBold.ttf \
+		../domino/fonts/UnisectVnuBlack.ttf \
+		../domino/content/TextBase.qml \
+		../domino/content/TextField.qml \
 		../domino/dynamicqml/AdminConfigPage.qml \
 		../domino/dynamicqml/UserConfigPage.qml \
 		../domino/dynamicqml/PiSettingsPage.qml \
 		../domino/dynamicqml/SettingsPage.qml \
 		../domino/dynamicqml/SettingPages.qml \
-		../domino/content/TextBase.qml \
-		../domino/content/TextField.qml \
 		../domino/images/billonprinter.png \
 		../domino/images/check-64.png \
 		../domino/images/checkicon.png \
@@ -711,10 +715,7 @@ qrc_qml.cpp: ../domino/qml.qrc \
 		../domino/icons/cancel.png \
 		../domino/icons/logo.png \
 		../domino/icons/txt_canteenvng.png \
-		../domino/icons/search_back.png \
-		../domino/fonts/UnisectVnu.ttf \
-		../domino/fonts/UnisectVnuBold.ttf \
-		../domino/fonts/UnisectVnuBlack.ttf
+		../domino/icons/search_back.png
 	/opt/build/qt5pi/qt5host/bin/rcc -name qml ../domino/qml.qrc -o qrc_qml.cpp
 
 qrc_icons.cpp: ../domino/icons/icons.qrc \

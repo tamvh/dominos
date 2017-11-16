@@ -2817,6 +2817,10 @@ ApplicationWindow {
         id: idLoadingPage
     }
 
+    WarningPlaceOrderErr {
+        id: idDoBillDominosErrAlert
+    }
+
     Connections {
         target: mainController
         onIdleTimeout: {

@@ -138,6 +138,7 @@ public:
     Q_INVOKABLE int     getFoodRefreshTimer();
     Q_INVOKABLE void    setFoodRefreshTimer(int timer);
     Q_INVOKABLE int     getBillAlertTimer();
+    Q_INVOKABLE QString getGInvoiceCode();
     Q_INVOKABLE void    setBillAlertTimer(int timer);
     Q_INVOKABLE bool    getShowThanhtoancungdonhang();
     Q_INVOKABLE void    setShowThanhtoancungdonhang(bool isShow);
@@ -214,6 +215,7 @@ public:
     }
 
 signals:
+    void showPopupAfterPrint(const QString& dominoInvoiceCode);
     void foodReset();
     void foodUpdate(const QVariant menus);
     void foodSearching(const QString& srchtxt);

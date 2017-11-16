@@ -40,6 +40,7 @@
         <file>FlatButton.qml</file>
         <file>AlarmPage.qml</file>
         <file>LoadingPage.qml</file>
+        <file>WarningPlaceOrderErr.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/checkicon.png</file>
