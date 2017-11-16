@@ -918,6 +918,11 @@ void MainController::onNotify(const QString &message)
 
 void MainController::eventPlaceOrderErr(const QString &err, const QString &msg) {
     qDebug() << "eventPlaceOrder Err: " << err << ", msg: " << msg;
+}
+void MainController::doPlaceOrderErr() {
+    qDebug() << "MainController::doPlaceOrderErr()";
+    QString err = "-1";
+    QString msg = "Request timeout.";
     this->doAlertDominosErr(err, msg);
     g_storeOrderID = "#";
     printBill(g_invceCode, g_printdata);

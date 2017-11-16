@@ -215,6 +215,23 @@ Rectangle {
                 }
             }
 
+            Timer {
+                id: timerPlaceOrder
+                interval: 1000;
+                running: false;
+                repeat: true;
+                onTriggered: {
+                    console.log('start place order');
+                    count_placeorder += 1;
+                    if(count_placeorder >=5) {
+                        count_placeorder = 0;
+                        mainController.doPlaceOrderErr();
+                        idLoadingPage.close();
+                        timerPlaceOrder.stop();
+                    }
+                }
+            }
+
             Connections {
                 target: mainController
                 onLoadingDone: {
@@ -298,7 +315,8 @@ Rectangle {
                     // open popup dialog to guide user get the bill
                     if ((bClose == true) && (errcode == 0)) {
                         if (mainController.getPrintStatus() === 0) {
-                            idLoadingPage.open()
+                            timerPlaceOrder.start();
+                            idLoadingPage.open();
                         }
                     }
                     if ( errcode == 1) {
@@ -307,8 +325,11 @@ Rectangle {
                         }
                     }
                 }
+
                 onShowPopupAfterPrint: {
+                    console.log('onShowPopupAfterPrint');
                     var dominoInvCode = dominoInvoiceCode;
+                    timerPlaceOrder.stop();
                     idLoadingPage.close();
                     if(dominoInvCode === "#")
                     {
@@ -322,7 +343,6 @@ Rectangle {
             Connections {
                 target: mainController
                 onPaySucc: {
-
                     // update QR code
                     qrimage.visible = true
                     qrimage.setImage("image://colors/" + qrcode)

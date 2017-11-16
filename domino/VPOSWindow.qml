@@ -89,6 +89,7 @@ ApplicationWindow {
     property int window_zindex: -1
     property bool telnet_result: false
     property int count_telnet: 0
+    property int count_placeorder: 0
 
 
     Material.primary: "#006493"

@@ -183,6 +183,7 @@ public:
     Q_INVOKABLE QString getIdCoupon();
     Q_INVOKABLE void    setIdCouponPercent(float percent);
     Q_INVOKABLE QString getIdCouponPercent();
+    Q_INVOKABLE void    doPlaceOrderErr();
 
     Q_INVOKABLE void saveConfig();
     Q_INVOKABLE void sendCancelBillUI();
@@ -216,6 +217,7 @@ public:
     }
 
 signals:
+    void startPlaceOrder();
     void showPopupAfterPrint(const QString& dominoInvoiceCode);
     void foodReset();
     void foodUpdate(const QVariant menus);
