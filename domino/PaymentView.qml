@@ -297,10 +297,9 @@ Rectangle {
 
                     // open popup dialog to guide user get the bill
                     if ((bClose == true) && (errcode == 0)) {
-//                        if (mainController.getBillAlertTimer() > 0) {
-
-//                        }
-                        idLoadingPage.open()
+                        if (mainController.getPrintStatus() === 0) {
+                            idLoadingPage.open()
+                        }
                     }
                     if ( errcode == 1) {
                         if (mainController.getBillAlertTimer() > 0) {

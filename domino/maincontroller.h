@@ -121,6 +121,7 @@ public:
     Q_INVOKABLE void checkPrinterStatus();
 
     Q_INVOKABLE void printTest(const QJsonArray &foods);
+    Q_INVOKABLE int getPrintStatus();
 
     Q_INVOKABLE QString getLocalIp();
 
@@ -426,6 +427,7 @@ private:
     QJsonArray m_prods_from_dominos;
     QString dominoUrl;
     int     dominoStore;
+    int printStt;
 private:
     QString g_invceCode;
     QString g_printdata;

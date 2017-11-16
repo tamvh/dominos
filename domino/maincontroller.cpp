@@ -748,8 +748,13 @@ void MainController::insertItem(const QString& type, const QString& code_name, c
     emit addItem(type, code_name, name, size, debanh, phomai, quantity, priceNum, price, oriprice, promtype);
 }
 
+int MainController::getPrintStatus() {
+    return printStt;
+}
+
 void MainController::printTest(const QJsonArray &foods)
 {
+    printStt = 1;
     QString dt = QString("\"dt\":{%1,%2,%3,%4,%5,%6,%7}")
             .arg("\"invoice_code\":\"0000000000000000\"")
             .arg("\"invoice_datetime\":\"201701100080808\"")
@@ -866,6 +871,7 @@ void MainController::onNotify(const QString &message)
                     BillInfo bi;
                     if( m_Bills.getBill(invceCode, bi) == true )
                     {
+                        printStt = 0;
                         //push data to domino server
                         QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrder(QJsonObject)), this, SLOT(eventPlaceOrder(QJsonObject)), Qt::UniqueConnection);
                         QObject::connect(&dominoCtrl, SIGNAL(eventPlaceOrderErr(QString, QString)), this, SLOT(eventPlaceOrderErr(QString, QString)), Qt::UniqueConnection);
