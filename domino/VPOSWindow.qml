@@ -1552,6 +1552,9 @@ ApplicationWindow {
                                                  if(name_code === '12HTMRITA') {
                                                      name_code = '12HTMAR';
                                                  }
+                                                 if(name_code === '9NYHAW') {
+                                                     name_code = '9NYHAV';
+                                                 }
                                                  console.log("Name Code: " + name_code);
                                                  mainController.insertItem("PIZZA", name_code, _name, pizza_sizebanh, pizza_debanh_id, nChessy, _price, _quantity, _oriprice, 0);
 
