@@ -1689,6 +1689,7 @@ void MainController::updateTotalMoney(long long moneyValue)
 // print bill detail to printer
 void MainController::printBill(const QString& ivcode, const QString &printData)
 {
+    qDebug() << "==============START PRINT BILL==============";
     qDebug() << "printData: " + printData;
 
     // call printing function to sending bill-Detail to printer

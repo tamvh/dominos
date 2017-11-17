@@ -519,7 +519,6 @@ ApplicationWindow {
 
     Component.onCompleted: {
         titleLabel.text = mainController.getAppMachine();
-
         if (mainController.getAppName() === "") {
             idPageLogin.open()
         }
@@ -1036,7 +1035,6 @@ ApplicationWindow {
                                             select_debanh("de_vua")
                                         }
                                     }
-
                                 }
                                 Rectangle {
                                     id: rectDeday
