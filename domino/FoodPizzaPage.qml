@@ -267,6 +267,7 @@ Rectangle {
                                     font.bold: true
                                 }
                                 Label {
+                                    visible: (mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9') === mainController.getMoneyValue(text_price9))?false:true
                                     text: " "
                                     font.pixelSize: 18
                                 }
@@ -320,6 +321,7 @@ Rectangle {
                                     font.bold: true
                                 }
                                 Label {
+                                    visible: (mainController.getPriceCoupon(mainController.getMoneyValue(text_price9), '9') === mainController.getMoneyValue(text_price9)) ? false : true
                                     text: text_price9  + " VNĐ"
                                     color: "gray"
                                     font.pixelSize: 18
@@ -374,6 +376,7 @@ Rectangle {
                                     font.bold: true
                                 }
                                 Label {
+                                    visible: (mainController.getPriceCoupon(mainController.getMoneyValue(text_price12), '12') === mainController.getMoneyValue(text_price12)) ? false : true
                                     text: text_price12 + " VNĐ"
                                     color: "gray"
                                     font.pixelSize: 18
